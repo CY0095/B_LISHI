@@ -11,6 +11,15 @@
 		C231C6221D361AAA009BB26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231C6201D361AAA009BB26B /* Main.storyboard */; };
 		C231C6241D361AAA009BB26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C231C6231D361AAA009BB26B /* Assets.xcassets */; };
 		C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231C6251D361AAA009BB26B /* LaunchScreen.storyboard */; };
+		C25ADAD11D3DBD5200BD1ED6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */; };
+		C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */; };
+		C25ADAD31D3DBD5200BD1ED6 /* MyAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */; };
+		C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */; };
+		C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD71D3DBE3300BD1ED6 /* LoginRequest.m */; };
+		C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD91D3DBE3300BD1ED6 /* GetCodeRequest.m */; };
+		C25ADAE01D3DBE3400BD1ED6 /* RegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADADB1D3DBE3300BD1ED6 /* RegisterRequest.m */; };
+		C25ADAE11D3DBE3400BD1ED6 /* UpMydataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */; };
+		C25ADAE31D3DC9B300BD1ED6 /* mydata.png in Resources */ = {isa = PBXBuildFile; fileRef = C25ADAE21D3DC9B300BD1ED6 /* mydata.png */; };
 		D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */; };
 		D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AF1D3A52DB0073EAE4 /* ActivityViewController.m */; };
 		D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */; };
@@ -78,7 +87,6 @@
 		D6ADC95F1D3A52DB0073EAE4 /* qingchu.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9171D3A52DB0073EAE4 /* qingchu.png */; };
 		D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9181D3A52DB0073EAE4 /* yijian.png */; };
 		D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9191D3A52DB0073EAE4 /* 箭头.png */; };
-		D6ADC9621D3A52DB0073EAE4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC91D1D3A52DB0073EAE4 /* LoginViewController.m */; };
 		FB1C041A433BDD3AA01A9A58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 097D4472229F8357FC223952 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +100,23 @@
 		C231C6231D361AAA009BB26B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C231C6261D361AAA009BB26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C231C6281D361AAA009BB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25ADAC91D3DBD5200BD1ED6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C25ADACD1D3DBD5200BD1ED6 /* MyAttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionViewController.h; sourceTree = "<group>"; };
+		C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionViewController.m; sourceTree = "<group>"; };
+		C25ADACF1D3DBD5200BD1ED6 /* ChangeMydataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeMydataViewController.h; sourceTree = "<group>"; };
+		C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeMydataViewController.m; sourceTree = "<group>"; };
+		C25ADAD61D3DBE3300BD1ED6 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		C25ADAD71D3DBE3300BD1ED6 /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
+		C25ADAD81D3DBE3300BD1ED6 /* GetCodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCodeRequest.h; sourceTree = "<group>"; };
+		C25ADAD91D3DBE3300BD1ED6 /* GetCodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCodeRequest.m; sourceTree = "<group>"; };
+		C25ADADA1D3DBE3300BD1ED6 /* RegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequest.h; sourceTree = "<group>"; };
+		C25ADADB1D3DBE3300BD1ED6 /* RegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterRequest.m; sourceTree = "<group>"; };
+		C25ADADC1D3DBE3300BD1ED6 /* UpMydataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpMydataRequest.h; sourceTree = "<group>"; };
+		C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpMydataRequest.m; sourceTree = "<group>"; };
+		C25ADAE21D3DC9B300BD1ED6 /* mydata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mydata.png; sourceTree = "<group>"; };
 		D6ADC8A91D3A52DA0073EAE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D6ADC8AE1D3A52DB0073EAE4 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -195,8 +220,6 @@
 		D6ADC9171D3A52DB0073EAE4 /* qingchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qingchu.png; sourceTree = "<group>"; };
 		D6ADC9181D3A52DB0073EAE4 /* yijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yijian.png; sourceTree = "<group>"; };
 		D6ADC9191D3A52DB0073EAE4 /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
-		D6ADC91C1D3A52DB0073EAE4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		D6ADC91D1D3A52DB0073EAE4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +289,36 @@
 				C231C6181D361AAA009BB26B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C25ADAC81D3DBD2D00BD1ED6 /* MyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C25ADAC91D3DBD5200BD1ED6 /* LoginViewController.h */,
+				C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */,
+				C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */,
+				C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */,
+				C25ADACD1D3DBD5200BD1ED6 /* MyAttentionViewController.h */,
+				C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */,
+				C25ADACF1D3DBD5200BD1ED6 /* ChangeMydataViewController.h */,
+				C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */,
+			);
+			name = MyViewController;
+			sourceTree = "<group>";
+		};
+		C25ADAD51D3DBDF800BD1ED6 /* MyViewRequest */ = {
+			isa = PBXGroup;
+			children = (
+				C25ADAD61D3DBE3300BD1ED6 /* LoginRequest.h */,
+				C25ADAD71D3DBE3300BD1ED6 /* LoginRequest.m */,
+				C25ADAD81D3DBE3300BD1ED6 /* GetCodeRequest.h */,
+				C25ADAD91D3DBE3300BD1ED6 /* GetCodeRequest.m */,
+				C25ADADA1D3DBE3300BD1ED6 /* RegisterRequest.h */,
+				C25ADADB1D3DBE3300BD1ED6 /* RegisterRequest.m */,
+				C25ADADC1D3DBE3300BD1ED6 /* UpMydataRequest.h */,
+				C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */,
+			);
+			name = MyViewRequest;
 			sourceTree = "<group>";
 		};
 		D6ADC8A71D3A52DA0073EAE4 /* Classes */ = {
@@ -364,6 +417,7 @@
 		D6ADC8D61D3A52DB0073EAE4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C25ADAD51D3DBDF800BD1ED6 /* MyViewRequest */,
 				D6ADC8D71D3A52DB0073EAE4 /* BaseRequest.h */,
 				D6ADC8D81D3A52DB0073EAE4 /* BaseRequest.m */,
 				D6ADC8D91D3A52DB0073EAE4 /* CommunityRequest.h */,
@@ -438,6 +492,7 @@
 		D6ADC8FF1D3A52DB0073EAE4 /* backgroundImage */ = {
 			isa = PBXGroup;
 			children = (
+				C25ADAE21D3DC9B300BD1ED6 /* mydata.png */,
 				D6ADC9001D3A52DB0073EAE4 /* IMG_5523.jpg */,
 				D6ADC9011D3A52DB0073EAE4 /* IMG_5524.jpg */,
 				D6ADC9021D3A52DB0073EAE4 /* IMG_5525.jpg */,
@@ -478,8 +533,7 @@
 		D6ADC91B1D3A52DB0073EAE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6ADC91C1D3A52DB0073EAE4 /* LoginViewController.h */,
-				D6ADC91D1D3A52DB0073EAE4 /* LoginViewController.m */,
+				C25ADAC81D3DBD2D00BD1ED6 /* MyViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -578,6 +632,7 @@
 				C231C6241D361AAA009BB26B /* Assets.xcassets in Resources */,
 				D6ADC9511D3A52DB0073EAE4 /* bag.png in Resources */,
 				D6ADC9341D3A52DB0073EAE4 /* ToolsTableViewCell.xib in Resources */,
+				C25ADAE31D3DC9B300BD1ED6 /* mydata.png in Resources */,
 				D6ADC95D1D3A52DB0073EAE4 /* My_Select.png in Resources */,
 				D6ADC94E1D3A52DB0073EAE4 /* IMG_5528.jpg in Resources */,
 				D6ADC9531D3A52DB0073EAE4 /* guanzhu.png in Resources */,
@@ -646,12 +701,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25ADAE01D3DBE3400BD1ED6 /* RegisterRequest.m in Sources */,
+				C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */,
 				D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */,
 				D6ADC9421D3A52DB0073EAE4 /* ToolsModel.m in Sources */,
 				D6ADC93F1D3A52DB0073EAE4 /* ListModel.m in Sources */,
 				D6ADC93B1D3A52DB0073EAE4 /* catnameModel.m in Sources */,
-				D6ADC9621D3A52DB0073EAE4 /* LoginViewController.m in Sources */,
+				C25ADAD11D3DBD5200BD1ED6 /* LoginViewController.m in Sources */,
 				D6ADC9271D3A52DB0073EAE4 /* HuwaifanViewController.m in Sources */,
+				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
+				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
 				D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */,
 				D6ADC92D1D3A52DB0073EAE4 /* ZhuangBeiKongViewController.m in Sources */,
 				D6ADC9391D3A52DB0073EAE4 /* ToolsRequest.m in Sources */,
@@ -670,13 +729,16 @@
 				D6ADC9371D3A52DB0073EAE4 /* ExchangeRequest.m in Sources */,
 				D6ADC93D1D3A52DB0073EAE4 /* FLModel.m in Sources */,
 				D6ADC9311D3A52DB0073EAE4 /* MyTableViewCell.m in Sources */,
+				C25ADAD31D3DBD5200BD1ED6 /* MyAttentionViewController.m in Sources */,
 				D6ADC92B1D3A52DB0073EAE4 /* RootViewController.m in Sources */,
 				D6ADC9281D3A52DB0073EAE4 /* LuyingViewController.m in Sources */,
 				D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */,
 				D6ADC93A1D3A52DB0073EAE4 /* BaseModel.m in Sources */,
 				D6ADC9401D3A52DB0073EAE4 /* sportList.m in Sources */,
+				C25ADAE11D3DBE3400BD1ED6 /* UpMydataRequest.m in Sources */,
 				D6ADC9261D3A52DB0073EAE4 /* ExchangeViewController.m in Sources */,
 				D6ADC92A1D3A52DB0073EAE4 /* PandengViewController.m in Sources */,
+				C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */,
 				D6ADC9411D3A52DB0073EAE4 /* sports_catesModel.m in Sources */,
 				C231C6191D361AAA009BB26B /* main.m in Sources */,
 				D6ADC9381D3A52DB0073EAE4 /* NetWorkRequest.m in Sources */,
@@ -795,6 +857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -808,6 +871,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
 				PRODUCT_NAME = "$(TARGET_NAME)";

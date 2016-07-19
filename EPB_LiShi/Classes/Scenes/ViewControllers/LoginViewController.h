@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface LoginViewController : BaseViewController
-
+@property(strong,nonatomic) NSString *user_id;
 @end
