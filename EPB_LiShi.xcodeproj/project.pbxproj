@@ -13,13 +13,27 @@
 		C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231C6251D361AAA009BB26B /* LaunchScreen.storyboard */; };
 		C25ADAD11D3DBD5200BD1ED6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */; };
 		C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */; };
-		C25ADAD31D3DBD5200BD1ED6 /* MyAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */; };
 		C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */; };
 		C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD71D3DBE3300BD1ED6 /* LoginRequest.m */; };
 		C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD91D3DBE3300BD1ED6 /* GetCodeRequest.m */; };
 		C25ADAE01D3DBE3400BD1ED6 /* RegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADADB1D3DBE3300BD1ED6 /* RegisterRequest.m */; };
 		C25ADAE11D3DBE3400BD1ED6 /* UpMydataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */; };
 		C25ADAE31D3DC9B300BD1ED6 /* mydata.png in Resources */ = {isa = PBXBuildFile; fileRef = C25ADAE21D3DC9B300BD1ED6 /* mydata.png */; };
+		C2D4DA6F1D40E7EF00A9A3BE /* MyAttentionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA681D40E7EF00A9A3BE /* MyAttentionRequest.m */; };
+		C2D4DA701D40E7EF00A9A3BE /* RecommendUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA6A1D40E7EF00A9A3BE /* RecommendUserRequest.m */; };
+		C2D4DA711D40E7EF00A9A3BE /* AttentionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA6C1D40E7EF00A9A3BE /* AttentionRequest.m */; };
+		C2D4DA721D40E7EF00A9A3BE /* UserDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA6E1D40E7EF00A9A3BE /* UserDetailRequest.m */; };
+		C2D4DA781D40EBE200A9A3BE /* MyAttentionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA751D40EBE200A9A3BE /* MyAttentionModel.m */; };
+		C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */; };
+		C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */; };
+		C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */; };
+		C2D4DA8A1D40EC6700A9A3BE /* MyAttentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */; };
+		C2D4DA8B1D40EC6700A9A3BE /* MyAttentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */; };
+		C2D4DA8C1D40EC6700A9A3BE /* RecommendUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */; };
+		C2D4DA8D1D40EC6700A9A3BE /* RecommendUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */; };
+		C2D4DA8E1D40EC6700A9A3BE /* AttentionDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */; };
+		C2D4DA8F1D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */; };
+		C2D4DA911D40F04C00A9A3BE /* yekong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA901D40F04C00A9A3BE /* yekong.jpg */; };
 		D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */; };
 		D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AF1D3A52DB0073EAE4 /* ActivityViewController.m */; };
 		D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */; };
@@ -104,8 +118,6 @@
 		C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		C25ADACD1D3DBD5200BD1ED6 /* MyAttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionViewController.h; sourceTree = "<group>"; };
-		C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionViewController.m; sourceTree = "<group>"; };
 		C25ADACF1D3DBD5200BD1ED6 /* ChangeMydataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeMydataViewController.h; sourceTree = "<group>"; };
 		C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeMydataViewController.m; sourceTree = "<group>"; };
 		C25ADAD61D3DBE3300BD1ED6 /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
@@ -117,6 +129,32 @@
 		C25ADADC1D3DBE3300BD1ED6 /* UpMydataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpMydataRequest.h; sourceTree = "<group>"; };
 		C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpMydataRequest.m; sourceTree = "<group>"; };
 		C25ADAE21D3DC9B300BD1ED6 /* mydata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mydata.png; sourceTree = "<group>"; };
+		C2D4DA671D40E7EF00A9A3BE /* MyAttentionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionRequest.h; sourceTree = "<group>"; };
+		C2D4DA681D40E7EF00A9A3BE /* MyAttentionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionRequest.m; sourceTree = "<group>"; };
+		C2D4DA691D40E7EF00A9A3BE /* RecommendUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendUserRequest.h; sourceTree = "<group>"; };
+		C2D4DA6A1D40E7EF00A9A3BE /* RecommendUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendUserRequest.m; sourceTree = "<group>"; };
+		C2D4DA6B1D40E7EF00A9A3BE /* AttentionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionRequest.h; sourceTree = "<group>"; };
+		C2D4DA6C1D40E7EF00A9A3BE /* AttentionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionRequest.m; sourceTree = "<group>"; };
+		C2D4DA6D1D40E7EF00A9A3BE /* UserDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailRequest.h; sourceTree = "<group>"; };
+		C2D4DA6E1D40E7EF00A9A3BE /* UserDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailRequest.m; sourceTree = "<group>"; };
+		C2D4DA741D40EBE200A9A3BE /* MyAttentionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionModel.h; sourceTree = "<group>"; };
+		C2D4DA751D40EBE200A9A3BE /* MyAttentionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionModel.m; sourceTree = "<group>"; };
+		C2D4DA761D40EBE200A9A3BE /* PostMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMessageModel.h; sourceTree = "<group>"; };
+		C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMessageModel.m; sourceTree = "<group>"; };
+		C2D4DA7A1D40EC4100A9A3BE /* MyAttentionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionViewController.h; sourceTree = "<group>"; };
+		C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionViewController.m; sourceTree = "<group>"; };
+		C2D4DA7D1D40EC4700A9A3BE /* AttentionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailViewController.h; sourceTree = "<group>"; };
+		C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailViewController.m; sourceTree = "<group>"; };
+		C2D4DA811D40EC6700A9A3BE /* MyAttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAttentionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C2D4DA841D40EC6700A9A3BE /* RecommendUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendUserTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C2D4DA871D40EC6700A9A3BE /* AttentionDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		C2D4DA901D40F04C00A9A3BE /* yekong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yekong.jpg; sourceTree = "<group>"; };
 		D6ADC8A91D3A52DA0073EAE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D6ADC8AE1D3A52DB0073EAE4 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -298,10 +336,12 @@
 				C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */,
 				C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */,
 				C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */,
-				C25ADACD1D3DBD5200BD1ED6 /* MyAttentionViewController.h */,
-				C25ADACE1D3DBD5200BD1ED6 /* MyAttentionViewController.m */,
 				C25ADACF1D3DBD5200BD1ED6 /* ChangeMydataViewController.h */,
 				C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */,
+				C2D4DA7A1D40EC4100A9A3BE /* MyAttentionViewController.h */,
+				C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */,
+				C2D4DA7D1D40EC4700A9A3BE /* AttentionDetailViewController.h */,
+				C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */,
 			);
 			name = MyViewController;
 			sourceTree = "<group>";
@@ -317,8 +357,43 @@
 				C25ADADB1D3DBE3300BD1ED6 /* RegisterRequest.m */,
 				C25ADADC1D3DBE3300BD1ED6 /* UpMydataRequest.h */,
 				C25ADADD1D3DBE3300BD1ED6 /* UpMydataRequest.m */,
+				C2D4DA671D40E7EF00A9A3BE /* MyAttentionRequest.h */,
+				C2D4DA681D40E7EF00A9A3BE /* MyAttentionRequest.m */,
+				C2D4DA691D40E7EF00A9A3BE /* RecommendUserRequest.h */,
+				C2D4DA6A1D40E7EF00A9A3BE /* RecommendUserRequest.m */,
+				C2D4DA6B1D40E7EF00A9A3BE /* AttentionRequest.h */,
+				C2D4DA6C1D40E7EF00A9A3BE /* AttentionRequest.m */,
+				C2D4DA6D1D40E7EF00A9A3BE /* UserDetailRequest.h */,
+				C2D4DA6E1D40E7EF00A9A3BE /* UserDetailRequest.m */,
 			);
 			name = MyViewRequest;
+			sourceTree = "<group>";
+		};
+		C2D4DA731D40EBD300A9A3BE /* MyModels */ = {
+			isa = PBXGroup;
+			children = (
+				C2D4DA741D40EBE200A9A3BE /* MyAttentionModel.h */,
+				C2D4DA751D40EBE200A9A3BE /* MyAttentionModel.m */,
+				C2D4DA761D40EBE200A9A3BE /* PostMessageModel.h */,
+				C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */,
+			);
+			name = MyModels;
+			sourceTree = "<group>";
+		};
+		C2D4DA801D40EC4C00A9A3BE /* MyCells */ = {
+			isa = PBXGroup;
+			children = (
+				C2D4DA811D40EC6700A9A3BE /* MyAttentionTableViewCell.h */,
+				C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */,
+				C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */,
+				C2D4DA841D40EC6700A9A3BE /* RecommendUserTableViewCell.h */,
+				C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */,
+				C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */,
+				C2D4DA871D40EC6700A9A3BE /* AttentionDetailTableViewCell.h */,
+				C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */,
+				C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */,
+			);
+			name = MyCells;
 			sourceTree = "<group>";
 		};
 		D6ADC8A71D3A52DA0073EAE4 /* Classes */ = {
@@ -444,6 +519,7 @@
 		D6ADC8E51D3A52DB0073EAE4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C2D4DA731D40EBD300A9A3BE /* MyModels */,
 				D6ADC8E61D3A52DB0073EAE4 /* BaseModel.h */,
 				D6ADC8E71D3A52DB0073EAE4 /* BaseModel.m */,
 				D6ADC8E81D3A52DB0073EAE4 /* catnameModel.h */,
@@ -492,6 +568,7 @@
 		D6ADC8FF1D3A52DB0073EAE4 /* backgroundImage */ = {
 			isa = PBXGroup;
 			children = (
+				C2D4DA901D40F04C00A9A3BE /* yekong.jpg */,
 				C25ADAE21D3DC9B300BD1ED6 /* mydata.png */,
 				D6ADC9001D3A52DB0073EAE4 /* IMG_5523.jpg */,
 				D6ADC9011D3A52DB0073EAE4 /* IMG_5524.jpg */,
@@ -541,6 +618,7 @@
 		D6ADC91E1D3A52DB0073EAE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2D4DA801D40EC4C00A9A3BE /* MyCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -605,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D4DA8B1D40EC6700A9A3BE /* MyAttentionTableViewCell.xib in Resources */,
 				D6ADC9521D3A52DB0073EAE4 /* boy_default.png in Resources */,
 				D6ADC9571D3A52DB0073EAE4 /* activity_Select.png in Resources */,
 				D6ADC9501D3A52DB0073EAE4 /* IMG_5530.jpg in Resources */,
@@ -616,6 +695,7 @@
 				D6ADC94A1D3A52DB0073EAE4 /* IMG_5524.jpg in Resources */,
 				D6ADC9321D3A52DB0073EAE4 /* MyTableViewCell.xib in Resources */,
 				D6ADC9481D3A52DB0073EAE4 /* 32.png in Resources */,
+				C2D4DA911D40F04C00A9A3BE /* yekong.jpg in Resources */,
 				D6ADC9441D3A52DB0073EAE4 /* 1.png in Resources */,
 				D6ADC9551D3A52DB0073EAE4 /* huodong.png in Resources */,
 				D6ADC95E1D3A52DB0073EAE4 /* welcome.jpg in Resources */,
@@ -626,6 +706,7 @@
 				D6ADC9451D3A52DB0073EAE4 /* 2.jpg in Resources */,
 				D6ADC94C1D3A52DB0073EAE4 /* IMG_5526.jpg in Resources */,
 				C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */,
+				C2D4DA8F1D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib in Resources */,
 				D6ADC95B1D3A52DB0073EAE4 /* equip_Select.png in Resources */,
 				D6ADC9491D3A52DB0073EAE4 /* IMG_5523.jpg in Resources */,
 				D6ADC95A1D3A52DB0073EAE4 /* equip.png in Resources */,
@@ -639,6 +720,7 @@
 				C231C6221D361AAA009BB26B /* Main.storyboard in Resources */,
 				D6ADC92F1D3A52DB0073EAE4 /* CommunityTableViewCell.xib in Resources */,
 				D6ADC94F1D3A52DB0073EAE4 /* IMG_5529.jpg in Resources */,
+				C2D4DA8D1D40EC6700A9A3BE /* RecommendUserTableViewCell.xib in Resources */,
 				D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */,
 				D6ADC9591D3A52DB0073EAE4 /* community_Select.png in Resources */,
 				D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */,
@@ -704,6 +786,7 @@
 				C25ADAE01D3DBE3400BD1ED6 /* RegisterRequest.m in Sources */,
 				C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */,
 				D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */,
+				C2D4DA721D40E7EF00A9A3BE /* UserDetailRequest.m in Sources */,
 				D6ADC9421D3A52DB0073EAE4 /* ToolsModel.m in Sources */,
 				D6ADC93F1D3A52DB0073EAE4 /* ListModel.m in Sources */,
 				D6ADC93B1D3A52DB0073EAE4 /* catnameModel.m in Sources */,
@@ -711,25 +794,31 @@
 				D6ADC9271D3A52DB0073EAE4 /* HuwaifanViewController.m in Sources */,
 				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
 				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
+				C2D4DA8C1D40EC6700A9A3BE /* RecommendUserTableViewCell.m in Sources */,
+				C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */,
 				D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */,
 				D6ADC92D1D3A52DB0073EAE4 /* ZhuangBeiKongViewController.m in Sources */,
 				D6ADC9391D3A52DB0073EAE4 /* ToolsRequest.m in Sources */,
 				D6ADC9351D3A52DB0073EAE4 /* BaseRequest.m in Sources */,
 				D6ADC9221D3A52DB0073EAE4 /* CommunityDetailViewController.m in Sources */,
+				C2D4DA701D40E7EF00A9A3BE /* RecommendUserRequest.m in Sources */,
+				C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */,
 				D6ADC9251D3A52DB0073EAE4 /* EquipViewController.m in Sources */,
+				C2D4DA711D40E7EF00A9A3BE /* AttentionRequest.m in Sources */,
 				D6ADC93C1D3A52DB0073EAE4 /* CommunityListModel.m in Sources */,
 				D6ADC9361D3A52DB0073EAE4 /* CommunityRequest.m in Sources */,
 				D6ADC92C1D3A52DB0073EAE4 /* SheyingViewController.m in Sources */,
 				D6ADC9301D3A52DB0073EAE4 /* LiShiTabBar.m in Sources */,
 				D6ADC92E1D3A52DB0073EAE4 /* CommunityTableViewCell.m in Sources */,
 				D6ADC9241D3A52DB0073EAE4 /* CommunityViewController.m in Sources */,
+				C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */,
 				D6ADC9291D3A52DB0073EAE4 /* MyViewController.m in Sources */,
 				D6ADC9231D3A52DB0073EAE4 /* CommunityScrollViewController.m in Sources */,
+				C2D4DA781D40EBE200A9A3BE /* MyAttentionModel.m in Sources */,
 				D6ADC93E1D3A52DB0073EAE4 /* JFModel.m in Sources */,
 				D6ADC9371D3A52DB0073EAE4 /* ExchangeRequest.m in Sources */,
 				D6ADC93D1D3A52DB0073EAE4 /* FLModel.m in Sources */,
 				D6ADC9311D3A52DB0073EAE4 /* MyTableViewCell.m in Sources */,
-				C25ADAD31D3DBD5200BD1ED6 /* MyAttentionViewController.m in Sources */,
 				D6ADC92B1D3A52DB0073EAE4 /* RootViewController.m in Sources */,
 				D6ADC9281D3A52DB0073EAE4 /* LuyingViewController.m in Sources */,
 				D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */,
@@ -737,11 +826,14 @@
 				D6ADC9401D3A52DB0073EAE4 /* sportList.m in Sources */,
 				C25ADAE11D3DBE3400BD1ED6 /* UpMydataRequest.m in Sources */,
 				D6ADC9261D3A52DB0073EAE4 /* ExchangeViewController.m in Sources */,
+				C2D4DA6F1D40E7EF00A9A3BE /* MyAttentionRequest.m in Sources */,
 				D6ADC92A1D3A52DB0073EAE4 /* PandengViewController.m in Sources */,
+				C2D4DA8E1D40EC6700A9A3BE /* AttentionDetailTableViewCell.m in Sources */,
 				C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */,
 				D6ADC9411D3A52DB0073EAE4 /* sports_catesModel.m in Sources */,
 				C231C6191D361AAA009BB26B /* main.m in Sources */,
 				D6ADC9381D3A52DB0073EAE4 /* NetWorkRequest.m in Sources */,
+				C2D4DA8A1D40EC6700A9A3BE /* MyAttentionTableViewCell.m in Sources */,
 				D6ADC9331D3A52DB0073EAE4 /* ToolsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

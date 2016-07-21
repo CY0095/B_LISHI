@@ -28,4 +28,16 @@
 // 修改昵称接口
 #define changeNickNameRequest_Url @"http://api.lis99.com/v2/user/updNickname"
 
+
+// 我的关注
+#define myAttentionRequest_Url @"http://api.lis99.com/v3/user/myFollow/0"
+// 推荐用户
+#define recommendUserRequest_Url @"http://api.lis99.com/v3/user/recommendUser/0"
+// 关注接口
+#define attentionRequest_Url @"http://api.lis99.com/v3/user/addFollow"
+
+// 用户详情接口
+#define userDetailRequest_Url @"http://api.lis99.com/v5/user/uinfo/0"
+
+
 #endif /* RequestUrls_h */

@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.rootVC = (RootViewController *)[[[UIApplication sharedApplication] windows] objectAtIndex:0].rootViewController;
+    self.rootVC = (RootViewController *)[[[UIApplication sharedApplication] windows] objectAtIndex:1].rootViewController;
     
 }
 
