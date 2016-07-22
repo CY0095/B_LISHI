@@ -27,13 +27,13 @@
 		C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */; };
 		C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */; };
 		C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */; };
-		C2D4DA8A1D40EC6700A9A3BE /* MyAttentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */; };
-		C2D4DA8B1D40EC6700A9A3BE /* MyAttentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */; };
-		C2D4DA8C1D40EC6700A9A3BE /* RecommendUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */; };
-		C2D4DA8D1D40EC6700A9A3BE /* RecommendUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */; };
-		C2D4DA8E1D40EC6700A9A3BE /* AttentionDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */; };
-		C2D4DA8F1D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */; };
 		C2D4DA911D40F04C00A9A3BE /* yekong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2D4DA901D40F04C00A9A3BE /* yekong.jpg */; };
+		D61A98CC1D423CD10009DBFD /* AttentionDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61A98C41D423CD10009DBFD /* AttentionDetailTableViewCell.m */; };
+		D61A98CD1D423CD10009DBFD /* AttentionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61A98C51D423CD10009DBFD /* AttentionDetailTableViewCell.xib */; };
+		D61A98CE1D423CD10009DBFD /* MyAttentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61A98C71D423CD10009DBFD /* MyAttentionTableViewCell.m */; };
+		D61A98CF1D423CD10009DBFD /* MyAttentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61A98C81D423CD10009DBFD /* MyAttentionTableViewCell.xib */; };
+		D61A98D01D423CD10009DBFD /* RecommendUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61A98CA1D423CD10009DBFD /* RecommendUserTableViewCell.m */; };
+		D61A98D11D423CD10009DBFD /* RecommendUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61A98CB1D423CD10009DBFD /* RecommendUserTableViewCell.xib */; };
 		D63370A01D41FB44004D5E20 /* EquipTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63370991D41FB44004D5E20 /* EquipTypeViewController.m */; };
 		D63370A11D41FB44004D5E20 /* EquipDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633709B1D41FB44004D5E20 /* EquipDetailViewController.m */; };
 		D63370A21D41FB44004D5E20 /* SportClothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633709D1D41FB44004D5E20 /* SportClothViewController.m */; };
@@ -166,16 +166,16 @@
 		C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionViewController.m; sourceTree = "<group>"; };
 		C2D4DA7D1D40EC4700A9A3BE /* AttentionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailViewController.h; sourceTree = "<group>"; };
 		C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailViewController.m; sourceTree = "<group>"; };
-		C2D4DA811D40EC6700A9A3BE /* MyAttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAttentionTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		C2D4DA841D40EC6700A9A3BE /* RecommendUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendUserTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		C2D4DA871D40EC6700A9A3BE /* AttentionDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		C2D4DA901D40F04C00A9A3BE /* yekong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yekong.jpg; sourceTree = "<group>"; };
+		D61A98C31D423CD10009DBFD /* AttentionDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailTableViewCell.h; sourceTree = "<group>"; };
+		D61A98C41D423CD10009DBFD /* AttentionDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailTableViewCell.m; sourceTree = "<group>"; };
+		D61A98C51D423CD10009DBFD /* AttentionDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionDetailTableViewCell.xib; sourceTree = "<group>"; };
+		D61A98C61D423CD10009DBFD /* MyAttentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAttentionTableViewCell.h; sourceTree = "<group>"; };
+		D61A98C71D423CD10009DBFD /* MyAttentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionTableViewCell.m; sourceTree = "<group>"; };
+		D61A98C81D423CD10009DBFD /* MyAttentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAttentionTableViewCell.xib; sourceTree = "<group>"; };
+		D61A98C91D423CD10009DBFD /* RecommendUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendUserTableViewCell.h; sourceTree = "<group>"; };
+		D61A98CA1D423CD10009DBFD /* RecommendUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendUserTableViewCell.m; sourceTree = "<group>"; };
+		D61A98CB1D423CD10009DBFD /* RecommendUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendUserTableViewCell.xib; sourceTree = "<group>"; };
 		D63370981D41FB44004D5E20 /* EquipTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipTypeViewController.h; sourceTree = "<group>"; };
 		D63370991D41FB44004D5E20 /* EquipTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquipTypeViewController.m; sourceTree = "<group>"; };
 		D633709A1D41FB44004D5E20 /* EquipDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipDetailViewController.h; sourceTree = "<group>"; };
@@ -437,20 +437,20 @@
 			name = MyModels;
 			sourceTree = "<group>";
 		};
-		C2D4DA801D40EC4C00A9A3BE /* MyCells */ = {
+		D61A98C21D423CD10009DBFD /* MyCells */ = {
 			isa = PBXGroup;
 			children = (
-				C2D4DA811D40EC6700A9A3BE /* MyAttentionTableViewCell.h */,
-				C2D4DA821D40EC6700A9A3BE /* MyAttentionTableViewCell.m */,
-				C2D4DA831D40EC6700A9A3BE /* MyAttentionTableViewCell.xib */,
-				C2D4DA841D40EC6700A9A3BE /* RecommendUserTableViewCell.h */,
-				C2D4DA851D40EC6700A9A3BE /* RecommendUserTableViewCell.m */,
-				C2D4DA861D40EC6700A9A3BE /* RecommendUserTableViewCell.xib */,
-				C2D4DA871D40EC6700A9A3BE /* AttentionDetailTableViewCell.h */,
-				C2D4DA881D40EC6700A9A3BE /* AttentionDetailTableViewCell.m */,
-				C2D4DA891D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib */,
+				D61A98C31D423CD10009DBFD /* AttentionDetailTableViewCell.h */,
+				D61A98C41D423CD10009DBFD /* AttentionDetailTableViewCell.m */,
+				D61A98C51D423CD10009DBFD /* AttentionDetailTableViewCell.xib */,
+				D61A98C61D423CD10009DBFD /* MyAttentionTableViewCell.h */,
+				D61A98C71D423CD10009DBFD /* MyAttentionTableViewCell.m */,
+				D61A98C81D423CD10009DBFD /* MyAttentionTableViewCell.xib */,
+				D61A98C91D423CD10009DBFD /* RecommendUserTableViewCell.h */,
+				D61A98CA1D423CD10009DBFD /* RecommendUserTableViewCell.m */,
+				D61A98CB1D423CD10009DBFD /* RecommendUserTableViewCell.xib */,
 			);
-			name = MyCells;
+			path = MyCells;
 			sourceTree = "<group>";
 		};
 		D6ADC8A71D3A52DA0073EAE4 /* Classes */ = {
@@ -711,7 +711,7 @@
 		D6ADC91E1D3A52DB0073EAE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C2D4DA801D40EC4C00A9A3BE /* MyCells */,
+				D61A98C21D423CD10009DBFD /* MyCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -776,7 +776,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D4DA8B1D40EC6700A9A3BE /* MyAttentionTableViewCell.xib in Resources */,
 				D6ADC9521D3A52DB0073EAE4 /* boy_default.png in Resources */,
 				D6ADC9571D3A52DB0073EAE4 /* activity_Select.png in Resources */,
 				D63370B11D41FB9B004D5E20 /* ToolsTableViewCell.xib in Resources */,
@@ -792,6 +791,7 @@
 				C2D4DA911D40F04C00A9A3BE /* yekong.jpg in Resources */,
 				D6ADC9441D3A52DB0073EAE4 /* 1.png in Resources */,
 				D6ADC9551D3A52DB0073EAE4 /* huodong.png in Resources */,
+				D61A98CF1D423CD10009DBFD /* MyAttentionTableViewCell.xib in Resources */,
 				D63370B71D41FB9B004D5E20 /* JoinStyleTableViewCell.xib in Resources */,
 				D6ADC95E1D3A52DB0073EAE4 /* welcome.jpg in Resources */,
 				D6ADC9461D3A52DB0073EAE4 /* 2.png in Resources */,
@@ -803,8 +803,8 @@
 				D6ADC9451D3A52DB0073EAE4 /* 2.jpg in Resources */,
 				D6ADC94C1D3A52DB0073EAE4 /* IMG_5526.jpg in Resources */,
 				D63370B31D41FB9B004D5E20 /* EquipDetailCollectionViewCell.xib in Resources */,
+				D61A98D11D423CD10009DBFD /* RecommendUserTableViewCell.xib in Resources */,
 				C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */,
-				C2D4DA8F1D40EC6700A9A3BE /* AttentionDetailTableViewCell.xib in Resources */,
 				D6ADC95B1D3A52DB0073EAE4 /* equip_Select.png in Resources */,
 				D6ADC9491D3A52DB0073EAE4 /* IMG_5523.jpg in Resources */,
 				D6ADC95A1D3A52DB0073EAE4 /* equip.png in Resources */,
@@ -812,6 +812,7 @@
 				D6ADC9511D3A52DB0073EAE4 /* bag.png in Resources */,
 				C25ADAE31D3DC9B300BD1ED6 /* mydata.png in Resources */,
 				D6ADC95D1D3A52DB0073EAE4 /* My_Select.png in Resources */,
+				D61A98CD1D423CD10009DBFD /* AttentionDetailTableViewCell.xib in Resources */,
 				D63370D81D420471004D5E20 /* 回复.png in Resources */,
 				D63370B51D41FB9B004D5E20 /* ClothDetailTableViewCell.xib in Resources */,
 				D6ADC94E1D3A52DB0073EAE4 /* IMG_5528.jpg in Resources */,
@@ -819,7 +820,6 @@
 				C231C6221D361AAA009BB26B /* Main.storyboard in Resources */,
 				D6ADC92F1D3A52DB0073EAE4 /* CommunityTableViewCell.xib in Resources */,
 				D6ADC94F1D3A52DB0073EAE4 /* IMG_5529.jpg in Resources */,
-				C2D4DA8D1D40EC6700A9A3BE /* RecommendUserTableViewCell.xib in Resources */,
 				D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */,
 				D6ADC9591D3A52DB0073EAE4 /* community_Select.png in Resources */,
 				D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */,
@@ -894,7 +894,6 @@
 				D63370B61D41FB9B004D5E20 /* JoinStyleTableViewCell.m in Sources */,
 				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
 				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
-				C2D4DA8C1D40EC6700A9A3BE /* RecommendUserTableViewCell.m in Sources */,
 				C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */,
 				D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */,
 				D63370C91D41FE26004D5E20 /* SportClothModel.m in Sources */,
@@ -906,6 +905,7 @@
 				D63370B01D41FB9B004D5E20 /* ToolsTableViewCell.m in Sources */,
 				C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */,
 				D6ADC9251D3A52DB0073EAE4 /* EquipViewController.m in Sources */,
+				D61A98D01D423CD10009DBFD /* RecommendUserTableViewCell.m in Sources */,
 				C2D4DA711D40E7EF00A9A3BE /* AttentionRequest.m in Sources */,
 				D6ADC93C1D3A52DB0073EAE4 /* CommunityListModel.m in Sources */,
 				D6ADC9361D3A52DB0073EAE4 /* CommunityRequest.m in Sources */,
@@ -915,6 +915,7 @@
 				D6ADC9301D3A52DB0073EAE4 /* LiShiTabBar.m in Sources */,
 				D6ADC92E1D3A52DB0073EAE4 /* CommunityTableViewCell.m in Sources */,
 				D6ADC9241D3A52DB0073EAE4 /* CommunityViewController.m in Sources */,
+				D61A98CC1D423CD10009DBFD /* AttentionDetailTableViewCell.m in Sources */,
 				D63370C71D41FE26004D5E20 /* JoinStyleModel.m in Sources */,
 				C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */,
 				D6ADC9291D3A52DB0073EAE4 /* MyViewController.m in Sources */,
@@ -930,6 +931,7 @@
 				D6ADC9281D3A52DB0073EAE4 /* LuyingViewController.m in Sources */,
 				D63370B21D41FB9B004D5E20 /* EquipDetailCollectionViewCell.m in Sources */,
 				D63370C01D41FCDD004D5E20 /* FlClothRequest.m in Sources */,
+				D61A98CE1D423CD10009DBFD /* MyAttentionTableViewCell.m in Sources */,
 				D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */,
 				D6ADC93A1D3A52DB0073EAE4 /* BaseModel.m in Sources */,
 				D6ADC9401D3A52DB0073EAE4 /* SportList.m in Sources */,
@@ -937,7 +939,6 @@
 				C2D4DA6F1D40E7EF00A9A3BE /* MyAttentionRequest.m in Sources */,
 				D63370A21D41FB44004D5E20 /* SportClothViewController.m in Sources */,
 				D6ADC92A1D3A52DB0073EAE4 /* PandengViewController.m in Sources */,
-				C2D4DA8E1D40EC6700A9A3BE /* AttentionDetailTableViewCell.m in Sources */,
 				D63370A01D41FB44004D5E20 /* EquipTypeViewController.m in Sources */,
 				C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */,
 				D6ADC9411D3A52DB0073EAE4 /* Sports_catesModel.m in Sources */,
@@ -947,7 +948,6 @@
 				D63370CF1D41FE3F004D5E20 /* LikeListModel.m in Sources */,
 				D63370D21D41FECE004D5E20 /* FLClothModel.m in Sources */,
 				D6ADC9381D3A52DB0073EAE4 /* NetWorkRequest.m in Sources */,
-				C2D4DA8A1D40EC6700A9A3BE /* MyAttentionTableViewCell.m in Sources */,
 				D63370C81D41FE26004D5E20 /* EquipDetailModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
