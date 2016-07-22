@@ -44,6 +44,32 @@
 
 // 用户详情接口
 #define userDetailRequest_Url @"http://api.lis99.com/v5/user/uinfo/0"
+// 社区列表URL
+#define CommunityListRequest_Url @"http://api.lis99.com/v4/club/omnibusList/0/451316"
+// 列表详情URL
+#define CommunityListDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
+// 社区徒步露营列表URL
+#define CommunityLuyingListRequest_Url @"http://api.lis99.com/v5/club/topiclists/284/0?page=0&user_id=451316"
+// 板块介绍
+#define LuyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/284/451316"
+
+// 社区户外摄影列表URL
+#define CommunitySheyingListRequest_Url @"http://api.lis99.com/v5/club/topiclists/342/0?page=0&user_id=451316"
+// 板块介绍
+#define SheyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/342/451316"
+
+// 社区极限攀登列表URL
+#define CommunityPandengListRequest_Url @"http://api.lis99.com/v5/club/topiclists/349/0?page=0&user_id=451316"
+// 板块介绍
+#define PandengHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/349/451316"
+
+// 社区装备控列表URL
+#define CommunityZhuangbeikongListRequest_Url @"http://api.lis99.com/v5/club/topiclists/285/0?page=0&user_id=451316"
+#define ZhuangbeikongHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/285/451316"
+
+// 社区户外范列表URL
+#define CommunityHuwaifanListRequest_Url @"http://api.lis99.com/v5/club/topiclists/48/0?page=0&user_id=451316"
+#define HuwaifanHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/48/451316"
 
 
 #endif /* RequestUrls_h */

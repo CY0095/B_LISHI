@@ -7,8 +7,8 @@
 //
 
 #import "CommunityRequest.h"
-// 社区列表
-#define CommunityListRequest_Url @"http://api.lis99.com/v4/club/omnibusList/0/451316"
+
+
 @implementation CommunityRequest
 - (void)CommunityListRequestWithParameter:(NSDictionary *)parameterDic
                                   success:(SuccessResponse)success
@@ -23,4 +23,113 @@
     
     
 }
+- (void)CommunityLuyingListRequestWithParameter:(NSDictionary *)parameterDic
+                                        success:(SuccessResponse)success
+                                        failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunityLuyingListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+- (void)CommunitySheyingListRequestWithParameter:(NSDictionary *)parameterDic
+                                         success:(SuccessResponse)success
+                                         failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunitySheyingListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+- (void)CommunityPandengListRequestWithParameter:(NSDictionary *)parameterDic
+                                         success:(SuccessResponse)success
+                                         failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunityPandengListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)CommunityZhuangbeikongListRequestWithParameter:(NSDictionary *)parameterDic
+                                               success:(SuccessResponse)success
+                                               failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunityZhuangbeikongListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+- (void)CommunityHuwaifanListRequestWithParameter:(NSDictionary *)parameterDic
+                                          success:(SuccessResponse)success
+                                          failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunityHuwaifanListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+// 板块介绍
+- (void)CommunityHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                        success:(SuccessResponse)success
+                                        failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:LuyingHeaderViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+- (void)SheyingHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                      success:(SuccessResponse)success
+                                      failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:SheyingHeaderViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+}
+- (void)PandengHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                      success:(SuccessResponse)success
+                                      failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:PandengHeaderViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+- (void)ZhuangbeikongHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                            success:(SuccessResponse)success
+                                            failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:ZhuangbeikongHeaderViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+- (void)HuwaifanHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                       success:(SuccessResponse)success
+                                       failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:HuwaifanHeaderViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+
+
 @end
