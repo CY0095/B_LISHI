@@ -6,10 +6,19 @@
 //  Copyright © 2016年 杨旭东. All rights reserved.
 //
 
+@class ToolsTableViewCell;
+
+@protocol toolDelegate <NSObject>
+
+- (void)toolClickButton:(ToolsTableViewCell *)cell;
+
+@end
+
 #import <UIKit/UIKit.h>
 #define ToolsTableViewCell_Identify @"ToolsTableViewCell_Identify"
 #import "JFModel.h"
 #import "FLModel.h"
+#import "ClothDetailViewController.h"
 
 @interface ToolsTableViewCell : UITableViewCell
 
@@ -21,5 +30,7 @@
 
 @property (strong, nonatomic) JFModel *jfmodel;
 @property (strong, nonatomic) FLModel *flmodel;
+
+@property (weak, nonatomic) id<toolDelegate> delegate;
 
 @end

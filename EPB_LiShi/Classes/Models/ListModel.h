@@ -14,5 +14,7 @@
 @property (nonatomic, strong) NSString *catname;
 //父类的ID
 @property (nonatomic, assign) NSInteger parentid;
+//衣服的ID
+@property (strong, nonatomic) NSString *ID;
 
 @end

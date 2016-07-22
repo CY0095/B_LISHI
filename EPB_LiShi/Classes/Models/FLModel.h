@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *images;
 @property (strong, nonatomic) NSString *market_price;
-
+//福利衣服的ID
+@property (strong, nonatomic) NSString *topicid;
 @end

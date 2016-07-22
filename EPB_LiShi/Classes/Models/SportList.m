@@ -1,18 +1,20 @@
 //
-//  sportList.m
+//  SportList.m
 //  tools
 //
 //  Created by lanou3g on 16/7/13.
 //  Copyright © 2016年 杨旭东. All rights reserved.
 //
 
-#import "sportList.h"
+#import "SportList.h"
 
-@implementation sportList
+@implementation SportList
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    
+    if ([key isEqualToString:@"id"]) {
+        _ID = value;
+    }
 }
 
 -(NSString *)description

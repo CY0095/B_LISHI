@@ -1,14 +1,14 @@
 //
-//  sports_catesModel.m
+//  Sports_catesModel.m
 //  tools
 //
 //  Created by lanou3g on 16/7/13.
 //  Copyright © 2016年 杨旭东. All rights reserved.
 //
 
-#import "sports_catesModel.h"
+#import "Sports_catesModel.h"
 
-@implementation sports_catesModel
+@implementation Sports_catesModel
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {

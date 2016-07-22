@@ -1,14 +1,14 @@
 //
-//  catnameModel.m
+//  CatnameModel.m
 //  tools
 //
 //  Created by lanou3g on 16/7/13.
 //  Copyright © 2016年 杨旭东. All rights reserved.
 //
 
-#import "catnameModel.h"
+#import "CatnameModel.h"
 
-@implementation catnameModel
+@implementation CatnameModel
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {

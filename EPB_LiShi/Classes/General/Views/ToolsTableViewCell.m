@@ -8,6 +8,7 @@
 
 #import "ToolsTableViewCell.h"
 
+
 @implementation ToolsTableViewCell
 
 - (void)awakeFromNib {
@@ -24,13 +25,22 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)clickButton:(id)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(toolClickButton:)]) {
+        [_delegate toolClickButton:self];
+    }
+    
+}
+
 - (void)setJfmodel:(JFModel *)jfmodel
 {
     _jfmodel = jfmodel;
     self.title.text = jfmodel.title;
     self.content.text = jfmodel.content;
     [self.ImgView setImageWithURL:[NSURL URLWithString:jfmodel.images]];
-    self.price.text = [NSString stringWithFormat:@"    %@积分",jfmodel.integral];
+    self.price.text = [NSString stringWithFormat:@"%@积分",jfmodel.integral];
+    self.price.textAlignment = NSTextAlignmentCenter;
     [self.type setTitle:@"申请兑换" forState:(UIControlStateNormal)];
 }
 
@@ -40,7 +50,7 @@
     self.title.text = flmodel.title;
     self.content.text = flmodel.content;
     [self.ImgView setImageWithURL:[NSURL URLWithString:flmodel.images]];
-    self.price.text = [NSString stringWithFormat:@"市场价:%@",flmodel.market_price];
+    self.price.text = [NSString stringWithFormat:@"市场价:%@元",flmodel.market_price];
     [self.type setTitle:@"免费试用" forState:(UIControlStateNormal)];
     
 }

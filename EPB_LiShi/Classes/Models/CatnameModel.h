@@ -1,5 +1,5 @@
 //
-//  catnameModel.h
+//  CatnameModel.h
 //  tools
 //
 //  Created by lanou3g on 16/7/13.
@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 #import "ListModel.h"
-@interface catnameModel : BaseModel
+@interface CatnameModel : BaseModel
 
 //服装类型名称
 @property (nonatomic, strong) NSString *catname;
