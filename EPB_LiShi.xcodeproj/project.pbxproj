@@ -11,6 +11,13 @@
 		C231C6221D361AAA009BB26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231C6201D361AAA009BB26B /* Main.storyboard */; };
 		C231C6241D361AAA009BB26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C231C6231D361AAA009BB26B /* Assets.xcassets */; };
 		C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C231C6251D361AAA009BB26B /* LaunchScreen.storyboard */; };
+		C241ED9D1D437560005162C5 /* TopicDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C241ED9C1D437560005162C5 /* TopicDetailRequest.m */; };
+		C241EDA21D4375AB005162C5 /* TopicsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C241ED9F1D4375AB005162C5 /* TopicsDetailModel.m */; };
+		C241EDA31D4375AB005162C5 /* ReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDA11D4375AB005162C5 /* ReplyModel.m */; };
+		C241EDA61D4375D9005162C5 /* TopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDA51D4375D9005162C5 /* TopicDetailViewController.m */; };
+		C241EDAC1D437600005162C5 /* TopicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDA81D437600005162C5 /* TopicDetailTableViewCell.m */; };
+		C241EDAD1D437600005162C5 /* ReplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDAA1D437600005162C5 /* ReplyTableViewCell.m */; };
+		C241EDAE1D437600005162C5 /* ReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C241EDAB1D437600005162C5 /* ReplyTableViewCell.xib */; };
 		C25ADAD11D3DBD5200BD1ED6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */; };
 		C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */; };
 		C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */; };
@@ -218,6 +225,19 @@
 		C231C6231D361AAA009BB26B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C231C6261D361AAA009BB26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C231C6281D361AAA009BB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C241ED9B1D437560005162C5 /* TopicDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailRequest.h; sourceTree = "<group>"; };
+		C241ED9C1D437560005162C5 /* TopicDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailRequest.m; sourceTree = "<group>"; };
+		C241ED9E1D4375AB005162C5 /* TopicsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsDetailModel.h; sourceTree = "<group>"; };
+		C241ED9F1D4375AB005162C5 /* TopicsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsDetailModel.m; sourceTree = "<group>"; };
+		C241EDA01D4375AB005162C5 /* ReplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyModel.h; sourceTree = "<group>"; };
+		C241EDA11D4375AB005162C5 /* ReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyModel.m; sourceTree = "<group>"; };
+		C241EDA41D4375D9005162C5 /* TopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailViewController.h; sourceTree = "<group>"; };
+		C241EDA51D4375D9005162C5 /* TopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailViewController.m; sourceTree = "<group>"; };
+		C241EDA71D437600005162C5 /* TopicDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicDetailTableViewCell.h; sourceTree = "<group>"; };
+		C241EDA81D437600005162C5 /* TopicDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicDetailTableViewCell.m; sourceTree = "<group>"; };
+		C241EDA91D437600005162C5 /* ReplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyTableViewCell.h; sourceTree = "<group>"; };
+		C241EDAA1D437600005162C5 /* ReplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTableViewCell.m; sourceTree = "<group>"; };
+		C241EDAB1D437600005162C5 /* ReplyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyTableViewCell.xib; sourceTree = "<group>"; };
 		C25ADAC91D3DBD5200BD1ED6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -608,6 +628,8 @@
 				C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */,
 				C2D4DA7D1D40EC4700A9A3BE /* AttentionDetailViewController.h */,
 				C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */,
+				C241EDA41D4375D9005162C5 /* TopicDetailViewController.h */,
+				C241EDA51D4375D9005162C5 /* TopicDetailViewController.m */,
 			);
 			name = MyViewController;
 			sourceTree = "<group>";
@@ -631,6 +653,8 @@
 				C2D4DA6C1D40E7EF00A9A3BE /* AttentionRequest.m */,
 				C2D4DA6D1D40E7EF00A9A3BE /* UserDetailRequest.h */,
 				C2D4DA6E1D40E7EF00A9A3BE /* UserDetailRequest.m */,
+				C241ED9B1D437560005162C5 /* TopicDetailRequest.h */,
+				C241ED9C1D437560005162C5 /* TopicDetailRequest.m */,
 			);
 			name = MyViewRequest;
 			sourceTree = "<group>";
@@ -642,6 +666,10 @@
 				C2D4DA751D40EBE200A9A3BE /* MyAttentionModel.m */,
 				C2D4DA761D40EBE200A9A3BE /* PostMessageModel.h */,
 				C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */,
+				C241ED9E1D4375AB005162C5 /* TopicsDetailModel.h */,
+				C241ED9F1D4375AB005162C5 /* TopicsDetailModel.m */,
+				C241EDA01D4375AB005162C5 /* ReplyModel.h */,
+				C241EDA11D4375AB005162C5 /* ReplyModel.m */,
 			);
 			name = MyModels;
 			sourceTree = "<group>";
@@ -741,6 +769,11 @@
 				D61A99861D42443F0009DBFD /* RecommendUserTableViewCell.h */,
 				D61A99871D42443F0009DBFD /* RecommendUserTableViewCell.m */,
 				D61A99881D42443F0009DBFD /* RecommendUserTableViewCell.xib */,
+				C241EDA71D437600005162C5 /* TopicDetailTableViewCell.h */,
+				C241EDA81D437600005162C5 /* TopicDetailTableViewCell.m */,
+				C241EDA91D437600005162C5 /* ReplyTableViewCell.h */,
+				C241EDAA1D437600005162C5 /* ReplyTableViewCell.m */,
+				C241EDAB1D437600005162C5 /* ReplyTableViewCell.xib */,
 			);
 			path = MyCells;
 			sourceTree = "<group>";
@@ -1272,6 +1305,7 @@
 				D6ADC9581D3A52DB0073EAE4 /* community.png in Resources */,
 				D6ADC9431D3A52DB0073EAE4 /* 0412.png in Resources */,
 				D63370D61D420471004D5E20 /* 围观.png in Resources */,
+				C241EDAE1D437600005162C5 /* ReplyTableViewCell.xib in Resources */,
 				D61A998E1D42443F0009DBFD /* RecommendUserTableViewCell.xib in Resources */,
 				D61A99701D4244130009DBFD /* community_Select.png in Resources */,
 				D61A99651D4244130009DBFD /* IMG_5528.jpg in Resources */,
@@ -1399,7 +1433,9 @@
 				D61A993C1D4243CD0009DBFD /* CommunityDetailModel.m in Sources */,
 				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
 				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
+				C241EDAC1D437600005162C5 /* TopicDetailTableViewCell.m in Sources */,
 				D61A99D01D42456E0009DBFD /* MJRefreshBackNormalFooter.m in Sources */,
+				C241EDAD1D437600005162C5 /* ReplyTableViewCell.m in Sources */,
 				C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */,
 				D61A99271D4240A00009DBFD /* ComDetailFirstCell.m in Sources */,
 				D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */,
@@ -1439,6 +1475,7 @@
 				D61A98EF1D423E8B0009DBFD /* UIScrollView+_DScrollView.m in Sources */,
 				D61A99D61D42456E0009DBFD /* MJRefreshConst.m in Sources */,
 				D61A98E71D423E8B0009DBFD /* CommunityDetailViewController.m in Sources */,
+				C241EDA21D4375AB005162C5 /* TopicsDetailModel.m in Sources */,
 				C2D4DA781D40EBE200A9A3BE /* MyAttentionModel.m in Sources */,
 				D67C53A01D4359A500D377B8 /* ActivityDetailRequest.m in Sources */,
 				D61A99CC1D42456E0009DBFD /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1461,7 +1498,11 @@
 				D63370C01D41FCDD004D5E20 /* FlClothRequest.m in Sources */,
 				D61A992B1D4240A00009DBFD /* CommunityLuyingCell.m in Sources */,
 				D6ADC93A1D3A52DB0073EAE4 /* BaseModel.m in Sources */,
+
 				D67C53991D43598A00D377B8 /* CycleModel.m in Sources */,
+
+				C241EDA61D4375D9005162C5 /* TopicDetailViewController.m in Sources */,
+
 				D6ADC9401D3A52DB0073EAE4 /* SportList.m in Sources */,
 				C25ADAE11D3DBE3400BD1ED6 /* UpMydataRequest.m in Sources */,
 				C2D4DA6F1D40E7EF00A9A3BE /* MyAttentionRequest.m in Sources */,
@@ -1480,6 +1521,7 @@
 				D63370A31D41FB44004D5E20 /* ClothDetailViewController.m in Sources */,
 				D63370BD1D41FCA5004D5E20 /* SportClothRequest.m in Sources */,
 				D61A99CD1D42456E0009DBFD /* MJRefreshAutoNormalFooter.m in Sources */,
+				C241EDA31D4375AB005162C5 /* ReplyModel.m in Sources */,
 				D63370CF1D41FE3F004D5E20 /* LikeListModel.m in Sources */,
 				D63370D21D41FECE004D5E20 /* FLClothModel.m in Sources */,
 				D61A99D91D42456E0009DBFD /* UIScrollView+MJRefresh.m in Sources */,
@@ -1487,6 +1529,7 @@
 				D63370C81D41FE26004D5E20 /* EquipDetailModel.m in Sources */,
 				D61A98EB1D423E8B0009DBFD /* LuyingViewController.m in Sources */,
 				D61A998D1D42443F0009DBFD /* RecommendUserTableViewCell.m in Sources */,
+				C241ED9D1D437560005162C5 /* TopicDetailRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

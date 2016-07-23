@@ -44,6 +44,14 @@
 
 // 用户详情接口
 #define userDetailRequest_Url @"http://api.lis99.com/v5/user/uinfo/0"
+// 发帖详情接口
+#define topicsDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
+// 评论接口
+#define commentRequest_Url @"http://api.lis99.com/v5/topics/topicsReply"
+
+
+
+
 // 社区列表URL
 #define CommunityListRequest_Url @"http://api.lis99.com/v4/club/omnibusList/0/451316"
 // 列表详情URL
