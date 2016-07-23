@@ -80,4 +80,13 @@
 #define HuwaifanHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/48/451316"
 
 
+// 活动页面url
+#define ActivityRequest_Url(Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/0?latitude=%@&longitude=%@",Latitude,Longitude]
+
+
+// 活动详情页面url
+#define ActivityDetailRequest_Url(activity_id,user_id)  [NSString stringWithFormat:@"https://apis.lis99.com/activity/detail?activity_id=%@&user_id=%@",activity_id,user_id]
+
+
+
 #endif /* RequestUrls_h */

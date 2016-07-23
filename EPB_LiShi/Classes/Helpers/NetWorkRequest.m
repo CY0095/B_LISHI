@@ -19,6 +19,9 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    manager.securityPolicy.validatesDomainName=NO;
+    manager.securityPolicy.allowInvalidCertificates=YES;
+    
     [manager GET:url parameters:parameterDic progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
