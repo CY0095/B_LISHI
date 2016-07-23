@@ -11,4 +11,6 @@
 @interface UserDetailRequest : NSObject
 +(instancetype)shareUserDetailRequest;
 -(void)UserDetailRequestWithUid:(NSString *)uid user_id:(NSString *)user_id success:(SuccessResponse)success failure:(FailureResponse)failure;
+
+
 @end

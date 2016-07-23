@@ -10,6 +10,7 @@
 #import "PostMessageModel.h"
 #import "AttentionDetailTableViewCell.h"
 #import "UserDetailRequest.h"
+#import "TopicDetailViewController.h"
 @interface AttentionDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic)UITableView *attentionDetailTableView;
 @property(strong,nonatomic)UIView *headView;// tableView的头视图
@@ -150,6 +151,19 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 90;
 }
+// cell的点击方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TopicDetailViewController *topicVC = [TopicDetailViewController new];
+    PostMessageModel *model = self.dataArray[indexPath.row];
+    
+    if (model.category == 3) {
+        topicVC.topics_id = model.topic_id;
+        NSLog(@"topics_id = %@",topicVC.topics_id);
+        [self.navigationController pushViewController:topicVC animated:YES];
+    }
+    NSLog(@"待定中。。。。。。");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
