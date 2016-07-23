@@ -18,6 +18,10 @@
 		C241EDAC1D437600005162C5 /* TopicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDA81D437600005162C5 /* TopicDetailTableViewCell.m */; };
 		C241EDAD1D437600005162C5 /* ReplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDAA1D437600005162C5 /* ReplyTableViewCell.m */; };
 		C241EDAE1D437600005162C5 /* ReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C241EDAB1D437600005162C5 /* ReplyTableViewCell.xib */; };
+		C241EDB91D439A42005162C5 /* OpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C241EDB71D439A42005162C5 /* OpinionViewController.m */; };
+		C241EDBA1D439A42005162C5 /* OpinionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C241EDB81D439A42005162C5 /* OpinionViewController.xib */; };
+		C241EDBC1D439B38005162C5 /* mydata3.png in Resources */ = {isa = PBXBuildFile; fileRef = C241EDBB1D439B38005162C5 /* mydata3.png */; };
+		C241EDBE1D439F8C005162C5 /* louzhu.png in Resources */ = {isa = PBXBuildFile; fileRef = C241EDBD1D439F8C005162C5 /* louzhu.png */; };
 		C25ADAD11D3DBD5200BD1ED6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */; };
 		C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADACC1D3DBD5200BD1ED6 /* RegisterViewController.m */; };
 		C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25ADAD01D3DBD5200BD1ED6 /* ChangeMydataViewController.m */; };
@@ -72,7 +76,6 @@
 		D61A99691D4244130009DBFD /* dianzan.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A99491D4244130009DBFD /* dianzan.png */; };
 		D61A996A1D4244130009DBFD /* huwaifan.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A994A1D4244130009DBFD /* huwaifan.png */; };
 		D61A996B1D4244130009DBFD /* loadImg.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A994B1D4244130009DBFD /* loadImg.png */; };
-		D61A996C1D4244130009DBFD /* louzhu.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A994C1D4244130009DBFD /* louzhu.png */; };
 		D61A996D1D4244130009DBFD /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A994E1D4244130009DBFD /* activity.png */; };
 		D61A996E1D4244130009DBFD /* activity_Select.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A994F1D4244130009DBFD /* activity_Select.png */; };
 		D61A996F1D4244130009DBFD /* community.png in Resources */ = {isa = PBXBuildFile; fileRef = D61A99501D4244130009DBFD /* community.png */; };
@@ -223,6 +226,11 @@
 		C241EDA91D437600005162C5 /* ReplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyTableViewCell.h; sourceTree = "<group>"; };
 		C241EDAA1D437600005162C5 /* ReplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyTableViewCell.m; sourceTree = "<group>"; };
 		C241EDAB1D437600005162C5 /* ReplyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyTableViewCell.xib; sourceTree = "<group>"; };
+		C241EDB61D439A42005162C5 /* OpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpinionViewController.h; sourceTree = "<group>"; };
+		C241EDB71D439A42005162C5 /* OpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpinionViewController.m; sourceTree = "<group>"; };
+		C241EDB81D439A42005162C5 /* OpinionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpinionViewController.xib; sourceTree = "<group>"; };
+		C241EDBB1D439B38005162C5 /* mydata3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mydata3.png; sourceTree = "<group>"; };
+		C241EDBD1D439F8C005162C5 /* louzhu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = louzhu.png; sourceTree = "<group>"; };
 		C25ADAC91D3DBD5200BD1ED6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C25ADACA1D3DBD5200BD1ED6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C25ADACB1D3DBD5200BD1ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -312,7 +320,6 @@
 		D61A99491D4244130009DBFD /* dianzan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianzan.png; sourceTree = "<group>"; };
 		D61A994A1D4244130009DBFD /* huwaifan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huwaifan.png; sourceTree = "<group>"; };
 		D61A994B1D4244130009DBFD /* loadImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadImg.png; sourceTree = "<group>"; };
-		D61A994C1D4244130009DBFD /* louzhu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = louzhu.png; sourceTree = "<group>"; };
 		D61A994E1D4244130009DBFD /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		D61A994F1D4244130009DBFD /* activity_Select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_Select.png; sourceTree = "<group>"; };
 		D61A99501D4244130009DBFD /* community.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = community.png; sourceTree = "<group>"; };
@@ -589,6 +596,9 @@
 				C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */,
 				C241EDA41D4375D9005162C5 /* TopicDetailViewController.h */,
 				C241EDA51D4375D9005162C5 /* TopicDetailViewController.m */,
+				C241EDB61D439A42005162C5 /* OpinionViewController.h */,
+				C241EDB71D439A42005162C5 /* OpinionViewController.m */,
+				C241EDB81D439A42005162C5 /* OpinionViewController.xib */,
 			);
 			name = MyViewController;
 			sourceTree = "<group>";
@@ -688,6 +698,7 @@
 		D61A993F1D4244130009DBFD /* backgroundImage */ = {
 			isa = PBXGroup;
 			children = (
+				C241EDBB1D439B38005162C5 /* mydata3.png */,
 				D61A99401D4244130009DBFD /* IMG_5523.jpg */,
 				D61A99411D4244130009DBFD /* IMG_5524.jpg */,
 				D61A99421D4244130009DBFD /* IMG_5525.jpg */,
@@ -1013,7 +1024,7 @@
 				D61A99491D4244130009DBFD /* dianzan.png */,
 				D61A994A1D4244130009DBFD /* huwaifan.png */,
 				D61A994B1D4244130009DBFD /* loadImg.png */,
-				D61A994C1D4244130009DBFD /* louzhu.png */,
+				C241EDBD1D439F8C005162C5 /* louzhu.png */,
 				D61A994D1D4244130009DBFD /* LSTabBar_Image */,
 				D61A99571D4244130009DBFD /* members.png */,
 				D61A99581D4244130009DBFD /* pandeng.jpg */,
@@ -1173,6 +1184,7 @@
 				D6ADC9501D3A52DB0073EAE4 /* IMG_5530.jpg in Resources */,
 				D61A99621D4244130009DBFD /* IMG_5525.jpg in Resources */,
 				D61A996F1D4244130009DBFD /* community.png in Resources */,
+				C241EDBA1D439A42005162C5 /* OpinionViewController.xib in Resources */,
 				D6ADC9561D3A52DB0073EAE4 /* activity.png in Resources */,
 				D6ADC9541D3A52DB0073EAE4 /* haoyou.png in Resources */,
 				D6ADC94B1D3A52DB0073EAE4 /* IMG_5525.jpg in Resources */,
@@ -1190,7 +1202,6 @@
 				D6ADC9551D3A52DB0073EAE4 /* huodong.png in Resources */,
 				D61A998C1D42443F0009DBFD /* MyAttentionTableViewCell.xib in Resources */,
 				D61A99661D4244130009DBFD /* IMG_5529.jpg in Resources */,
-				D61A996C1D4244130009DBFD /* louzhu.png in Resources */,
 				D61A99781D4244130009DBFD /* Resources.bundle in Resources */,
 				D61A992E1D4240A00009DBFD /* CommunityLuyingVideoCell.xib in Resources */,
 				D63370B71D41FB9B004D5E20 /* JoinStyleTableViewCell.xib in Resources */,
@@ -1221,6 +1232,7 @@
 				C231C6241D361AAA009BB26B /* Assets.xcassets in Resources */,
 				D61A99721D4244130009DBFD /* equip_Select.png in Resources */,
 				D61A99941D4245360009DBFD /* yekong.jpg in Resources */,
+				C241EDBC1D439B38005162C5 /* mydata3.png in Resources */,
 				D61A99741D4244130009DBFD /* My_Select.png in Resources */,
 				D61A997C1D4244130009DBFD /* videoPlay.png in Resources */,
 				D61A99611D4244130009DBFD /* IMG_5524.jpg in Resources */,
@@ -1240,6 +1252,7 @@
 				D6ADC94E1D3A52DB0073EAE4 /* IMG_5528.jpg in Resources */,
 				D6ADC9531D3A52DB0073EAE4 /* guanzhu.png in Resources */,
 				C231C6221D361AAA009BB26B /* Main.storyboard in Resources */,
+				C241EDBE1D439F8C005162C5 /* louzhu.png in Resources */,
 				D61A99681D4244130009DBFD /* chakan.png in Resources */,
 				D6ADC94F1D3A52DB0073EAE4 /* IMG_5529.jpg in Resources */,
 				D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */,
@@ -1378,6 +1391,7 @@
 				D61A99891D42443F0009DBFD /* AttentionDetailTableViewCell.m in Sources */,
 				D61A99D41D42456E0009DBFD /* MJRefreshStateHeader.m in Sources */,
 				D6ADC93D1D3A52DB0073EAE4 /* FLModel.m in Sources */,
+				C241EDB91D439A42005162C5 /* OpinionViewController.m in Sources */,
 				D6ADC9311D3A52DB0073EAE4 /* MyTableViewCell.m in Sources */,
 				D6ADC92B1D3A52DB0073EAE4 /* RootViewController.m in Sources */,
 				D63370B41D41FB9B004D5E20 /* ClothDetailTableViewCell.m in Sources */,

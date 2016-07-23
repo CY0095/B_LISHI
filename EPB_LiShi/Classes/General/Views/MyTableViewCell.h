@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *ImgView;
 
+@property (weak, nonatomic) IBOutlet UILabel *huancunLabel;
+
 @end

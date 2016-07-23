@@ -137,7 +137,7 @@
 
 // 界面绘制
 -(void)drawView{
-    self.topicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 51) style:(UITableViewStylePlain)];
+    self.topicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 106) style:(UITableViewStylePlain)];
     self.topicTableView.backgroundColor = [UIColor colorWithRed:220 /255.0 green:219 / 255.0 blue:195 / 255.0 alpha:1];
     self.topicTableView.delegate = self;
     self.topicTableView.dataSource = self;
@@ -145,7 +145,7 @@
     UIView *tableHeadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, WindowHeight / 9 *2)];// tableView的头部视图
     tableHeadView.backgroundColor = [UIColor whiteColor];
     self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, WindowHeight / 9)];
-    self.headView.backgroundColor = [UIColor whiteColor];
+    self.headView.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
     // 头视图底部线条
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth - 10, 1)];
     lineView.backgroundColor = [UIColor grayColor];
@@ -166,8 +166,8 @@
     [self.headView addSubview:self.nicknameLabel];
     // 楼主图片
     UIImageView *louzhuImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
-    louzhuImg.center = CGPointMake(WindowHeight / 18 + 20 + 10 , self.headView.center.y + WindowHeight / 72);
-    louzhuImg.image = [UIImage imageNamed:@"louzhu.jpg"];
+    louzhuImg.center = CGPointMake(WindowHeight / 18 + 20 + 10 + 5 , self.headView.center.y + WindowHeight / 72);
+    louzhuImg.image = [UIImage imageNamed:@"louzhu.png"];
     [self.headView addSubview:louzhuImg];
     // 关注按钮
     self.attentionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
