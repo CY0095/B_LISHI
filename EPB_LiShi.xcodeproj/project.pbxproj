@@ -136,6 +136,11 @@
 		D63370D61D420471004D5E20 /* 围观.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D31D420471004D5E20 /* 围观.png */; };
 		D63370D71D420471004D5E20 /* 时间.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D41D420471004D5E20 /* 时间.png */; };
 		D63370D81D420471004D5E20 /* 回复.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D51D420471004D5E20 /* 回复.png */; };
+		D665BB441D43713700916B4F /* CommunityReuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D665BB431D43713700916B4F /* CommunityReuseViewController.m */; };
+		D6838BF41D4309E900E90C0E /* CommunityCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */; };
+		D6838BF51D4309E900E90C0E /* CommunityCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */; };
+		D6838BF81D430D1900E90C0E /* CommunityCoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */; };
+		D68E574E1D459F25001507E0 /* AllListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68E574D1D459F25001507E0 /* AllListViewController.m */; };
 		D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */; };
 		D6ADC9201D3A52DB0073EAE4 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AF1D3A52DB0073EAE4 /* ActivityViewController.m */; };
 		D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */; };
@@ -404,6 +409,15 @@
 		D63370D31D420471004D5E20 /* 围观.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "围观.png"; sourceTree = "<group>"; };
 		D63370D41D420471004D5E20 /* 时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时间.png"; sourceTree = "<group>"; };
 		D63370D51D420471004D5E20 /* 回复.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "回复.png"; sourceTree = "<group>"; };
+		D665BB421D43713700916B4F /* CommunityReuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityReuseViewController.h; sourceTree = "<group>"; };
+		D665BB431D43713700916B4F /* CommunityReuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityReuseViewController.m; sourceTree = "<group>"; };
+		D6838BF11D4309E900E90C0E /* CommunityCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCustomCell.h; sourceTree = "<group>"; };
+		D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCustomCell.m; sourceTree = "<group>"; };
+		D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityCustomCell.xib; sourceTree = "<group>"; };
+		D6838BF61D430D1900E90C0E /* CommunityCoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCoCellModel.h; sourceTree = "<group>"; };
+		D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCoCellModel.m; sourceTree = "<group>"; };
+		D68E574C1D459F25001507E0 /* AllListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListViewController.h; sourceTree = "<group>"; };
+		D68E574D1D459F25001507E0 /* AllListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListViewController.m; sourceTree = "<group>"; };
 		D6ADC8A91D3A52DA0073EAE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D6ADC8AE1D3A52DB0073EAE4 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
@@ -614,12 +628,12 @@
 				D61A98D61D423E8B0009DBFD /* CommunityScrollViewController.m */,
 				D61A98D71D423E8B0009DBFD /* CommunityViewController.h */,
 				D61A98D81D423E8B0009DBFD /* CommunityViewController.m */,
+				D665BB421D43713700916B4F /* CommunityReuseViewController.h */,
+				D665BB431D43713700916B4F /* CommunityReuseViewController.m */,
 				D61A98D91D423E8B0009DBFD /* HuwaifanViewController.h */,
 				D61A98DA1D423E8B0009DBFD /* HuwaifanViewController.m */,
 				D61A98DB1D423E8B0009DBFD /* LuyingViewController.h */,
 				D61A98DC1D423E8B0009DBFD /* LuyingViewController.m */,
-				D61A98DD1D423E8B0009DBFD /* MoreListViewController.h */,
-				D61A98DE1D423E8B0009DBFD /* MoreListViewController.m */,
 				D61A98DF1D423E8B0009DBFD /* PandengViewController.h */,
 				D61A98E01D423E8B0009DBFD /* PandengViewController.m */,
 				D61A98E11D423E8B0009DBFD /* SheyingViewController.h */,
@@ -628,6 +642,10 @@
 				D61A98E41D423E8B0009DBFD /* UIScrollView+_DScrollView.m */,
 				D61A98E51D423E8B0009DBFD /* ZhuangBeiKongViewController.h */,
 				D61A98E61D423E8B0009DBFD /* ZhuangBeiKongViewController.m */,
+				D61A98DD1D423E8B0009DBFD /* MoreListViewController.h */,
+				D61A98DE1D423E8B0009DBFD /* MoreListViewController.m */,
+				D68E574C1D459F25001507E0 /* AllListViewController.h */,
+				D68E574D1D459F25001507E0 /* AllListViewController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -635,6 +653,9 @@
 		D61A99141D4240A00009DBFD /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				D6838BF11D4309E900E90C0E /* CommunityCustomCell.h */,
+				D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */,
+				D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */,
 				D61A99151D4240A00009DBFD /* ComDetailFirstCell.h */,
 				D61A99161D4240A00009DBFD /* ComDetailFirstCell.m */,
 				D61A99171D4240A00009DBFD /* ComDetailFirstCell.xib */,
@@ -935,13 +956,15 @@
 				D61A99361D4243CD0009DBFD /* CommunityDetailModel.m */,
 				D61A99371D4243CD0009DBFD /* CommunityHeaderModel.h */,
 				D61A99381D4243CD0009DBFD /* CommunityHeaderModel.m */,
+				D6ADC8EA1D3A52DB0073EAE4 /* CommunityListModel.h */,
+				D6ADC8EB1D3A52DB0073EAE4 /* CommunityListModel.m */,
+				D6838BF61D430D1900E90C0E /* CommunityCoCellModel.h */,
+				D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */,
 				D61A99391D4243CD0009DBFD /* LuyingListModel.h */,
 				D61A993A1D4243CD0009DBFD /* LuyingListModel.m */,
 				C2D4DA731D40EBD300A9A3BE /* MyModels */,
 				D6ADC8E61D3A52DB0073EAE4 /* BaseModel.h */,
 				D6ADC8E71D3A52DB0073EAE4 /* BaseModel.m */,
-				D6ADC8EA1D3A52DB0073EAE4 /* CommunityListModel.h */,
-				D6ADC8EB1D3A52DB0073EAE4 /* CommunityListModel.m */,
 				D6ADC8E81D3A52DB0073EAE4 /* CatnameModel.h */,
 				D6ADC8E91D3A52DB0073EAE4 /* CatnameModel.m */,
 				D6ADC8EC1D3A52DB0073EAE4 /* FLModel.h */,
@@ -1170,6 +1193,7 @@
 				D6ADC9581D3A52DB0073EAE4 /* community.png in Resources */,
 				D6ADC9431D3A52DB0073EAE4 /* 0412.png in Resources */,
 				D63370D61D420471004D5E20 /* 围观.png in Resources */,
+				D6838BF51D4309E900E90C0E /* CommunityCustomCell.xib in Resources */,
 				D61A998E1D42443F0009DBFD /* RecommendUserTableViewCell.xib in Resources */,
 				D61A99701D4244130009DBFD /* community_Select.png in Resources */,
 				D61A99651D4244130009DBFD /* IMG_5528.jpg in Resources */,
@@ -1280,6 +1304,7 @@
 				C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */,
 				D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */,
 				D61A993E1D4243CD0009DBFD /* LuyingListModel.m in Sources */,
+				D6838BF41D4309E900E90C0E /* CommunityCustomCell.m in Sources */,
 				C2D4DA721D40E7EF00A9A3BE /* UserDetailRequest.m in Sources */,
 				D61A99C81D42456E0009DBFD /* MJRefreshBackFooter.m in Sources */,
 				D6ADC9421D3A52DB0073EAE4 /* ToolsModel.m in Sources */,
@@ -1323,6 +1348,7 @@
 				D61A99C61D42456E0009DBFD /* CommunityDetailRequest.m in Sources */,
 				D61A98E91D423E8B0009DBFD /* CommunityViewController.m in Sources */,
 				D6ADC9301D3A52DB0073EAE4 /* LiShiTabBar.m in Sources */,
+				D6838BF81D430D1900E90C0E /* CommunityCoCellModel.m in Sources */,
 				D63370C71D41FE26004D5E20 /* JoinStyleModel.m in Sources */,
 				C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */,
 				D6ADC9291D3A52DB0073EAE4 /* MyViewController.m in Sources */,
@@ -1333,6 +1359,7 @@
 				D61A98E71D423E8B0009DBFD /* CommunityDetailViewController.m in Sources */,
 				C2D4DA781D40EBE200A9A3BE /* MyAttentionModel.m in Sources */,
 				D61A99CC1D42456E0009DBFD /* MJRefreshAutoGifFooter.m in Sources */,
+				D68E574E1D459F25001507E0 /* AllListViewController.m in Sources */,
 				D61A99D71D42456E0009DBFD /* NSBundle+MJRefresh.m in Sources */,
 				D6ADC93E1D3A52DB0073EAE4 /* JFModel.m in Sources */,
 				D61A99D81D42456E0009DBFD /* UIScrollView+MJExtension.m in Sources */,
@@ -1358,6 +1385,7 @@
 				D63370A01D41FB44004D5E20 /* EquipTypeViewController.m in Sources */,
 				C25ADAD21D3DBD5200BD1ED6 /* RegisterViewController.m in Sources */,
 				D61A98E81D423E8B0009DBFD /* CommunityScrollViewController.m in Sources */,
+				D665BB441D43713700916B4F /* CommunityReuseViewController.m in Sources */,
 				D6ADC9411D3A52DB0073EAE4 /* Sports_catesModel.m in Sources */,
 				C231C6191D361AAA009BB26B /* main.m in Sources */,
 				D61A99CA1D42456E0009DBFD /* MJRefreshFooter.m in Sources */,
