@@ -20,7 +20,8 @@
 #define sportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/0/20?sport_id=%@",ID]
 //福利社衣服的界面
 #define flClothClothDetailRequest_Url @"http://api.lis99.com/v3/club/lineactivedetail"
-
+//更多免费界面
+#define moreFreeClothDetailRequest_Url @"http://api.lis99.com/v5/club/tagTopic/0"
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
@@ -44,6 +45,13 @@
 
 // 用户详情接口
 #define userDetailRequest_Url @"http://api.lis99.com/v5/user/uinfo/0"
+
+// 发帖详情接口
+#define topicsDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
+// 评论接口
+#define commentRequest_Url @"http://api.lis99.com/v5/topics/topicsReply"
+
+
 
 
 
@@ -79,6 +87,15 @@
 #define CommunityAllListHeaderRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/detail/%@/%@",club_id,user_id]
 
 #define CommunityAllCollectionViewRequest_Url @"http://api.lis99.com/v5/club/allclublist/"
+
+
+// 活动页面url
+#define ActivityRequest_Url(Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/0?latitude=%@&longitude=%@",Latitude,Longitude]
+
+
+// 活动详情页面url
+#define ActivityDetailRequest_Url(activity_id,user_id)  [NSString stringWithFormat:@"https://apis.lis99.com/activity/detail?activity_id=%@&user_id=%@",activity_id,user_id]
+
 
 
 #endif /* RequestUrls_h */

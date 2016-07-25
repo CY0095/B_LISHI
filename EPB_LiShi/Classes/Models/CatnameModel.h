@@ -15,6 +15,6 @@
 //服装类型ID
 @property (nonatomic, strong) NSString *catnameID;
 //服装类型的种类
-@property (nonatomic, strong) ListModel *list;
+@property (nonatomic, strong) NSArray *list;
 
 @end

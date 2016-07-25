@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpinionViewController">
+            <connections>
+                <outlet property="OpinionTextField" destination="tmK-vY-uMO" id="2OG-yQ-D1q"/>
+                <outlet property="phoneNumberTextField" destination="v7e-zH-Ej1" id="aWO-ip-Uc9"/>
+                <outlet property="referBtn" destination="71N-mM-hbv" id="aaZ-VZ-BJ3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="详细描述您的问题,我们会尽快解决" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmK-vY-uMO">
+                    <rect key="frame" x="0.0" y="139" width="414" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="aYL-Fh-tni"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="填写您的QQ或是手机号,方便我们联系您" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7e-zH-Ej1">
+                    <rect key="frame" x="0.0" y="187" width="414" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="LOk-si-4NK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71N-mM-hbv">
+                    <rect key="frame" x="27" y="299" width="359" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.57010276846442953" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ncq-Lg-Ke4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="referBtnAction:" destination="-1" eventType="touchUpInside" id="aRS-ZN-BQI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多意见您可以加QQ群565047365，进行交流" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Go-Wa-aSW">
+                    <rect key="frame" x="28" y="385" width="358" height="57"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="gEG-gc-Fwr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.86274509799999999" green="0.85882352939999995" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="tmK-vY-uMO" secondAttribute="trailing" id="0vo-sE-xcj"/>
+                <constraint firstItem="71N-mM-hbv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="5bq-mH-OJP"/>
+                <constraint firstItem="v7e-zH-Ej1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="187" id="78q-9w-ixJ"/>
+                <constraint firstItem="71N-mM-hbv" firstAttribute="top" secondItem="v7e-zH-Ej1" secondAttribute="bottom" constant="62" id="Ohx-XY-n5U"/>
+                <constraint firstItem="v7e-zH-Ej1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sjo-0o-K63"/>
+                <constraint firstItem="6Go-Wa-aSW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="28" id="VqI-iz-7w9"/>
+                <constraint firstItem="tmK-vY-uMO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="139" id="Z14-vV-bk9"/>
+                <constraint firstAttribute="trailing" secondItem="v7e-zH-Ej1" secondAttribute="trailing" id="baW-x9-6yY"/>
+                <constraint firstItem="6Go-Wa-aSW" firstAttribute="top" secondItem="71N-mM-hbv" secondAttribute="bottom" constant="56" id="fQN-HI-k44"/>
+                <constraint firstItem="tmK-vY-uMO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kho-mk-BTa"/>
+                <constraint firstAttribute="trailing" secondItem="6Go-Wa-aSW" secondAttribute="trailing" constant="28" id="rbk-Sr-xdb"/>
+                <constraint firstAttribute="trailing" secondItem="71N-mM-hbv" secondAttribute="trailing" constant="28" id="wdu-B5-nb5"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+</document>

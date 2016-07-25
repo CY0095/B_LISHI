@@ -11,7 +11,7 @@
 @interface PostMessageModel : BaseModel
 @property(strong,nonatomic)NSString *activity_code;
 @property(strong,nonatomic)NSString *club_id;
-@property(strong,nonatomic)NSString *category;// 种类
+@property(assign,nonatomic)NSInteger category;// 种类
 @property(strong,nonatomic)NSString *club_title;// 来自...
 @property(strong,nonatomic)NSString *createdate;// 创建日期
 @property(assign,nonatomic)NSInteger height;

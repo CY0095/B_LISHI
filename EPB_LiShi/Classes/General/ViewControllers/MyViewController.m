@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "MyAttentionViewController.h"
 #import "ChangeMydataViewController.h"
+#import "OpinionViewController.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;// 头视图
@@ -47,7 +48,7 @@
 
 // 添加右按钮
 -(void)addRightButton{
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mydata"] style:(UIBarButtonItemStylePlain) target:self action:@selector(changeMydata)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mydata3"] style:(UIBarButtonItemStylePlain) target:self action:@selector(changeMydata)];
     
 }
 // 修改个人资料按钮
@@ -172,7 +173,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyTableViewCell_Identify];
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == 0) {
         cell.myLabel.text = @"我的好友";
         cell.ImgView.image = [UIImage imageNamed:@"haoyou"];
@@ -187,6 +188,8 @@
         cell.ImgView.image = [UIImage imageNamed:@"yijian"];
     }else if (indexPath.row == 4){
         cell.myLabel.text = @"清理缓存";
+        float number = [self getFilePath];
+        cell.huancunLabel.text = [NSString stringWithFormat:@"%.2fM",number];
         cell.ImgView.image = [UIImage imageNamed:@"qingchu"];
     }
     
@@ -206,9 +209,21 @@
         }else if (indexPath.row == 2){
             
         }else if (indexPath.row == 3){
-            
+            OpinionViewController *opinionVC = [[OpinionViewController alloc] init];
+            [self.navigationController pushViewController:opinionVC animated:YES];
         }else if (indexPath.row == 4){
-            
+            // 清除缓存
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"您要清除本地缓存吗" preferredStyle:(UIAlertControllerStyleActionSheet)];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                [self removeCache];
+            }];
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alertVC addAction:okAction];
+            [alertVC addAction:cancel];
+            [self presentViewController:alertVC animated:YES completion:nil];
+
         }
         
         
@@ -226,6 +241,67 @@
     }
     
     
+}
+
+// 清除缓存方法
+-(void)removeCache{
+    //===============清除缓存==============
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:cachePath];
+    //    NSLog(@"文件数 ：%d",[files count]);
+    for (NSString *p in files)
+    {
+        NSError *error;
+        NSString *path = [cachePath stringByAppendingString:[NSString stringWithFormat:@"/%@",p]];
+        if([[NSFileManager defaultManager] fileExistsAtPath:path])
+        {
+            [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+        }
+    }
+    [self.mytableView reloadData];
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"缓存清理成功" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertC addAction:okAction];
+    
+    [self presentViewController:alertC animated:YES completion:nil];
+    
+}
+// 获取缓存的方法
+-(float)getFilePath{
+    //文件管理
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //缓存路径
+    
+    NSArray *cachePaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES);
+    
+    NSString *cacheDir = [cachePaths objectAtIndex:0];
+    
+    NSArray *cacheFileList;
+    
+    NSEnumerator *cacheEnumerator;
+    
+    NSString *cacheFilePath;
+    
+    unsigned long long cacheFolderSize = 0;
+    
+    cacheFileList = [fileManager subpathsOfDirectoryAtPath:cacheDir error:nil];
+    
+    cacheEnumerator = [cacheFileList objectEnumerator];
+    
+    while (cacheFilePath = [cacheEnumerator nextObject]) {
+        
+        NSDictionary *cacheFileAttributes = [fileManager attributesOfItemAtPath:[cacheDir stringByAppendingPathComponent:cacheFilePath] error:nil];
+        
+        cacheFolderSize += [cacheFileAttributes fileSize];
+    }
+    //单位KB
+    return cacheFolderSize/1024/1024;
+    // 单位MB
+    // return cacheFolderSize/1024/1024;
 }
 
 
