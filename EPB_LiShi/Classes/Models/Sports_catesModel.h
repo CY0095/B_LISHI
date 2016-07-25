@@ -16,7 +16,7 @@
 //运动ID
 @property (nonatomic, strong) NSString *sportID;
 //运动方式的种类
-@property (nonatomic, strong) NSString *list;
+@property (nonatomic, strong) NSArray *list;
 
 
 @end

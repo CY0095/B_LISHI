@@ -20,7 +20,8 @@
 #define sportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/0/20?sport_id=%@",ID]
 //福利社衣服的界面
 #define flClothClothDetailRequest_Url @"http://api.lis99.com/v3/club/lineactivedetail"
-
+//更多免费界面
+#define moreFreeClothDetailRequest_Url @"http://api.lis99.com/v5/club/tagTopic/0"
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
