@@ -195,7 +195,7 @@ SDCycleScrollViewDelegate
     
     ActivityDetailViewController *activityVC = [ActivityDetailViewController new];
     
-    ActivityModel *model = [ActivityModel new];
+    ActivityModel *model = [[ActivityModel alloc] init];
     model = self.dataArr[indexPath.row];
     
     activityVC.DetailIDString = model.ID;

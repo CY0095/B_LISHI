@@ -1506,7 +1506,7 @@
 				D61A99D41D42456E0009DBFD /* MJRefreshStateHeader.m in Sources */,
 				D6ADC93D1D3A52DB0073EAE4 /* FLModel.m in Sources */,
 
-				C241EDB91D439A42005162C5 /*
+				C241EDB91D439A42005162C5 /* OpinionViewController.m in Sources */,
 				D67C53A11D4359A500D377B8 /* ActivityRequest.m in Sources */,
 
 				D6ADC9311D3A52DB0073EAE4 /* MyTableViewCell.m in Sources */,

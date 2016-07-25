@@ -139,7 +139,7 @@
 // cell点击方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     AttentionDetailViewController *attentionVC = [AttentionDetailViewController new];
-    MyAttentionModel *model = [MyAttentionModel new];
+    MyAttentionModel *model = [[MyAttentionModel alloc] init];
     if (self.segmented.selectedSegmentIndex == 0) {
         model = self.myAttentionArray[indexPath.row];
     }else{
