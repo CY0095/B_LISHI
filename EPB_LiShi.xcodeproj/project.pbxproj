@@ -186,9 +186,7 @@
 		D6ADC9421D3A52DB0073EAE4 /* ToolsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8F71D3A52DB0073EAE4 /* ToolsModel.m */; };
 		D6ADC9431D3A52DB0073EAE4 /* 0412.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8F91D3A52DB0073EAE4 /* 0412.png */; };
 		D6ADC9441D3A52DB0073EAE4 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8FA1D3A52DB0073EAE4 /* 1.png */; };
-		D6ADC9451D3A52DB0073EAE4 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8FB1D3A52DB0073EAE4 /* 2.jpg */; };
 		D6ADC9461D3A52DB0073EAE4 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8FC1D3A52DB0073EAE4 /* 2.png */; };
-		D6ADC9471D3A52DB0073EAE4 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8FD1D3A52DB0073EAE4 /* 3.jpg */; };
 		D6ADC9481D3A52DB0073EAE4 /* 32.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC8FE1D3A52DB0073EAE4 /* 32.png */; };
 		D6ADC9491D3A52DB0073EAE4 /* IMG_5523.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9001D3A52DB0073EAE4 /* IMG_5523.jpg */; };
 		D6ADC94A1D3A52DB0073EAE4 /* IMG_5524.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9011D3A52DB0073EAE4 /* IMG_5524.jpg */; };
@@ -536,9 +534,7 @@
 		D6ADC8F71D3A52DB0073EAE4 /* ToolsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsModel.m; sourceTree = "<group>"; };
 		D6ADC8F91D3A52DB0073EAE4 /* 0412.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0412.png; sourceTree = "<group>"; };
 		D6ADC8FA1D3A52DB0073EAE4 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		D6ADC8FB1D3A52DB0073EAE4 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		D6ADC8FC1D3A52DB0073EAE4 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		D6ADC8FD1D3A52DB0073EAE4 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		D6ADC8FE1D3A52DB0073EAE4 /* 32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 32.png; sourceTree = "<group>"; };
 		D6ADC9001D3A52DB0073EAE4 /* IMG_5523.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5523.jpg; sourceTree = "<group>"; };
 		D6ADC9011D3A52DB0073EAE4 /* IMG_5524.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5524.jpg; sourceTree = "<group>"; };
@@ -1016,22 +1012,11 @@
 		D6ADC8AD1D3A52DB0073EAE4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6E4504C1D460A1500C5692E /* Equipment */,
 				D67C53A21D4359B100D377B8 /* Activity */,
 				D61A98D21D423E8B0009DBFD /* Community */,
 				D6ADC8B01D3A52DB0073EAE4 /* BaseViewController.h */,
 				D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */,
-				D6ADC8B81D3A52DB0073EAE4 /* EquipViewController.h */,
-				D6ADC8B91D3A52DB0073EAE4 /* EquipViewController.m */,
-				D63370981D41FB44004D5E20 /* EquipTypeViewController.h */,
-				D63370991D41FB44004D5E20 /* EquipTypeViewController.m */,
-				D633709A1D41FB44004D5E20 /* EquipDetailViewController.h */,
-				D633709B1D41FB44004D5E20 /* EquipDetailViewController.m */,
-				D633709C1D41FB44004D5E20 /* SportClothViewController.h */,
-				D633709D1D41FB44004D5E20 /* SportClothViewController.m */,
-				D633709E1D41FB44004D5E20 /* ClothDetailViewController.h */,
-				D633709F1D41FB44004D5E20 /* ClothDetailViewController.m */,
-				D6E450491D45FBD600C5692E /* MoreFreeViewController.h */,
-				D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */,
 				D6ADC8C01D3A52DB0073EAE4 /* MyViewController.h */,
 				D6ADC8C11D3A52DB0073EAE4 /* MyViewController.m */,
 				D6ADC8C41D3A52DB0073EAE4 /* RootViewController.h */,
@@ -1078,6 +1063,7 @@
 		D6ADC8D61D3A52DB0073EAE4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D6E4504D1D460A3E00C5692E /* Equipment */,
 				D67C539B1D4359A500D377B8 /* Activity */,
 				D61A99971D42456E0009DBFD /* MJRefresh */,
 				C25ADAD51D3DBDF800BD1ED6 /* MyViewRequest */,
@@ -1089,18 +1075,6 @@
 				D61A99961D42456E0009DBFD /* CommunityDetailRequest.m */,
 				D6ADC8DD1D3A52DB0073EAE4 /* NetWorkRequest.h */,
 				D6ADC8DE1D3A52DB0073EAE4 /* NetWorkRequest.m */,
-				D6ADC8DF1D3A52DB0073EAE4 /* ToolsRequest.h */,
-				D6ADC8E01D3A52DB0073EAE4 /* ToolsRequest.m */,
-				D6ADC8DB1D3A52DB0073EAE4 /* ExchangeRequest.h */,
-				D6ADC8DC1D3A52DB0073EAE4 /* ExchangeRequest.m */,
-				D63370B81D41FBDE004D5E20 /* EquipDetailRequest.h */,
-				D63370B91D41FBDE004D5E20 /* EquipDetailRequest.m */,
-				D63370BB1D41FCA5004D5E20 /* SportClothRequest.h */,
-				D63370BC1D41FCA5004D5E20 /* SportClothRequest.m */,
-				D63370BE1D41FCDD004D5E20 /* FlClothRequest.h */,
-				D63370BF1D41FCDD004D5E20 /* FlClothRequest.m */,
-				D6E450371D45FB5200C5692E /* MoreFreeRequest.h */,
-				D6E450381D45FB5200C5692E /* MoreFreeRequest.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1117,6 +1091,7 @@
 		D6ADC8E51D3A52DB0073EAE4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D6E4504E1D460A6B00C5692E /* Equipment */,
 				D67C538B1D43598A00D377B8 /* Activity */,
 				D61A99331D4243CD0009DBFD /* CommunityDetailListModel.h */,
 				D61A99341D4243CD0009DBFD /* CommunityDetailListModel.m */,
@@ -1131,38 +1106,6 @@
 				D6ADC8E71D3A52DB0073EAE4 /* BaseModel.m */,
 				D6ADC8EA1D3A52DB0073EAE4 /* CommunityListModel.h */,
 				D6ADC8EB1D3A52DB0073EAE4 /* CommunityListModel.m */,
-				D6ADC8E81D3A52DB0073EAE4 /* CatnameModel.h */,
-				D6ADC8E91D3A52DB0073EAE4 /* CatnameModel.m */,
-				D6ADC8EC1D3A52DB0073EAE4 /* FLModel.h */,
-				D6ADC8ED1D3A52DB0073EAE4 /* FLModel.m */,
-				D63370D01D41FECE004D5E20 /* FLClothModel.h */,
-				D63370D11D41FECE004D5E20 /* FLClothModel.m */,
-				D6ADC8EE1D3A52DB0073EAE4 /* JFModel.h */,
-				D6ADC8EF1D3A52DB0073EAE4 /* JFModel.m */,
-				D6ADC8F01D3A52DB0073EAE4 /* ListModel.h */,
-				D6ADC8F11D3A52DB0073EAE4 /* ListModel.m */,
-				D6ADC8F21D3A52DB0073EAE4 /* SportList.h */,
-				D6ADC8F31D3A52DB0073EAE4 /* SportList.m */,
-				D6ADC8F41D3A52DB0073EAE4 /* Sports_catesModel.h */,
-				D6ADC8F51D3A52DB0073EAE4 /* Sports_catesModel.m */,
-				D6ADC8F61D3A52DB0073EAE4 /* ToolsModel.h */,
-				D6ADC8F71D3A52DB0073EAE4 /* ToolsModel.m */,
-				D63370C11D41FE26004D5E20 /* JoinStyleModel.h */,
-				D63370C21D41FE26004D5E20 /* JoinStyleModel.m */,
-				D63370C31D41FE26004D5E20 /* EquipDetailModel.h */,
-				D63370C41D41FE26004D5E20 /* EquipDetailModel.m */,
-				D63370C51D41FE26004D5E20 /* SportClothModel.h */,
-				D63370C61D41FE26004D5E20 /* SportClothModel.m */,
-				D63370CA1D41FE3F004D5E20 /* LikeNumModel.h */,
-				D63370CB1D41FE3F004D5E20 /* LikeNumModel.m */,
-				D63370CC1D41FE3F004D5E20 /* LikeListModel.h */,
-				D63370CD1D41FE3F004D5E20 /* LikeListModel.m */,
-				D6E450281D45FAA300C5692E /* MoreFreeModel.h */,
-				D6E450291D45FAA300C5692E /* MoreFreeModel.m */,
-				D6E4502A1D45FAA300C5692E /* MoreFreeDetailModel.h */,
-				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
-				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
-				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1170,6 +1113,7 @@
 		D6ADC8F81D3A52DB0073EAE4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D6E4504F1D460AC600C5692E /* Equipment */,
 				D67C53851D43597B00D377B8 /* 标签.png */,
 				D67C53861D43597B00D377B8 /* 客服.png */,
 				D67C53871D43597B00D377B8 /* bg_eventlistcell.png */,
@@ -1189,19 +1133,6 @@
 				D61A995D1D4244130009DBFD /* videoPlay.png */,
 				D61A995E1D4244130009DBFD /* yidianzan.png */,
 				D61A995F1D4244130009DBFD /* zhuangbei.jpg */,
-				D63370D31D420471004D5E20 /* 围观.png */,
-				D63370D41D420471004D5E20 /* 时间.png */,
-				D63370D51D420471004D5E20 /* 回复.png */,
-				D6ADC9191D3A52DB0073EAE4 /* 箭头.png */,
-				D6E450351D45FAFA00C5692E /* 左箭头.png */,
-				D6E450311D45FAF100C5692E /* 省略.png */,
-				D6E450321D45FAF100C5692E /* 点赞.png */,
-				D6ADC8F91D3A52DB0073EAE4 /* 0412.png */,
-				D6ADC8FA1D3A52DB0073EAE4 /* 1.png */,
-				D6ADC8FB1D3A52DB0073EAE4 /* 2.jpg */,
-				D6ADC8FC1D3A52DB0073EAE4 /* 2.png */,
-				D6ADC8FD1D3A52DB0073EAE4 /* 3.jpg */,
-				D6ADC8FE1D3A52DB0073EAE4 /* 32.png */,
 				D6ADC8FF1D3A52DB0073EAE4 /* backgroundImage */,
 				D6ADC9081D3A52DB0073EAE4 /* bag.png */,
 				D6ADC9091D3A52DB0073EAE4 /* boy_default.png */,
@@ -1271,6 +1202,101 @@
 				D61A997F1D42443F0009DBFD /* MyCells */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D6E4504C1D460A1500C5692E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				D6ADC8B81D3A52DB0073EAE4 /* EquipViewController.h */,
+				D6ADC8B91D3A52DB0073EAE4 /* EquipViewController.m */,
+				D63370981D41FB44004D5E20 /* EquipTypeViewController.h */,
+				D63370991D41FB44004D5E20 /* EquipTypeViewController.m */,
+				D633709A1D41FB44004D5E20 /* EquipDetailViewController.h */,
+				D633709B1D41FB44004D5E20 /* EquipDetailViewController.m */,
+				D633709C1D41FB44004D5E20 /* SportClothViewController.h */,
+				D633709D1D41FB44004D5E20 /* SportClothViewController.m */,
+				D633709E1D41FB44004D5E20 /* ClothDetailViewController.h */,
+				D633709F1D41FB44004D5E20 /* ClothDetailViewController.m */,
+				D6E450491D45FBD600C5692E /* MoreFreeViewController.h */,
+				D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */,
+			);
+			name = Equipment;
+			sourceTree = "<group>";
+		};
+		D6E4504D1D460A3E00C5692E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				D6ADC8DF1D3A52DB0073EAE4 /* ToolsRequest.h */,
+				D6ADC8E01D3A52DB0073EAE4 /* ToolsRequest.m */,
+				D6ADC8DB1D3A52DB0073EAE4 /* ExchangeRequest.h */,
+				D6ADC8DC1D3A52DB0073EAE4 /* ExchangeRequest.m */,
+				D63370B81D41FBDE004D5E20 /* EquipDetailRequest.h */,
+				D63370B91D41FBDE004D5E20 /* EquipDetailRequest.m */,
+				D63370BB1D41FCA5004D5E20 /* SportClothRequest.h */,
+				D63370BC1D41FCA5004D5E20 /* SportClothRequest.m */,
+				D63370BE1D41FCDD004D5E20 /* FlClothRequest.h */,
+				D63370BF1D41FCDD004D5E20 /* FlClothRequest.m */,
+				D6E450371D45FB5200C5692E /* MoreFreeRequest.h */,
+				D6E450381D45FB5200C5692E /* MoreFreeRequest.m */,
+			);
+			name = Equipment;
+			sourceTree = "<group>";
+		};
+		D6E4504E1D460A6B00C5692E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				D6ADC8E81D3A52DB0073EAE4 /* CatnameModel.h */,
+				D6ADC8E91D3A52DB0073EAE4 /* CatnameModel.m */,
+				D6ADC8EC1D3A52DB0073EAE4 /* FLModel.h */,
+				D6ADC8ED1D3A52DB0073EAE4 /* FLModel.m */,
+				D63370D01D41FECE004D5E20 /* FLClothModel.h */,
+				D63370D11D41FECE004D5E20 /* FLClothModel.m */,
+				D6ADC8EE1D3A52DB0073EAE4 /* JFModel.h */,
+				D6ADC8EF1D3A52DB0073EAE4 /* JFModel.m */,
+				D6ADC8F01D3A52DB0073EAE4 /* ListModel.h */,
+				D6ADC8F11D3A52DB0073EAE4 /* ListModel.m */,
+				D6ADC8F21D3A52DB0073EAE4 /* SportList.h */,
+				D6ADC8F31D3A52DB0073EAE4 /* SportList.m */,
+				D6ADC8F41D3A52DB0073EAE4 /* Sports_catesModel.h */,
+				D6ADC8F51D3A52DB0073EAE4 /* Sports_catesModel.m */,
+				D6ADC8F61D3A52DB0073EAE4 /* ToolsModel.h */,
+				D6ADC8F71D3A52DB0073EAE4 /* ToolsModel.m */,
+				D63370C11D41FE26004D5E20 /* JoinStyleModel.h */,
+				D63370C21D41FE26004D5E20 /* JoinStyleModel.m */,
+				D63370C31D41FE26004D5E20 /* EquipDetailModel.h */,
+				D63370C41D41FE26004D5E20 /* EquipDetailModel.m */,
+				D63370C51D41FE26004D5E20 /* SportClothModel.h */,
+				D63370C61D41FE26004D5E20 /* SportClothModel.m */,
+				D63370CA1D41FE3F004D5E20 /* LikeNumModel.h */,
+				D63370CB1D41FE3F004D5E20 /* LikeNumModel.m */,
+				D63370CC1D41FE3F004D5E20 /* LikeListModel.h */,
+				D63370CD1D41FE3F004D5E20 /* LikeListModel.m */,
+				D6E450281D45FAA300C5692E /* MoreFreeModel.h */,
+				D6E450291D45FAA300C5692E /* MoreFreeModel.m */,
+				D6E4502A1D45FAA300C5692E /* MoreFreeDetailModel.h */,
+				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
+				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
+				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
+			);
+			name = Equipment;
+			sourceTree = "<group>";
+		};
+		D6E4504F1D460AC600C5692E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				D63370D31D420471004D5E20 /* 围观.png */,
+				D63370D41D420471004D5E20 /* 时间.png */,
+				D63370D51D420471004D5E20 /* 回复.png */,
+				D6ADC9191D3A52DB0073EAE4 /* 箭头.png */,
+				D6E450351D45FAFA00C5692E /* 左箭头.png */,
+				D6E450311D45FAF100C5692E /* 省略.png */,
+				D6E450321D45FAF100C5692E /* 点赞.png */,
+				D6ADC8F91D3A52DB0073EAE4 /* 0412.png */,
+				D6ADC8FA1D3A52DB0073EAE4 /* 1.png */,
+				D6ADC8FC1D3A52DB0073EAE4 /* 2.png */,
+				D6ADC8FE1D3A52DB0073EAE4 /* 32.png */,
+			);
+			name = Equipment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1347,7 +1373,6 @@
 				D6ADC9541D3A52DB0073EAE4 /* haoyou.png in Resources */,
 				D67C53891D43597B00D377B8 /* 客服.png in Resources */,
 				D6ADC94B1D3A52DB0073EAE4 /* IMG_5525.jpg in Resources */,
-				D6ADC9471D3A52DB0073EAE4 /* 3.jpg in Resources */,
 				D6ADC95F1D3A52DB0073EAE4 /* qingchu.png in Resources */,
 				D61A99641D4244130009DBFD /* IMG_5527.jpg in Resources */,
 				D6ADC94A1D3A52DB0073EAE4 /* IMG_5524.jpg in Resources */,
@@ -1383,7 +1408,6 @@
 				D61A99651D4244130009DBFD /* IMG_5528.jpg in Resources */,
 				D63370D71D420471004D5E20 /* 时间.png in Resources */,
 				D6ADC94D1D3A52DB0073EAE4 /* IMG_5527.jpg in Resources */,
-				D6ADC9451D3A52DB0073EAE4 /* 2.jpg in Resources */,
 				D6ADC94C1D3A52DB0073EAE4 /* IMG_5526.jpg in Resources */,
 				D63370B31D41FB9B004D5E20 /* EquipDetailCollectionViewCell.xib in Resources */,
 				D6E450331D45FAF100C5692E /* 省略.png in Resources */,
