@@ -98,7 +98,8 @@
 // 发表评论方法
 -(void)publishReolyAction:(UIButton *)button{
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
-    if (!user_id) {
+    NSLog(@"user _id = %@========",user_id);
+    if (user_id) {
         if (self.textField.text.length != 0) {
             NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
             [[TopicDetailRequest shareTopicDetailRequest] commentRequestWithContent:self.textField.text topics_id:self.topics_id user_id:user_id success:^(NSDictionary *dic) {
