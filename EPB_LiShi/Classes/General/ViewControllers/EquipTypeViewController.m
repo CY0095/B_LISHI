@@ -251,7 +251,11 @@ static NSString *const cellReuseIdentifier = @"11";
         
         ListModel *model = self.ListNameDic[self.CatNameArr[indexPath.section]][indexPath.row];
         cell.textLabel.text = model.catname;
+        
+        //设置cell上的箭头
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }else{
@@ -260,13 +264,18 @@ static NSString *const cellReuseIdentifier = @"11";
         
         Sports_catesModel *model = self.SportListNameDic[self.SportNameArr[indexPath.section]][indexPath.row];
         cell.textLabel.text = model.title;
+        
+        //设置cell上的箭头
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }
     
 }
 
+#pragma mark --- 设置cell的点击方法 ---
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.EquipTableView) {

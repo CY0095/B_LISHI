@@ -11,6 +11,7 @@
 #import "ExchangeRequest.h"
 #import "EquipTypeViewController.h"
 #import "ClothDetailViewController.h"
+#import "MoreFreeViewController.h"
 
 @interface EquipViewController ()<UITableViewDelegate,UITableViewDataSource,toolDelegate>
 
@@ -147,7 +148,7 @@
     [btn setTitle:@"更多免费装备" forState:(UIControlStateNormal)];
     [btn setTitleColor:[UIColor greenColor] forState:(UIControlStateNormal)];
     btn.center = footView.center;
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:(UIControlEventTouchUpInside)];
+    [btn addTarget:self action:@selector(moreFreeClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIImageView *add = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 22, 15, 15))];
     add.image = [UIImage imageNamed:@"箭头"];
@@ -168,7 +169,7 @@
     [btn1 setTitle:@"更多换购装备" forState:(UIControlStateNormal)];
     [btn1 setTitleColor:[UIColor greenColor] forState:(UIControlStateNormal)];
     btn1.center = footView1.center;
-    [btn1 addTarget:self action:@selector(btnClick:) forControlEvents:(UIControlEventTouchUpInside)];
+    [btn1 addTarget:self action:@selector(moreEchangeClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIImageView *add1 = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 33, 15, 15))];
     add1.image = [UIImage imageNamed:@"箭头"];
@@ -176,6 +177,22 @@
     [footView1 addSubview:add1];
     [footView1 addSubview:btn1];
     self.JFView.tableFooterView = footView1;
+}
+
+#pragma mark --- 设置更多换购装备的点击 ---
+- (void)moreEchangeClick:(UIButton *)btn
+{
+    NSLog(@"1111");
+}
+
+#pragma mark --- 设置更多免费装备的点击 ---
+- (void)moreFreeClick:(UIButton *)btn
+{
+    MoreFreeViewController *freeVC = [MoreFreeViewController new];
+    
+    [self presentViewController:freeVC animated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark --- 请求商品数据 ---
@@ -246,6 +263,8 @@
         cell.flmodel = model1;
         //遵循点击button的代理
         cell.delegate = self;
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }else
@@ -257,11 +276,14 @@
         cell.jfmodel = model;
         //遵循点击button的代理
         cell.delegate = self;
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
     }
 }
 
+#pragma mark --- 设置代理button的点击方法 ---
 - (void)toolClickButton:(ToolsTableViewCell *)cell
 {
     ClothDetailViewController *spVC = [ClothDetailViewController new];

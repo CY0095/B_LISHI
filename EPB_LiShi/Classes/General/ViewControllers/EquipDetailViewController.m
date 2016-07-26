@@ -52,6 +52,7 @@ static NSString *const cellResueID = @"111";
     self.view.backgroundColor = [UIColor purpleColor];
 }
 
+#pragma mark --- 请求数据 ---
 - (void)DataRequest
 {
     __weak typeof(self) weakself = self;
@@ -77,24 +78,25 @@ static NSString *const cellResueID = @"111";
     }];
 }
 
-//分区个数
+#pragma mark --- 设置分区个数 ---
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
 }
 
-//item个数
+#pragma mark --- 设置item的个数 ---
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.detailArr.count;
 }
 
-//定义每个Item 的大小
+#pragma mark --- 设置item的大小 ---
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake((WindownWidth - 20) / 2, 283);
 }
 
+#pragma mark --- 设置item ---
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EquipDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:EquipDetailViewCell_Identify forIndexPath:indexPath];

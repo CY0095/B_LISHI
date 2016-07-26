@@ -168,7 +168,7 @@
                 <outlet property="members" destination="GhJ-wo-w07" id="JIE-nN-q1f"/>
                 <outlet property="title" destination="SCs-2M-NEi" id="gkb-cZ-sgp"/>
             </connections>
-            <point key="canvasLocation" x="615" y="328.5"/>
+            <point key="canvasLocation" x="272" y="278.5"/>
         </tableViewCell>
     </objects>
     <resources>

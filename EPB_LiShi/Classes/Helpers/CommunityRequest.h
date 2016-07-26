@@ -49,4 +49,13 @@
 - (void)HuwaifanHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
                                        success:(SuccessResponse)success
                                        failure:(FailureResponse)failure;
+- (void)CollectionViewCellRequestWithParameter:(NSDictionary *)parameterDic
+                                       success:(SuccessResponse)success
+                                       failure:(FailureResponse)failure;
+- (void)CommunityAllListViewRequestWithParameter:(NSDictionary *)parameterDic
+                                         success:(SuccessResponse)success
+                                         failure:(FailureResponse)failure;
+- (void)CommunityAllListHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                               success:(SuccessResponse)success
+                                               failure:(FailureResponse)failure;
 @end
