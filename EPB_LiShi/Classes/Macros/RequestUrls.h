@@ -48,6 +48,10 @@
 #define topicsDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
 // 评论接口
 #define commentRequest_Url @"http://api.lis99.com/v5/topics/topicsReply"
+// 帖子接口
+#define postHeadRequest_Url(topic_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v3/club/topics/%@/%@",topic_id,user_id]
+
+#define postReplyRequest_Url(topic_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v2/club/replylist/%@/%@",topic_id,user_id]
 
 
 

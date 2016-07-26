@@ -41,7 +41,7 @@
     // 注意：若自适应计算出高度重新赋值就不用在执行[self.contextLabel sizeToFit]方法
     // [self.contextLabel sizeToFit];
     if (model.images != nil) {
-        [self.images setImageWithURL:[NSURL URLWithString:model.images]];
+        [self.images setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:[UIImage imageNamed:@"imageLoad.jpg"]];
         // 设定照片的高
         if (model.images_width != 0 && model.images_height != 0) {
             CGFloat imageHeight = WindownWidth * model.images_height / model.images_width;
