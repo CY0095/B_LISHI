@@ -10,6 +10,7 @@
 #import "EquipDetailCollectionViewCell.h"
 #import "sportClothRequest.h"
 #import "SportClothModel.h"
+#import "BuySportViewController.h"
 
 @interface SportClothViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -71,7 +72,7 @@ static NSString *const cellResueID = @"111";
             [weakself.sportTableView reloadData];
         });
         
-//                NSLog(@"detail == %@",weakself.detailArr);
+//        NSLog(@"detail == %@",weakself.detailArr);
     } failure:^(NSError *error) {
         
         NSLog(@"failure == %@",error);
@@ -96,15 +97,27 @@ static NSString *const cellResueID = @"111";
     return CGSizeMake((WindownWidth - 20) / 2, 283);
 }
 
-#pragma mark --- 设置item的大小 ---
+#pragma mark --- 设置item ---
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EquipDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:EquipDetailViewCell_Identify forIndexPath:indexPath];
     
-    EquipDetailModel *Emodel = self.detailArr[indexPath.row];
-    cell.model = Emodel;
+    SportClothModel *Emodel = self.detailArr[indexPath.row];
+    cell.model1 = Emodel;
     
     return cell;
+}
+
+#pragma mark --- 设置item的点击方法 ---
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BuySportViewController *buyVC = [[BuySportViewController alloc] init];
+    SportClothModel *model = self.detailArr[indexPath.row];
+    buyVC.model = model;
+    
+    UINavigationController *thirdNC = [[UINavigationController alloc]initWithRootViewController:buyVC];
+    
+    [self presentViewController:thirdNC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

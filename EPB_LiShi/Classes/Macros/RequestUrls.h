@@ -22,6 +22,10 @@
 #define flClothClothDetailRequest_Url @"http://api.lis99.com/v3/club/lineactivedetail"
 //更多免费界面
 #define moreFreeClothDetailRequest_Url @"http://api.lis99.com/v5/club/tagTopic/0"
+//购买运动装备的介绍界面
+#define buySportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/v3/zhuangbei/detail/%@",ID]
+//商店界面
+#define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"

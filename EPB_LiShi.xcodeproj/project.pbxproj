@@ -213,6 +213,10 @@
 		D6ADC95F1D3A52DB0073EAE4 /* qingchu.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9171D3A52DB0073EAE4 /* qingchu.png */; };
 		D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9181D3A52DB0073EAE4 /* yijian.png */; };
 		D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9191D3A52DB0073EAE4 /* 箭头.png */; };
+		D6E0AB8C1D4844DC003C798B /* OutDoorShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */; };
+		D6E0AB8F1D484973003C798B /* BuyEquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */; };
+		D6E0AB931D48603A003C798B /* SportPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */; };
+		D6E0AB941D48603A003C798B /* SportPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E0AB921D48603A003C798B /* SportPicTableViewCell.xib */; };
 		D6E4502E1D45FAA300C5692E /* MoreFreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450291D45FAA300C5692E /* MoreFreeModel.m */; };
 		D6E4502F1D45FAA300C5692E /* MoreFreeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */; };
 		D6E450301D45FAA300C5692E /* TopicImagelistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */; };
@@ -227,6 +231,29 @@
 		D6E450471D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450411D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m */; };
 		D6E450481D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E450421D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib */; };
 		D6E4504B1D45FBD600C5692E /* MoreFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */; };
+		D6E450521D4611B200C5692E /* BuySportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450511D4611B200C5692E /* BuySportViewController.m */; };
+		D6E450551D46139F00C5692E /* BuySportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450541D46139F00C5692E /* BuySportModel.m */; };
+		D6E450581D46197800C5692E /* BuySportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450571D46197800C5692E /* BuySportRequest.m */; };
+		D6E4505D1D462F6400C5692E /* BuySportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4505B1D462F6400C5692E /* BuySportTableViewCell.m */; };
+		D6E4505E1D462F6400C5692E /* BuySportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E4505C1D462F6400C5692E /* BuySportTableViewCell.xib */; };
+		D6E450621D4645D700C5692E /* BuySportPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450601D4645D700C5692E /* BuySportPicTableViewCell.m */; };
+		D6E450631D4645D700C5692E /* BuySportPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E450611D4645D700C5692E /* BuySportPicTableViewCell.xib */; };
+		D6E450671D464C9100C5692E /* 信息.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E450661D464C9100C5692E /* 信息.png */; };
+		D6E4506A1D4658FC00C5692E /* zhuangBeiPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450691D4658FC00C5692E /* zhuangBeiPicModel.m */; };
+		D6E4506D1D465A4100C5692E /* TextTureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4506C1D465A4100C5692E /* TextTureModel.m */; };
+		D6F53EF31D473A4500BBE710 /* BuySportTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F53EF21D473A4500BBE710 /* BuySportTabBar.m */; };
+		D6F53EF51D473CE900BBE710 /* 购物车.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53EF41D473CE900BBE710 /* 购物车.png */; };
+		D6F53EF81D473DAB00BBE710 /* 喜欢.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53EF61D473DAB00BBE710 /* 喜欢.png */; };
+		D6F53EF91D473DAB00BBE710 /* 喜欢1.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53EF71D473DAB00BBE710 /* 喜欢1.png */; };
+		D6F53EFD1D47550D00BBE710 /* 分享.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53EFC1D47550D00BBE710 /* 分享.png */; };
+		D6F53F001D47594C00BBE710 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F53EFF1D47594C00BBE710 /* ShopModel.m */; };
+		D6F53F031D475A9B00BBE710 /* ShopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F53F021D475A9B00BBE710 /* ShopRequest.m */; };
+		D6F53F061D4760F100BBE710 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F53F051D4760F100BBE710 /* ShopViewController.m */; };
+		D6F53F0D1D47A1FC00BBE710 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F53F0B1D47A1FC00BBE710 /* ShopTableViewCell.m */; };
+		D6F53F0E1D47A1FC00BBE710 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F0C1D47A1FC00BBE710 /* ShopTableViewCell.xib */; };
+		D6F53F101D47A40500BBE710 /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F0F1D47A40500BBE710 /* destination.png */; };
+		D6F53F121D47A46100BBE710 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F111D47A46100BBE710 /* star1.png */; };
+		D6F53F141D47A4F300BBE710 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F131D47A4F300BBE710 /* star.png */; };
 		FB1C041A433BDD3AA01A9A58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 097D4472229F8357FC223952 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -561,6 +588,13 @@
 		D6ADC9171D3A52DB0073EAE4 /* qingchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qingchu.png; sourceTree = "<group>"; };
 		D6ADC9181D3A52DB0073EAE4 /* yijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yijian.png; sourceTree = "<group>"; };
 		D6ADC9191D3A52DB0073EAE4 /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
+		D6E0AB8A1D4844DC003C798B /* OutDoorShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutDoorShopViewController.h; sourceTree = "<group>"; };
+		D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutDoorShopViewController.m; sourceTree = "<group>"; };
+		D6E0AB8D1D484973003C798B /* BuyEquipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyEquipViewController.h; sourceTree = "<group>"; };
+		D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyEquipViewController.m; sourceTree = "<group>"; };
+		D6E0AB901D48603A003C798B /* SportPicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportPicTableViewCell.h; sourceTree = "<group>"; };
+		D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportPicTableViewCell.m; sourceTree = "<group>"; };
+		D6E0AB921D48603A003C798B /* SportPicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportPicTableViewCell.xib; sourceTree = "<group>"; };
 		D6E450281D45FAA300C5692E /* MoreFreeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreFreeModel.h; sourceTree = "<group>"; };
 		D6E450291D45FAA300C5692E /* MoreFreeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreFreeModel.m; sourceTree = "<group>"; };
 		D6E4502A1D45FAA300C5692E /* MoreFreeDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreFreeDetailModel.h; sourceTree = "<group>"; };
@@ -583,6 +617,41 @@
 		D6E450421D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreFreeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		D6E450491D45FBD600C5692E /* MoreFreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreFreeViewController.h; sourceTree = "<group>"; };
 		D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreFreeViewController.m; sourceTree = "<group>"; };
+		D6E450501D4611B200C5692E /* BuySportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportViewController.h; sourceTree = "<group>"; };
+		D6E450511D4611B200C5692E /* BuySportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportViewController.m; sourceTree = "<group>"; };
+		D6E450531D46139F00C5692E /* BuySportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportModel.h; sourceTree = "<group>"; };
+		D6E450541D46139F00C5692E /* BuySportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportModel.m; sourceTree = "<group>"; };
+		D6E450561D46197800C5692E /* BuySportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportRequest.h; sourceTree = "<group>"; };
+		D6E450571D46197800C5692E /* BuySportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportRequest.m; sourceTree = "<group>"; };
+		D6E4505A1D462F6400C5692E /* BuySportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportTableViewCell.h; sourceTree = "<group>"; };
+		D6E4505B1D462F6400C5692E /* BuySportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportTableViewCell.m; sourceTree = "<group>"; };
+		D6E4505C1D462F6400C5692E /* BuySportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuySportTableViewCell.xib; sourceTree = "<group>"; };
+		D6E4505F1D4645D700C5692E /* BuySportPicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportPicTableViewCell.h; sourceTree = "<group>"; };
+		D6E450601D4645D700C5692E /* BuySportPicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportPicTableViewCell.m; sourceTree = "<group>"; };
+		D6E450611D4645D700C5692E /* BuySportPicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuySportPicTableViewCell.xib; sourceTree = "<group>"; };
+		D6E450661D464C9100C5692E /* 信息.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "信息.png"; sourceTree = "<group>"; };
+		D6E450681D4658FC00C5692E /* zhuangBeiPicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhuangBeiPicModel.h; sourceTree = "<group>"; };
+		D6E450691D4658FC00C5692E /* zhuangBeiPicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhuangBeiPicModel.m; sourceTree = "<group>"; };
+		D6E4506B1D465A4100C5692E /* TextTureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTureModel.h; sourceTree = "<group>"; };
+		D6E4506C1D465A4100C5692E /* TextTureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTureModel.m; sourceTree = "<group>"; };
+		D6F53EF11D473A4500BBE710 /* BuySportTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuySportTabBar.h; sourceTree = "<group>"; };
+		D6F53EF21D473A4500BBE710 /* BuySportTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuySportTabBar.m; sourceTree = "<group>"; };
+		D6F53EF41D473CE900BBE710 /* 购物车.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车.png"; sourceTree = "<group>"; };
+		D6F53EF61D473DAB00BBE710 /* 喜欢.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喜欢.png"; sourceTree = "<group>"; };
+		D6F53EF71D473DAB00BBE710 /* 喜欢1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喜欢1.png"; sourceTree = "<group>"; };
+		D6F53EFC1D47550D00BBE710 /* 分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享.png"; sourceTree = "<group>"; };
+		D6F53EFE1D47594C00BBE710 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShopMo\U0010del.h"; sourceTree = "<group>"; };
+		D6F53EFF1D47594C00BBE710 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShopMo\U0010del.m"; sourceTree = "<group>"; };
+		D6F53F011D475A9B00BBE710 /* ShopRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopRequest.h; sourceTree = "<group>"; };
+		D6F53F021D475A9B00BBE710 /* ShopRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopRequest.m; sourceTree = "<group>"; };
+		D6F53F041D4760F100BBE710 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		D6F53F051D4760F100BBE710 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		D6F53F0A1D47A1FC00BBE710 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		D6F53F0B1D47A1FC00BBE710 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		D6F53F0C1D47A1FC00BBE710 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		D6F53F0F1D47A40500BBE710 /* destination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = destination.png; sourceTree = "<group>"; };
+		D6F53F111D47A46100BBE710 /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
+		D6F53F131D47A4F300BBE710 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1028,6 +1097,7 @@
 		D6ADC8CA1D3A52DB0073EAE4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6E450591D462F2400C5692E /* Equipment */,
 				D67C53AF1D4359D500D377B8 /* Activity */,
 				D61A99141D4240A00009DBFD /* Community */,
 				D6ADC8CE1D3A52DB0073EAE4 /* LiShiTabBar.h */,
@@ -1035,27 +1105,6 @@
 				D6ADC8D01D3A52DB0073EAE4 /* MyTableViewCell.h */,
 				D6ADC8D11D3A52DB0073EAE4 /* MyTableViewCell.m */,
 				D6ADC8D21D3A52DB0073EAE4 /* MyTableViewCell.xib */,
-				D63370A41D41FB9B004D5E20 /* ToolsTableViewCell.h */,
-				D63370A51D41FB9B004D5E20 /* ToolsTableViewCell.m */,
-				D63370A61D41FB9B004D5E20 /* ToolsTableViewCell.xib */,
-				D63370A71D41FB9B004D5E20 /* EquipDetailCollectionViewCell.h */,
-				D63370A81D41FB9B004D5E20 /* EquipDetailCollectionViewCell.m */,
-				D63370A91D41FB9B004D5E20 /* EquipDetailCollectionViewCell.xib */,
-				D63370AA1D41FB9B004D5E20 /* ClothDetailTableViewCell.h */,
-				D63370AB1D41FB9B004D5E20 /* ClothDetailTableViewCell.m */,
-				D63370AC1D41FB9B004D5E20 /* ClothDetailTableViewCell.xib */,
-				D63370AD1D41FB9B004D5E20 /* JoinStyleTableViewCell.h */,
-				D63370AE1D41FB9B004D5E20 /* JoinStyleTableViewCell.m */,
-				D63370AF1D41FB9B004D5E20 /* JoinStyleTableViewCell.xib */,
-				D6E4503A1D45FB7A00C5692E /* LikeNumCollectionViewCell.h */,
-				D6E4503B1D45FB7A00C5692E /* LikeNumCollectionViewCell.m */,
-				D6E4503C1D45FB7A00C5692E /* LikeNumCollectionViewCell.xib */,
-				D6E4503D1D45FB7A00C5692E /* MoreFreeTableViewCell.h */,
-				D6E4503E1D45FB7A00C5692E /* MoreFreeTableViewCell.m */,
-				D6E4503F1D45FB7A00C5692E /* MoreFreeTableViewCell.xib */,
-				D6E450401D45FB7A00C5692E /* MoreFreeDetailTableViewCell.h */,
-				D6E450411D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m */,
-				D6E450421D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1209,16 +1258,24 @@
 			children = (
 				D6ADC8B81D3A52DB0073EAE4 /* EquipViewController.h */,
 				D6ADC8B91D3A52DB0073EAE4 /* EquipViewController.m */,
+				D633709E1D41FB44004D5E20 /* ClothDetailViewController.h */,
+				D633709F1D41FB44004D5E20 /* ClothDetailViewController.m */,
+				D6E450491D45FBD600C5692E /* MoreFreeViewController.h */,
+				D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */,
 				D63370981D41FB44004D5E20 /* EquipTypeViewController.h */,
 				D63370991D41FB44004D5E20 /* EquipTypeViewController.m */,
 				D633709A1D41FB44004D5E20 /* EquipDetailViewController.h */,
 				D633709B1D41FB44004D5E20 /* EquipDetailViewController.m */,
 				D633709C1D41FB44004D5E20 /* SportClothViewController.h */,
 				D633709D1D41FB44004D5E20 /* SportClothViewController.m */,
-				D633709E1D41FB44004D5E20 /* ClothDetailViewController.h */,
-				D633709F1D41FB44004D5E20 /* ClothDetailViewController.m */,
-				D6E450491D45FBD600C5692E /* MoreFreeViewController.h */,
-				D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */,
+				D6E450501D4611B200C5692E /* BuySportViewController.h */,
+				D6E450511D4611B200C5692E /* BuySportViewController.m */,
+				D6E0AB8D1D484973003C798B /* BuyEquipViewController.h */,
+				D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */,
+				D6F53F041D4760F100BBE710 /* ShopViewController.h */,
+				D6F53F051D4760F100BBE710 /* ShopViewController.m */,
+				D6E0AB8A1D4844DC003C798B /* OutDoorShopViewController.h */,
+				D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -1234,10 +1291,14 @@
 				D63370B91D41FBDE004D5E20 /* EquipDetailRequest.m */,
 				D63370BB1D41FCA5004D5E20 /* SportClothRequest.h */,
 				D63370BC1D41FCA5004D5E20 /* SportClothRequest.m */,
+				D6E450561D46197800C5692E /* BuySportRequest.h */,
+				D6E450571D46197800C5692E /* BuySportRequest.m */,
 				D63370BE1D41FCDD004D5E20 /* FlClothRequest.h */,
 				D63370BF1D41FCDD004D5E20 /* FlClothRequest.m */,
 				D6E450371D45FB5200C5692E /* MoreFreeRequest.h */,
 				D6E450381D45FB5200C5692E /* MoreFreeRequest.m */,
+				D6F53F011D475A9B00BBE710 /* ShopRequest.h */,
+				D6F53F021D475A9B00BBE710 /* ShopRequest.m */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -1267,6 +1328,12 @@
 				D63370C41D41FE26004D5E20 /* EquipDetailModel.m */,
 				D63370C51D41FE26004D5E20 /* SportClothModel.h */,
 				D63370C61D41FE26004D5E20 /* SportClothModel.m */,
+				D6E450531D46139F00C5692E /* BuySportModel.h */,
+				D6E450541D46139F00C5692E /* BuySportModel.m */,
+				D6E450681D4658FC00C5692E /* zhuangBeiPicModel.h */,
+				D6E450691D4658FC00C5692E /* zhuangBeiPicModel.m */,
+				D6E4506B1D465A4100C5692E /* TextTureModel.h */,
+				D6E4506C1D465A4100C5692E /* TextTureModel.m */,
 				D63370CA1D41FE3F004D5E20 /* LikeNumModel.h */,
 				D63370CB1D41FE3F004D5E20 /* LikeNumModel.m */,
 				D63370CC1D41FE3F004D5E20 /* LikeListModel.h */,
@@ -1277,6 +1344,8 @@
 				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
 				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
 				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
+				D6F53EFE1D47594C00BBE710 /* ShopModel.h */,
+				D6F53EFF1D47594C00BBE710 /* ShopModel.m */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -1284,6 +1353,14 @@
 		D6E4504F1D460AC600C5692E /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
+				D6F53F131D47A4F300BBE710 /* star.png */,
+				D6F53F111D47A46100BBE710 /* star1.png */,
+				D6F53F0F1D47A40500BBE710 /* destination.png */,
+				D6F53EFC1D47550D00BBE710 /* 分享.png */,
+				D6F53EF61D473DAB00BBE710 /* 喜欢.png */,
+				D6F53EF71D473DAB00BBE710 /* 喜欢1.png */,
+				D6F53EF41D473CE900BBE710 /* 购物车.png */,
+				D6E450661D464C9100C5692E /* 信息.png */,
 				D63370D31D420471004D5E20 /* 围观.png */,
 				D63370D41D420471004D5E20 /* 时间.png */,
 				D63370D51D420471004D5E20 /* 回复.png */,
@@ -1295,6 +1372,48 @@
 				D6ADC8FA1D3A52DB0073EAE4 /* 1.png */,
 				D6ADC8FC1D3A52DB0073EAE4 /* 2.png */,
 				D6ADC8FE1D3A52DB0073EAE4 /* 32.png */,
+			);
+			name = Equipment;
+			sourceTree = "<group>";
+		};
+		D6E450591D462F2400C5692E /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				D6F53EF11D473A4500BBE710 /* BuySportTabBar.h */,
+				D6F53EF21D473A4500BBE710 /* BuySportTabBar.m */,
+				D63370A41D41FB9B004D5E20 /* ToolsTableViewCell.h */,
+				D63370A51D41FB9B004D5E20 /* ToolsTableViewCell.m */,
+				D63370A61D41FB9B004D5E20 /* ToolsTableViewCell.xib */,
+				D63370A71D41FB9B004D5E20 /* EquipDetailCollectionViewCell.h */,
+				D63370A81D41FB9B004D5E20 /* EquipDetailCollectionViewCell.m */,
+				D63370A91D41FB9B004D5E20 /* EquipDetailCollectionViewCell.xib */,
+				D63370AA1D41FB9B004D5E20 /* ClothDetailTableViewCell.h */,
+				D63370AB1D41FB9B004D5E20 /* ClothDetailTableViewCell.m */,
+				D63370AC1D41FB9B004D5E20 /* ClothDetailTableViewCell.xib */,
+				D63370AD1D41FB9B004D5E20 /* JoinStyleTableViewCell.h */,
+				D63370AE1D41FB9B004D5E20 /* JoinStyleTableViewCell.m */,
+				D63370AF1D41FB9B004D5E20 /* JoinStyleTableViewCell.xib */,
+				D6E4503A1D45FB7A00C5692E /* LikeNumCollectionViewCell.h */,
+				D6E4503B1D45FB7A00C5692E /* LikeNumCollectionViewCell.m */,
+				D6E4503C1D45FB7A00C5692E /* LikeNumCollectionViewCell.xib */,
+				D6E4503D1D45FB7A00C5692E /* MoreFreeTableViewCell.h */,
+				D6E4503E1D45FB7A00C5692E /* MoreFreeTableViewCell.m */,
+				D6E4503F1D45FB7A00C5692E /* MoreFreeTableViewCell.xib */,
+				D6E450401D45FB7A00C5692E /* MoreFreeDetailTableViewCell.h */,
+				D6E450411D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m */,
+				D6E450421D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib */,
+				D6E4505A1D462F6400C5692E /* BuySportTableViewCell.h */,
+				D6E4505B1D462F6400C5692E /* BuySportTableViewCell.m */,
+				D6E4505C1D462F6400C5692E /* BuySportTableViewCell.xib */,
+				D6E4505F1D4645D700C5692E /* BuySportPicTableViewCell.h */,
+				D6E450601D4645D700C5692E /* BuySportPicTableViewCell.m */,
+				D6E450611D4645D700C5692E /* BuySportPicTableViewCell.xib */,
+				D6F53F0A1D47A1FC00BBE710 /* ShopTableViewCell.h */,
+				D6F53F0B1D47A1FC00BBE710 /* ShopTableViewCell.m */,
+				D6F53F0C1D47A1FC00BBE710 /* ShopTableViewCell.xib */,
+				D6E0AB901D48603A003C798B /* SportPicTableViewCell.h */,
+				D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */,
+				D6E0AB921D48603A003C798B /* SportPicTableViewCell.xib */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -1367,6 +1486,7 @@
 				D61A99691D4244130009DBFD /* dianzan.png in Resources */,
 				D6ADC9501D3A52DB0073EAE4 /* IMG_5530.jpg in Resources */,
 				D61A99621D4244130009DBFD /* IMG_5525.jpg in Resources */,
+				D6F53F0E1D47A1FC00BBE710 /* ShopTableViewCell.xib in Resources */,
 				D61A996F1D4244130009DBFD /* community.png in Resources */,
 				C241EDBA1D439A42005162C5 /* OpinionViewController.xib in Resources */,
 				D6ADC9561D3A52DB0073EAE4 /* activity.png in Resources */,
@@ -1375,19 +1495,26 @@
 				D6ADC94B1D3A52DB0073EAE4 /* IMG_5525.jpg in Resources */,
 				D6ADC95F1D3A52DB0073EAE4 /* qingchu.png in Resources */,
 				D61A99641D4244130009DBFD /* IMG_5527.jpg in Resources */,
+				D6E450671D464C9100C5692E /* 信息.png in Resources */,
 				D6ADC94A1D3A52DB0073EAE4 /* IMG_5524.jpg in Resources */,
 				D6ADC9321D3A52DB0073EAE4 /* MyTableViewCell.xib in Resources */,
+				D6F53EF81D473DAB00BBE710 /* 喜欢.png in Resources */,
 				D6ADC9481D3A52DB0073EAE4 /* 32.png in Resources */,
 				D61A996A1D4244130009DBFD /* huwaifan.png in Resources */,
 				D6ADC9441D3A52DB0073EAE4 /* 1.png in Resources */,
 				D61A99711D4244130009DBFD /* equip.png in Resources */,
 				D61A99631D4244130009DBFD /* IMG_5526.jpg in Resources */,
 				D61A998A1D42443F0009DBFD /* AttentionDetailTableViewCell.xib in Resources */,
+				D6F53EFD1D47550D00BBE710 /* 分享.png in Resources */,
 				D6ADC9551D3A52DB0073EAE4 /* huodong.png in Resources */,
+				D6F53F141D47A4F300BBE710 /* star.png in Resources */,
 				D61A998C1D42443F0009DBFD /* MyAttentionTableViewCell.xib in Resources */,
 				D61A99661D4244130009DBFD /* IMG_5529.jpg in Resources */,
+				D6E4505E1D462F6400C5692E /* BuySportTableViewCell.xib in Resources */,
+				D6F53EF51D473CE900BBE710 /* 购物车.png in Resources */,
 				D61A99781D4244130009DBFD /* Resources.bundle in Resources */,
 				D67C538A1D43597B00D377B8 /* bg_eventlistcell.png in Resources */,
+				D6E450631D4645D700C5692E /* BuySportPicTableViewCell.xib in Resources */,
 				D6E450461D45FB7A00C5692E /* MoreFreeTableViewCell.xib in Resources */,
 				D61A992E1D4240A00009DBFD /* CommunityLuyingVideoCell.xib in Resources */,
 				D63370B71D41FB9B004D5E20 /* JoinStyleTableViewCell.xib in Resources */,
@@ -1402,6 +1529,7 @@
 				D63370D61D420471004D5E20 /* 围观.png in Resources */,
 				C241EDAE1D437600005162C5 /* ReplyTableViewCell.xib in Resources */,
 				D6E450481D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib in Resources */,
+				D6F53F121D47A46100BBE710 /* star1.png in Resources */,
 				D6E450441D45FB7A00C5692E /* LikeNumCollectionViewCell.xib in Resources */,
 				D61A998E1D42443F0009DBFD /* RecommendUserTableViewCell.xib in Resources */,
 				D61A99701D4244130009DBFD /* community_Select.png in Resources */,
@@ -1414,6 +1542,7 @@
 				C231C6271D361AAA009BB26B /* LaunchScreen.storyboard in Resources */,
 				D61A99281D4240A00009DBFD /* ComDetailFirstCell.xib in Resources */,
 				D61A99791D4244130009DBFD /* sheying.jpg in Resources */,
+				D6E0AB941D48603A003C798B /* SportPicTableViewCell.xib in Resources */,
 				D6ADC95B1D3A52DB0073EAE4 /* equip_Select.png in Resources */,
 				D6ADC9491D3A52DB0073EAE4 /* IMG_5523.jpg in Resources */,
 				D6ADC95A1D3A52DB0073EAE4 /* equip.png in Resources */,
@@ -1434,6 +1563,7 @@
 				D63370D81D420471004D5E20 /* 回复.png in Resources */,
 				D61A992C1D4240A00009DBFD /* CommunityLuyingCell.xib in Resources */,
 				D61A99731D4244130009DBFD /* My.png in Resources */,
+				D6F53EF91D473DAB00BBE710 /* 喜欢1.png in Resources */,
 				D63370B51D41FB9B004D5E20 /* ClothDetailTableViewCell.xib in Resources */,
 				D61A99321D4240A00009DBFD /* VideoTableViewCell.xib in Resources */,
 				D61A99601D4244130009DBFD /* IMG_5523.jpg in Resources */,
@@ -1446,6 +1576,7 @@
 				D6ADC94F1D3A52DB0073EAE4 /* IMG_5529.jpg in Resources */,
 				D6E450341D45FAF100C5692E /* 点赞.png in Resources */,
 				D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */,
+				D6F53F101D47A40500BBE710 /* destination.png in Resources */,
 				D61A996B1D4244130009DBFD /* loadImg.png in Resources */,
 				D61A99671D4244130009DBFD /* IMG_5530.jpg in Resources */,
 				D61A997B1D4244130009DBFD /* tubu.jpg in Resources */,
@@ -1513,6 +1644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E450621D4645D700C5692E /* BuySportPicTableViewCell.m in Sources */,
 				D61A98ED1D423E8B0009DBFD /* PandengViewController.m in Sources */,
 				C25ADAE01D3DBE3400BD1ED6 /* RegisterRequest.m in Sources */,
 				C25ADADE1D3DBE3400BD1ED6 /* LoginRequest.m in Sources */,
@@ -1531,12 +1663,15 @@
 				D61A99291D4240A00009DBFD /* CommunityHeaderCell.m in Sources */,
 				D63370B61D41FB9B004D5E20 /* JoinStyleTableViewCell.m in Sources */,
 				D61A98EC1D423E8B0009DBFD /* MoreListViewController.m in Sources */,
+				D6E0AB8F1D484973003C798B /* BuyEquipViewController.m in Sources */,
 				D6E450301D45FAA300C5692E /* TopicImagelistModel.m in Sources */,
 				D61A993C1D4243CD0009DBFD /* CommunityDetailModel.m in Sources */,
 				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
 				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
+				D6F53F061D4760F100BBE710 /* ShopViewController.m in Sources */,
 				D6E4502F1D45FAA300C5692E /* MoreFreeDetailModel.m in Sources */,
 				C241EDAC1D437600005162C5 /* TopicDetailTableViewCell.m in Sources */,
+				D6E4506D1D465A4100C5692E /* TextTureModel.m in Sources */,
 				D61A99D01D42456E0009DBFD /* MJRefreshBackNormalFooter.m in Sources */,
 				C241EDAD1D437600005162C5 /* ReplyTableViewCell.m in Sources */,
 				C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */,
@@ -1581,15 +1716,22 @@
 				D61A993D1D4243CD0009DBFD /* CommunityHeaderModel.m in Sources */,
 				D61A98EF1D423E8B0009DBFD /* UIScrollView+_DScrollView.m in Sources */,
 				D61A99D61D42456E0009DBFD /* MJRefreshConst.m in Sources */,
+				D6F53F031D475A9B00BBE710 /* ShopRequest.m in Sources */,
+				D6F53EF31D473A4500BBE710 /* BuySportTabBar.m in Sources */,
 				D61A98E71D423E8B0009DBFD /* CommunityDetailViewController.m in Sources */,
+				D6E0AB8C1D4844DC003C798B /* OutDoorShopViewController.m in Sources */,
+				D6E450551D46139F00C5692E /* BuySportModel.m in Sources */,
 				C241EDA21D4375AB005162C5 /* TopicsDetailModel.m in Sources */,
 				C2D4DA781D40EBE200A9A3BE /* MyAttentionModel.m in Sources */,
 				D67C53A01D4359A500D377B8 /* ActivityDetailRequest.m in Sources */,
+				D6E4506A1D4658FC00C5692E /* zhuangBeiPicModel.m in Sources */,
 				D61A99CC1D42456E0009DBFD /* MJRefreshAutoGifFooter.m in Sources */,
 				D61A99D71D42456E0009DBFD /* NSBundle+MJRefresh.m in Sources */,
+				D6F53F001D47594C00BBE710 /* ShopModel.m in Sources */,
 				D6ADC93E1D3A52DB0073EAE4 /* JFModel.m in Sources */,
 				D61A99D81D42456E0009DBFD /* UIScrollView+MJExtension.m in Sources */,
 				D61A998B1D42443F0009DBFD /* MyAttentionTableViewCell.m in Sources */,
+				D6E450521D4611B200C5692E /* BuySportViewController.m in Sources */,
 				D6ADC9371D3A52DB0073EAE4 /* ExchangeRequest.m in Sources */,
 				D67C53AB1D4359B100D377B8 /* ActivityDetailViewController.m in Sources */,
 				D67C53AD1D4359B100D377B8 /* ActivityIntroduceViewController.m in Sources */,
@@ -1597,6 +1739,8 @@
 				D61A99D41D42456E0009DBFD /* MJRefreshStateHeader.m in Sources */,
 				D6ADC93D1D3A52DB0073EAE4 /* FLModel.m in Sources */,
 				C241EDB91D439A42005162C5 /* OpinionViewController.m in Sources */,
+				D6E450581D46197800C5692E /* BuySportRequest.m in Sources */,
+				D6E0AB931D48603A003C798B /* SportPicTableViewCell.m in Sources */,
 				D67C53A11D4359A500D377B8 /* ActivityRequest.m in Sources */,
 				D6ADC9311D3A52DB0073EAE4 /* MyTableViewCell.m in Sources */,
 				D6ADC92B1D3A52DB0073EAE4 /* RootViewController.m in Sources */,
@@ -1632,9 +1776,11 @@
 				D63370D21D41FECE004D5E20 /* FLClothModel.m in Sources */,
 				D61A99D91D42456E0009DBFD /* UIScrollView+MJRefresh.m in Sources */,
 				D6ADC9381D3A52DB0073EAE4 /* NetWorkRequest.m in Sources */,
+				D6F53F0D1D47A1FC00BBE710 /* ShopTableViewCell.m in Sources */,
 				D63370C81D41FE26004D5E20 /* EquipDetailModel.m in Sources */,
 				D61A98EB1D423E8B0009DBFD /* LuyingViewController.m in Sources */,
 				D61A998D1D42443F0009DBFD /* RecommendUserTableViewCell.m in Sources */,
+				D6E4505D1D462F6400C5692E /* BuySportTableViewCell.m in Sources */,
 				D6E450451D45FB7A00C5692E /* MoreFreeTableViewCell.m in Sources */,
 				C241ED9D1D437560005162C5 /* TopicDetailRequest.m in Sources */,
 			);

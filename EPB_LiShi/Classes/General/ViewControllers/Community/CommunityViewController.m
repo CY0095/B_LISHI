@@ -74,7 +74,7 @@
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.communityListArray addObject:model];
         }
-        NSLog(@"communityListArray == %@",weakSelf.communityListArray);
+//        NSLog(@"communityListArray == %@",weakSelf.communityListArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
