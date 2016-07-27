@@ -49,10 +49,18 @@ SDCycleScrollViewDelegate
 
 @property(strong,nonatomic) ActivityModel *activityModel;
 
+@property(assign,nonatomic) double latitude;
+
+@property(assign,nonatomic) double longitude;
+// 地理编码和反编码需要使用的属性
+@property(strong,nonatomic) CLGeocoder *geocoder;
 
 @end
 
 @implementation ActivityViewController
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,16 +70,17 @@ SDCycleScrollViewDelegate
     // 设置代理
     self.mapView.delegate = self;
     
-    
+    self.geocoder = [[CLGeocoder alloc] init];
     
     // 1、创建位置管理器(定位用户设置)，创建完毕之后，是不会开启定位功能，因为特别耗电，如果想要开启定位，需要调用方法
     self.locMgr = [[CLLocationManager alloc] init];
     // 2、设置代理
     self.locMgr.delegate = self;
     // 设置定位的精度
+    self.locMgr.distanceFilter = 10;
     self.locMgr.desiredAccuracy = kCLLocationAccuracyBest; // 最精确
     // 授权
-    [self.locMgr requestWhenInUseAuthorization]; // 需要时候授权
+    [self.locMgr requestAlwaysAuthorization];
     // 开启定位
     [self.locMgr startUpdatingLocation];
     
@@ -86,14 +95,23 @@ SDCycleScrollViewDelegate
     [self requestActivityData];
     
     
+    [self mapTitle];
+    
+    
+    
 }
+
+-(void)mapTitle{
+    
+    }
 
 
 
 -(void)requestActivityData{
     __weak typeof(self) weakSelf = self;
     ActivityRequest *request = [[ActivityRequest alloc] init];
-    [request ActivityRequestParameter:nil success:^(NSDictionary *dic) {
+    
+    [request ActivityRequestWithLongitude:[NSString stringWithFormat:@"%f",self.longitude] latitude:[NSString stringWithFormat:@"%f",self.latitude] parameter:nil success:^(NSDictionary *dic) {
         
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         
@@ -122,13 +140,23 @@ SDCycleScrollViewDelegate
             [self cycleImage];
         });
         
-        
     } failure:^(NSError *error) {
         NSLog(@"Activity error = %@",error);
     }];
     
     
+    
+    
+    
 }
+
+
+
+
+
+
+
+
 
 
 -(void)cycleImage{
@@ -152,13 +180,39 @@ SDCycleScrollViewDelegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     
-    CLLocation *location = [locations firstObject]; // 取出第一个位置
+    // 获取定位的位置信息
+    CLLocation *location = locations.lastObject;
     
-    self.coordinate = location.coordinate; // 位置坐标
+    // 位置中的经纬度
+    // 纬度
+    self.latitude = location.coordinate.latitude;
+    // 经度
+    self.longitude = location.coordinate.longitude;
+    // 海拔高度
+    double altitude = location.altitude;
+    // 航向(正北方向为0，取值范围0~359.9°)
+    double course = location.course;
+    // 速度
+    double speed = location.speed;
+    // 当地标准时间
+    NSDate *time = location.timestamp;
     
-    NSLog(@"经度 %f，纬度 %f",self.coordinate.longitude,self.coordinate.latitude);
     
-    // 如果不需要实时定位，需要关闭定位服务
+    NSLog(@"%f",self.latitude);
+    
+    CLLocation *location1 = [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
+    NSLog(@"-----------------%f",self.latitude);
+    NSLog(@"-----------------%f",self.longitude);
+    [self.geocoder reverseGeocodeLocation:location1 completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        CLPlacemark *placeMark = placemarks.firstObject;
+        NSString *city = [placeMark.addressDictionary objectForKey:@"State"];
+        self.title = city;
+    }];
+
+    
+    
+    // 通常为了节省电量和资源损耗，在获取到位置以后选择停止定位服务
     [self.locMgr stopUpdatingLocation];
 }
 

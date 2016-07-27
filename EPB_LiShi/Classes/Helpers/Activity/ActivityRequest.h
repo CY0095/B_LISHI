@@ -14,5 +14,8 @@
 -(void)ActivityRequestParameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure;
 
 
+-(void)ActivityRequestWithLongitude:(NSString *)longitude latitude:(NSString *)latitude parameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure;
+
+
 
 @end

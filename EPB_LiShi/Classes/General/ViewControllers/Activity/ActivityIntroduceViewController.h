@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ActivityDetailModel.h"
+#import "RootViewController.h"
 
 @interface ActivityIntroduceViewController : UIViewController
 
 @property(strong,nonatomic) ActivityDetailModel *model;
+
+@property (strong, nonatomic)RootViewController *rootVC;
 
 @end
