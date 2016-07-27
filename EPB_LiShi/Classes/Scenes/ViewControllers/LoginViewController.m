@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginRequest.h"
 #import "RegisterViewController.h"
+#import "MBProgressHUD.h"
 @interface LoginViewController ()
 @property(strong,nonatomic) UIImageView *backgroundImgView;
 @property(strong,nonatomic) UIView *backgroundView;
@@ -113,6 +114,7 @@
         [self presentViewController:alertC animated:YES completion:nil];
     }else{
         // 登录
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[LoginRequest shareLoginRequest] loginRequestWithUsername:self.usernameField.text passWord:self.passwordField.text success:^(NSDictionary *dic) {
             NSString *status = [dic objectForKey:@"status"];
             if ([status isEqualToString:@"OK"]) {
@@ -136,16 +138,19 @@
                         [self.navigationController popViewControllerAnimated:YES];
                     }];
                     [alertC addAction:okaction];
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                     [self presentViewController:alertC animated:YES completion:nil];
                     
                 });
             }else{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
                 UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"登录失败,请重试" preferredStyle:(UIAlertControllerStyleAlert)];
                 UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:nil];
                 [alertC addAction:okaction];
                 [self presentViewController:alertC animated:YES completion:nil];
             }
         } failure:^(NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"error = %@",error);
             UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"登录失败,请重试" preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:nil];

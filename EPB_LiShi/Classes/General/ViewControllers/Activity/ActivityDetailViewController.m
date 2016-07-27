@@ -61,9 +61,25 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    // 查找rootViewController
+    self.rootVC = (RootViewController *)[[[UIApplication sharedApplication] windows] objectAtIndex:1].rootViewController;
     
     [self CycleDetailRequest];
     [self ActivityDetailRequest];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
+    
 }
 
 
@@ -313,6 +329,7 @@
     ActivityIntroduceViewController *introducnVC = [ActivityIntroduceViewController new];
     
     introducnVC.model = self.model;
+    
     NSLog(@"%@",introducnVC.model);
     
     [self.navigationController pushViewController:introducnVC animated:YES];

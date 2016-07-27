@@ -129,7 +129,41 @@
         failure(error);
     }];
 }
+- (void)CollectionViewCellRequestWithParameter:(NSDictionary *)parameterDic
+                                       success:(SuccessResponse)success
+                                       failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request requestWithUrl:CommunityAllCollectionViewRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+    
+}
 
-
-
+- (void)CommunityAllListViewRequestWithParameter:(NSDictionary *)parameterDic
+                                         success:(SuccessResponse)success
+                                         failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    NSString *club_id = [parameterDic objectForKey:@"club_id"];
+    NSString *user_id = [parameterDic objectForKey:@"user_id"];
+    [request requestWithUrl:CommunityAllListRequest_Url(club_id, user_id) parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+- (void)CommunityAllListHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
+                                               success:(SuccessResponse)success
+                                               failure:(FailureResponse)failure {
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    NSString *club_id = [parameterDic objectForKey:@"club_id"];
+    NSString *user_id = [parameterDic objectForKey:@"user_id"];
+    [request requestWithUrl:CommunityAllListHeaderRequest_Url(club_id, user_id) parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end

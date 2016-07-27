@@ -293,7 +293,7 @@
             </objects>
             <point key="canvasLocation" x="-362" y="126"/>
         </scene>
-        <!--活动-->
+        <!--Activity View Controller-->
         <scene sceneID="j12-Na-5u5">
             <objects>
                 <viewController id="n6H-AE-2r9" customClass="ActivityViewController" sceneMemberID="viewController">
@@ -314,7 +314,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.25925117910000001" blue="0.32440104130000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rmb-uB-aDI" firstAttribute="top" secondItem="Gck-RY-r6m" secondAttribute="bottom" constant="49" id="1Jg-aC-yGk"/>
                             <constraint firstItem="Gck-RY-r6m" firstAttribute="leading" secondItem="8po-hW-XHa" secondAttribute="leading" id="gvs-Lb-Q7f"/>
@@ -322,7 +322,7 @@
                             <constraint firstItem="Gck-RY-r6m" firstAttribute="top" secondItem="sGa-Y9-MCC" secondAttribute="bottom" id="xMb-g6-fAw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="活动" id="eZo-zh-GBY"/>
+                    <navigationItem key="navigationItem" id="eZo-zh-GBY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="ActivityTableView" destination="Gck-RY-r6m" id="BMw-WM-zvn"/>

@@ -25,4 +25,20 @@
 }
 
 
+
+
+-(void)ActivityRequestWithLongitude:(NSString *)longitude latitude:(NSString *)latitude parameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
+    
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    
+    [request requestWithUrl:ActivityRequest_Url(latitude, longitude) parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+    
+    
+}
+
+
 @end

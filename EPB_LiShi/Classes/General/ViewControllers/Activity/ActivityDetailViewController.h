@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
 @interface ActivityDetailViewController : UIViewController
 
 @property(strong,nonatomic) NSString *DetailIDString;
+
+@property (strong, nonatomic)RootViewController *rootVC;
 
 @end
