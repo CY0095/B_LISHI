@@ -11,6 +11,7 @@
 #import "AttentionDetailTableViewCell.h"
 #import "UserDetailRequest.h"
 #import "TopicDetailViewController.h"
+#import "PostViewController.h"
 @interface AttentionDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic)UITableView *attentionDetailTableView;
 @property(strong,nonatomic)UIView *headView;// tableView的头视图
@@ -160,8 +161,15 @@
         topicVC.topics_id = model.topic_id;
         NSLog(@"topics_id = %@",topicVC.topics_id);
         [self.navigationController pushViewController:topicVC animated:YES];
+    }else if(model.category == 0){
+        PostViewController *postVC = [[PostViewController alloc] init];
+        postVC.topic_id = model.topic_id;
+        [self.navigationController pushViewController:postVC animated:YES];
+        NSLog(@"topics_id = %@",postVC.topic_id);
+    }else{
+        NSLog(@"待定中。。。。。。");
     }
-    NSLog(@"待定中。。。。。。");
+    
 }
 
 - (void)didReceiveMemoryWarning {

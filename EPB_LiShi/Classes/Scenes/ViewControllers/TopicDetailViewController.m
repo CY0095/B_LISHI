@@ -12,7 +12,9 @@
 #import "TopicsDetailModel.h"
 #import "ReplyModel.h"
 #import "ReplyTableViewCell.h"
-@interface TopicDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import <UMSocial.h>
+#import "LoginViewController.h"
+@interface TopicDetailViewController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate>
 @property (strong, nonatomic) UITableView *topicTableView;
 @property (strong, nonatomic) UIView *headView;
 @property (strong, nonatomic) UIImageView *userHeadImg;
@@ -28,6 +30,8 @@
 @property (strong, nonatomic) UIView *putInView;
 @property (strong, nonatomic) UITextField *textField;
 @property (strong, nonatomic) UIButton *publishBtn;
+// 分享的标题
+@property (strong, nonatomic) NSString *shareTitle;
 @end
 
 @implementation TopicDetailViewController
@@ -35,13 +39,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self drawView];
+    [self addRightBtn];// 添加右按钮
     // 注册cell
     [self.topicTableView registerClass:[TopicDetailTableViewCell class] forCellReuseIdentifier:TopicDetailTableViewCell_Identify];
     [self.topicTableView registerNib:[UINib nibWithNibName:@"ReplyTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ReplyTableViewCell_Identify];
-    // 初始化数组
-    self.dataArray = [NSMutableArray array];
-    self.replyArray = [NSMutableArray array];
-    [self topicsRequest];
+
+    [self topicsRequest];// 请求数据
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -51,15 +54,21 @@
     // 添加观察者
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 }
+
+// 添加右按钮
+-(void)addRightBtn{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"fenxiang"] style:(UIBarButtonItemStylePlain) target:self action:@selector(shareAction)];
+}
+
 // 绘制底部输入框
 -(void)drawPutinView{
     self.putInView = [[UIView alloc] initWithFrame:CGRectMake(0, WindowHeight - 50, WindownWidth, 50)];
-    self.putInView.backgroundColor = [UIColor clearColor];
+    self.putInView.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
     // 创建模糊View
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:(UIBlurEffectStyleLight)]];
+    // UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:(UIBlurEffectStyleLight)]];
     // 设定模糊View的尺寸
-    effectView.frame = self.putInView.bounds;
-    [self.putInView addSubview:effectView];
+    // effectView.frame = self.putInView.bounds;
+    // [self.putInView addSubview:effectView];
     
     [self.view addSubview:self.putInView];
     // 添加发送按钮
@@ -85,24 +94,40 @@
     // 移除观察者
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 }
+#pragma mark ------ 发表评论方法
 // 发表评论方法
 -(void)publishReolyAction:(UIButton *)button{
-    if (self.textField.text.length != 0) {
-        NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
-        [[TopicDetailRequest shareTopicDetailRequest] commentRequestWithContent:self.textField.text topics_id:self.topics_id user_id:user_id success:^(NSDictionary *dic) {
-            NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:error preferredStyle:(UIAlertControllerStyleAlert)];
-                UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                    self.textField.text = @"";
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.topicTableView reloadData];
-                    });
-                }];
-                [alertC addAction:okaction];
-                [self presentViewController:alertC animated:YES completion:nil];
-            });
-        } failure:^(NSError *error) {
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSLog(@"user _id = %@========",user_id);
+    if (user_id) {
+        if (self.textField.text.length != 0) {
+            NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+            [[TopicDetailRequest shareTopicDetailRequest] commentRequestWithContent:self.textField.text topics_id:self.topics_id user_id:user_id success:^(NSDictionary *dic) {
+                NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:error preferredStyle:(UIAlertControllerStyleAlert)];
+                    UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                        self.textField.text = @"";
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self topicsRequest];
+                        });
+                    }];
+                    [alertC addAction:okaction];
+                    [self presentViewController:alertC animated:YES completion:nil];
+                });
+            } failure:^(NSError *error) {
+                
+            }];
+        }
+    }else{
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有登录" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"去登录" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            LoginViewController *loginVC = [[LoginViewController alloc] init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }];
+        [alertC addAction:okaction];
+        
+        [self presentViewController:alertC animated:YES completion:^{
             
         }];
     }
@@ -129,7 +154,7 @@
         //2.修改tableView的高度
         // _tableView.height = _bottomView.top;
     } completion:^(BOOL finished) {
-        // [self tableViewScrollToBottom];
+        [self tableViewScrollToBottom];
     }];
     
     
@@ -137,7 +162,7 @@
 
 // 界面绘制
 -(void)drawView{
-    self.topicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 51) style:(UITableViewStylePlain)];
+    self.topicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 106) style:(UITableViewStylePlain)];
     self.topicTableView.backgroundColor = [UIColor colorWithRed:220 /255.0 green:219 / 255.0 blue:195 / 255.0 alpha:1];
     self.topicTableView.delegate = self;
     self.topicTableView.dataSource = self;
@@ -145,7 +170,7 @@
     UIView *tableHeadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, WindowHeight / 9 *2)];// tableView的头部视图
     tableHeadView.backgroundColor = [UIColor whiteColor];
     self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, WindowHeight / 9)];
-    self.headView.backgroundColor = [UIColor whiteColor];
+    self.headView.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
     // 头视图底部线条
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth - 10, 1)];
     lineView.backgroundColor = [UIColor grayColor];
@@ -166,8 +191,8 @@
     [self.headView addSubview:self.nicknameLabel];
     // 楼主图片
     UIImageView *louzhuImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
-    louzhuImg.center = CGPointMake(WindowHeight / 18 + 20 + 10 , self.headView.center.y + WindowHeight / 72);
-    louzhuImg.image = [UIImage imageNamed:@"louzhu.jpg"];
+    louzhuImg.center = CGPointMake(WindowHeight / 18 + 20 + 10 + 5 , self.headView.center.y + WindowHeight / 72);
+    louzhuImg.image = [UIImage imageNamed:@"louzhu.png"];
     [self.headView addSubview:louzhuImg];
     // 关注按钮
     self.attentionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -199,12 +224,21 @@
     [self.headView addSubview:self.attentionBtn];
     [self.view addSubview:self.topicTableView];
 }
+#pragma mark ------ 请求数据
 // 请求数据
 -(void)topicsRequest{
+    // 初始化数组
+    self.dataArray = [NSMutableArray array];
+    self.replyArray = [NSMutableArray array];
+    __weak typeof(self) weakSelf = self;
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (!user_id) {
+        user_id = @"0";
+    }
     [[TopicDetailRequest shareTopicDetailRequest] topicDetailRequestWithTopics_id:self.topics_id user_id:user_id success:^(NSDictionary *dic) {
         NSDictionary *data = [dic objectForKey:@"data"];
         NSString *title = [data objectForKey:@"title"];
+        weakSelf.shareTitle = title;
         NSString *nickname = [data objectForKey:@"nickname"];
         NSString *headicon = [data objectForKey:@"headicon"];
         NSString *createtime = [data objectForKey:@"createtime"];
@@ -272,7 +306,7 @@
     if (section == 1) {
         return @"精彩评论";
     }else{
-        return @"---";
+        return @"";
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -287,6 +321,39 @@
 }
 
 #pragma mark ------ 使tableView滑到底部
+- (void)tableViewScrollToBottom
+{
+    // self.replyArray为存放数据的数组
+    if (self.replyArray.count > 0) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.replyArray.count-1) inSection:1];
+        [self.topicTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+}
+
+
+#pragma mark ------ 第三方分享
+// 分享按钮方法
+-(void)shareAction{
+    
+    [UMSocialData defaultData].extConfig.title = @"分享的title";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5795790567e58eb0bc00128f"
+                                      shareText:self.shareTitle
+                                     shareImage:[UIImage imageNamed:@"IMG_5523.jpg"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                       delegate:self];
+}
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];

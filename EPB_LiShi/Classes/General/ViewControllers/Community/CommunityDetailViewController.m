@@ -102,7 +102,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
+    
     
     CommunityDetailModel *model = [CommunityDetailModel new];
     [model setValuesForKeysWithDictionary:self.detailDataDic];
@@ -111,7 +111,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.model = model;
     return cell;
-
+    
     
 }
 

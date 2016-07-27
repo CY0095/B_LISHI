@@ -77,6 +77,7 @@
 }
 // 我的关注数据
 -(void)requestMyAttentionData{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 开始加载动画
     __weak typeof(self) weakSelf = self;
     NSString *uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     [[MyAttentionRequest shareMyAttentionRequest] myAttentRequestWithUid:uid success:^(NSDictionary *dic) {
@@ -90,13 +91,20 @@
         NSLog(@"array = %@",weakSelf.myAttentionArray);
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.MytableView reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请求超时，检查网络!" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+        [alertC addAction:okaction];
+        [self presentViewController:alertC animated:YES completion:nil];
         NSLog(@"error = %@",error);
     }];
 }
 // 推荐用户请求
 -(void)recommendUserRequest{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 开始加载动画
     __weak typeof(self) weakSelf = self;
     NSString *uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     [[RecommendUserRequest shareRecomendUserRequest] recommendUserWithUid:uid Success:^(NSDictionary *dic) {
@@ -110,8 +118,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.MytableView reloadData];
             NSLog(@"array = %@",weakSelf.recommendUserArray);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } failure:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSLog(@"error = %@",error);
     }];
 }
@@ -139,7 +149,7 @@
 // cell点击方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     AttentionDetailViewController *attentionVC = [AttentionDetailViewController new];
-    MyAttentionModel *model = [MyAttentionModel new];
+    MyAttentionModel *model = [[MyAttentionModel alloc] init];
     if (self.segmented.selectedSegmentIndex == 0) {
         model = self.myAttentionArray[indexPath.row];
     }else{

@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "GetCodeRequest.h"
 #import "RegisterRequest.h"
+#import "MBProgressHUD.h"
 @interface RegisterViewController ()
 @property(strong,nonatomic) UIImageView *backgroundImgView;
 @property(strong,nonatomic) UIView *backgroundView;
@@ -124,16 +125,19 @@
         [alertC addAction:okaction];
         [self presentViewController:alertC animated:YES completion:nil];
     }else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 开始加载动画
         [[RegisterRequest shareRegisterRequest] registerRequestWithUsername:self.username.text passWord:self.password.text code:self.phoneCode.text success:^(NSDictionary *dic) {
             NSString *status = [dic objectForKey:@"status"];
             if ([status isEqualToString:@"OK"]) {
                 UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功！" preferredStyle:(UIAlertControllerStyleAlert)];
                 UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"去登陆" style:(UIAlertActionStyleDefault) handler:nil];
                 [alertC addAction:okaction];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];// 停止加载动画
                 [self presentViewController:alertC animated:YES completion:^{
                     [self.navigationController popViewControllerAnimated:YES];
                 }];
             }else{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];// 停止加载动画
                 NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
                 UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:error preferredStyle:(UIAlertControllerStyleAlert)];
                 UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
@@ -141,6 +145,7 @@
                 [self presentViewController:alertC animated:YES completion:nil];
             }
         } failure:^(NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];// 停止加载动画
             NSLog(@"error = %@",error);
             UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册失败请重试！" preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];

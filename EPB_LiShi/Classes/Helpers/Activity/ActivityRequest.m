@@ -10,7 +10,6 @@
 
 @implementation ActivityRequest
 
-
 -(void)ActivityRequestParameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
     
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
