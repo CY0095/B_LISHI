@@ -67,14 +67,14 @@ static NSString *const cellResueID = @"111";
             [weakself.detailArr addObject:model];
         }
         
-        NSLog(@"请求装备的ID == %@",self.detailArr);
+//        NSLog(@"请求装备的ID == %@",self.detailArr);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakself.equipDetailView reloadData];
         });
         
-        NSLog(@"detail == %@",weakself.detailArr);
+//        NSLog(@"detail == %@",weakself.detailArr);
     } failure:^(NSError *error) {
         
         NSLog(@"failure == %@",error);

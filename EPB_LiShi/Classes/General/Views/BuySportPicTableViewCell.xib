@@ -267,13 +267,13 @@
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="jD5-wB-ewN"/>
+                                <exclude reference="9TO-F7-Ezv"/>
                                 <exclude reference="Ibl-ho-l6f"/>
                                 <exclude reference="RBr-FV-qOC"/>
+                                <exclude reference="ezw-n9-6Zd"/>
+                                <exclude reference="jD5-wB-ewN"/>
                                 <exclude reference="klZ-HF-5Gc"/>
                                 <exclude reference="oAR-Mj-WMx"/>
-                                <exclude reference="ezw-n9-6Zd"/>
-                                <exclude reference="9TO-F7-Ezv"/>
                             </mask>
                         </variation>
                     </label>

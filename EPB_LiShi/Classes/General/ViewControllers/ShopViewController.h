@@ -8,9 +8,11 @@
 
 #import "BaseViewController.h"
 #import "BuySportModel.h"
+#import "ActivityDetailModel.h"
 
 @interface ShopViewController : BaseViewController
 
 @property (strong, nonatomic) BuySportModel *model;
+@property (strong, nonatomic) ActivityDetailModel *model1;
 
 @end
