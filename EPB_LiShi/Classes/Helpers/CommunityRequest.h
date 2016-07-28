@@ -58,4 +58,9 @@
 - (void)CommunityAllListHeaderViewRequestWithParameter:(NSDictionary *)parameterDic
                                                success:(SuccessResponse)success
                                                failure:(FailureResponse)failure;
+
+- (void)CommunityHeaderDetailViewRequestWithParameter:(NSDictionary *)parameterDic
+                                              success:(SuccessResponse)success
+                                              failure:(FailureResponse)failure;
+
 @end

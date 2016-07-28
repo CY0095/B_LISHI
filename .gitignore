@@ -16,7 +16,8 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
+ShopMo020del.h
+ShopMo020del.m
 ## Other
 *.moved-aside
 *.xcuserstate

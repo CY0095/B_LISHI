@@ -190,9 +190,7 @@
 {
     MoreFreeViewController *freeVC = [MoreFreeViewController new];
     
-    [self presentViewController:freeVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:freeVC animated:YES];
 }
 
 #pragma mark --- 请求商品数据 ---

@@ -12,7 +12,8 @@
 #import "CommunityLuyingVideoCell.h"
 #import "CommunityListModel.h"
 #import "CommunityHeaderCell.h"
-
+#import "TopicDetailViewController.h"
+#import "ComTopicDetailViewController.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -152,15 +153,26 @@
         CommunityHeaderModel *model = [CommunityHeaderModel new];
         [model setValuesForKeysWithDictionary:self.headerDataDic];
         NSLog(@"model.club_id == %@",model.club_id);
+        
+        ComTopicDetailViewController *detailVC = [ComTopicDetailViewController new];
+        detailVC.model = model;
+        [self.navigationController pushViewController:detailVC animated:YES];
+        
     }else {
         LuyingListModel *model = self.luyingListArray[indexPath.row];
         
         if (model.images.count == 0) {
             
             NSLog(@"PandengVideoID == %ld",model.videoid);
+            TopicDetailViewController *detailVC = [TopicDetailViewController new];
+            detailVC.topics_id = model.list_id;
+            [self.navigationController pushViewController:detailVC animated:YES];
         }else {
             
             NSLog(@"PandengImageID == %@",model.list_id);
+            TopicDetailViewController *detailVC = [TopicDetailViewController new];
+            detailVC.topics_id = model.list_id;
+            [self.navigationController pushViewController:detailVC animated:YES];
         }
     }
     

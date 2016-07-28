@@ -10,6 +10,7 @@
 #import "EquipDetailRequest.h"
 #import "EquipDetailModel.h"
 #import "EquipDetailCollectionViewCell.h"
+#import "BuyEquipViewController.h"
 
 @interface EquipDetailViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -66,6 +67,8 @@ static NSString *const cellResueID = @"111";
             [weakself.detailArr addObject:model];
         }
         
+//        NSLog(@"请求装备的ID == %@",self.detailArr);
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakself.equipDetailView reloadData];
@@ -105,6 +108,18 @@ static NSString *const cellResueID = @"111";
     cell.model = Emodel;
     
     return cell;
+}
+
+#pragma mark --- 设置item的点击方法 ---
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BuyEquipViewController *buyVC = [[BuyEquipViewController alloc] init];
+    EquipDetailModel *model = self.detailArr[indexPath.row];
+    buyVC.model = model;
+    
+    UINavigationController *thirdNC = [[UINavigationController alloc]initWithRootViewController:buyVC];
+    
+    [self presentViewController:thirdNC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
