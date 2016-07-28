@@ -15,7 +15,6 @@
 #import "NetWorkRequest.h"
 #import <UIImageView+AFNetworking.h>
 
-#import "MJRefresh.h"
 
 
 

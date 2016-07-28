@@ -3203,7 +3203,7 @@
 				D63370CC1D41FE3F004D5E20 /* LikeListModel.h */,
 				D63370CD1D41FE3F004D5E20 /* LikeListModel.m */,
 
->>>>>>> 5cf8e4661f24c2696fa79968cc7fb9fc8999192d
+
 				D6E450281D45FAA300C5692E /* MoreFreeModel.h */,
 				D6E450291D45FAA300C5692E /* MoreFreeModel.m */,
 				D6E4502A1D45FAA300C5692E /* MoreFreeDetailModel.h */,
