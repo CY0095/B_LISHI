@@ -140,7 +140,7 @@
     <resources>
         <image name="boy_default.png" width="128" height="128"/>
         <image name="chakan.png" width="32" height="32"/>
-        <image name="louzhu.png" width="32" height="32"/>
+        <image name="louzhu.png" width="64" height="64"/>
         <image name="time.png" width="32" height="32"/>
     </resources>
 </document>

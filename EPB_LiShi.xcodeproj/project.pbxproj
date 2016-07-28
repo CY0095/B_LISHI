@@ -166,6 +166,11 @@
 		D63370D61D420471004D5E20 /* 围观.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D31D420471004D5E20 /* 围观.png */; };
 		D63370D71D420471004D5E20 /* 时间.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D41D420471004D5E20 /* 时间.png */; };
 		D63370D81D420471004D5E20 /* 回复.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D51D420471004D5E20 /* 回复.png */; };
+
+		D648B4101D48636F00F59DF1 /* ComMiddleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */; };
+		D648B4111D48636F00F59DF1 /* ComMiddleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */; };
+
+
 		D665BB441D43713700916B4F /* CommunityReuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D665BB431D43713700916B4F /* CommunityReuseViewController.m */; };
 		D67C53881D43597B00D377B8 /* 标签.png in Resources */ = {isa = PBXBuildFile; fileRef = D67C53851D43597B00D377B8 /* 标签.png */; };
 		D67C53891D43597B00D377B8 /* 客服.png in Resources */ = {isa = PBXBuildFile; fileRef = D67C53861D43597B00D377B8 /* 客服.png */; };
@@ -184,12 +189,21 @@
 		D67C53B61D4359D500D377B8 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C53B31D4359D500D377B8 /* ActivityTableViewCell.m */; };
 		D67C53B71D4359D500D377B8 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67C53B41D4359D500D377B8 /* ActivityTableViewCell.xib */; };
 
+
+
 		D67C53BB1D43991000D377B8 /* ItineraryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C53B91D43991000D377B8 /* ItineraryTableViewCell.m */; };
+
 
 		D6838BF41D4309E900E90C0E /* CommunityCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */; };
 		D6838BF51D4309E900E90C0E /* CommunityCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */; };
 		D6838BF81D430D1900E90C0E /* CommunityCoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */; };
 		D68E574E1D459F25001507E0 /* AllListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68E574D1D459F25001507E0 /* AllListViewController.m */; };
+
+		D6A983051D47864600F559E2 /* ComTopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */; };
+		D6A9836E1D47A4B300F559E2 /* ComHeaderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */; };
+		D6A9836F1D47A4B300F559E2 /* ComHeaderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9836D1D47A4B300F559E2 /* ComHeaderDetailCell.xib */; };
+
+
 
 		D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */; };
 		D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */; };
@@ -1153,6 +1167,12 @@
 		D63370D31D420471004D5E20 /* 围观.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "围观.png"; sourceTree = "<group>"; };
 		D63370D41D420471004D5E20 /* 时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时间.png"; sourceTree = "<group>"; };
 		D63370D51D420471004D5E20 /* 回复.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "回复.png"; sourceTree = "<group>"; };
+
+		D648B40D1D48636F00F59DF1 /* ComMiddleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComMiddleDetailCell.h; sourceTree = "<group>"; };
+		D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComMiddleDetailCell.m; sourceTree = "<group>"; };
+		D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComMiddleDetailCell.xib; sourceTree = "<group>"; };
+
+
 		D665BB421D43713700916B4F /* CommunityReuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityReuseViewController.h; sourceTree = "<group>"; };
 		D665BB431D43713700916B4F /* CommunityReuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityReuseViewController.m; sourceTree = "<group>"; };
 		D67C53851D43597B00D377B8 /* 标签.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签.png"; sourceTree = "<group>"; };
@@ -1184,8 +1204,11 @@
 		D67C53B31D4359D500D377B8 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
 		D67C53B41D4359D500D377B8 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 
+
+
 		D67C53B81D43991000D377B8 /* ItineraryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItineraryTableViewCell.h; sourceTree = "<group>"; };
 		D67C53B91D43991000D377B8 /* ItineraryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryTableViewCell.m; sourceTree = "<group>"; };
+
 
 		D6838BF11D4309E900E90C0E /* CommunityCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCustomCell.h; sourceTree = "<group>"; };
 		D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCustomCell.m; sourceTree = "<group>"; };
@@ -1194,6 +1217,14 @@
 		D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCoCellModel.m; sourceTree = "<group>"; };
 		D68E574C1D459F25001507E0 /* AllListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListViewController.h; sourceTree = "<group>"; };
 		D68E574D1D459F25001507E0 /* AllListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListViewController.m; sourceTree = "<group>"; };
+
+		D6A983031D47864600F559E2 /* ComTopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTopicDetailViewController.h; sourceTree = "<group>"; };
+		D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTopicDetailViewController.m; sourceTree = "<group>"; };
+		D6A9836B1D47A4B300F559E2 /* ComHeaderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComHeaderDetailCell.h; sourceTree = "<group>"; };
+		D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComHeaderDetailCell.m; sourceTree = "<group>"; };
+		D6A9836D1D47A4B300F559E2 /* ComHeaderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComHeaderDetailCell.xib; sourceTree = "<group>"; };
+
+
 
 		D6ADC8A91D3A52DA0073EAE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2576,6 +2607,8 @@
 				D61A98DE1D423E8B0009DBFD /* MoreListViewController.m */,
 				D68E574C1D459F25001507E0 /* AllListViewController.h */,
 				D68E574D1D459F25001507E0 /* AllListViewController.m */,
+				D6A983031D47864600F559E2 /* ComTopicDetailViewController.h */,
+				D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -2583,6 +2616,12 @@
 		D61A99141D4240A00009DBFD /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				D6A9836B1D47A4B300F559E2 /* ComHeaderDetailCell.h */,
+				D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */,
+				D6A9836D1D47A4B300F559E2 /* ComHeaderDetailCell.xib */,
+				D648B40D1D48636F00F59DF1 /* ComMiddleDetailCell.h */,
+				D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */,
+				D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */,
 				D6838BF11D4309E900E90C0E /* CommunityCustomCell.h */,
 				D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */,
 				D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */,
@@ -3129,6 +3168,8 @@
 			isa = PBXGroup;
 			children = (
 
+
+
 				D6ADC8E81D3A52DB0073EAE4 /* CatnameModel.h */,
 				D6ADC8E91D3A52DB0073EAE4 /* CatnameModel.m */,
 				D6ADC8EC1D3A52DB0073EAE4 /* FLModel.h */,
@@ -3161,6 +3202,7 @@
 				D63370CB1D41FE3F004D5E20 /* LikeNumModel.m */,
 				D63370CC1D41FE3F004D5E20 /* LikeListModel.h */,
 				D63370CD1D41FE3F004D5E20 /* LikeListModel.m */,
+
 
 				D6E450281D45FAA300C5692E /* MoreFreeModel.h */,
 				D6E450291D45FAA300C5692E /* MoreFreeModel.m */,
@@ -3369,6 +3411,7 @@
 				D61A996A1D4244130009DBFD /* huwaifan.png in Resources */,
 				D6ADC9441D3A52DB0073EAE4 /* 1.png in Resources */,
 				D61A99711D4244130009DBFD /* equip.png in Resources */,
+				D648B4111D48636F00F59DF1 /* ComMiddleDetailCell.xib in Resources */,
 				D61A99631D4244130009DBFD /* IMG_5526.jpg in Resources */,
 				D61A998A1D42443F0009DBFD /* AttentionDetailTableViewCell.xib in Resources */,
 				D6F53EFD1D47550D00BBE710 /* 分享.png in Resources */,
@@ -3390,6 +3433,7 @@
 				D61A99301D4240A00009DBFD /* CommunityTableViewCell.xib in Resources */,
 				D61A99751D4244130009DBFD /* welcome.jpg in Resources */,
 				D61A992A1D4240A00009DBFD /* CommunityHeaderCell.xib in Resources */,
+				D6A9836F1D47A4B300F559E2 /* ComHeaderDetailCell.xib in Resources */,
 				D61A997E1D4244130009DBFD /* zhuangbei.jpg in Resources */,
 				D6ADC9581D3A52DB0073EAE4 /* community.png in Resources */,
 				D6ADC9431D3A52DB0073EAE4 /* 0412.png in Resources */,
@@ -3579,6 +3623,7 @@
 				D67C53B51D4359D500D377B8 /* ActivityIntroduceTableViewCell.m in Sources */,
 				D61A98F01D423E8B0009DBFD /* ZhuangBeiKongViewController.m in Sources */,
 				D67C53981D43598A00D377B8 /* ActivityModel.m in Sources */,
+				D6A983051D47864600F559E2 /* ComTopicDetailViewController.m in Sources */,
 				C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */,
 				D6E450391D45FB5200C5692E /* MoreFreeRequest.m in Sources */,
 				D6ADC9251D3A52DB0073EAE4 /* EquipViewController.m in Sources */,
@@ -3679,10 +3724,12 @@
 				D6ADC9381D3A52DB0073EAE4 /* NetWorkRequest.m in Sources */,
 				D6F53F0D1D47A1FC00BBE710 /* ShopTableViewCell.m in Sources */,
 				D63370C81D41FE26004D5E20 /* EquipDetailModel.m in Sources */,
+				D6A9836E1D47A4B300F559E2 /* ComHeaderDetailCell.m in Sources */,
 				D61A98EB1D423E8B0009DBFD /* LuyingViewController.m in Sources */,
 				D61A998D1D42443F0009DBFD /* RecommendUserTableViewCell.m in Sources */,
 				D6E4505D1D462F6400C5692E /* BuySportTableViewCell.m in Sources */,
 				D6E450451D45FB7A00C5692E /* MoreFreeTableViewCell.m in Sources */,
+				D648B4101D48636F00F59DF1 /* ComMiddleDetailCell.m in Sources */,
 				C241ED9D1D437560005162C5 /* TopicDetailRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

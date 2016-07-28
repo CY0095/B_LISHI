@@ -49,6 +49,13 @@
  *  管理员列表
  */
 @property (nonatomic, copy) NSArray *adminlist;
-
+/**
+ *  创建者
+ */
+@property (nonatomic, copy) NSString *initnickname;
+/**
+ *  创建者头像
+ */
+@property (nonatomic, copy) NSString *initheadicon;
 
 @end

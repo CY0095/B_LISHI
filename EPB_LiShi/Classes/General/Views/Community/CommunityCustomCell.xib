@@ -57,7 +57,7 @@
                 <outlet property="image" destination="lIR-Q5-zSB" id="8rb-ql-IV5"/>
                 <outlet property="total" destination="VRI-XW-5Iu" id="yuv-uy-Rzd"/>
             </connections>
-            <point key="canvasLocation" x="603" y="361"/>
+            <point key="canvasLocation" x="767" y="504"/>
         </collectionViewCell>
     </objects>
 </document>
