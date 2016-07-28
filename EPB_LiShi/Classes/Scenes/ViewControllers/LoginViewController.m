@@ -113,6 +113,7 @@
         [alertC addAction:okaction];
         [self presentViewController:alertC animated:YES completion:nil];
     }else{
+        [self.passwordField resignFirstResponder];// 取消键盘响应
         // 登录
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[LoginRequest shareLoginRequest] loginRequestWithUsername:self.usernameField.text passWord:self.passwordField.text success:^(NSDictionary *dic) {
@@ -121,6 +122,7 @@
                 // 登录成功的操作
                 dispatch_async(dispatch_get_main_queue(), ^{
                     BOOL isLog = YES;
+                    // 设置登录成功
                     [[NSUserDefaults standardUserDefaults] setBool:isLog forKey:@"isLog"];
         
                     // 存储userID

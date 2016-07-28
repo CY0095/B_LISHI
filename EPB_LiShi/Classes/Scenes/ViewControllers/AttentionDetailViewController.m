@@ -12,6 +12,7 @@
 #import "UserDetailRequest.h"
 #import "TopicDetailViewController.h"
 #import "PostViewController.h"
+#import "ActivityDetailViewController.h"
 @interface AttentionDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic)UITableView *attentionDetailTableView;
 @property(strong,nonatomic)UIView *headView;// tableView的头视图
@@ -35,6 +36,7 @@
 }
 // 绘制界面
 -(void)drawView{
+    self.view.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
     self.attentionDetailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 56)];
     self.attentionDetailTableView.delegate = self;
     self.attentionDetailTableView.dataSource = self;
@@ -167,7 +169,10 @@
         [self.navigationController pushViewController:postVC animated:YES];
         NSLog(@"topics_id = %@",postVC.topic_id);
     }else{
-        NSLog(@"待定中。。。。。。");
+        NSLog(@"model.category = %ld",model.category);
+        ActivityDetailViewController *actiDetailVC = [[ActivityDetailViewController alloc] init];
+        actiDetailVC.DetailIDString = model.topic_id;
+        [self.navigationController pushViewController:actiDetailVC animated:YES];
     }
     
 }

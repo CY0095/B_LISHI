@@ -11,5 +11,5 @@
 @interface UpMydataRequest : NSObject
 +(instancetype)shareUpmyDataRequest;
 -(void)upMydataWithNickname:(NSString *)nickname user_id:(NSString *)user_id success:(SuccessResponse)success failure:(FailureResponse)failure;
--(void)upMydataWithImage:(UIImage *)image success:(SuccessResponse)success failure:(FailureResponse)failure;
+-(void)upMydataWithImage:(UIImage *)image user_id:(NSString *)user_id success:(SuccessResponse)success failure:(FailureResponse)failure;
 @end

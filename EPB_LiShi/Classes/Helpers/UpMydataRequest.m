@@ -27,9 +27,9 @@ static UpMydataRequest *request = nil;
     }];
 }
 
--(void)upMydataWithImage:(UIImage *)image success:(SuccessResponse)success failure:(FailureResponse)failure{
+-(void)upMydataWithImage:(UIImage *)image user_id:(NSString *)user_id success:(SuccessResponse)success failure:(FailureResponse)failure{
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request sendImageWithUrl:getHeadImgRequest_Url paramter:nil image:image successResponse:^(NSDictionary *dic) {
+    [request sendImageWithUrl:getHeadImgRequest_Url paramter:@{@"user_id":user_id} image:image successResponse:^(NSDictionary *dic) {
         success(dic);
     } failureResponse:^(NSError *error) {
         failure(error);

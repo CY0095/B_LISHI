@@ -12,6 +12,8 @@
 #import "MyAttentionViewController.h"
 #import "ChangeMydataViewController.h"
 #import "OpinionViewController.h"
+#import "PostMessageViewController.h"
+#import "AttentionDetailViewController.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;// 头视图
@@ -86,6 +88,13 @@
 }
 // 头像点击事件
 -(void)tapImgAction:(UITapGestureRecognizer *)sender{
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (user_id) {
+        AttentionDetailViewController *attentionDetailVC = [[AttentionDetailViewController alloc] init];
+        attentionDetailVC.uid = user_id;
+        [self.navigationController pushViewController:attentionDetailVC animated:YES];
+    }
+    
     NSLog(@"我是点击手势");
 }
 
@@ -172,11 +181,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyTableViewCell_Identify];
-    
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == 0) {
-        cell.myLabel.text = @"我的好友";
-        cell.ImgView.image = [UIImage imageNamed:@"haoyou"];
+        cell.myLabel.text = @"我要发帖";
+        cell.ImgView.image = [UIImage imageNamed:@"yijian"];
     }else if (indexPath.row == 1){
         cell.myLabel.text = @"我的关注";
         cell.ImgView.image = [UIImage imageNamed:@"guanzhu"];
@@ -202,11 +211,14 @@
     BOOL isLog = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLog"];
     if (isLog) {
         if (indexPath.row == 0) {
-            
+            // 跳转发帖界面
+            PostMessageViewController *postMeVC = [[PostMessageViewController alloc] init];
+            [self.navigationController pushViewController:postMeVC animated:YES];
         }else if (indexPath.row == 1){
             MyAttentionViewController *myAttVC = [[MyAttentionViewController alloc] init];
             [self.navigationController pushViewController:myAttVC animated:YES];
         }else if (indexPath.row == 2){
+            
             
         }else if (indexPath.row == 3){
             OpinionViewController *opinionVC = [[OpinionViewController alloc] init];
