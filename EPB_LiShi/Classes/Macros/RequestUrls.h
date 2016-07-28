@@ -56,7 +56,7 @@
 
 
 // 社区列表URL
-#define CommunityListRequest_Url @"http://api.lis99.com/v4/club/omnibusList/0/451316"
+#define CommunityListRequest_Url(page) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/omnibusList/%@/451316",page]
 // 列表详情URL
 #define CommunityListDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
 // 社区徒步露营列表URL
@@ -87,7 +87,8 @@
 #define CommunityAllListHeaderRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/detail/%@/%@",club_id,user_id]
 
 #define CommunityAllCollectionViewRequest_Url @"http://api.lis99.com/v5/club/allclublist/"
-
+// 俱乐部介绍
+#define CommunityHeaderDetailRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/detail/%@/%@",club_id,user_id]
 
 // 活动页面url
 #define ActivityRequest_Url(Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/0?latitude=%@&longitude=%@",Latitude,Longitude]

@@ -89,7 +89,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.djclublistArray addObject:model];
         }
-        // NSLog(@"djclublistArray%@",self.djclublistArray);
+        NSLog(@"djclublistArray%@",self.djclublistArray);
         
         NSArray *tslistArray = [self.allDataDic objectForKey:@"tsclublist"];
         for (NSDictionary *tempDic in tslistArray) {
@@ -97,7 +97,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.tsclublistArray addObject:model];
         }
-        // NSLog(@"tsclublistArray%@",self.tsclublistArray);
+        NSLog(@"tsclublistArray%@",self.tsclublistArray);
         
         NSArray *pplistArray = [self.allDataDic objectForKey:@"ppclublist"];
         for (NSDictionary *tempDic in pplistArray) {
@@ -105,7 +105,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.ppclublistArray addObject:model];
         }
-        // NSLog(@"ppclublistArray%@",self.ppclublistArray);
+        NSLog(@"ppclublistArray%@",self.ppclublistArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
