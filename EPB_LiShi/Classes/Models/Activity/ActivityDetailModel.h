@@ -29,7 +29,7 @@
 @property(strong,nonatomic) NSString *leaderheadicon;
 // 组织标签
 @property(strong,nonatomic) NSArray *leaderdesc;
-// 下面照片存在的数组
+// 下面照片存在的数组(具体行程)
 @property(strong,nonatomic) NSArray *tripdetail;
 // 起止时间到结束时间
 @property(strong,nonatomic) NSString *activitytimes;
@@ -37,6 +37,31 @@
 @property(strong,nonatomic) NSString *club_title;
 
 @property(strong,nonatomic) NSArray *activitydetail;
+
+
+// 具体行程页面
+// 集合时间
+@property(strong,nonatomic) NSString *settime;
+// 集合地点
+@property(strong,nonatomic) NSString *setaddress;
+// 联系方式
+@property(strong,nonatomic) NSString *leadermobile;
+// 具体行程
+
+// 建议装备
+@property(strong,nonatomic) NSString *equipadvise;
+// 费用说明
+@property(strong,nonatomic) NSString *constdesc;
+// 免责声明
+@property(strong,nonatomic) NSString *disclaimer;
+// 注意事项
+@property(strong,nonatomic) NSString *catematter;
+
+
+// 地图
+@property(strong,nonatomic) NSString *gaodlongitude;
+@property(strong,nonatomic) NSString *gaodelatitude;
+
 
 
 

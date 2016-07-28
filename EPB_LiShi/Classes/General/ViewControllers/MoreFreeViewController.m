@@ -58,7 +58,7 @@
 - (void)freeClickButton:(MoreFreeTableViewCell *)cell
 {
     NSLog(@"111");
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark --- 请求数据 ---

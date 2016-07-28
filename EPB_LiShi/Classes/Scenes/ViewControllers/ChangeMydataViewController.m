@@ -110,16 +110,19 @@
 }
 // 上传头像方法
 -(void)uploadingHeadImg{
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 加载动画
     [[UpMydataRequest shareUpmyDataRequest] upMydataWithImage:self.headImg.image success:^(NSDictionary *dic) {
         NSString *status = [dic objectForKey:@"status"];
         if ([status isEqualToString:@"OK"]) {
             NSLog(@"img = %@",[[dic objectForKey:@"data"] objectForKey:@"img"]);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
         }else{
             NSLog(@"dic = %@",dic);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
         }
     } failure:^(NSError *error) {
         NSLog(@"error = %@",error);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
     }];
     
 }
@@ -132,12 +135,14 @@
         UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
         [alertC addAction:okaction];
     }else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 加载动画
         NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
         [[UpMydataRequest shareUpmyDataRequest] upMydataWithNickname:self.nickNameText.text user_id:user_id success:^(NSDictionary *dic) {
             NSString *status = [dic objectForKey:@"status"];
             if ([status isEqualToString:@"ERR"]) {
                 NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
                     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:error preferredStyle:(UIAlertControllerStyleAlert)];
                     UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
                     [alertC addAction:okaction];
@@ -147,6 +152,7 @@
             }else if ([status isEqualToString:@"OK"]){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[NSUserDefaults standardUserDefaults] setObject:self.nickNameText.text forKey:@"nickname"];
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
                     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"修改成功!" preferredStyle:(UIAlertControllerStyleAlert)];
                     UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
                     [alertC addAction:okaction];
@@ -154,6 +160,7 @@
                     });
             }else{
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
                     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"修改失败，请重试!" preferredStyle:(UIAlertControllerStyleAlert)];
                     UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
                     [alertC addAction:okaction];
@@ -163,7 +170,8 @@
         } failure:^(NSError *error) {
             NSLog(@"error = %@",error);
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"修改失败，请重试!" preferredStyle:(UIAlertControllerStyleAlert)];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
+                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请求超时，请重试!" preferredStyle:(UIAlertControllerStyleAlert)];
                 UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
                 [alertC addAction:okaction];
                 [self presentViewController:alertC animated:YES completion:nil];
