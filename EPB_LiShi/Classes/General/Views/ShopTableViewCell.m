@@ -23,10 +23,9 @@
 - (void)setModel:(ShopModel *)model
 {
     _model = model;
-//    [self.shopImg setImageWithURL:[NSURL URLWithString:model.img]];
+    [self.shopImg setImageWithURL:[NSURL URLWithString:model.img]];
     self.titleLabel.text = model.title;
     self.addressLabel.text = model.address;
-    self.distanceLabel.text = [NSString stringWithFormat:@"%@km",model.distance];
 }
 
 @end

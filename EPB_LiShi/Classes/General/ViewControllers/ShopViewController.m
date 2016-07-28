@@ -10,6 +10,7 @@
 #import "ShopModel.h"
 #import "ShopRequest.h"
 #import "ShopTableViewCell.h"
+#import "ShopDetailViewController.h"
 
 @interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -49,7 +50,8 @@
 {
     __weak typeof(self) weakself = self;
     ShopRequest *request = [[ShopRequest alloc] init];
-    [request shopRequestWithBrand_id:self.model.brand_id sucess:^(NSDictionary *dic) {
+    
+    [request shopRequestWithBrand_id:self.model.brand_id Latitude:@"40.02928931" Longitude:@"116.33704576" sucess:^(NSDictionary *dic) {
         
         NSArray *event = [[dic objectForKey:@"data"] objectForKey:@"shoplist"];
         
@@ -75,7 +77,6 @@
 #pragma mark --- 设置cell的行数 ---
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"=== %lu",(unsigned long)self.shopDetailArr.count);
     return self.shopDetailArr.count;
 }
 
@@ -88,7 +89,22 @@
     
     ShopModel *model = self.shopDetailArr[indexPath.row];
     cell.model = model;
-    NSLog(@"=== %@",cell.model);
+    //显示距离
+    CGFloat dis = model.distance / 1000;
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.1fkm",dis];
+    //显示星级
+    if (model.star < 5) {
+        cell.img5.image = [UIImage imageNamed:@"star1"];
+    }else if (model.star < 4)
+    {
+        cell.img5.image = [UIImage imageNamed:@"star1"];
+        cell.img4.image = [UIImage imageNamed:@"star1"];
+    }else if (model.star < 3)
+    {
+        cell.img5.image = [UIImage imageNamed:@"star1"];
+        cell.img4.image = [UIImage imageNamed:@"star1"];
+        cell.img3.image = [UIImage imageNamed:@"star1"];
+    }
     
     return cell;
 }
@@ -97,6 +113,18 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 102;
+}
+
+#pragma mark --- 点击cell跳转界面 ---
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ShopDetailViewController *shopVC = [[ShopDetailViewController alloc] init];
+    
+    ShopModel *model = self.shopDetailArr[indexPath.row];
+    shopVC.model = model;
+    
+    [self.navigationController pushViewController:shopVC animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

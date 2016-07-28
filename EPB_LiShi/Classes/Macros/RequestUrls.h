@@ -26,6 +26,8 @@
 #define buySportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/v3/zhuangbei/detail/%@",ID]
 //商店界面
 #define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
+//商店详情界面
+#define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
