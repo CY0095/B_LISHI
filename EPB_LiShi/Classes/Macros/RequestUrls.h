@@ -28,6 +28,8 @@
 #define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
 //商店详情界面
 #define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
+//户外商店详情
+#define outDoorShopRequest_Url @"http://api.lis99.com/shop/promotionShopList?latitude=40.02922418&longitude=116.33588774&offset=0&limit=20&cityid=1&shoptype=&sorttype="
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"

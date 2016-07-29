@@ -53,6 +53,7 @@
     self.title.text = model.title;
     self.price.text = [NSString stringWithFormat:@"市场价格:￥%0.2f",model.market_price];
     self.content.text = model.Sportdescription;
+    self.share_url = model.share_url;
 }
 
 @end
