@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #define shopViewCell_Identify @"shopViewCell_Identify"
-#import "ShopModel.h"
+
+#import "ShopModel.h"
 
 @interface ShopTableViewCell : UITableViewCell
 

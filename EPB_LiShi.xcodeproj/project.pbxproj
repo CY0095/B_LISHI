@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C22036581D4AFEBE0041F3E8 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C22036571D4AFEBE0041F3E8 /* ShopModel.m */; };
 		C226C0631D49F7B300DD1893 /* PostMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C226C0611D49F7B300DD1893 /* PostMessageViewController.m */; };
 		C226C0641D49F7B300DD1893 /* PostMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C226C0621D49F7B300DD1893 /* PostMessageViewController.xib */; };
 		C226C06A1D49F88200DD1893 /* bianji.png in Resources */ = {isa = PBXBuildFile; fileRef = C226C0691D49F88200DD1893 /* bianji.png */; };
@@ -338,6 +339,8 @@
 		097D4472229F8357FC223952 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C374D786A534EDEF7E7166 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9A504738DFE88723BDE1185F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C22036561D4AFEBE0041F3E8 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		C22036571D4AFEBE0041F3E8 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
 		C226C0601D49F7B300DD1893 /* PostMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMessageViewController.h; sourceTree = "<group>"; };
 		C226C0611D49F7B300DD1893 /* PostMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMessageViewController.m; sourceTree = "<group>"; };
 		C226C0621D49F7B300DD1893 /* PostMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostMessageViewController.xib; sourceTree = "<group>"; };
@@ -3197,6 +3200,11 @@
 				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
 				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
 				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
+
+
+				C22036561D4AFEBE0041F3E8 /* ShopModel.h */,
+				C22036571D4AFEBE0041F3E8 /* ShopModel.m */,
+
 				D60729B01D4A4E480077547A /* ShopDetailModel.h */,
 				D60729B11D4A4E480077547A /* ShopDetailModel.m */,
 				D60729B21D4A4E480077547A /* PicModel.h */,
@@ -3674,6 +3682,7 @@
 				D61A998B1D42443F0009DBFD /* MyAttentionTableViewCell.m in Sources */,
 				D6E450521D4611B200C5692E /* BuySportViewController.m in Sources */,
 				D6ADC9371D3A52DB0073EAE4 /* ExchangeRequest.m in Sources */,
+				C22036581D4AFEBE0041F3E8 /* ShopModel.m in Sources */,
 				D67C53AB1D4359B100D377B8 /* ActivityDetailViewController.m in Sources */,
 				D67C53AD1D4359B100D377B8 /* ActivityIntroduceViewController.m in Sources */,
 				D61A99891D42443F0009DBFD /* AttentionDetailTableViewCell.m in Sources */,
