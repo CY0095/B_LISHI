@@ -7,10 +7,10 @@
 //
 
 #import "ShopViewController.h"
-#import "ShopModel.h"
 #import "ShopRequest.h"
 #import "ShopTableViewCell.h"
 #import "ShopDetailViewController.h"
+#import "ShopModel.h"
 
 @interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource>
 
