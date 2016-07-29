@@ -17,8 +17,9 @@
 #import "ShopViewController.h"
 #import "SportClothViewController.h"
 #import "SportPicTableViewCell.h"
+#import "UMSocial.h"
 
-@interface BuyEquipViewController ()<UITableViewDataSource,UITableViewDelegate,buySportDelegate,shareSportDelegate>
+@interface BuyEquipViewController ()<UITableViewDataSource,UITableViewDelegate,buySportDelegate,shareSportDelegate,UMSocialUIDelegate>
 
 @property (strong, nonatomic) UITableView *buySportTableView;
 //存放购买衣服的详情
@@ -257,6 +258,15 @@
 - (void)shareButtonClick:(BuySportTableViewCell *)cell
 {
     NSLog(@"分享的点击");
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeWeb url:cell.share_url];
+    [UMSocialData defaultData].extConfig.title = cell.title.text;
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5795790567e58eb0bc00128f"
+                                      shareText:cell.title.text
+                                     shareImage:[UIImage imageNamed:@"icon"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                       delegate:self];
 }
 
 #pragma mark --- 返回高度 ---

@@ -15,4 +15,8 @@
 @property(strong,nonatomic) ActivityDetailModel *model;
 @property (strong, nonatomic) ShopDetailModel *model1;
 
+@property(strong,nonatomic) NSString *longitude;
+
+@property(strong,nonatomic) NSString *latitude;
+
 @end

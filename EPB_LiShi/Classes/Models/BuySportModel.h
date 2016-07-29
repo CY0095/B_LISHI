@@ -22,5 +22,7 @@
 @property (strong, nonatomic) NSArray *zhuangbeiimg;
 //传送到商店的ID
 @property (strong, nonatomic) NSString *brand_id;
+//分享的网址
+@property (strong, nonatomic) NSString *share_url;
 
 @end

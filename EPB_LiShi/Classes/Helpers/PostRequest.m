@@ -43,11 +43,11 @@ static PostRequest *request = nil;
 }
 
 
--(void)postMessageRequestWithUser_id:(NSString *)user_id content:(NSString *)content title:(NSString *)title image:(UIImage *)image success:(SuccessResponse)success failure:(FailureResponse)failure{
+-(void)postMessageRequestWithUser_id:(NSString *)user_id content:(NSString *)content title:(NSString *)title data:(NSData *)data success:(SuccessResponse)success failure:(FailureResponse)failure{
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request sendImageWithUrl:postMessageRequest_Url paramter:@{@"club_id":@"48",@"content[]":content,@"source":@"2",@"title":title,@"user_id":user_id,@"ext[]":@".JPEG"} image:image successResponse:^(NSDictionary *dic) {
+    [request sendDataWithUrl:postMessageRequest_Url paramters:@{@"club_id":@"48",@"content[]":content,@"source":@"2",@"title":title,@"user_id":user_id,@"ext[]":@".JPEG",@"thumb[]":data} successResponse:^(NSDictionary *dic) {
         success(dic);
-    } failureResponse:^(NSError *error) {
+    } failure:^(NSError *error) {
         failure(error);
     }];
 }

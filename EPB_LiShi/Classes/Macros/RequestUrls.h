@@ -28,6 +28,8 @@
 #define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
 //商店详情界面
 #define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
+//户外商店详情
+#define outDoorShopRequest_Url @"http://api.lis99.com/shop/promotionShopList?latitude=40.02922418&longitude=116.33588774&offset=0&limit=20&cityid=1&shoptype=&sorttype="
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
@@ -102,7 +104,7 @@
 #define CommunityHeaderDetailRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/detail/%@/%@",club_id,user_id]
 
 // 活动页面url
-#define ActivityRequest_Url(Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/0?latitude=%@&longitude=%@",Latitude,Longitude]
+#define ActivityRequest_Url(number,Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/%@?latitude=%@&longitude=%@",number,Latitude,Longitude]
 
 
 // 活动详情页面url

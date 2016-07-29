@@ -12,6 +12,7 @@
 #import "EquipTypeViewController.h"
 #import "ClothDetailViewController.h"
 #import "MoreFreeViewController.h"
+#import "OutDoorShopViewController.h"
 
 @interface EquipViewController ()<UITableViewDelegate,UITableViewDataSource,toolDelegate>
 
@@ -105,14 +106,14 @@
     //添加scrollview
     self.exchangeScrollView = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
     self.exchangeScrollView.backgroundColor = [UIColor clearColor];
-    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.JFView.frame) + 50);
+    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.FLView.frame) + 50);
     
     //添加视图
     
     [self.exchangeScrollView addSubview:self.shopView];
     [self.exchangeScrollView addSubview:self.equipView];
     [self.exchangeScrollView addSubview:self.FLView];
-    [self.exchangeScrollView addSubview:self.JFView];
+//    [self.exchangeScrollView addSubview:self.JFView];
     [self.exchangeScrollView addSubview:btn];
     [self.exchangeScrollView addSubview:btn1];
     [self.view addSubview:self.exchangeScrollView];
@@ -130,6 +131,10 @@
 - (void)btn1Click:(UIButton *)btn
 {
     NSLog(@"222");
+    
+    OutDoorShopViewController *outVC = [[OutDoorShopViewController alloc] init];
+    
+    [self.navigationController pushViewController:outVC animated:YES];
 }
 
 #pragma mark --- 设置头尾视图 ---
@@ -142,7 +147,7 @@
     [headView addSubview:i];
     self.FLView.tableHeaderView = headView;
     
-    UIView *footView = [[UIView alloc] initWithFrame:(CGRectMake(0, 10, WindownWidth, 40))];
+    UIView *footView = [[UIView alloc] initWithFrame:(CGRectMake(0, 20, WindownWidth, 40))];
     UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     btn.frame = CGRectMake(0, 0, 150, 30);
     [btn setTitle:@"更多免费装备" forState:(UIControlStateNormal)];
@@ -150,7 +155,7 @@
     btn.center = footView.center;
     [btn addTarget:self action:@selector(moreFreeClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    UIImageView *add = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 22, 15, 15))];
+    UIImageView *add = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 33, 15, 15))];
     add.image = [UIImage imageNamed:@"箭头"];
     [footView addSubview:btn];
     [footView addSubview:add];

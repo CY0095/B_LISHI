@@ -15,6 +15,7 @@
 #import <SDCycleScrollView.h>
 #import "ActivityModel.h"
 #import "ActivityDetailViewController.h"
+#import "MJRefresh.h"
 
 
 
@@ -55,6 +56,10 @@ SDCycleScrollViewDelegate
 // 地理编码和反编码需要使用的属性
 @property(strong,nonatomic) CLGeocoder *geocoder;
 
+@property(assign,nonatomic) int number;
+
+@property(strong,nonatomic) SDCycleScrollView *cycle;
+
 @end
 
 @implementation ActivityViewController
@@ -64,6 +69,8 @@ SDCycleScrollViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.number = 0;
     
     // 创建
     self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
@@ -95,23 +102,54 @@ SDCycleScrollViewDelegate
     [self requestActivityData];
     
     
-    [self mapTitle];
+    
+    
+    // 下拉刷新
+    self.ActivityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动回调这个block
+        [self.dataArr removeAllObjects];
+        [self.dataArray removeAllObjects];
+    }];
+    // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
+    self.ActivityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullResfresh)];
+    // 马上进入刷新状态
+//    [self.ActivityTableView.mj_header beginRefreshing];
+    
+    
+    
+    // 上拉加载
+    self.ActivityTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+    }];
+    self.ActivityTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addNumber)];
+//    [self.ActivityTableView.mj_footer beginRefreshing];
     
     
     
 }
 
--(void)mapTitle{
-    
-    }
+
+
+- (void)downPullResfresh
+{
+    [self.dataArray removeAllObjects];
+    [self.dataArr removeAllObjects];
+    self.number = 0;
+    [self requestActivityData];
+}
 
 
 
 -(void)requestActivityData{
+    [self.ActivityTableView.mj_header endRefreshing];
+    [self.ActivityTableView.mj_footer endRefreshing];
+    
     __weak typeof(self) weakSelf = self;
     ActivityRequest *request = [[ActivityRequest alloc] init];
     
-    [request ActivityRequestWithLongitude:[NSString stringWithFormat:@"%f",self.longitude] latitude:[NSString stringWithFormat:@"%f",self.latitude] parameter:nil success:^(NSDictionary *dic) {
+    
+    
+    [request ActivityRequestWithNumber:[NSString stringWithFormat:@"%d",self.number] longitude:[NSString stringWithFormat:@"%f",self.longitude] latitude:[NSString stringWithFormat:@"%f",self.latitude] parameter:nil success:^(NSDictionary *dic) {
         
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         
@@ -136,7 +174,10 @@ SDCycleScrollViewDelegate
         NSLog(@"%@",weakSelf.dataArr);
         NSLog(@"%@",weakSelf.dataArray);
         dispatch_async(dispatch_get_main_queue(), ^{
+            // 当视图加载出来的时候结束刷新
+           
             [self.ActivityTableView reloadData];
+            
             [self cycleImage];
         });
         
@@ -145,31 +186,33 @@ SDCycleScrollViewDelegate
     }];
     
     
+  
+}
+
+-(void)addNumber{
     
-    
+    self.number ++;
+    [self requestActivityData];
     
 }
 
 
-
-
-
-
-
-
-
-
 -(void)cycleImage{
     
-    SDCycleScrollView *cycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WindownWidth, 245) imageURLStringsGroup:self.imgArr];
-    cycle.delegate = self;
+    if (!self.cycle) {
+        self.cycle = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WindownWidth, 245) imageURLStringsGroup:self.imgArr];
+    self.cycle.delegate = self;
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 245)];
     
-    [view addSubview:cycle];
+    [view addSubview:self.cycle];
     self.ActivityTableView.tableHeaderView = view;
     
     NSLog(@"asdasd");
+    }
+    
+    
+    
     
 }
 
@@ -188,14 +231,7 @@ SDCycleScrollViewDelegate
     self.latitude = location.coordinate.latitude;
     // 经度
     self.longitude = location.coordinate.longitude;
-    // 海拔高度
-    double altitude = location.altitude;
-    // 航向(正北方向为0，取值范围0~359.9°)
-    double course = location.course;
-    // 速度
-    double speed = location.speed;
-    // 当地标准时间
-    NSDate *time = location.timestamp;
+    
     
     
     NSLog(@"%f",self.latitude);

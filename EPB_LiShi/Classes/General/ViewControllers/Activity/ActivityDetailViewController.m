@@ -13,7 +13,8 @@
 #import <SDCycleScrollView.h>
 #import "ActivityModel.h"
 #import "ActivityIntroduceViewController.h"
-@interface ActivityDetailViewController ()<SDCycleScrollViewDelegate>
+#import <UMSocial.h>
+@interface ActivityDetailViewController ()<SDCycleScrollViewDelegate,UMSocialUIDelegate>
 
 @property(strong,nonatomic) NSMutableArray *imgArr;
 
@@ -61,12 +62,35 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(returnLastPage)];
+    
     // 查找rootViewController
     self.rootVC = (RootViewController *)[[[UIApplication sharedApplication] windows] objectAtIndex:1].rootViewController;
     
     [self CycleDetailRequest];
     [self ActivityDetailRequest];
+    [self shareNavigationItem];
 }
+
+-(void)returnLastPage{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
+-(void)shareNavigationItem{
+    
+    UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:(UIBarButtonItemStyleDone) target:self action:@selector(shareAction)];
+    self.navigationItem.rightBarButtonItem = share;
+    
+}
+
+
+
+
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -150,6 +174,24 @@
         NSLog(@"%@",error);
     }];
     
+    
+}
+
+-(void)shareAction{
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.imagesString];
+    [UMSocialData defaultData].extConfig.title = self.model.title;
+    [UMSocialData defaultData].extConfig.qqData.url = self.imagesString;
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5795790567e58eb0bc00128f"
+                                      shareText:self.model.title
+                                     shareImage:[UIImage imageNamed:@""]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                       delegate:self];
+    
+    [UMSocialData defaultData].extConfig.qqData.title = self.model.title;
+    [UMSocialData defaultData].extConfig.qzoneData.url = self.imagesString;
+    [UMSocialData defaultData].extConfig.qzoneData.title = self.model.title;
     
 }
 
@@ -286,11 +328,22 @@
     consultLabel.textColor = [UIColor brownColor];
     
     
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"免费咨询电话400-672-8099(工作日9:00-18:00)"];
-    UILabel *counselLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(consultLabel.frame) + 10, WindownWidth - 40, 20)];
-    [str addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(6, 12)];
-    [str addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, 33)];
-    counselLabel.attributedText = str;
+    UILabel *counselLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(consultLabel.frame)+10, 72, 20)];
+    counselLabel.text = @"免费咨询电话";
+    counselLabel.font = [UIFont systemFontOfSize:12];
+    
+    
+    UIButton *counselButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [counselButton setTitle:@"400-672-8099" forState:UIControlStateNormal];
+    [counselButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    counselButton.frame = CGRectMake(CGRectGetMaxX(counselLabel.frame)+1, CGRectGetMaxY(consultLabel.frame) + 10, 87, 20);
+    counselButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [counselButton addTarget:self action:@selector(usePhone:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UILabel *counselLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(counselButton.frame)+1, CGRectGetMaxY(consultLabel.frame) + 10, 109, 20)];
+    counselLabel2.text = @"(工作日9:00-18:00)";
+    counselLabel2.font = [UIFont systemFontOfSize:12];
+    
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 374, WindownWidth, CGRectGetMaxY(counselLabel.frame) + 60)];
     view.backgroundColor = [UIColor whiteColor];
@@ -301,6 +354,8 @@
     
     
     
+    [view addSubview:counselLabel2];
+    [view addSubview:counselButton];
     [view addSubview:counselLabel];
     [view addSubview:consultLabel];
     [view addSubview:applyLabel];
@@ -320,8 +375,64 @@
     [self.scrollView addSubview:view];
     [self.scrollView addSubview:CycleView];
     [self.view addSubview:self.scrollView];
+    
+    
+    UIView *applyView = [[UIView alloc] initWithFrame:CGRectMake(0, WindowHeight - 40, WindownWidth, 40)];
+    applyView.backgroundColor = [UIColor colorWithRed:114/255.0 green:226/255.0 blue:115/255.0 alpha:0.7];
+    
+    UIButton *applyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [applyBtn setTitle:@"我要报名" forState:UIControlStateNormal];
+    applyBtn.frame = CGRectMake(0, 0, WindownWidth, 40);
+    applyBtn.center = CGPointMake(WindownWidth / 2, 20);
+    [applyBtn addTarget:self action:@selector(applyAction:) forControlEvents:UIControlEventTouchUpInside];
+    [applyView addSubview:applyBtn];
+    
+    [self.view addSubview:applyView];
+    
 }
 
+-(void)applyAction:(UIButton *)btn{
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确认报名" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIAlertController *applyController = [UIAlertController alertControllerWithTitle:nil message:@"报名成功" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [applyController addAction:determineAction];
+        [self presentViewController:applyController animated:YES completion:nil];
+        
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertController addAction:OKAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+}
+
+
+
+
+
+-(void)usePhone:(UIButton *)btn{
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否拨打电话" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[UIApplication  sharedApplication]openURL:[NSURL URLWithString:@"tel://4006728099"]];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:okAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+}
 
 
 -(void)viewDetailClick:(UIButton *)btn{

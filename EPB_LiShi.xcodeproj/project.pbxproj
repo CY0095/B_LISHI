@@ -186,6 +186,7 @@
 		D63370D81D420471004D5E20 /* 回复.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D51D420471004D5E20 /* 回复.png */; };
 		D648B4101D48636F00F59DF1 /* ComMiddleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */; };
 		D648B4111D48636F00F59DF1 /* ComMiddleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */; };
+		D65046CB1D4B565300F4FE65 /* OutDoorShopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D65046CA1D4B565300F4FE65 /* OutDoorShopRequest.m */; };
 		D665BB441D43713700916B4F /* CommunityReuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D665BB431D43713700916B4F /* CommunityReuseViewController.m */; };
 		D67C53881D43597B00D377B8 /* 标签.png in Resources */ = {isa = PBXBuildFile; fileRef = D67C53851D43597B00D377B8 /* 标签.png */; };
 		D67C53891D43597B00D377B8 /* 客服.png in Resources */ = {isa = PBXBuildFile; fileRef = D67C53861D43597B00D377B8 /* 客服.png */; };
@@ -1198,6 +1199,8 @@
 		D648B40D1D48636F00F59DF1 /* ComMiddleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComMiddleDetailCell.h; sourceTree = "<group>"; };
 		D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComMiddleDetailCell.m; sourceTree = "<group>"; };
 		D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComMiddleDetailCell.xib; sourceTree = "<group>"; };
+		D65046C91D4B565300F4FE65 /* OutDoorShopRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutDoorShopRequest.h; sourceTree = "<group>"; };
+		D65046CA1D4B565300F4FE65 /* OutDoorShopRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutDoorShopRequest.m; sourceTree = "<group>"; };
 		D665BB421D43713700916B4F /* CommunityReuseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityReuseViewController.h; sourceTree = "<group>"; };
 		D665BB431D43713700916B4F /* CommunityReuseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityReuseViewController.m; sourceTree = "<group>"; };
 		D67C53851D43597B00D377B8 /* 标签.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签.png"; sourceTree = "<group>"; };
@@ -3170,6 +3173,8 @@
 				D6F53F021D475A9B00BBE710 /* ShopRequest.m */,
 				D60729AD1D4A4D9C0077547A /* ShopDetailRequest.h */,
 				D60729AE1D4A4D9C0077547A /* ShopDetailRequest.m */,
+				D65046C91D4B565300F4FE65 /* OutDoorShopRequest.h */,
+				D65046CA1D4B565300F4FE65 /* OutDoorShopRequest.m */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -3339,7 +3344,9 @@
 				TargetAttributes = {
 					C231C6131D361AAA009BB26B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R7Z5STJESD;
+
+						DevelopmentTeam = 5EWQD3JR6H;
+
 					};
 				};
 			};
@@ -3678,6 +3685,7 @@
 				D61A99D61D42456E0009DBFD /* MJRefreshConst.m in Sources */,
 				D6F53F031D475A9B00BBE710 /* ShopRequest.m in Sources */,
 				D6F53EF31D473A4500BBE710 /* BuySportTabBar.m in Sources */,
+				D65046CB1D4B565300F4FE65 /* OutDoorShopRequest.m in Sources */,
 				D60729AB1D4A4D7D0077547A /* ShopProductTableViewCell.m in Sources */,
 				D61A98E71D423E8B0009DBFD /* CommunityDetailViewController.m in Sources */,
 				D6E0AB8C1D4844DC003C798B /* OutDoorShopViewController.m in Sources */,
@@ -3829,7 +3837,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -3868,7 +3875,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3886,7 +3892,6 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PODS_ROOT)/UmengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/**",
@@ -3918,7 +3923,9 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/HyphenateFullSDK/HyphenateFullSDK/lib/3rdparty\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
+
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi008";
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3934,7 +3941,6 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PODS_ROOT)/UmengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/**",
@@ -3966,7 +3972,9 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/HyphenateFullSDK/HyphenateFullSDK/lib/3rdparty\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
+
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi008";
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

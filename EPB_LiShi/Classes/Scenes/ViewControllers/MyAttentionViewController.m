@@ -137,12 +137,14 @@
     if (self.segmented.selectedSegmentIndex == 0) {
         MyAttentionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyAttentionTableViewCell_Identify];
         cell.model = self.myAttentionArray[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else{
     
     RecommendUserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RecommendUserTableViewCell_Identify];
         cell.delegate = self;
-    cell.model = self.recommendUserArray[indexPath.row];
+        cell.model = self.recommendUserArray[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     }
 }
@@ -164,6 +166,7 @@
     
     return 66.0;
 }
+#pragma mark ------ cell 上的关注按钮
 // RecommendUserTableViewCell的代理方法
 -(void)recommendUserTableViewAttentionBtnClicked:(RecommendUserTableViewCell *)cell{
     
