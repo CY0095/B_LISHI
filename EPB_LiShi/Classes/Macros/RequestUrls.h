@@ -102,7 +102,7 @@
 #define CommunityHeaderDetailRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v4/club/detail/%@/%@",club_id,user_id]
 
 // 活动页面url
-#define ActivityRequest_Url(Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/0?latitude=%@&longitude=%@",Latitude,Longitude]
+#define ActivityRequest_Url(number,Latitude,Longitude)  [NSString stringWithFormat:@"http://api.lis99.com/v5/club/providActivity/%@?latitude=%@&longitude=%@",number,Latitude,Longitude]
 
 
 // 活动详情页面url

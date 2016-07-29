@@ -10,28 +10,28 @@
 
 @implementation ActivityRequest
 
--(void)ActivityRequestParameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
+//-(void)ActivityRequestParameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
+//    
+//    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+//    
+//    NSString *Longitude = @"116.337219";
+//    NSString *Latitude = @"40.029247";
+//    [request requestWithUrl:ActivityRequest_Url(Latitude,Longitude) parameters:nil successResponse:^(NSDictionary *dic) {
+//        success(dic);
+//    } failureResponse:^(NSError *error) {
+//        failure(error);
+//    }];
+//    
+//}
+
+
+
+
+-(void)ActivityRequestWithNumber:(NSString *)number longitude:(NSString *)longitude latitude:(NSString *)latitude parameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
     
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
     
-    NSString *Longitude = @"116.337219";
-    NSString *Latitude = @"40.029247";
-    [request requestWithUrl:ActivityRequest_Url(Latitude,Longitude) parameters:nil successResponse:^(NSDictionary *dic) {
-        success(dic);
-    } failureResponse:^(NSError *error) {
-        failure(error);
-    }];
-    
-}
-
-
-
-
--(void)ActivityRequestWithLongitude:(NSString *)longitude latitude:(NSString *)latitude parameter:(NSDictionary *)paramerter success:(SuccessResponse)success failure:(FailureResponse)failure{
-    
-    NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    
-    [request requestWithUrl:ActivityRequest_Url(latitude, longitude) parameters:nil successResponse:^(NSDictionary *dic) {
+    [request requestWithUrl:ActivityRequest_Url(number,latitude, longitude) parameters:nil successResponse:^(NSDictionary *dic) {
         success(dic);
     } failureResponse:^(NSError *error) {
         failure(error);
