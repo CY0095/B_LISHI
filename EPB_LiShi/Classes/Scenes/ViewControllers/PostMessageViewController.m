@@ -40,8 +40,9 @@
     if (self.titleTextField.text.length > 0 && self.contentTextView.text.length > 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
-        UIImage *image = [UIImage imageNamed:@"zhuangbei.jpg"];
-        [[PostRequest sharePostRequest] postMessageRequestWithUser_id:user_id content:self.contentTextView.text title:self.titleTextField.text image:image success:^(NSDictionary *dic) {
+        UIImage *image = self.postImg.image;
+        NSData *data = UIImageJPEGRepresentation(image, 0.1);
+        [[PostRequest sharePostRequest] postMessageRequestWithUser_id:user_id content:self.contentTextView.text title:self.titleTextField.text data:data success:^(NSDictionary *dic) {
             NSString *status = [dic objectForKey:@"status"];
             if ([status isEqualToString:@"OK"]) {
                 NSString *topics_id = [[dic objectForKey:@"data"] objectForKey:@"topics_id"];

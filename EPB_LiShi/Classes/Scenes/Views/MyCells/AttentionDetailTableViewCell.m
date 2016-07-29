@@ -23,7 +23,9 @@
         _model = nil;
         _model = model;
     }
-    [self.headImg setImageWithURL:[NSURL URLWithString:model.image]];
+    if (model.image) {
+        [self.headImg setImageWithURL:[NSURL URLWithString:model.image]];
+    }
     self.titleLabel.text = model.topic_title;
     self.fromClubLabel.text = [NSString stringWithFormat:@"来自 %@",model.club_title];
     self.createdateLabel.text = model.createdate;

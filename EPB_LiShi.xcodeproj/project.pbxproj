@@ -3322,7 +3322,7 @@
 				TargetAttributes = {
 					C231C6131D361AAA009BB26B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R7Z5STJESD;
+						DevelopmentTeam = VQE8YLG6C3;
 					};
 				};
 			};
@@ -3810,7 +3810,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -3849,7 +3848,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3867,7 +3865,6 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PODS_ROOT)/UmengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/**",
@@ -3899,7 +3896,7 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/HyphenateFullSDK/HyphenateFullSDK/lib/3rdparty\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi010";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3915,7 +3912,6 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EPB_LiShi/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = EPB_LiShi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(PODS_ROOT)/UmengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/**",
@@ -3947,7 +3943,7 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/HyphenateFullSDK/HyphenateFullSDK/lib/3rdparty\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanou3g.EPB-LiShi010";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
