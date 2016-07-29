@@ -99,11 +99,31 @@
                                     <constraint firstItem="hII-3Q-sY4" firstAttribute="leading" secondItem="YgU-pf-868" secondAttribute="leading" constant="8" id="zaA-Wk-vXd"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiT-QD-dSc">
+                                <rect key="frame" x="262" y="319" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="C8R-g4-fwr"/>
+                                    <constraint firstAttribute="height" constant="30" id="mDm-yt-hIM"/>
+                                </constraints>
+                                <state key="normal" title="回复"/>
+                                <connections>
+                                    <action selector="huifuAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8Rt-qb-HPQ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="huifu.png" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-Q8-p7r">
+                                <rect key="frame" x="224" y="319" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5e3-Zk-Sft"/>
+                                    <constraint firstAttribute="width" constant="30" id="eKF-MO-aBh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TiT-QD-dSc" secondAttribute="bottom" constant="8" id="0XD-D0-JEb"/>
                             <constraint firstItem="WoZ-iB-3pC" firstAttribute="top" secondItem="vMb-db-Z1s" secondAttribute="top" constant="21" id="5A4-Iq-tgz"/>
                             <constraint firstItem="vdf-cZ-3xS" firstAttribute="top" secondItem="vMb-db-Z1s" secondAttribute="top" constant="8" id="9QJ-de-xwq"/>
+                            <constraint firstAttribute="bottom" secondItem="qhG-Q8-p7r" secondAttribute="bottom" constant="8" id="AIZ-ah-fhC"/>
                             <constraint firstItem="vdf-cZ-3xS" firstAttribute="leading" secondItem="cUI-sZ-6ni" secondAttribute="trailing" constant="8" id="HQX-Oh-4On"/>
                             <constraint firstItem="o1z-4q-zxM" firstAttribute="top" secondItem="vMb-db-Z1s" secondAttribute="top" constant="27" id="JFB-a9-XYd"/>
                             <constraint firstItem="o1z-4q-zxM" firstAttribute="leading" secondItem="cUI-sZ-6ni" secondAttribute="trailing" constant="8" id="JKM-hJ-ZdU"/>
@@ -113,6 +133,8 @@
                             <constraint firstItem="cUI-sZ-6ni" firstAttribute="leading" secondItem="vMb-db-Z1s" secondAttribute="leading" constant="8" id="Wml-mn-aR5"/>
                             <constraint firstItem="cUI-sZ-6ni" firstAttribute="top" secondItem="vMb-db-Z1s" secondAttribute="top" constant="8" id="aSz-gc-wlF"/>
                             <constraint firstAttribute="trailing" secondItem="WoZ-iB-3pC" secondAttribute="trailing" constant="8" id="bf3-3K-ir6"/>
+                            <constraint firstItem="TiT-QD-dSc" firstAttribute="leading" secondItem="qhG-Q8-p7r" secondAttribute="trailing" constant="8" id="o1g-TJ-ot0"/>
+                            <constraint firstAttribute="trailing" secondItem="TiT-QD-dSc" secondAttribute="trailing" constant="13" id="vYn-0Y-CMz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -128,6 +150,7 @@
                 <outlet property="creatTimeLabel" destination="o1z-4q-zxM" id="LmD-AA-pfT"/>
                 <outlet property="foolLabel" destination="WoZ-iB-3pC" id="Vrq-j1-CWt"/>
                 <outlet property="headImg" destination="cUI-sZ-6ni" id="nt2-En-rO9"/>
+                <outlet property="huifuBtn" destination="TiT-QD-dSc" id="Lzt-Xq-rkV"/>
                 <outlet property="nicknameLabel" destination="vdf-cZ-3xS" id="lok-Pb-6Yq"/>
                 <outlet property="replyView" destination="YgU-pf-868" id="LVu-w7-SHQ"/>
                 <outlet property="reply_content" destination="hII-3Q-sY4" id="X5M-2q-r3l"/>
@@ -139,5 +162,6 @@
     </objects>
     <resources>
         <image name="boy_default.png" width="128" height="128"/>
+        <image name="huifu.png" width="32" height="32"/>
     </resources>
 </document>

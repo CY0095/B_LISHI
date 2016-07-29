@@ -24,6 +24,8 @@
     // 为头像图片切圆角
     self.headImg.layer.cornerRadius = 50.0;
     self.headImg.layer.masksToBounds = YES;
+    NSString *headImg = [[NSUserDefaults standardUserDefaults] objectForKey:@"headicon"];
+    [self.headImg setImageWithURL:[NSURL URLWithString:headImg]];
     NSString *nickname = [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"];
     self.nickNameText.text = nickname;
     // 添加右按钮
@@ -111,20 +113,35 @@
 // 上传头像方法
 -(void)uploadingHeadImg{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];// 加载动画
-    [[UpMydataRequest shareUpmyDataRequest] upMydataWithImage:self.headImg.image success:^(NSDictionary *dic) {
+    
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    [[UpMydataRequest shareUpmyDataRequest] upMydataWithImage:self.headImg.image user_id:user_id success:^(NSDictionary *dic) {
         NSString *status = [dic objectForKey:@"status"];
         if ([status isEqualToString:@"OK"]) {
-            NSLog(@"img = %@",[[dic objectForKey:@"data"] objectForKey:@"img"]);
+            NSString *img = [[dic objectForKey:@"data"] objectForKey:@"img"];
+            NSLog(@"img = %@",img);
+            [[NSUserDefaults standardUserDefaults] setObject:img forKey:@"headicon"];
             [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"上传头像成功" preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:nil];
+            [alertC addAction:okaction];
+            [self presentViewController:alertC animated:YES completion:nil];
         }else{
             NSLog(@"dic = %@",dic);
             [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"上传头像失败" preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+            [alertC addAction:okaction];
+            [self presentViewController:alertC animated:YES completion:nil];
         }
     } failure:^(NSError *error) {
         NSLog(@"error = %@",error);
         [MBProgressHUD hideHUDForView:self.view animated:YES];// 结束加载
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"网络出错啦!" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+        [alertC addAction:okaction];
+        [self presentViewController:alertC animated:YES completion:nil];
     }];
-    
 }
 
 

@@ -39,8 +39,11 @@
     
     self.longitude = self.model.gaodlongitude;
     self.latitude = self.model.gaodelatitude;
-    NSLog(@"++++++++++%@",self.longitude);
-    NSLog(@"+++++++++%@",self.latitude);
+//    NSLog(@"++++++++++%@",self.longitude);
+//    NSLog(@"+++++++++%@",self.latitude);
+    
+    self.longitude = self.model1.gaode_longitude;
+    self.latitude = self.model1.gaode_latitude;
     
     [self addAnnotation];
     

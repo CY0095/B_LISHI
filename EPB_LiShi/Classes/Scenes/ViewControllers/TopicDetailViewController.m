@@ -208,7 +208,7 @@
     
     // 标题label
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, self.headView.bounds.size.height + 10, WindownWidth - 20, WindowHeight / 9 * 3 / 4)];
-    self.titleLabel.text = @"师徒三人结组70年代担惊受恐阿萨德就按时间段里阿卡洛杉矶";
+    self.titleLabel.text = @"加载中";
     self.titleLabel.font = [UIFont systemFontOfSize:21.0];
     self.titleLabel.numberOfLines = 0;
     // 创建时间label

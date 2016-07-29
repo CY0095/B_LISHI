@@ -19,7 +19,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"title == %@,picture == %@",_title,_thumb];
+    return [NSString stringWithFormat:@"title == %@,Id == %@",_title,_ID];
 }
 
 @end

@@ -13,9 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
 @property (weak, nonatomic) IBOutlet UIView *backView;
-
 @property (strong, nonatomic) MyAttentionModel *model;
 
 @end

@@ -25,9 +25,27 @@ static PostRequest *request = nil;
         failure(error);
     }];
 }
--(void)postReplyRequestWithTopic_id:(NSString *)topic_id user_id:(NSString *)user_id success:(SuccessResponse)success failure:(FailureResponse)failure{
+-(void)postReplyRequestWithTopic_id:(NSString *)topic_id user_id:(NSString *)user_id page:(NSString *)page success:(SuccessResponse)success failure:(FailureResponse)failure{
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request requestWithUrl:postReplyRequest_Url(topic_id, user_id) parameters:nil successResponse:^(NSDictionary *dic) {
+    [request requestWithUrl:postReplyRequest_Url(topic_id, user_id,page) parameters:nil successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failureResponse:^(NSError *error) {
+        failure(error);
+    }];
+}
+-(void)replyRequestWithUser_id:(NSString *)user_id club_id:(NSString *)club_id parentid:(NSString *)parentid reply_id:(NSString *)reply content:(NSString *)content success:(SuccessResponse)success failure:(FailureResponse)failure{
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request sendDataWithUrl:replyRequest_Url paramters:@{@"user_id":user_id,@"club_id":club_id,@"parentid":parentid,@"reply_id":reply,@"content":content} successResponse:^(NSDictionary *dic) {
+        success(dic);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+
+-(void)postMessageRequestWithUser_id:(NSString *)user_id content:(NSString *)content title:(NSString *)title image:(UIImage *)image success:(SuccessResponse)success failure:(FailureResponse)failure{
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    [request sendImageWithUrl:postMessageRequest_Url paramter:@{@"club_id":@"48",@"content[]":content,@"source":@"2",@"title":title,@"user_id":user_id,@"ext[]":@".JPEG"} image:image successResponse:^(NSDictionary *dic) {
         success(dic);
     } failureResponse:^(NSError *error) {
         failure(error);

@@ -8,10 +8,12 @@
 
 #import "BaseViewController.h"
 #import "ActivityDetailModel.h"
+#import "ShopDetailModel.h"
 
 @interface MapViewController : BaseViewController
 
 @property(strong,nonatomic) ActivityDetailModel *model;
+@property (strong, nonatomic) ShopDetailModel *model1;
 
 @property(strong,nonatomic) NSString *longitude;
 
