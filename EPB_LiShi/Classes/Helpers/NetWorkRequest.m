@@ -52,8 +52,9 @@
 -(void)sendImageWithUrl:(NSString *)url paramter:(NSDictionary *)paramterDic image:(UIImage *)uploadImage successResponse:(SuccessResponse)success failureResponse:(FailureResponse)failure{
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     [manager POST:url parameters:paramterDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:UIImageJPEGRepresentation(uploadImage, 0.5) name:@"avatar" fileName:@"avatar.jpg" mimeType:@"application/octet-stream"];
+        [formData appendPartWithFileData:UIImageJPEGRepresentation(uploadImage, 0.5) name:@"photo" fileName:@"FILE.JPG" mimeType:@"application/octet-stream"];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         

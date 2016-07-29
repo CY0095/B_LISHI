@@ -20,7 +20,7 @@
     [self.contentView addSubview:self.imgView];
 }
 
-
+// model的setter方法
 -(void)setModel:(PostReplyModel *)model{
     if (_model != model) {
         _model = nil;
@@ -30,6 +30,8 @@
     self.nicknameLabel.text = model.nickname;
     self.creatTimeLabel.text = model.createdate;
     self.foolLabel.text = [NSString stringWithFormat:@"%@楼",model.floor];
+    self.club_id = model.club_id;
+    self.replytopic_id = model.replytopic_id;
     if (model.reply_nickname.length != 0) {
         self.replyView.hidden = NO;
         self.reply_content.text = model.reply_content;
@@ -67,7 +69,7 @@
 
 
 +(CGFloat)cellHeight:(PostReplyModel *)model{
-    CGFloat staticHeight = 90;
+    CGFloat staticHeight = 130;
     CGFloat dynamicHeight = [self textHeightFromMode:model];
     CGFloat imgHeight = 0;
     NSArray *imgArray = model.topic_image;
@@ -85,6 +87,12 @@
 +(CGFloat)textHeightFromMode:(PostReplyModel *)model{
     CGRect rect = [model.content boundingRectWithSize:CGSizeMake(WindownWidth - 20, 736) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15.0]} context:nil];
     return rect.size.height;
+}
+// 回复评论点击方法
+- (IBAction)huifuAction:(id)sender {
+    if (_delegate && [_delegate respondsToSelector:@selector(PostReplyTableViewReplyBtnClicked:)]) {
+        [_delegate PostReplyTableViewReplyBtnClicked:self];
+    }
 }
 
 

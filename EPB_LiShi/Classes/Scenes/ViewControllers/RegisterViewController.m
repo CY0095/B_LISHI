@@ -168,16 +168,19 @@
         [alertC addAction:okaction];
         [self presentViewController:alertC animated:YES completion:nil];
     }else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[GetCodeRequest shareGetCodeRequest] getCodeRequestWithphoneNumber:self.username.text success:^(NSDictionary *dic) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             // NSString *status = [dic objectForKey:@"status"];
             NSString *result = [[dic objectForKey:@"data"] objectForKey:@"error"];
-            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:result preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:result preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:nil];
             [alertC addAction:okaction];
             [self presentViewController:alertC animated:YES completion:nil];
         } failure:^(NSError *error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"error = %@",error);
-            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"获取失败请重试" preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"网络超时,请检查网络" preferredStyle:(UIAlertControllerStyleAlert)];
             UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
             [alertC addAction:okaction];
             [self presentViewController:alertC animated:YES completion:nil];

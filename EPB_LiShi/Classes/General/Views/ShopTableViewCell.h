@@ -16,6 +16,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *img1;
+@property (strong, nonatomic) IBOutlet UIImageView *img2;
+@property (strong, nonatomic) IBOutlet UIImageView *img3;
+@property (strong, nonatomic) IBOutlet UIImageView *img4;
+@property (strong, nonatomic) IBOutlet UIImageView *img5;
+
 
 @property (strong, nonatomic) ShopModel *model;
 

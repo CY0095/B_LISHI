@@ -22,7 +22,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="十堰市神农氏户外运动俱乐部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yW-mX-z27">
                         <rect key="frame" x="143" y="8" width="170" height="28"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="170" id="wZK-Vq-eAs"/>
                         </constraints>
@@ -61,24 +61,24 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="destination.png" translatesAutoresizingMaskIntoConstraints="NO" id="eWb-5S-oPt">
-                        <rect key="frame" x="356" y="73" width="20" height="18"/>
+                        <rect key="frame" x="353" y="73" width="20" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="T7N-gL-XKU"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzb-wN-GYe">
-                        <rect key="frame" x="378" y="72" width="28" height="19"/>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="373" y="72" width="33" height="19"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="28" id="Lmt-Bd-lxX"/>
+                            <constraint firstAttribute="width" constant="33" id="Lmt-Bd-lxX"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBm-yp-V3T">
                         <rect key="frame" x="143" y="73" width="213" height="21"/>
-                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="126" id="Lmb-m4-w86"/>
                         </constraints>
@@ -109,7 +109,7 @@
                     <constraint firstItem="sKX-c3-Ehv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="144" id="OwZ-jq-C2R"/>
                     <constraint firstItem="kBm-yp-V3T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="143" id="PUr-pI-eN3"/>
                     <constraint firstAttribute="bottom" secondItem="x0A-Df-ebJ" secondAttribute="bottom" constant="39" id="TKi-Sf-eGp"/>
-                    <constraint firstAttribute="trailing" secondItem="eWb-5S-oPt" secondAttribute="trailing" constant="38" id="TUh-pj-blc"/>
+                    <constraint firstAttribute="trailing" secondItem="eWb-5S-oPt" secondAttribute="trailing" constant="41" id="TUh-pj-blc"/>
                     <constraint firstAttribute="bottom" secondItem="fxr-LR-dG3" secondAttribute="bottom" constant="39" id="U5J-hd-HKD"/>
                     <constraint firstItem="Mhz-dI-E4F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="44" id="Y5P-xh-fjm"/>
                     <constraint firstAttribute="bottom" secondItem="kBm-yp-V3T" secondAttribute="bottom" constant="7" id="bxn-y1-Poe"/>
@@ -139,6 +139,11 @@
             <connections>
                 <outlet property="addressLabel" destination="kBm-yp-V3T" id="9J7-TL-vtz"/>
                 <outlet property="distanceLabel" destination="Dzb-wN-GYe" id="ckc-KJ-PUk"/>
+                <outlet property="img1" destination="sKX-c3-Ehv" id="Eq9-Nb-sdd"/>
+                <outlet property="img2" destination="eAe-j7-sKb" id="GVt-qh-Nnf"/>
+                <outlet property="img3" destination="Mhz-dI-E4F" id="XoL-94-6Um"/>
+                <outlet property="img4" destination="fxr-LR-dG3" id="zVT-AH-3H2"/>
+                <outlet property="img5" destination="x0A-Df-ebJ" id="vEe-ga-v2v"/>
                 <outlet property="shopImg" destination="7DU-uo-3bS" id="9fR-78-paB"/>
                 <outlet property="titleLabel" destination="3yW-mX-z27" id="DFt-4Y-RN6"/>
             </connections>

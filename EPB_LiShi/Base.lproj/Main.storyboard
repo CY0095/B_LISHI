@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NyQ-VP-qqN">
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NyQ-VP-qqN">
+
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -105,7 +109,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVq-EH-cCZ">
-                                <rect key="frame" x="34" y="452" width="346" height="50"/>
+                                <rect key="frame" x="34" y="455" width="346" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bGU-Je-MPP"/>
@@ -138,7 +142,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.86262528992684562" green="0.85850930838322148" blue="0.76651581006107383" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wVq-EH-cCZ" firstAttribute="top" secondItem="8pE-ai-0Dv" secondAttribute="bottom" constant="43" id="1ft-4f-YQs"/>
+                            <constraint firstItem="wVq-EH-cCZ" firstAttribute="top" secondItem="8pE-ai-0Dv" secondAttribute="bottom" constant="46" id="1ft-4f-YQs"/>
                             <constraint firstAttribute="trailing" secondItem="8pE-ai-0Dv" secondAttribute="trailing" id="Btx-2L-6gZ"/>
                             <constraint firstItem="by3-KJ-ifM" firstAttribute="top" secondItem="sPt-BN-Mvk" secondAttribute="bottom" constant="13" id="Ru6-fA-mD7"/>
                             <constraint firstItem="8pE-ai-0Dv" firstAttribute="top" secondItem="by3-KJ-ifM" secondAttribute="bottom" constant="24" id="eDa-C1-lD3"/>

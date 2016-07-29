@@ -26,6 +26,8 @@
 #define buySportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/v3/zhuangbei/detail/%@",ID]
 //商店界面
 #define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
+//商店详情界面
+#define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
@@ -35,7 +37,6 @@
 #define registerRequest_Url @"http://api.lis99.com/v2/user/regMobile"
 // 上传头像接口
 #define getHeadImgRequest_Url @"http://api.lis99.com/user/savePhoto"
-
 // 修改昵称接口
 #define changeNickNameRequest_Url @"http://api.lis99.com/v2/user/updNickname"
 
@@ -57,9 +58,11 @@
 // 帖子接口
 #define postHeadRequest_Url(topic_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v3/club/topics/%@/%@",topic_id,user_id]
 
-#define postReplyRequest_Url(topic_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v2/club/replylist/%@/%@",topic_id,user_id]
-
-
+#define postReplyRequest_Url(topic_id,user_id,page) [NSString stringWithFormat:@"http://api.lis99.com/v2/club/replylist/%@/%@?page=%@",topic_id,user_id,page]
+// 回复接口
+#define replyRequest_Url @"http://api.lis99.com/v4/club/clubActivityTopic"
+// 发帖接口
+#define postMessageRequest_Url @"http://api.lis99.com/v5/topics/pubTopics"
 
 
 
