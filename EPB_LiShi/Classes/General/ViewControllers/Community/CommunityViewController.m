@@ -29,54 +29,54 @@
 
 @implementation CommunityViewController
 
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        
-//        
-//        self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//            // 进入刷新状态后会自动回调这个block
-//        }];
-//        // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
-//        self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestCommunityListData)];
-//        // 马上进入刷新状态
-//        [self.communityTableView.mj_header beginRefreshing];
-//        self.page = 0;
-//        [self requestCommunityListData];
-//        
-//    }
-//    return self;
-//}
+
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
     self.communityTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
+    
+    // 下拉刷新
+    self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动回调这个block
+    }];
+    // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
+    self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh)];
+    // 马上进入刷新状态
+    // [self.communityTableView.mj_header beginRefreshing];
+    
+    
     // 上拉加载
     self.communityTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
         
     }];
-    
     self.communityTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addPage)];
-    [self.communityTableView.mj_footer beginRefreshing];
+    // [self.communityTableView.mj_footer beginRefreshing];
     
     // 注册
     [self.communityTableView registerNib:[UINib nibWithNibName:@"CommunityTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityTableViewCell_Identify];
     self.communityTableView.dataSource = self;
     self.communityTableView.delegate = self;
-    
-    
+    self.page = 0;
     [self.view addSubview:self.communityTableView];
     self.communityListArray = [NSMutableArray array];
     [self requestCommunityListData];
     
 }
+
+- (void)downPullRefresh {
+    
+    [self.communityListArray removeAllObjects];
+    self.page = 0;
+    [self requestCommunityListData];
+    
+}
+
 - (void)addPage {
     
     self.page ++;
-    
     [self requestCommunityListData];
-    
     NSLog(@"page++");
 }
 
@@ -94,7 +94,7 @@
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.communityListArray addObject:model];
         }
-//        NSLog(@"communityListArray == %@",weakSelf.communityListArray);
+        NSLog(@"communityListArray == %@",weakSelf.communityListArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -104,7 +104,7 @@
         
     }];
     // 当视图加载出来的时候结束刷新
-    // [self.communityTableView.mj_header endRefreshing];
+    [self.communityTableView.mj_header endRefreshing];
     [self.communityTableView.mj_footer endRefreshing];
 }
 

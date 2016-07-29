@@ -26,18 +26,11 @@
 
 @property (nonatomic, strong) NSMutableDictionary *headerDataDic;
 
+@property (nonatomic, assign) NSInteger page;
+
 @end
 
 @implementation HuwaifanViewController
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self requestCommunityHeaderViewData];
-        [self requestCommunityLuyingListData];
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,16 +49,53 @@
     
     [self.view addSubview:self.communityLuyingListView];
     
+    self.luyingListArray = [NSMutableArray array];
+    self.headerDataDic = [NSMutableDictionary dictionary];
+    // 下拉刷新
+    self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动回调这个block
+    }];
+    // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
+    self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh2)];
+    // 马上进入刷新状态
+    // [self.communityTableView.mj_header beginRefreshing];
     
     
+    // 上拉加载
+    self.communityLuyingListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+    }];
+    self.communityLuyingListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addPage2)];
+    // [self.communityTableView.mj_footer beginRefreshing];
+    
+    [self requestCommunityHeaderViewData];
+    [self requestCommunityLuyingListData];
     
 }
+- (void)downPullRefresh2 {
+    
+    [self.luyingListArray removeAllObjects];
+    // [self.headerDataDic removeAllObjects];
+    self.page = 0;
+    [self requestCommunityLuyingListData];
 
+}
+
+- (void)addPage2 {
+    
+    self.page ++;
+    [self requestCommunityLuyingListData];
+
+    NSLog(@"page++");
+    
+}
 - (void)requestCommunityLuyingListData {
-    self.luyingListArray = [NSMutableArray array];
+    
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
-    [request CommunityHuwaifanListRequestWithParameter:nil success:^(NSDictionary *dic) {
+    NSString *user_id = @"451316";
+    // [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    [request CommunityHuwaifanListRequestWithParameter:@{@"page":[NSString stringWithFormat:@"%ld",self.page],@"user_id":user_id} success:^(NSDictionary *dic) {
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         NSArray *tempArray = [tempEvents objectForKey:@"topiclist"];
         for (NSDictionary *tempDic in tempArray) {
@@ -84,11 +114,13 @@
     } failure:^(NSError *error) {
         
     }];
-    
+    // 当视图加载出来的时候结束刷新
+    [self.communityLuyingListView.mj_header endRefreshing];
+    [self.communityLuyingListView.mj_footer endRefreshing];
     
 }
 - (void)requestCommunityHeaderViewData {
-    self.headerDataDic = [NSMutableDictionary dictionary];
+    
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
     [request HuwaifanHeaderViewRequestWithParameter:nil success:^(NSDictionary *dic) {

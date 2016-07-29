@@ -68,7 +68,7 @@
 // 列表详情URL
 #define CommunityListDetailRequest_Url @"http://api.lis99.com/v5/topics/detail"
 // 社区徒步露营列表URL
-#define CommunityLuyingListRequest_Url @"http://api.lis99.com/v5/club/topiclists/284/0?page=0&user_id=451316"
+#define CommunityLuyingListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/284/0?page=%@&user_id=%@",page,user_id]
 // 板块介绍
 #define LuyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/284/451316"
 
@@ -87,7 +87,7 @@
 #define ZhuangbeikongHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/285/451316"
 
 // 社区户外范列表URL
-#define CommunityHuwaifanListRequest_Url @"http://api.lis99.com/v5/club/topiclists/48/0?page=0&user_id=451316"
+#define CommunityHuwaifanListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/48/0?page=%@&user_id=%@",page,user_id]
 #define HuwaifanHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/48/451316"
 
 #define CommunityAllListRequest_Url(club_id,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/%@/0?page=0&user_id=%@",club_id,user_id]

@@ -8,6 +8,17 @@
 
 #import "BaseModel.h"
 
-@interface ShopMo_del : BaseModel
+@interface ShopModel : BaseModel
+
+//地址
+@property (strong, nonatomic) NSString *address;
+//星级
+@property (strong, nonatomic) NSString *star;
+//商铺名称
+@property (strong, nonatomic) NSString *title;
+//商铺照片
+@property (strong, nonatomic) NSString *img;
+//距离
+@property (strong, nonatomic) NSString *distance;
 
 @end

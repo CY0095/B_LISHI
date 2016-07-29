@@ -8,6 +8,16 @@
 
 #import "ShopModel.h"
 
-@implementation ShopMo_del
+@implementation ShopModel
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
+
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"title == %@,star == %@",_title,_star];
+}
 
 @end
