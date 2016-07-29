@@ -76,12 +76,12 @@
 #define LuyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/284/451316"
 
 // 社区户外摄影列表URL
-#define CommunitySheyingListRequest_Url @"http://api.lis99.com/v5/club/topiclists/342/0?page=0&user_id=451316"
+#define CommunitySheyingListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/342/0?page=%@&user_id=%@",page,user_id]
 // 板块介绍
 #define SheyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/342/451316"
 
 // 社区极限攀登列表URL
-#define CommunityPandengListRequest_Url @"http://api.lis99.com/v5/club/topiclists/349/0?page=0&user_id=451316"
+#define CommunityPandengListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/349/0?page=%@&user_id=%@",page,user_id]
 // 板块介绍
 #define PandengHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/349/451316"
 

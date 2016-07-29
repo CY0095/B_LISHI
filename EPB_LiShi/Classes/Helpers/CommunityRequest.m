@@ -40,7 +40,9 @@
                                          success:(SuccessResponse)success
                                          failure:(FailureResponse)failure {
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request requestWithUrl:CommunitySheyingListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+    NSString *page = [parameterDic objectForKey:@"page"];
+    NSString *user_id = [parameterDic objectForKey:@"user_id"];
+    [request requestWithUrl:CommunitySheyingListRequest_Url(page, user_id) parameters:parameterDic successResponse:^(NSDictionary *dic) {
         success(dic);
     } failureResponse:^(NSError *error) {
         failure(error);
@@ -50,7 +52,9 @@
                                          success:(SuccessResponse)success
                                          failure:(FailureResponse)failure {
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request requestWithUrl:CommunityPandengListRequest_Url parameters:parameterDic successResponse:^(NSDictionary *dic) {
+    NSString *page = [parameterDic objectForKey:@"page"];
+    NSString *user_id = [parameterDic objectForKey:@"user_id"];
+    [request requestWithUrl:CommunityPandengListRequest_Url(page, user_id) parameters:parameterDic successResponse:^(NSDictionary *dic) {
         success(dic);
     } failureResponse:^(NSError *error) {
         failure(error);

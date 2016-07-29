@@ -39,11 +39,11 @@
     
     self.communityLuyingListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
     // 下拉刷新
-    self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    // self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动回调这个block
-    }];
+    // }];
     // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
-    self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh1)];
+    // self.communityLuyingListView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh1)];
     
     
     // 上拉加载
@@ -66,15 +66,16 @@
     
     [self requestCommunityLuyingListData];
     [self requestCommunityHeaderViewData];
-    
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
-- (void)downPullRefresh1 {
-    
-    [self.luyingListArray removeAllObjects];
-    self.page = 0;
-    [self requestCommunityLuyingListData];
-    
-}
+//- (void)downPullRefresh1 {
+//    
+//    [self.luyingListArray removeAllObjects];
+//    self.page = 0;
+//    [self requestCommunityLuyingListData];
+//    
+//}
 
 - (void)addPage1 {
     
@@ -100,6 +101,7 @@
         NSLog(@"weakSelf.luyingListArray=========%@",weakSelf.luyingListArray);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.communityLuyingListView reloadData];
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {
@@ -107,7 +109,7 @@
     }];
     
     // 当视图加载出来的时候结束刷新
-    [self.communityLuyingListView.mj_header endRefreshing];
+    // [self.communityLuyingListView.mj_header endRefreshing];
     [self.communityLuyingListView.mj_footer endRefreshing];
 }
 - (void)requestCommunityHeaderViewData {
@@ -140,7 +142,8 @@
     if (indexPath.row == 0) {
         return 153;
     }else {
-        return 420;
+        LuyingListModel *model = self.luyingListArray[indexPath.row - 1];
+        return [CommunityLuyingCell cellHeight:model];
     }
     
 }

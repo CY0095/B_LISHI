@@ -207,6 +207,8 @@
 		D6838BF41D4309E900E90C0E /* CommunityCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF21D4309E900E90C0E /* CommunityCustomCell.m */; };
 		D6838BF51D4309E900E90C0E /* CommunityCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */; };
 		D6838BF81D430D1900E90C0E /* CommunityCoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */; };
+		D68895A51D4B4DA100F1E0BE /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D68895A21D4B4DA100F1E0BE /* GiFHUD.m */; };
+		D68895B01D4B4DE000F1E0BE /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D68895AF1D4B4DE000F1E0BE /* loading.gif */; };
 		D68E574E1D459F25001507E0 /* AllListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68E574D1D459F25001507E0 /* AllListViewController.m */; };
 		D6A983051D47864600F559E2 /* ComTopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */; };
 		D6A9836E1D47A4B300F559E2 /* ComHeaderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */; };
@@ -1233,6 +1235,9 @@
 		D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityCustomCell.xib; sourceTree = "<group>"; };
 		D6838BF61D430D1900E90C0E /* CommunityCoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCoCellModel.h; sourceTree = "<group>"; };
 		D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCoCellModel.m; sourceTree = "<group>"; };
+		D68895A11D4B4DA100F1E0BE /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
+		D68895A21D4B4DA100F1E0BE /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
+		D68895AF1D4B4DE000F1E0BE /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		D68E574C1D459F25001507E0 /* AllListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListViewController.h; sourceTree = "<group>"; };
 		D68E574D1D459F25001507E0 /* AllListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListViewController.m; sourceTree = "<group>"; };
 		D6A983031D47864600F559E2 /* ComTopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTopicDetailViewController.h; sourceTree = "<group>"; };
@@ -1430,6 +1435,7 @@
 		C231C6161D361AAA009BB26B /* EPB_LiShi */ = {
 			isa = PBXGroup;
 			children = (
+				D68895A41D4B4DA100F1E0BE /* GifHUD */,
 				D6ADC8A71D3A52DA0073EAE4 /* Classes */,
 				C231C6201D361AAA009BB26B /* Main.storyboard */,
 				C231C6231D361AAA009BB26B /* Assets.xcassets */,
@@ -2600,6 +2606,8 @@
 		D61A98D21D423E8B0009DBFD /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				D61A98E31D423E8B0009DBFD /* UIScrollView+_DScrollView.h */,
+				D61A98E41D423E8B0009DBFD /* UIScrollView+_DScrollView.m */,
 				D665BB421D43713700916B4F /* CommunityReuseViewController.h */,
 				D665BB431D43713700916B4F /* CommunityReuseViewController.m */,
 				D61A98D31D423E8B0009DBFD /* CommunityDetailViewController.h */,
@@ -2616,8 +2624,6 @@
 				D61A98E01D423E8B0009DBFD /* PandengViewController.m */,
 				D61A98E11D423E8B0009DBFD /* SheyingViewController.h */,
 				D61A98E21D423E8B0009DBFD /* SheyingViewController.m */,
-				D61A98E31D423E8B0009DBFD /* UIScrollView+_DScrollView.h */,
-				D61A98E41D423E8B0009DBFD /* UIScrollView+_DScrollView.m */,
 				D61A98E51D423E8B0009DBFD /* ZhuangBeiKongViewController.h */,
 				D61A98E61D423E8B0009DBFD /* ZhuangBeiKongViewController.m */,
 				D61A98DD1D423E8B0009DBFD /* MoreListViewController.h */,
@@ -2875,6 +2881,17 @@
 				D67C53B91D43991000D377B8 /* ItineraryTableViewCell.m */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		D68895A41D4B4DA100F1E0BE /* GifHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D68895A11D4B4DA100F1E0BE /* GiFHUD.h */,
+				D68895A21D4B4DA100F1E0BE /* GiFHUD.m */,
+				D68895AF1D4B4DE000F1E0BE /* loading.gif */,
+			);
+			name = GifHUD;
+			path = "../../Desktop/项目期/LessonSenior_18_cocoaPods/GifHUD";
 			sourceTree = "<group>";
 		};
 		D6ADC8A71D3A52DA0073EAE4 /* Classes */ = {
@@ -3200,11 +3217,8 @@
 				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
 				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
 				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
-
-
 				C22036561D4AFEBE0041F3E8 /* ShopModel.h */,
 				C22036571D4AFEBE0041F3E8 /* ShopModel.m */,
-
 				D60729B01D4A4E480077547A /* ShopDetailModel.h */,
 				D60729B11D4A4E480077547A /* ShopDetailModel.m */,
 				D60729B21D4A4E480077547A /* PicModel.h */,
@@ -3477,6 +3491,7 @@
 				D61A99721D4244130009DBFD /* equip_Select.png in Resources */,
 				D61A99941D4245360009DBFD /* yekong.jpg in Resources */,
 				C241EDBC1D439B38005162C5 /* mydata3.png in Resources */,
+				D68895B01D4B4DE000F1E0BE /* loading.gif in Resources */,
 				C233C6941D47567500061AA9 /* imageLoad.jpg in Resources */,
 				D61A99741D4244130009DBFD /* My_Select.png in Resources */,
 				D61A997C1D4244130009DBFD /* videoPlay.png in Resources */,
@@ -3699,6 +3714,7 @@
 				D63370B41D41FB9B004D5E20 /* ClothDetailTableViewCell.m in Sources */,
 				D67C539A1D43598A00D377B8 /* DetailCycleModel.m in Sources */,
 				D63370B21D41FB9B004D5E20 /* EquipDetailCollectionViewCell.m in Sources */,
+				D68895A51D4B4DA100F1E0BE /* GiFHUD.m in Sources */,
 				C233C6911D47562D00061AA9 /* PostHeadModel.m in Sources */,
 				C233C6921D47562D00061AA9 /* PostReplyModel.m in Sources */,
 				D60729991D4A4D430077547A /* ShopDetailViewController.m in Sources */,

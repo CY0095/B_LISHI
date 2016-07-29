@@ -12,8 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.image.layer.cornerRadius = 25;
-    self.image.layer.masksToBounds = YES;
+//    self.image.layer.cornerRadius = self.image.bounds.size.width;
+//    self.image.layer.masksToBounds = YES;
 }
 
 - (void)setModel:(CommunityCoCellModel *)model {

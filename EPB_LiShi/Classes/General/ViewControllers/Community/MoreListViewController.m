@@ -42,18 +42,18 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     // 设置每个item的大小
-    flowLayout.itemSize = CGSizeMake((kScreenWidth - 40)/ 2, ((kScreenWidth - 40)/ 2) / 190 * 70);
+    flowLayout.itemSize = CGSizeMake((WindownWidth - 40) / 2, ((WindownWidth - 40) / 2) / 5 * 2);
     // 设置最小行间距
-    flowLayout.minimumLineSpacing = 20;
+    flowLayout.minimumLineSpacing = 10;
     // 设置最小列间距
-    flowLayout.minimumInteritemSpacing = 20;
+    flowLayout.minimumInteritemSpacing = 10;
     // 设置单个分区距离上下左右的位置
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     // 设置滑动方向(垂直)
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     // 设置增补视图尺寸
 //    flowLayout.footerReferenceSize = CGSizeMake(0, 50);
-    flowLayout.headerReferenceSize = CGSizeMake(0, 20);
+    flowLayout.headerReferenceSize = CGSizeMake(0, 30);
     
     // 初始化collectionView
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44) collectionViewLayout:flowLayout];
@@ -64,7 +64,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     
     self.collectionView.dataSource =self;
     self.collectionView.delegate = self;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:243.0 green:244.0 blue:213.0 alpha:1.0];
     [self.view addSubview:self.collectionView];
     
     self.allDataDic = [NSMutableDictionary dictionary];
@@ -73,6 +73,8 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     self.ppclublistArray = [NSMutableArray array];
     
     [self requestCollectionViewData];
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 - (void)requestCollectionViewData {
@@ -109,6 +111,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
+            [GiFHUD dismiss];
         });
         
         
@@ -160,9 +163,25 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID forIndexPath:indexPath];
         
-        headerView.backgroundColor = [UIColor whiteColor];
+        headerView.backgroundColor = [UIColor colorWithRed:243.0 green:244.0 blue:213.0 alpha:1.0];
         
-        reuseableView = headerView;
+        if (indexPath.section == 0) {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
+            label.text = @"当季推荐";
+            [headerView addSubview:label];
+            reuseableView = headerView;
+        }else if (indexPath.section == 1) {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
+            label.text = @"特色项目";
+            [headerView addSubview:label];
+            reuseableView = headerView;
+        }else {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
+            label.text = @"品牌专区";
+            [headerView addSubview:label];
+            reuseableView = headerView;
+        }
+        
     }
     return reuseableView;
     

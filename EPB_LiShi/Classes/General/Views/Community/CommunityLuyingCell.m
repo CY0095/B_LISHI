@@ -15,8 +15,13 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    
+//    CGFloat imgWidth = (kScreenWidth - 54) / 3;
+//    self.shareImg_0.frame = CGRectMake(14, 115, imgWidth, imgWidth);
+//    self.shareImg_1.frame = CGRectMake(14 + imgWidth + 13, 115, imgWidth, imgWidth);
+//    self.shareImg_2.frame = CGRectMake(14 + imgWidth + 13 + imgWidth + 13, 115, imgWidth, imgWidth);
+//    self.shareImg_3.frame = CGRectMake(14, 115 + imgWidth + 13, imgWidth, imgWidth);
+//    self.shareImg_4.frame = CGRectMake(14 + imgWidth + 13, 115 + imgWidth + 13, imgWidth, imgWidth);
+//    self.shareImg_5.frame = CGRectMake(14 + imgWidth + 13 + imgWidth + 13, 115 + imgWidth + 13, imgWidth, imgWidth);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,6 +49,16 @@
     
 }
 
-
+//计算cell整体的高度
++ (CGFloat)cellHeight:(LuyingListModel *)model {
+    
+    // cell固定部分的高度（代指实际开发中不要自适应，有固定高度的控件和间隙所共同占有高度的总和）
+    CGFloat staticHeight = 166;
+    // cell不固定部分的高度（需要自适应，因内容而变换的控件的高度）
+    CGFloat dynamicHeight = ((kScreenWidth - 40)/3.0)*2;
+    // cell的高度等于固定的部分 + 变化的部分
+    return staticHeight + dynamicHeight;
+    
+}
 
 @end

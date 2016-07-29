@@ -20,9 +20,9 @@
 
 @interface  ZhuangBeiKongViewController()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *communitySheyingListView;
+@property (nonatomic, strong) UITableView *communityzhuangbeifanListView;
 
-@property (nonatomic, strong) NSMutableArray *SheyingListArray;
+@property (nonatomic, strong) NSMutableArray *ZhuangbeiListArray;
 
 @property (nonatomic, strong) NSMutableDictionary *headerDataDic;
 
@@ -30,41 +30,36 @@
 
 @implementation ZhuangBeiKongViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self requestCommunityHeaderViewData];
-        [self requestCommunityLuyingListData];
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.communitySheyingListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
+    self.communityzhuangbeifanListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
     
     // 注册
-    [self.communitySheyingListView registerNib:[UINib nibWithNibName:@"CommunityHeaderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityHeaderCell_Identify];
-    [self.communitySheyingListView registerNib:[UINib nibWithNibName:@"CommunityLuyingCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingCell_Identify];
-    [self.communitySheyingListView registerNib:[UINib nibWithNibName:@"CommunityLuyingVideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingVideoCell_Identify];
+    [self.communityzhuangbeifanListView registerNib:[UINib nibWithNibName:@"CommunityHeaderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityHeaderCell_Identify];
+    [self.communityzhuangbeifanListView registerNib:[UINib nibWithNibName:@"CommunityLuyingCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingCell_Identify];
+    [self.communityzhuangbeifanListView registerNib:[UINib nibWithNibName:@"CommunityLuyingVideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingVideoCell_Identify];
     
-    self.communitySheyingListView.dataSource = self;
-    self.communitySheyingListView.delegate = self;
+    self.communityzhuangbeifanListView.dataSource = self;
+    self.communityzhuangbeifanListView.delegate = self;
     
-    [self.view addSubview:self.communitySheyingListView];
-    
-    
+    [self.view addSubview:self.communityzhuangbeifanListView];
     
     
-//    [self requestCommunityLuyingListData];
-//    [self requestCommunityHeaderViewData];
     
+    
+    [self requestCommunityLuyingListData];
+    [self requestCommunityHeaderViewData];
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 - (void)requestCommunityLuyingListData {
-    self.SheyingListArray = [NSMutableArray array];
+    self.ZhuangbeiListArray = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
     [request CommunityZhuangbeikongListRequestWithParameter:nil success:^(NSDictionary *dic) {
@@ -73,13 +68,14 @@
         for (NSDictionary *tempDic in tempArray) {
             LuyingListModel *model = [LuyingListModel new];
             [model setValuesForKeysWithDictionary:tempDic];
-            [weakSelf.SheyingListArray addObject:model];
+            [weakSelf.ZhuangbeiListArray addObject:model];
         }
         
         // NSLog(@"SheyingListArray == %@",weakSelf.SheyingListArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.communitySheyingListView reloadData];
+            [self.communityzhuangbeifanListView reloadData];
+            [GiFHUD dismiss];
         });
         
         
@@ -102,7 +98,7 @@
         // NSLog(@"headerDataDic == %@",weakSelf.headerDataDic);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.communitySheyingListView reloadData];
+            [weakSelf.communityzhuangbeifanListView reloadData];
         });
         
     } failure:^(NSError *error) {
@@ -114,12 +110,13 @@
     if (indexPath.row == 0) {
         return 153;
     }else {
-        return 420;
+        LuyingListModel *model = self.ZhuangbeiListArray[indexPath.row - 1];
+        return [CommunityLuyingCell cellHeight:model];
     }
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.SheyingListArray.count;
+    return self.ZhuangbeiListArray.count + 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -132,7 +129,7 @@
         [cell.backImage setImage:[UIImage imageNamed:@"zhuangbei.jpg"]];
         return cell;
     }else {
-        LuyingListModel *model = self.SheyingListArray[indexPath.row];
+        LuyingListModel *model = self.ZhuangbeiListArray[indexPath.row - 1];
         if (model.images.count == 0) {
             CommunityLuyingVideoCell *videoCell = [tableView dequeueReusableCellWithIdentifier:CommunityLuyingVideoCell_Identify];
             videoCell.model = model;
@@ -161,7 +158,7 @@
         [self.navigationController pushViewController:detailVC animated:YES];
         
     }else {
-        LuyingListModel *model = self.SheyingListArray[indexPath.row];
+        LuyingListModel *model = self.ZhuangbeiListArray[indexPath.row - 1];
         
         if (model.images.count == 0) {
             

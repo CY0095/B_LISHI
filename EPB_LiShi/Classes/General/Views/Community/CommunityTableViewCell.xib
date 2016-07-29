@@ -21,12 +21,6 @@
                             <constraint firstAttribute="width" constant="30" id="mSI-NL-LZS"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0412.png" translatesAutoresizingMaskIntoConstraints="NO" id="AZK-Gb-ZHi">
-                        <rect key="frame" x="0.0" y="46" width="414" height="190"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="190" id="EfO-1p-Y8j"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈耕生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-NQ-D1J">
                         <rect key="frame" x="46" y="12" width="297" height="21"/>
                         <constraints>
@@ -40,7 +34,6 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牛人牛队 | 年宝玉则赏花探湖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-Gg-HQA">
                         <rect key="frame" x="8" y="244" width="398" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="398" id="OCc-XN-jpy"/>
                             <constraint firstAttribute="height" constant="21" id="VOJ-hM-MfN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,6 +67,12 @@
                             <constraint firstAttribute="height" constant="13" id="SdO-3h-qCf"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0412.png" translatesAutoresizingMaskIntoConstraints="NO" id="AZK-Gb-ZHi">
+                        <rect key="frame" x="8" y="46" width="398" height="190"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="190" id="EfO-1p-Y8j"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fMy-kC-5x5" secondAttribute="trailing" id="9Jq-v1-DTi"/>
@@ -84,14 +83,15 @@
                     <constraint firstItem="kdI-ru-E50" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JVf-Sw-Wee"/>
                     <constraint firstItem="hdr-GJ-4WO" firstAttribute="top" secondItem="sfc-Gg-HQA" secondAttribute="bottom" constant="5" id="Lqa-OE-Xsb"/>
                     <constraint firstItem="AZK-Gb-ZHi" firstAttribute="top" secondItem="TWs-Ji-fWM" secondAttribute="bottom" constant="8" id="Oum-Ss-m1n"/>
-                    <constraint firstAttribute="trailing" secondItem="AZK-Gb-ZHi" secondAttribute="trailing" id="S8i-1t-xbn"/>
+                    <constraint firstAttribute="trailing" secondItem="AZK-Gb-ZHi" secondAttribute="trailing" constant="8" id="S8i-1t-xbn"/>
                     <constraint firstItem="fMy-kC-5x5" firstAttribute="top" secondItem="hdr-GJ-4WO" secondAttribute="bottom" constant="10" id="Vid-1B-ZQD"/>
                     <constraint firstItem="fMy-kC-5x5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YYK-b3-7uD"/>
                     <constraint firstItem="Brc-NQ-D1J" firstAttribute="leading" secondItem="kdI-ru-E50" secondAttribute="trailing" constant="8" id="Zrf-uH-kcf"/>
                     <constraint firstItem="sfc-Gg-HQA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jkd-85-NiQ"/>
                     <constraint firstAttribute="trailing" secondItem="TWs-Ji-fWM" secondAttribute="trailing" constant="17" id="kAm-x6-hyu"/>
                     <constraint firstItem="hdr-GJ-4WO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kUF-D1-JE2"/>
-                    <constraint firstItem="AZK-Gb-ZHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sot-Hz-AVq"/>
+                    <constraint firstAttribute="trailing" secondItem="sfc-Gg-HQA" secondAttribute="trailing" constant="8" id="l1z-E0-AP3"/>
+                    <constraint firstItem="AZK-Gb-ZHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sot-Hz-AVq"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -102,7 +102,7 @@
                 <outlet property="replyNumLabel" destination="hdr-GJ-4WO" id="kDs-Qo-S9o"/>
                 <outlet property="titleLabel" destination="sfc-Gg-HQA" id="aZa-l2-Gnb"/>
             </connections>
-            <point key="canvasLocation" x="551" y="302.5"/>
+            <point key="canvasLocation" x="354" y="302.5"/>
         </tableViewCell>
     </objects>
     <resources>
