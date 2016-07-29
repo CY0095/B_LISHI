@@ -207,14 +207,9 @@
 		D6838BF51D4309E900E90C0E /* CommunityCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6838BF31D4309E900E90C0E /* CommunityCustomCell.xib */; };
 		D6838BF81D430D1900E90C0E /* CommunityCoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */; };
 		D68E574E1D459F25001507E0 /* AllListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D68E574D1D459F25001507E0 /* AllListViewController.m */; };
-		D69121921D4A0E9C0059E8D2 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D69121911D4A0E9C0059E8D2 /* ShopModel.m */; };
 		D6A983051D47864600F559E2 /* ComTopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */; };
 		D6A9836E1D47A4B300F559E2 /* ComHeaderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */; };
 		D6A9836F1D47A4B300F559E2 /* ComHeaderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A9836D1D47A4B300F559E2 /* ComHeaderDetailCell.xib */; };
-
-
-
-
 		D6ADC91F1D3A52DB0073EAE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */; };
 		D6ADC9211D3A52DB0073EAE4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B11D3A52DB0073EAE4 /* BaseViewController.m */; };
 		D6ADC9251D3A52DB0073EAE4 /* EquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6ADC8B91D3A52DB0073EAE4 /* EquipViewController.m */; };
@@ -270,10 +265,6 @@
 		D6E0AB8F1D484973003C798B /* BuyEquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */; };
 		D6E0AB931D48603A003C798B /* SportPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */; };
 		D6E0AB941D48603A003C798B /* SportPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E0AB921D48603A003C798B /* SportPicTableViewCell.xib */; };
-
-
-
-
 		D6E4502E1D45FAA300C5692E /* MoreFreeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450291D45FAA300C5692E /* MoreFreeModel.m */; };
 		D6E4502F1D45FAA300C5692E /* MoreFreeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */; };
 		D6E450301D45FAA300C5692E /* TopicImagelistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */; };
@@ -288,7 +279,6 @@
 		D6E450471D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450411D45FB7A00C5692E /* MoreFreeDetailTableViewCell.m */; };
 		D6E450481D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E450421D45FB7A00C5692E /* MoreFreeDetailTableViewCell.xib */; };
 		D6E4504B1D45FBD600C5692E /* MoreFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4504A1D45FBD600C5692E /* MoreFreeViewController.m */; };
-
 		D6E450521D4611B200C5692E /* BuySportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450511D4611B200C5692E /* BuySportViewController.m */; };
 		D6E450551D46139F00C5692E /* BuySportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450541D46139F00C5692E /* BuySportModel.m */; };
 		D6E450581D46197800C5692E /* BuySportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E450571D46197800C5692E /* BuySportRequest.m */; };
@@ -311,10 +301,6 @@
 		D6F53F101D47A40500BBE710 /* destination.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F0F1D47A40500BBE710 /* destination.png */; };
 		D6F53F121D47A46100BBE710 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F111D47A46100BBE710 /* star1.png */; };
 		D6F53F141D47A4F300BBE710 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F53F131D47A4F300BBE710 /* star.png */; };
-
-
-
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1246,17 +1232,11 @@
 		D6838BF71D430D1900E90C0E /* CommunityCoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCoCellModel.m; sourceTree = "<group>"; };
 		D68E574C1D459F25001507E0 /* AllListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListViewController.h; sourceTree = "<group>"; };
 		D68E574D1D459F25001507E0 /* AllListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListViewController.m; sourceTree = "<group>"; };
-		D69121901D4A0E9C0059E8D2 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShopMo\U0010del.h"; sourceTree = "<group>"; };
-		D69121911D4A0E9C0059E8D2 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShopMo\U0010del.m"; sourceTree = "<group>"; };
 		D6A983031D47864600F559E2 /* ComTopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTopicDetailViewController.h; sourceTree = "<group>"; };
 		D6A983041D47864600F559E2 /* ComTopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTopicDetailViewController.m; sourceTree = "<group>"; };
 		D6A9836B1D47A4B300F559E2 /* ComHeaderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComHeaderDetailCell.h; sourceTree = "<group>"; };
 		D6A9836C1D47A4B300F559E2 /* ComHeaderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComHeaderDetailCell.m; sourceTree = "<group>"; };
 		D6A9836D1D47A4B300F559E2 /* ComHeaderDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComHeaderDetailCell.xib; sourceTree = "<group>"; };
-
-
-
-
 		D6ADC8A91D3A52DA0073EAE4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6ADC8AA1D3A52DB0073EAE4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D6ADC8B01D3A52DB0073EAE4 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -3018,13 +2998,8 @@
 		D6ADC8F81D3A52DB0073EAE4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-
-
-
 				C226C06B1D49FA2100DD1893 /* tupiantianjia.png */,
 				C226C0691D49F88200DD1893 /* bianji.png */,
-
-
 				D611B38C1D4638660000F765 /* arrow_down_grey.png */,
 				D611B38D1D4638660000F765 /* arrow_down_grey@2x.png */,
 				D611B38E1D4638660000F765 /* arrow_down_grey@3x.png */,
@@ -3182,8 +3157,6 @@
 		D6E4504E1D460A6B00C5692E /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
-
-
 				D6ADC8E81D3A52DB0073EAE4 /* CatnameModel.h */,
 				D6ADC8E91D3A52DB0073EAE4 /* CatnameModel.m */,
 				D6ADC8EC1D3A52DB0073EAE4 /* FLModel.h */,
@@ -3212,7 +3185,6 @@
 				D63370CD1D41FE3F004D5E20 /* LikeListModel.m */,
 				D6ADC8EA1D3A52DB0073EAE4 /* CommunityListModel.h */,
 				D6ADC8EB1D3A52DB0073EAE4 /* CommunityListModel.m */,
-
 				D6E450531D46139F00C5692E /* BuySportModel.h */,
 				D6E450541D46139F00C5692E /* BuySportModel.m */,
 				D6E450681D4658FC00C5692E /* zhuangBeiPicModel.h */,
@@ -3225,17 +3197,10 @@
 				D6E4502B1D45FAA300C5692E /* MoreFreeDetailModel.m */,
 				D6E4502C1D45FAA300C5692E /* TopicImagelistModel.h */,
 				D6E4502D1D45FAA300C5692E /* TopicImagelistModel.m */,
-
-				D69121901D4A0E9C0059E8D2 /* ShopModel.h */,
-				D69121911D4A0E9C0059E8D2 /* ShopModel.m */,
-
-				D6F53EFE1D47594C00BBE710 /* ShopModel.h */,
-				D6F53EFF1D47594C00BBE710 /* ShopModel.m */,
 				D60729B01D4A4E480077547A /* ShopDetailModel.h */,
 				D60729B11D4A4E480077547A /* ShopDetailModel.m */,
 				D60729B21D4A4E480077547A /* PicModel.h */,
 				D60729B31D4A4E480077547A /* PicModel.m */,
-
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -3631,10 +3596,7 @@
 				C25ADADF1D3DBE3400BD1ED6 /* GetCodeRequest.m in Sources */,
 				C25ADAD41D3DBD5200BD1ED6 /* ChangeMydataViewController.m in Sources */,
 				D6F53F061D4760F100BBE710 /* ShopViewController.m in Sources */,
-
-
 				D60729AF1D4A4D9C0077547A /* ShopDetailRequest.m in Sources */,
-
 				C233C68C1D47561200061AA9 /* PostRequest.m in Sources */,
 				D6E4502F1D45FAA300C5692E /* MoreFreeDetailModel.m in Sources */,
 				D60729B41D4A4E480077547A /* ShopDetailModel.m in Sources */,
@@ -3661,7 +3623,6 @@
 				D67C53981D43598A00D377B8 /* ActivityModel.m in Sources */,
 				D6A983051D47864600F559E2 /* ComTopicDetailViewController.m in Sources */,
 				C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */,
-				D69121921D4A0E9C0059E8D2 /* ShopModel.m in Sources */,
 				D6E450391D45FB5200C5692E /* MoreFreeRequest.m in Sources */,
 				D6ADC9251D3A52DB0073EAE4 /* EquipViewController.m in Sources */,
 				D61A99CB1D42456E0009DBFD /* MJRefreshHeader.m in Sources */,
