@@ -11,9 +11,7 @@
 #import "Annotation.h"
 @interface MapViewController ()<MKMapViewDelegate>
 
-@property(strong,nonatomic) NSString *longitude;
 
-@property(strong,nonatomic) NSString *latitude;
 
 @property(strong,nonatomic) MKMapView *mapView;
 
