@@ -15,13 +15,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-//    CGFloat imgWidth = (kScreenWidth - 54) / 3;
-//    self.shareImg_0.frame = CGRectMake(14, 115, imgWidth, imgWidth);
-//    self.shareImg_1.frame = CGRectMake(14 + imgWidth + 13, 115, imgWidth, imgWidth);
-//    self.shareImg_2.frame = CGRectMake(14 + imgWidth + 13 + imgWidth + 13, 115, imgWidth, imgWidth);
-//    self.shareImg_3.frame = CGRectMake(14, 115 + imgWidth + 13, imgWidth, imgWidth);
-//    self.shareImg_4.frame = CGRectMake(14 + imgWidth + 13, 115 + imgWidth + 13, imgWidth, imgWidth);
-//    self.shareImg_5.frame = CGRectMake(14 + imgWidth + 13 + imgWidth + 13, 115 + imgWidth + 13, imgWidth, imgWidth);
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -34,8 +34,8 @@
     
 
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn2 setImage:[UIImage imageNamed:@"activity"] forState:UIControlStateSelected];
-    [btn2 setImage:[UIImage imageNamed:@"activity_Select"] forState:UIControlStateNormal];
+    [btn2 setImage:[UIImage imageNamed:@"activity_Select"] forState:UIControlStateSelected];
+    [btn2 setImage:[UIImage imageNamed:@"activity"] forState:UIControlStateNormal];
     [btn2 setImageEdgeInsets:(UIEdgeInsetsMake(0, 10, 15, 0))];
     [btn2 setTitleEdgeInsets:UIEdgeInsetsMake(30, -49, 0, 0)];
     [btn2 setTitle:@"活动" forState:(UIControlStateNormal)];

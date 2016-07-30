@@ -34,6 +34,11 @@
     self.replyNumLabel.text = [NSString stringWithFormat:@"%@则回复",model.reply_num];
     
 }
+- (IBAction)attentionAction:(UIButton *)sender {
+    
+    
+    
+}
 
 
 @end

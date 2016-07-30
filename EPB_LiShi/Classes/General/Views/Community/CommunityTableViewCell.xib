@@ -59,6 +59,9 @@
                         <state key="normal" title="+ 关注">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="attentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KHp-F9-hJV"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-kC-5x5">
                         <rect key="frame" x="0.0" y="301" width="414" height="13"/>
@@ -102,7 +105,7 @@
                 <outlet property="replyNumLabel" destination="hdr-GJ-4WO" id="kDs-Qo-S9o"/>
                 <outlet property="titleLabel" destination="sfc-Gg-HQA" id="aZa-l2-Gnb"/>
             </connections>
-            <point key="canvasLocation" x="354" y="302.5"/>
+            <point key="canvasLocation" x="146" y="357.5"/>
         </tableViewCell>
     </objects>
     <resources>
