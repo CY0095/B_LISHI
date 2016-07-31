@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zwk-7z-Kkn">
                                 <rect key="frame" x="8" y="6" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Aql-rq-DfF"/>
                                     <constraint firstAttribute="height" constant="60" id="pnc-rl-nKL"/>
