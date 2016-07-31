@@ -58,6 +58,10 @@
     //添加视图
     [self.view addSubview:self.shopDetailTableView];
     self.view.backgroundColor = [UIColor cyanColor];
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 #pragma mark --- 请求数据 ---
@@ -93,6 +97,9 @@
             
             [self cycleShow];
             [self.shopDetailTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {

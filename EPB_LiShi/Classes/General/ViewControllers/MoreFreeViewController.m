@@ -53,6 +53,10 @@
     [self DataRequest];
     
     self.view.backgroundColor = [UIColor grayColor];
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 - (void)freeClickButton:(MoreFreeTableViewCell *)cell
@@ -86,6 +90,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.moreFreeTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {

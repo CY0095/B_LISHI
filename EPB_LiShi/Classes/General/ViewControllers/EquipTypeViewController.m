@@ -85,6 +85,10 @@ static NSString *const cellReuseIdentifier = @"11";
     [self DataRequest];
     [self addView];
     
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
+    
 }
 
 #pragma mark --- 设置头部视图及UISegmentedControl页面 ---
@@ -194,6 +198,9 @@ static NSString *const cellReuseIdentifier = @"11";
             
             [weakself.EquipTableView reloadData];
             [weakself.SportTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
 //        NSLog(@"sportName == %@",weakself.SportNameArr);

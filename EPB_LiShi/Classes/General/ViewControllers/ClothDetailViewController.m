@@ -61,6 +61,10 @@
     [self.view addSubview:self.ClothDetailView];
     self.view.backgroundColor = [UIColor cyanColor];
     
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
+    
 }
 
 #pragma mark --- 添加collectionView ---
@@ -145,6 +149,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakself.likeNumCollectionView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
         //参与活动的model

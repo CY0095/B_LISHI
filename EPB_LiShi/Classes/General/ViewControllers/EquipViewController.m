@@ -54,6 +54,10 @@
     [self DataRequest];
     
     self.view.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 #pragma mark --- 布局视图 ---
@@ -212,6 +216,9 @@
             JFModel *model = [[JFModel alloc] init];
             [model setValuesForKeysWithDictionary:tempDic];
             [weakself.JFArray addObject:model];
+            
+            //取消效果
+            [GiFHUD dismiss];
         }
         
         //请求福利商品
