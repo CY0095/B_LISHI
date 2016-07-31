@@ -37,7 +37,7 @@
 // 绘制界面
 -(void)drawView{
     
-    self.attentionDetailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 56)];
+    self.attentionDetailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WindownWidth, WindowHeight - 64)];
     self.attentionDetailTableView.delegate = self;
     self.attentionDetailTableView.dataSource = self;
     self.attentionDetailTableView.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
