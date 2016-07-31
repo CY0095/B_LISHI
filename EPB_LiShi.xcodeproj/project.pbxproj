@@ -63,6 +63,7 @@
 		C2D4DA791D40EBE200A9A3BE /* PostMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA771D40EBE200A9A3BE /* PostMessageModel.m */; };
 		C2D4DA7C1D40EC4100A9A3BE /* MyAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */; };
 		C2D4DA7F1D40EC4700A9A3BE /* AttentionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */; };
+		C2F9F6A81D4E2D0F00196E47 /* ActivityApplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9F6A71D4E2D0F00196E47 /* ActivityApplyModel.m */; };
 		D60729991D4A4D430077547A /* ShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60729981D4A4D430077547A /* ShopDetailViewController.m */; };
 		D60729A71D4A4D7D0077547A /* ShopDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D607299F1D4A4D7D0077547A /* ShopDetailTableViewCell.m */; };
 		D60729A81D4A4D7D0077547A /* ShopDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60729A01D4A4D7D0077547A /* ShopDetailTableViewCell.xib */; };
@@ -263,9 +264,6 @@
 		D6ADC95F1D3A52DB0073EAE4 /* qingchu.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9171D3A52DB0073EAE4 /* qingchu.png */; };
 		D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9181D3A52DB0073EAE4 /* yijian.png */; };
 		D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9191D3A52DB0073EAE4 /* 箭头.png */; };
-
-		
-
 		D6C7F0161D4C35BB0021A9B4 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7F0141D4C35BB0021A9B4 /* GiFHUD.m */; };
 		D6C7F0171D4C35BB0021A9B4 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0151D4C35BB0021A9B4 /* loading.gif */; };
 		D6C7F0251D4C99FA0021A9B4 /* My_Select.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F01D1D4C99FA0021A9B4 /* My_Select.png */; };
@@ -277,7 +275,6 @@
 		D6C7F02B1D4C99FA0021A9B4 /* My.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0231D4C99FA0021A9B4 /* My.png */; };
 		D6C7F02C1D4C99FA0021A9B4 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0241D4C99FA0021A9B4 /* activity.png */; };
 		D6C7F02F1D4CE6F10021A9B4 /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7F02E1D4CE6F10021A9B4 /* CollectionHeaderView.m */; };
-
 		D6E0AB8C1D4844DC003C798B /* OutDoorShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */; };
 		D6E0AB8F1D484973003C798B /* BuyEquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */; };
 		D6E0AB931D48603A003C798B /* SportPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */; };
@@ -447,6 +444,8 @@
 		C2D4DA7B1D40EC4100A9A3BE /* MyAttentionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAttentionViewController.m; sourceTree = "<group>"; };
 		C2D4DA7D1D40EC4700A9A3BE /* AttentionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailViewController.h; sourceTree = "<group>"; };
 		C2D4DA7E1D40EC4700A9A3BE /* AttentionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailViewController.m; sourceTree = "<group>"; };
+		C2F9F6A61D4E2D0F00196E47 /* ActivityApplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityApplyModel.h; sourceTree = "<group>"; };
+		C2F9F6A71D4E2D0F00196E47 /* ActivityApplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityApplyModel.m; sourceTree = "<group>"; };
 		D60729971D4A4D430077547A /* ShopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailViewController.h; sourceTree = "<group>"; };
 		D60729981D4A4D430077547A /* ShopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopDetailViewController.m; sourceTree = "<group>"; };
 		D607299E1D4A4D7D0077547A /* ShopDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -1336,11 +1335,6 @@
 		D6ADC9171D3A52DB0073EAE4 /* qingchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qingchu.png; sourceTree = "<group>"; };
 		D6ADC9181D3A52DB0073EAE4 /* yijian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yijian.png; sourceTree = "<group>"; };
 		D6ADC9191D3A52DB0073EAE4 /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
-
-		D6B99D401D4B4D4B00AAA2D9 /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
-		D6B99D411D4B4D4B00AAA2D9 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
-		D6B99D491D4B4D6D00AAA2D9 /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
-
 		D6C7F0131D4C35BB0021A9B4 /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
 		D6C7F0141D4C35BB0021A9B4 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
 		D6C7F0151D4C35BB0021A9B4 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
@@ -1354,7 +1348,6 @@
 		D6C7F0241D4C99FA0021A9B4 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		D6C7F02D1D4CE6F10021A9B4 /* CollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderView.h; sourceTree = "<group>"; };
 		D6C7F02E1D4CE6F10021A9B4 /* CollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderView.m; sourceTree = "<group>"; };
-
 		D6E0AB8A1D4844DC003C798B /* OutDoorShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutDoorShopViewController.h; sourceTree = "<group>"; };
 		D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutDoorShopViewController.m; sourceTree = "<group>"; };
 		D6E0AB8D1D484973003C798B /* BuyEquipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyEquipViewController.h; sourceTree = "<group>"; };
@@ -2909,6 +2902,8 @@
 				D621EDB81D4793E9009F81D8 /* MapViewController.m */,
 				D673CB511D4B8AA700DA9C22 /* activitySingle.h */,
 				D673CB521D4B8AA700DA9C22 /* activitySingle.m */,
+				C2F9F6A61D4E2D0F00196E47 /* ActivityApplyModel.h */,
+				C2F9F6A71D4E2D0F00196E47 /* ActivityApplyModel.m */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -2930,7 +2925,6 @@
 		D6ADC8A71D3A52DA0073EAE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D6B99D3F1D4B4D4B00AAA2D9 /* GifHUD */,
 				D6ADC8A81D3A52DA0073EAE4 /* AppDelegate */,
 				D6ADC8AB1D3A52DB0073EAE4 /* General */,
 				D6ADC8D61D3A52DB0073EAE4 /* Helpers */,
@@ -3158,16 +3152,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-
-
-
 		D6C7F0121D4C35BB0021A9B4 /* GifHUD */ = {
 			isa = PBXGroup;
 			children = (
 				D6C7F0131D4C35BB0021A9B4 /* GiFHUD.h */,
 				D6C7F0141D4C35BB0021A9B4 /* GiFHUD.m */,
 				D6C7F0151D4C35BB0021A9B4 /* loading.gif */,
-
 			);
 			path = GifHUD;
 			sourceTree = "<group>";
@@ -3532,11 +3522,7 @@
 				D61A99651D4244130009DBFD /* IMG_5528.jpg in Resources */,
 				C233C6A31D47662700061AA9 /* fenxiang.png in Resources */,
 				D63370D71D420471004D5E20 /* 时间.png in Resources */,
-
-				D6B99D4A1D4B4D6D00AAA2D9 /* load.gif in Resources */,
-
 				D6C7F02B1D4C99FA0021A9B4 /* My.png in Resources */,
-
 				D6ADC94D1D3A52DB0073EAE4 /* IMG_5527.jpg in Resources */,
 				D611B3931D4638660000F765 /* arrow_down_grey@2x.png in Resources */,
 				D611B3921D4638660000F765 /* arrow_down_grey.png in Resources */,
@@ -3686,6 +3672,7 @@
 				D60729AF1D4A4D9C0077547A /* ShopDetailRequest.m in Sources */,
 				C233C68C1D47561200061AA9 /* PostRequest.m in Sources */,
 				D6E4502F1D45FAA300C5692E /* MoreFreeDetailModel.m in Sources */,
+				C2F9F6A81D4E2D0F00196E47 /* ActivityApplyModel.m in Sources */,
 				D60729B41D4A4E480077547A /* ShopDetailModel.m in Sources */,
 				C241EDAC1D437600005162C5 /* TopicDetailTableViewCell.m in Sources */,
 				D6E4506D1D465A4100C5692E /* TextTureModel.m in Sources */,
@@ -3782,7 +3769,6 @@
 				D63370B41D41FB9B004D5E20 /* ClothDetailTableViewCell.m in Sources */,
 				D67C539A1D43598A00D377B8 /* DetailCycleModel.m in Sources */,
 				D63370B21D41FB9B004D5E20 /* EquipDetailCollectionViewCell.m in Sources */,
-				D6B99D431D4B4D4B00AAA2D9 /* GiFHUD.m in Sources */,
 				C233C6911D47562D00061AA9 /* PostHeadModel.m in Sources */,
 				C233C6921D47562D00061AA9 /* PostReplyModel.m in Sources */,
 				D60729991D4A4D430077547A /* ShopDetailViewController.m in Sources */,

@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="MyActivityCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="MyActivityCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caoyuan.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XOL-lq-nf1">
@@ -38,8 +38,8 @@
                             <constraint firstAttribute="width" constant="30" id="kt6-rA-aQK"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-Cl-V47">
-                        <rect key="frame" x="118" y="43" width="194" height="57"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZW-Cl-V47">
+                        <rect key="frame" x="118" y="40" width="194" height="57"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="57" id="sgJ-Bw-agL"/>
                         </constraints>
@@ -47,20 +47,35 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-rq-Bmf">
+                        <rect key="frame" x="18" y="108" width="284" height="1"/>
+                        <color key="backgroundColor" red="0.0" green="0.57010276849999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="E0I-2f-na8"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" red="0.86274509799999999" green="0.85882352939999995" blue="0.75361632700000003" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="6ZW-Cl-V47" secondAttribute="trailing" constant="8" id="0v2-lu-AXQ"/>
                     <constraint firstItem="XOL-lq-nf1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Abq-XG-K8G"/>
                     <constraint firstAttribute="trailing" secondItem="oPb-xB-77a" secondAttribute="trailing" constant="55" id="FgJ-hy-cc1"/>
+                    <constraint firstAttribute="trailing" secondItem="bDe-rq-Bmf" secondAttribute="trailing" constant="18" id="ZXC-Ky-dlV"/>
                     <constraint firstItem="JfZ-5J-dbE" firstAttribute="leading" secondItem="XOL-lq-nf1" secondAttribute="trailing" constant="11" id="ezM-VC-YoK"/>
+                    <constraint firstItem="bDe-rq-Bmf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="hgd-VC-Yow"/>
                     <constraint firstItem="6ZW-Cl-V47" firstAttribute="leading" secondItem="XOL-lq-nf1" secondAttribute="trailing" constant="8" id="lWa-1W-cv0"/>
                     <constraint firstItem="oPb-xB-77a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lgg-ze-7Z2"/>
+                    <constraint firstAttribute="bottom" secondItem="bDe-rq-Bmf" secondAttribute="bottom" constant="6" id="mjG-sU-Noy"/>
                     <constraint firstItem="JfZ-5J-dbE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="n1n-aQ-xWB"/>
-                    <constraint firstAttribute="bottom" secondItem="6ZW-Cl-V47" secondAttribute="bottom" constant="7" id="uOO-Kh-2TE"/>
+                    <constraint firstAttribute="bottom" secondItem="6ZW-Cl-V47" secondAttribute="bottom" constant="18" id="uOO-Kh-2TE"/>
                     <constraint firstItem="XOL-lq-nf1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xqh-an-0HJ"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="236" y="322"/>
+            <connections>
+                <outlet property="activityImg" destination="XOL-lq-nf1" id="IQV-CH-0Ee"/>
+                <outlet property="contentLabel" destination="6ZW-Cl-V47" id="AmL-WW-cZD"/>
+            </connections>
+            <point key="canvasLocation" x="261" y="316.5"/>
         </tableViewCell>
     </objects>
     <resources>

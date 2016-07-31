@@ -12,6 +12,18 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.activityImg.layer.cornerRadius = 10;
+    self.activityImg.layer.masksToBounds = YES;
+}
+
+-(void)setModel:(ActivityApplyModel *)model{
+    if (_model != model) {
+        _model = nil;
+        _model = model;
+    }
+    [self.activityImg setImageWithURL:[NSURL URLWithString:model.imageStr]];
+    self.contentLabel.text = model.activityTitle;
+    self.activityID = model.activityID;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -26,15 +26,15 @@
 // 关闭数据库
 -(void)closeDataBase;
 // 增
--(void)insertActivityDetail:(ActivityDetailModel *)activityDetail;
+
 // 删除
 -(void)deleteActivityWithUserID:(NSString *)UserID;
 // 全查
 -(NSArray *)selectFromStudent;
 // 根据id查
--(NSArray *)selectFromActivityWithID:(NSString *)userID;
+-(NSMutableArray *)selectFromActivityWithID:(NSString *)userID;
 
--(void)insertActivityDEtailWithID:(NSString *)userID title:(NSString *)title imagesString:(NSString *)imagesString;
+-(void)insertActivityDEtailWithID:(NSString *)activityID title:(NSString *)title imagesString:(NSString *)imagesString user_id:(NSString *)user_id;
 
 
 @end

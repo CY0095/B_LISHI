@@ -7,7 +7,7 @@
 //
 
 #import "activitySingle.h"
-
+#import "ActivityApplyModel.h"
 static activitySingle *activity = nil;
 @implementation activitySingle
 
@@ -49,7 +49,7 @@ static sqlite3 *db = nil;
 // 建表
 -(void)creatTable{
     
-    NSString *creatTableSQLWord = @"CREATE TABLE IF NOT EXISTS 'activity' ('id' TEXT PRIMARY KEY NOT NULL, 'title' TEXT NOT NULL, 'imageString' TEXT NOT NULL)";
+    NSString *creatTableSQLWord = @"CREATE TABLE IF NOT EXISTS 'activity' ('id' TEXT PRIMARY KEY NOT NULL, 'title' TEXT NOT NULL, 'imageString' TEXT NOT NULL,'user_id' TEXT NOT NULL)";
     
     // 执行语句
     int result = sqlite3_exec(db, creatTableSQLWord.UTF8String, NULL, NULL, NULL);
@@ -79,24 +79,11 @@ static sqlite3 *db = nil;
 }
 
 #pragma 增
--(void)insertActivityDetail:(ActivityDetailModel *)activityDetail{
+
+-(void)insertActivityDEtailWithID:(NSString *)activityID title:(NSString *)title imagesString:(NSString *)imagesString user_id:(NSString *)user_id{
     
     // 准备SQL语句
-    NSString *insertSQLWord = [NSString stringWithFormat:@"insert into 'activity' ('id','title','imageString') values ('%@','%@','%@')",activityDetail.activity_id,activityDetail.title,[activityDetail.tripdetail.lastObject objectForKey:@"images"]];
-    
-    int result = sqlite3_exec(db, insertSQLWord.UTF8String, NULL, NULL, NULL);
-    
-    if (result == SQLITE_OK) {
-        NSLog(@"插入数据成功");
-    }else{
-        NSLog(@"插入数据失败，失败代码为%d",result);
-    }
-    
-}
--(void)insertActivityDEtailWithID:(NSString *)userID title:(NSString *)title imagesString:(NSString *)imagesString{
-    
-    // 准备SQL语句
-    NSString *insertSQLWord = [NSString stringWithFormat:@"insert into 'activity' ('id','title','imageString') values ('%@','%@','%@')",userID,title,imagesString];
+    NSString *insertSQLWord = [NSString stringWithFormat:@"insert into 'activity' ('id','title','imageString','user_id') values ('%@','%@','%@','%@')",activityID,title,imagesString,user_id];
     
     int result = sqlite3_exec(db, insertSQLWord.UTF8String, NULL, NULL, NULL);
     
@@ -144,11 +131,12 @@ static sqlite3 *db = nil;
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             
-            ActivityDetailModel *model = [ActivityDetailModel new];
-            model.activity_id = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
-            model.title = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
-            NSString *imagesString = [model.tripdetail.lastObject objectForKey:@"images"];
-            imagesString = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            ActivityApplyModel *model = [ActivityApplyModel new];
+            model.activityID = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
+            model.activityTitle = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            
+            model.imageStr = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            model.user_id = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 3)];
             [array addObject:model];
         }
     }
@@ -157,26 +145,26 @@ static sqlite3 *db = nil;
 }
 
 
--(NSArray *)selectFromActivityWithID:(NSString *)userID{
+-(NSMutableArray *)selectFromActivityWithID:(NSString *)userID{
     
     NSMutableArray *array = nil;
     
     sqlite3_stmt *stmt = nil;
     
-    NSString *selectSQLWord = [NSString stringWithFormat:@"select *from activity where id = %@",userID];
+    NSString *selectSQLWord = [NSString stringWithFormat:@"select *from activity where user_id = '%@'",userID];
     
     int result = sqlite3_prepare(db, selectSQLWord.UTF8String, -1, &stmt, NULL);
-    ActivityDetailModel *model = [ActivityDetailModel new];
+    
     if (result == SQLITE_OK) {
         array = [NSMutableArray new];
         
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             
-            
-            model.activity_id = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
-            model.title = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
-            NSString *imagesString = [model.tripdetail.lastObject objectForKey:@"images"];
-            imagesString = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            ActivityApplyModel *model = [ActivityApplyModel new];
+            model.activityID = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 0)];
+            model.activityTitle = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            model.imageStr = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            model.user_id = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 3)];
              [array addObject:model];
         }
     }

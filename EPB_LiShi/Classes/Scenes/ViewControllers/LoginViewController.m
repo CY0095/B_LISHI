@@ -54,7 +54,7 @@
     UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth - 40, WindowHeight /2 - 20)];
     centerView.backgroundColor = [UIColor whiteColor];
     centerView.center = self.view.center;
-    centerView.alpha = 1;
+    centerView.alpha = 0.85;
     [self.view addSubview:centerView];
     // 添加用户名textfield
     self.usernameField = [[UITextField alloc] initWithFrame:CGRectMake(10, WindowHeight / 24, WindownWidth - 60 , WindowHeight/12)];

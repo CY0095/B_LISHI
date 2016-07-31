@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ActivityApplyModel.h"
+#define MyActivityCell_Identify @"MyActivityCell_Identify"
 @interface MyActivityCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *activityImg;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
+@property (strong, nonatomic) NSString *activityID;
+@property (strong, nonatomic) ActivityApplyModel *model;
 @end
