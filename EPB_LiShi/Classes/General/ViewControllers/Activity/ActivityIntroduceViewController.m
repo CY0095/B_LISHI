@@ -61,6 +61,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"NSUser = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"DetailIDString"]);
+    
     self.dataArray = [NSMutableArray array];
     
     self.title = @"活动信息";
