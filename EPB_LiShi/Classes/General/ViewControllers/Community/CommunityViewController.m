@@ -63,6 +63,8 @@
     self.communityListArray = [NSMutableArray array];
     [self requestCommunityListData];
     
+    
+    
 }
 
 - (void)downPullRefresh {
@@ -70,7 +72,8 @@
     [self.communityListArray removeAllObjects];
     self.page = 0;
     [self requestCommunityListData];
-    
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 - (void)addPage {
@@ -87,6 +90,8 @@
     CommunityRequest *request = [[CommunityRequest alloc] init];
     
     [request CommunityListRequestWithParameter:@{@"page":[NSString stringWithFormat:@"%ld",self.page]} success:^(NSDictionary *dic) {
+        
+        
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         NSArray *tempArray = [tempEvents objectForKey:@"omnibuslist"];
         for (NSDictionary *tempDic in tempArray) {
@@ -99,6 +104,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.communityTableView reloadData];
+            [GiFHUD dismiss];
         });
     } failure:^(NSError *error) {
         

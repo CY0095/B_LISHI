@@ -111,6 +111,9 @@
 {
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     
+    if (user_id.length == 0) {
+        user_id = @"0";
+    }
     __weak typeof(self) weakself = self;
     FlClothRequest *request = [[FlClothRequest alloc] init];
     [request flClothRequestWithTopID:self.model.topicid userID:user_id sucess:^(NSDictionary *dic) {

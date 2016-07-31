@@ -94,7 +94,7 @@ static NSString *const cellResueID = @"111";
 #pragma mark --- 设置item的大小 ---
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((WindownWidth - 20) / 2, 283);
+    return CGSizeMake((WindownWidth - 20) / 2, 228);
 }
 
 #pragma mark --- 设置item ---

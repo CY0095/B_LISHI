@@ -65,7 +65,7 @@
     self.sportPicArr = [NSMutableArray array];
     
     //初始化TableView
-    self.buySportTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
+    self.buySportTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight - 40))];
     //设置代理
     self.buySportTableView.delegate = self;
     self.buySportTableView.dataSource = self;
@@ -268,8 +268,10 @@
     {
         return 166;
     }else{
-        zhuangBeiPicModel *model = self.sportPicArr[indexPath.row];
-        return model.height;
+//        zhuangBeiPicModel *model = self.sportPicArr[indexPath.row];
+//        return model.height;
+        
+        return 350;
     }
     
 }

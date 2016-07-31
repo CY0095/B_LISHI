@@ -28,6 +28,8 @@
 #define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
 //商店详情界面
 #define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
+//户外商店详情
+#define outDoorShopRequest_Url @"http://api.lis99.com/shop/promotionShopList?latitude=40.02922418&longitude=116.33588774&offset=0&limit=20&cityid=1&shoptype=&sorttype="
 
 // 登录
 #define loginRequest_Url @"http://api.lis99.com/v2/user/loginMobile"
@@ -76,12 +78,12 @@
 #define LuyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/284/451316"
 
 // 社区户外摄影列表URL
-#define CommunitySheyingListRequest_Url @"http://api.lis99.com/v5/club/topiclists/342/0?page=0&user_id=451316"
+#define CommunitySheyingListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/342/0?page=%@&user_id=%@",page,user_id]
 // 板块介绍
 #define SheyingHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/342/451316"
 
 // 社区极限攀登列表URL
-#define CommunityPandengListRequest_Url @"http://api.lis99.com/v5/club/topiclists/349/0?page=0&user_id=451316"
+#define CommunityPandengListRequest_Url(page,user_id) [NSString stringWithFormat:@"http://api.lis99.com/v5/club/topiclists/349/0?page=%@&user_id=%@",page,user_id]
 // 板块介绍
 #define PandengHeaderViewRequest_Url @"http://api.lis99.com/v4/club/detail/349/451316"
 

@@ -11,6 +11,7 @@
 #import "CommunityCustomCell.h"
 #import "CommunityCoCellModel.h"
 #import "AllListViewController.h"
+#import "CollectionHeaderView.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -26,14 +27,8 @@
 
 @end
 
-static NSString *const headerID = @"headerCellReuseIdentifier";
+// static NSString *const headerID = @"headerCellReuseIdentifier";
 @implementation MoreListViewController
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        [self requestCollectionViewData];
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,29 +37,29 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     // 设置每个item的大小
-    flowLayout.itemSize = CGSizeMake((kScreenWidth - 40)/ 2, ((kScreenWidth - 40)/ 2) / 190 * 70);
+    flowLayout.itemSize = CGSizeMake((WindownWidth - 40) / 2, ((WindownWidth - 40) / 2) / 5 * 2);
     // 设置最小行间距
-    flowLayout.minimumLineSpacing = 20;
+    flowLayout.minimumLineSpacing = 10;
     // 设置最小列间距
-    flowLayout.minimumInteritemSpacing = 20;
+    flowLayout.minimumInteritemSpacing = 10;
     // 设置单个分区距离上下左右的位置
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     // 设置滑动方向(垂直)
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     // 设置增补视图尺寸
 //    flowLayout.footerReferenceSize = CGSizeMake(0, 50);
-    flowLayout.headerReferenceSize = CGSizeMake(0, 20);
+    flowLayout.headerReferenceSize = CGSizeMake(0, 30);
     
     // 初始化collectionView
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44) collectionViewLayout:flowLayout];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"CommunityCustomCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:CommunityCustomCell_Identify];
     
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID];
+    [self.collectionView registerClass:[CollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionHeaderView"];
     
     self.collectionView.dataSource =self;
     self.collectionView.delegate = self;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:243.0 green:244.0 blue:213.0 alpha:1.0];
     [self.view addSubview:self.collectionView];
     
     self.allDataDic = [NSMutableDictionary dictionary];
@@ -73,6 +68,8 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     self.ppclublistArray = [NSMutableArray array];
     
     [self requestCollectionViewData];
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 - (void)requestCollectionViewData {
@@ -89,7 +86,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.djclublistArray addObject:model];
         }
-        NSLog(@"djclublistArray%@",self.djclublistArray);
+        // NSLog(@"djclublistArray%@",self.djclublistArray);
         
         NSArray *tslistArray = [self.allDataDic objectForKey:@"tsclublist"];
         for (NSDictionary *tempDic in tslistArray) {
@@ -97,7 +94,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.tsclublistArray addObject:model];
         }
-        NSLog(@"tsclublistArray%@",self.tsclublistArray);
+        // NSLog(@"tsclublistArray%@",self.tsclublistArray);
         
         NSArray *pplistArray = [self.allDataDic objectForKey:@"ppclublist"];
         for (NSDictionary *tempDic in pplistArray) {
@@ -105,12 +102,13 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.ppclublistArray addObject:model];
         }
-        NSLog(@"ppclublistArray%@",self.ppclublistArray);
+        // NSLog(@"ppclublistArray%@",self.ppclublistArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
+            
         });
-        
+        [GiFHUD dismiss];
         
         
     } failure:^(NSError *error) {
@@ -158,11 +156,14 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reuseableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID forIndexPath:indexPath];
+        CollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CollectionHeaderView" forIndexPath:indexPath];
         
-        headerView.backgroundColor = [UIColor whiteColor];
+        headerView.backgroundColor = [UIColor colorWithRed:243.0 green:244.0 blue:213.0 alpha:1.0];
+        NSArray *array = @[@"当季推荐",@"特色项目",@"品牌专区"];
+        headerView.titleLabel.text = array[indexPath.section];
         
         reuseableView = headerView;
+        
     }
     return reuseableView;
     

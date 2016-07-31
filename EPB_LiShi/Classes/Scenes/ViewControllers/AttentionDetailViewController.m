@@ -36,10 +36,11 @@
 }
 // 绘制界面
 -(void)drawView{
-    self.view.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
+    
     self.attentionDetailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 56, WindownWidth, WindowHeight - 56)];
     self.attentionDetailTableView.delegate = self;
     self.attentionDetailTableView.dataSource = self;
+    self.attentionDetailTableView.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
     
     // 头视图
     self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, WindowHeight / 3)];
@@ -55,14 +56,14 @@
     [self.headImg addSubview:self.userImg];
     
     self.nickNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
-    self.nickNameLabel.center = CGPointMake(self.userImg.center.x, self.userImg.center.y + 46);
+    self.nickNameLabel.center = CGPointMake(self.userImg.center.x, self.userImg.center.y + 40);
     self.nickNameLabel.textAlignment = NSTextAlignmentCenter;
     self.nickNameLabel.text = @"可可西里carlisle";
     self.nickNameLabel.textColor = [UIColor whiteColor];
     [self.headImg addSubview:self.nickNameLabel];// 添加昵称视图
     
     self.fanceNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-    self.fanceNumLabel.center = CGPointMake(self.nickNameLabel.center.x, self.nickNameLabel.center.y + 23);
+    self.fanceNumLabel.center = CGPointMake(self.nickNameLabel.center.x, self.nickNameLabel.center.y + 18);
     self.fanceNumLabel.textAlignment = NSTextAlignmentCenter;
     self.fanceNumLabel.text = @"999位粉丝";
     self.fanceNumLabel.textColor = [UIColor whiteColor];
@@ -115,6 +116,9 @@
 // 请求数据
 -(void)userDetailRequest{
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (!user_id) {
+        user_id = @"0";
+    }
     NSLog(@"uid ====== %@",self.uid);
     [[UserDetailRequest shareUserDetailRequest] UserDetailRequestWithUid:self.uid user_id:user_id success:^(NSDictionary *dic) {
         NSArray *topiclist = [[dic objectForKey:@"data"] objectForKey:@"topiclist"];
@@ -149,6 +153,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     AttentionDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AttentionDetailTableViewCell_Identify];
     cell.model = self.dataArray[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

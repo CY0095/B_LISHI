@@ -20,64 +20,74 @@
 
 @interface PandengViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *communityLuyingListView;
+@property (nonatomic, strong) UITableView *communitypandengListView;
 
-@property (nonatomic, strong) NSMutableArray *luyingListArray;
+@property (nonatomic, strong) NSMutableArray *pandengListArray;
 
 @property (nonatomic, strong) NSMutableDictionary *headerDataDic;
 
+@property (nonatomic, assign) NSInteger page;
+
 @end
 @implementation PandengViewController
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self requestCommunityHeaderViewData];
-        [self requestCommunityLuyingListData];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.communityLuyingListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
+    self.communitypandengListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
     
     // 注册
-    [self.communityLuyingListView registerNib:[UINib nibWithNibName:@"CommunityHeaderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityHeaderCell_Identify];
-    [self.communityLuyingListView registerNib:[UINib nibWithNibName:@"CommunityLuyingCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingCell_Identify];
-    [self.communityLuyingListView registerNib:[UINib nibWithNibName:@"CommunityLuyingVideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingVideoCell_Identify];
+    [self.communitypandengListView registerNib:[UINib nibWithNibName:@"CommunityHeaderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityHeaderCell_Identify];
+    [self.communitypandengListView registerNib:[UINib nibWithNibName:@"CommunityLuyingCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingCell_Identify];
+    [self.communitypandengListView registerNib:[UINib nibWithNibName:@"CommunityLuyingVideoCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityLuyingVideoCell_Identify];
     
-    self.communityLuyingListView.dataSource = self;
-    self.communityLuyingListView.delegate = self;
+    self.communitypandengListView.dataSource = self;
+    self.communitypandengListView.delegate = self;
     
-    [self.view addSubview:self.communityLuyingListView];
+    [self.view addSubview:self.communitypandengListView];
     
+    // 上拉加载
+    self.communitypandengListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+    }];
+    self.communitypandengListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addPage3)];
+    self.pandengListArray = [NSMutableArray array];
     
-    
-    
-//    [self requestCommunityLuyingListData];
-//    [self requestCommunityHeaderViewData];
+    [self requestCommunityLuyingListData];
+    [self requestCommunityHeaderViewData];
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
+- (void)addPage3 {
+    self.page ++;
+    [self requestCommunityLuyingListData];
+    NSLog(@"page++");
+}
+
+
 - (void)requestCommunityLuyingListData {
-    self.luyingListArray = [NSMutableArray array];
+    
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
-    [request CommunityPandengListRequestWithParameter:nil success:^(NSDictionary *dic) {
+    NSString *user_id = @"451316";
+    
+    [request CommunityPandengListRequestWithParameter:@{@"page":[NSString stringWithFormat:@"%ld",self.page],@"user_id":user_id} success:^(NSDictionary *dic) {
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         NSArray *tempArray = [tempEvents objectForKey:@"topiclist"];
         for (NSDictionary *tempDic in tempArray) {
             LuyingListModel *model = [LuyingListModel new];
             [model setValuesForKeysWithDictionary:tempDic];
-            [weakSelf.luyingListArray addObject:model];
+            [weakSelf.pandengListArray addObject:model];
         }
         
         // NSLog(@"LuyingListArray == %@",weakSelf.luyingListArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.communityLuyingListView reloadData];
+            [weakSelf.communitypandengListView reloadData];
+            [GiFHUD dismiss];
         });
         
         
@@ -100,7 +110,7 @@
         // NSLog(@"headerDataDic == %@",weakSelf.headerDataDic);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.communityLuyingListView reloadData];
+            [self.communitypandengListView reloadData];
         });
         
     } failure:^(NSError *error) {
@@ -113,11 +123,12 @@
     if (indexPath.row == 0) {
         return 153;
     }else {
-        return 420;
+        LuyingListModel *model = self.pandengListArray[indexPath.row - 1];
+        return [CommunityLuyingCell cellHeight:model];
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.luyingListArray.count;
+    return self.pandengListArray.count + 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -130,7 +141,7 @@
         [cell.backImage setImage:[UIImage imageNamed:@"pandeng.jpg"]];
         return cell;
     }else {
-        LuyingListModel *model = self.luyingListArray[indexPath.row];
+        LuyingListModel *model = self.pandengListArray[indexPath.row - 1];
         if (model.images.count == 0) {
             CommunityLuyingVideoCell *videoCell = [tableView dequeueReusableCellWithIdentifier:CommunityLuyingVideoCell_Identify];
             videoCell.model = model;
@@ -159,7 +170,7 @@
         [self.navigationController pushViewController:detailVC animated:YES];
         
     }else {
-        LuyingListModel *model = self.luyingListArray[indexPath.row];
+        LuyingListModel *model = self.pandengListArray[indexPath.row - 1];
         
         if (model.images.count == 0) {
             

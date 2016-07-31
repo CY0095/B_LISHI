@@ -8,23 +8,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EquipDetailCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="182" height="283"/>
+            <rect key="frame" x="0.0" y="0.0" width="182" height="228"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="182" height="283"/>
+                <rect key="frame" x="0.0" y="0.0" width="182" height="228"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0412.png" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-QG-ChV">
-                        <rect key="frame" x="8" y="8" width="165" height="189"/>
+                        <rect key="frame" x="8" y="8" width="165" height="159"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="189" id="bWh-hN-sfq"/>
+                            <constraint firstAttribute="height" constant="159" id="bWh-hN-sfq"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="衣服的介绍" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUB-kj-Lsw">
-                        <rect key="frame" x="8" y="207" width="166" height="68"/>
+                        <rect key="frame" x="8" y="168" width="166" height="55"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="59" id="Txo-I3-9TU"/>
                             <constraint firstAttribute="height" constant="68" id="cvS-nV-WbW"/>
+                            <constraint firstAttribute="height" constant="55" id="xcq-Vl-6hg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,6 +33,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Txo-I3-9TU"/>
+                                <exclude reference="cvS-nV-WbW"/>
                             </mask>
                         </variation>
                     </label>
@@ -42,19 +44,25 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="RUB-kj-Lsw" secondAttribute="bottom" constant="8" id="1rg-4i-OWh"/>
                 <constraint firstItem="3mY-QG-ChV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="2OG-xS-Il6"/>
+                <constraint firstAttribute="trailing" secondItem="RUB-kj-Lsw" secondAttribute="trailing" constant="8" id="3uO-cu-y5p"/>
+                <constraint firstAttribute="bottom" secondItem="RUB-kj-Lsw" secondAttribute="bottom" constant="5" id="7rs-om-MJE"/>
                 <constraint firstAttribute="trailing" secondItem="3mY-QG-ChV" secondAttribute="trailing" constant="9" id="UQU-Fp-Dvd"/>
                 <constraint firstAttribute="trailing" secondItem="RUB-kj-Lsw" secondAttribute="trailing" constant="8" id="bVD-Iv-xxd"/>
                 <constraint firstAttribute="trailing" secondItem="RUB-kj-Lsw" secondAttribute="trailing" constant="8" id="cL0-gb-Y3Z"/>
+                <constraint firstItem="RUB-kj-Lsw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="cTv-iZ-2Xk"/>
                 <constraint firstItem="RUB-kj-Lsw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="lCY-Om-v0B"/>
                 <constraint firstItem="RUB-kj-Lsw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="pfA-wQ-2Uf"/>
                 <constraint firstAttribute="bottom" secondItem="RUB-kj-Lsw" secondAttribute="bottom" constant="17" id="uV0-2v-iJn"/>
                 <constraint firstItem="3mY-QG-ChV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="xRR-Xy-tKf"/>
             </constraints>
-            <size key="customSize" width="182" height="283"/>
+            <size key="customSize" width="182" height="238"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="1rg-4i-OWh"/>
                     <exclude reference="bVD-Iv-xxd"/>
+                    <exclude reference="cL0-gb-Y3Z"/>
                     <exclude reference="lCY-Om-v0B"/>
+                    <exclude reference="pfA-wQ-2Uf"/>
                     <exclude reference="uV0-2v-iJn"/>
                 </mask>
             </variation>
@@ -62,7 +70,7 @@
                 <outlet property="DetailImage" destination="3mY-QG-ChV" id="Qoe-ls-PeA"/>
                 <outlet property="DetailTitle" destination="RUB-kj-Lsw" id="Kxl-qR-0Dh"/>
             </connections>
-            <point key="canvasLocation" x="256" y="429.5"/>
+            <point key="canvasLocation" x="256" y="407"/>
         </collectionViewCell>
     </objects>
     <resources>

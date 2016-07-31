@@ -44,7 +44,7 @@
     self.ShopDetailPicArr = [NSMutableArray array];
     
     //初始化TableView
-    self.shopDetailTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight))];
+    self.shopDetailTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 64))];
     //设置代理
     self.shopDetailTableView.delegate = self;
     self.shopDetailTableView.dataSource = self;
@@ -66,6 +66,10 @@
     __weak typeof(self) weakself = self;
     ShopDetailRequest *request = [[ShopDetailRequest alloc] init];
     NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    
+    if (user_id.length == 0) {
+        user_id = @"0";
+    }
     
     [request shopRequestWithId:self.model.oid User_id:user_id sucess:^(NSDictionary *dic) {
         
@@ -209,7 +213,7 @@
 {
     ShopDetailModel *model = self.shopDetailArr[indexPath.row];
     NSString *str = model.phone;
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"10086"]];
     NSLog(@"电话号 == %@",str);
 }
 

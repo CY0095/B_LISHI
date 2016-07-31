@@ -28,5 +28,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 
 @property (nonatomic, strong) LuyingListModel *model;
-
++ (CGFloat)cellHeight:(LuyingListModel *)model;
 @end

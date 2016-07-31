@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *content;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UIButton *shareButton;
+@property (strong, nonatomic) NSString *share_url;
 
 
 @property (strong, nonatomic) BuySportModel *model;

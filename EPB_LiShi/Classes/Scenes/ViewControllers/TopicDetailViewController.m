@@ -14,6 +14,7 @@
 #import "ReplyTableViewCell.h"
 #import <UMSocial.h>
 #import "LoginViewController.h"
+#import "AttentionRequest.h"
 @interface TopicDetailViewController ()<UITableViewDataSource,UITableViewDelegate,UMSocialUIDelegate>
 @property (strong, nonatomic) UITableView *topicTableView;
 @property (strong, nonatomic) UIView *headView;
@@ -32,6 +33,10 @@
 @property (strong, nonatomic) UIButton *publishBtn;
 // 分享的标题
 @property (strong, nonatomic) NSString *shareTitle;
+// 分享的连接
+@property (strong, nonatomic) NSString *shareUrl;
+// 版主的id
+@property (strong, nonatomic) NSString *uid;
 @end
 
 @implementation TopicDetailViewController
@@ -73,7 +78,7 @@
     [self.view addSubview:self.putInView];
     // 添加发送按钮
     self.publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.publishBtn.frame = CGRectMake(WindownWidth - 100 + 15, 10, 60, 40);
+    self.publishBtn.frame = CGRectMake(WindownWidth - 100 + 20, 7, 60, 40);
     [self.publishBtn setTitle:@"发表" forState:(UIControlStateNormal)];
     [self.publishBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     [self.putInView addSubview:self.publishBtn];
@@ -101,7 +106,7 @@
     NSLog(@"user _id = %@========",user_id);
     if (user_id) {
         if (self.textField.text.length != 0) {
-            NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [[TopicDetailRequest shareTopicDetailRequest] commentRequestWithContent:self.textField.text topics_id:self.topics_id user_id:user_id success:^(NSDictionary *dic) {
                 NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -118,6 +123,7 @@
             } failure:^(NSError *error) {
                 
             }];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }
     }else{
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有登录" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -199,12 +205,14 @@
     self.attentionBtn.frame = CGRectMake(0, 0, WindowHeight / 12, WindowHeight / 24);
     self.attentionBtn.center = CGPointMake(WindownWidth - WindowHeight / 18 - 20, self.headView.center.y);
     [self.attentionBtn setTitle:@"+关注" forState:(UIControlStateNormal)];
-    [self.attentionBtn setTitleColor:[UIColor greenColor] forState:(UIControlStateNormal)];
+    [self.attentionBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+    // 给关注按钮添加方法
+    [self.attentionBtn addTarget:self action:@selector(attentionBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     // 设置账号标签的边框宽度为1
-    self.attentionBtn.layer.borderWidth = 1;
+    // self.attentionBtn.layer.borderWidth = 1;
     // 设置账号标签边框的弧度为5
-    self.attentionBtn.layer.cornerRadius = 15;
-    self.attentionBtn.layer.borderColor = [UIColor greenColor].CGColor;
+    // self.attentionBtn.layer.cornerRadius = 15;
+    // self.attentionBtn.layer.borderColor = [UIColor greenColor].CGColor;
     
     // 标题label
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, self.headView.bounds.size.height + 10, WindownWidth - 20, WindowHeight / 9 * 3 / 4)];
@@ -224,6 +232,44 @@
     [self.headView addSubview:self.attentionBtn];
     [self.view addSubview:self.topicTableView];
 }
+#pragma mark ------ 关注按钮
+-(void)attentionBtnAction:(UIButton *)button{
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (user_id) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[AttentionRequest shareAttentionRequest] attentionRequestWithFromuid:user_id touid:self.uid success:^(NSDictionary *dic) {
+            NSString *status = [dic objectForKey:@"status"];
+            NSString *error = [[dic objectForKey:@"data"] objectForKey:@"error"];
+            if ([status isEqualToString:@"OK"]) {
+                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"关注成功！" preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.attentionBtn.hidden = YES;
+                    });
+                }];
+                [alertC addAction:okaction];
+                [self presentViewController:alertC animated:YES completion:nil];
+            }else{
+                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:error preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+                [alertC addAction:okaction];
+                [self presentViewController:alertC animated:YES completion:nil];
+            }
+        } failure:^(NSError *error) {
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"连接超时！" preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+            [alertC addAction:okaction];
+            [self presentViewController:alertC animated:YES completion:nil];
+        }];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }else{
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:@"您还没有登录" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+        [alertC addAction:okaction];
+        [self presentViewController:alertC animated:YES completion:nil];
+    }
+
+}
 #pragma mark ------ 请求数据
 // 请求数据
 -(void)topicsRequest{
@@ -239,9 +285,17 @@
         NSDictionary *data = [dic objectForKey:@"data"];
         NSString *title = [data objectForKey:@"title"];
         weakSelf.shareTitle = title;
+        NSString *uid = [data objectForKey:@"user_id"];
+        weakSelf.uid = uid;
         NSString *nickname = [data objectForKey:@"nickname"];
         NSString *headicon = [data objectForKey:@"headicon"];
         NSString *createtime = [data objectForKey:@"createtime"];
+        self.shareUrl = [data objectForKey:@"shareurl"];
+        // 判断是否已经关注
+        NSNumber  *attenStatus = [data objectForKey:@"attenStatus"];
+        if ([attenStatus  isEqual: @1] ) {
+            self.attentionBtn.hidden = YES;// 如果已经关注就隐藏关注按钮
+        }
         NSArray *topicsdetaillist = [data objectForKey:@"topicsdetaillist"];
         NSArray *topicsreplylist = [data objectForKey:@"topicsreplylist"];
         for (NSDictionary *tempDic in topicsdetaillist) {
@@ -335,8 +389,8 @@
 // 分享按钮方法
 -(void)shareAction{
     
-    [UMSocialData defaultData].extConfig.title = @"分享的title";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialData defaultData].extConfig.title = self.shareTitle;
+    [UMSocialData defaultData].extConfig.qqData.url = self.shareUrl;
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"5795790567e58eb0bc00128f"
                                       shareText:self.shareTitle

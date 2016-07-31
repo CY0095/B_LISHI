@@ -22,17 +22,17 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="砾石俱乐部" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nF-Ie-TLd">
-                        <rect key="frame" x="129" y="113" width="111" height="21"/>
+                        <rect key="frame" x="75" y="113" width="218" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="111" id="djg-WT-C5z"/>
+                            <constraint firstAttribute="width" constant="218" id="djg-WT-C5z"/>
                             <constraint firstAttribute="height" constant="21" id="x05-D8-3DW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.86274509803921573" green="0.85882352941176465" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="0nF-Ie-TLd" firstAttribute="top" secondItem="wNZ-2o-hai" secondAttribute="bottom" constant="8" id="L47-Sl-TWS"/>
                     <constraint firstItem="0nF-Ie-TLd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bct-2L-xMV"/>
@@ -44,7 +44,7 @@
                 <outlet property="images" destination="wNZ-2o-hai" id="b6N-58-LIs"/>
                 <outlet property="title" destination="0nF-Ie-TLd" id="1jg-UJ-kbh"/>
             </connections>
-            <point key="canvasLocation" x="540.5" y="420"/>
+            <point key="canvasLocation" x="663.5" y="439"/>
         </tableViewCell>
     </objects>
 </document>

@@ -26,17 +26,11 @@
 
 @property (nonatomic, strong) NSMutableDictionary *headerDataDic;
 
+@property (nonatomic, assign) NSInteger page;
+
 @end
 
 @implementation SheyingViewController
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self requestCommunityHeaderViewData];
-        [self requestCommunityLuyingListData];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +38,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.communitySheyingListView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49 - 64 - 44)];
+    
+    // 上拉加载
+    self.communitySheyingListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+    }];
+    self.communitySheyingListView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(addPage4)];
     
     // 注册
     [self.communitySheyingListView registerNib:[UINib nibWithNibName:@"CommunityHeaderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:CommunityHeaderCell_Identify];
@@ -57,16 +57,26 @@
     
     
     
-//    [self requestCommunityHeaderViewData];
-//    [self requestCommunityLuyingListData];
+    [self requestCommunityHeaderViewData];
+    [self requestCommunityLuyingListData];
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
     
 }
+- (void)addPage4 {
+    self.page ++;
+    [self requestCommunityLuyingListData];
+    NSLog(@"page++");
+}
+
 
 - (void)requestCommunityLuyingListData {
     self.SheyingListArray = [NSMutableArray array];
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
-    [request CommunitySheyingListRequestWithParameter:nil success:^(NSDictionary *dic) {
+    NSString *user_id = @"451316";
+    
+    [request CommunitySheyingListRequestWithParameter:@{@"page":[NSString stringWithFormat:@"%ld",self.page],@"user_id":user_id} success:^(NSDictionary *dic) {
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         NSArray *tempArray = [tempEvents objectForKey:@"topiclist"];
         for (NSDictionary *tempDic in tempArray) {
@@ -78,7 +88,8 @@
         // NSLog(@"SheyingListArray == %@",weakSelf.SheyingListArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.communitySheyingListView reloadData];
+            [weakSelf.communitySheyingListView reloadData];
+            [GiFHUD dismiss];
         });
         
         
@@ -116,11 +127,12 @@
     if (indexPath.row == 0) {
         return 153;
     }else {
-        return 420;
+        LuyingListModel *model = self.SheyingListArray[indexPath.row - 1];
+        return [CommunityLuyingCell cellHeight:model];
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.SheyingListArray.count;
+    return self.SheyingListArray.count + 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -134,7 +146,7 @@
         return cell;
     }
     
-    LuyingListModel *model = self.SheyingListArray[indexPath.row];
+    LuyingListModel *model = self.SheyingListArray[indexPath.row - 1];
     if (model.images.count == 0) {
         CommunityLuyingVideoCell *videoCell = [tableView dequeueReusableCellWithIdentifier:CommunityLuyingVideoCell_Identify];
         videoCell.model = model;
@@ -161,7 +173,7 @@
         [self.navigationController pushViewController:detailVC animated:YES];
         
     }else {
-        LuyingListModel *model = self.SheyingListArray[indexPath.row];
+        LuyingListModel *model = self.SheyingListArray[indexPath.row - 1];
         
         if (model.images.count == 0) {
             
