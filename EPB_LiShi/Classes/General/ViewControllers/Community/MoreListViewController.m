@@ -11,6 +11,7 @@
 #import "CommunityCustomCell.h"
 #import "CommunityCoCellModel.h"
 #import "AllListViewController.h"
+#import "CollectionHeaderView.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -26,14 +27,8 @@
 
 @end
 
-static NSString *const headerID = @"headerCellReuseIdentifier";
+// static NSString *const headerID = @"headerCellReuseIdentifier";
 @implementation MoreListViewController
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        [self requestCollectionViewData];
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +55,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"CommunityCustomCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:CommunityCustomCell_Identify];
     
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID];
+    [self.collectionView registerClass:[CollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionHeaderView"];
     
     self.collectionView.dataSource =self;
     self.collectionView.delegate = self;
@@ -91,7 +86,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.djclublistArray addObject:model];
         }
-        NSLog(@"djclublistArray%@",self.djclublistArray);
+        // NSLog(@"djclublistArray%@",self.djclublistArray);
         
         NSArray *tslistArray = [self.allDataDic objectForKey:@"tsclublist"];
         for (NSDictionary *tempDic in tslistArray) {
@@ -99,7 +94,7 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.tsclublistArray addObject:model];
         }
-        NSLog(@"tsclublistArray%@",self.tsclublistArray);
+        // NSLog(@"tsclublistArray%@",self.tsclublistArray);
         
         NSArray *pplistArray = [self.allDataDic objectForKey:@"ppclublist"];
         for (NSDictionary *tempDic in pplistArray) {
@@ -107,13 +102,13 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
             [model setValuesForKeysWithDictionary:tempDic];
             [weakSelf.ppclublistArray addObject:model];
         }
-        NSLog(@"ppclublistArray%@",self.ppclublistArray);
+        // NSLog(@"ppclublistArray%@",self.ppclublistArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
-            [GiFHUD dismiss];
+            
         });
-        
+        [GiFHUD dismiss];
         
         
     } failure:^(NSError *error) {
@@ -161,26 +156,13 @@ static NSString *const headerID = @"headerCellReuseIdentifier";
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reuseableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerID forIndexPath:indexPath];
+        CollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CollectionHeaderView" forIndexPath:indexPath];
         
         headerView.backgroundColor = [UIColor colorWithRed:243.0 green:244.0 blue:213.0 alpha:1.0];
+        NSArray *array = @[@"当季推荐",@"特色项目",@"品牌专区"];
+        headerView.titleLabel.text = array[indexPath.section];
         
-        if (indexPath.section == 0) {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
-            label.text = @"当季推荐";
-            [headerView addSubview:label];
-            reuseableView = headerView;
-        }else if (indexPath.section == 1) {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
-            label.text = @"特色项目";
-            [headerView addSubview:label];
-            reuseableView = headerView;
-        }else {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 20)];
-            label.text = @"品牌专区";
-            [headerView addSubview:label];
-            reuseableView = headerView;
-        }
+        reuseableView = headerView;
         
     }
     return reuseableView;

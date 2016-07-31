@@ -11,13 +11,19 @@
 #import "ShopTableViewCell.h"
 #import "ShopDetailViewController.h"
 #import "ShopModel.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ShopViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate>
 
 //存放商店的数组
 @property (strong, nonatomic) NSMutableArray *shopDetailArr;
 //商店的TableView
 @property (strong, nonatomic) UITableView *shopTableView;
+//位置管理器
+@property(nonatomic,strong)CLLocationManager *locMagr;
+//设置经纬度
+@property(assign,nonatomic) double latitude;
+@property(assign,nonatomic) double longitude;
 
 @end
 
@@ -41,8 +47,45 @@
     //添加视图
     [self.view addSubview:self.shopTableView];
     
+    [self LocationAdd];
     [self DataRequest];
     self.view.backgroundColor = [UIColor cyanColor];    
+}
+
+#pragma mark --- 添加定位功能 ---
+- (void)LocationAdd
+{
+    //1.创建位置管理器（定位用户的位置），创建完毕之后，是不会开启定位功能的，因为特别耗电，如果想要开启定位，则需要调用方法
+    self.locMagr = [[CLLocationManager alloc]init];
+    //2.设置代理
+    self.locMagr.delegate = self;
+    
+    //3.desiredAccuracy:设置定位的精度
+    self.locMagr.desiredAccuracy = kCLLocationAccuracyBest;
+    //4.定位的频率，每隔多少米进行定位
+    CLLocationDistance distance = 10;//十米定位一次
+    self.locMagr.distanceFilter = distance;
+    
+    //4.授权设置
+    [self.locMagr requestWhenInUseAuthorization];//需要的时候进行授权
+    //5.开启定位
+    [self.locMagr startUpdatingLocation];
+}
+
+#pragma mark --- 定位用户的经纬度,用于请求数据 ---
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    //取出第一个位置
+    CLLocation *location = [locations firstObject];
+    CLLocationCoordinate2D coordinate = location.coordinate;//位置坐标
+    
+    self.longitude = coordinate.longitude;
+    self.latitude = coordinate.latitude;
+    
+    NSLog(@"longtitude == %f, latitude == %f",self.longitude,self.latitude);
+    
+    //如果不需要实时去定位，需要关闭行为服务
+    [self.locMagr stopUpdatingLocation];
 }
 
 #pragma mark --- 请求数据 ---
@@ -51,7 +94,7 @@
     __weak typeof(self) weakself = self;
     ShopRequest *request = [[ShopRequest alloc] init];
     
-    [request shopRequestWithBrand_id:self.model.brand_id Latitude:@"40.02928931" Longitude:@"116.33704576" sucess:^(NSDictionary *dic) {
+    [request shopRequestWithBrand_id:self.model.brand_id Latitude:@"40.029196" Longitude:@"116.337192" sucess:^(NSDictionary *dic) {
         
         NSArray *event = [[dic objectForKey:@"data"] objectForKey:@"shoplist"];
         
