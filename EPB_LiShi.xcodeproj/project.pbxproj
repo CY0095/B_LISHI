@@ -257,8 +257,7 @@
 		D6ADC9601D3A52DB0073EAE4 /* yijian.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9181D3A52DB0073EAE4 /* yijian.png */; };
 		D6ADC9611D3A52DB0073EAE4 /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = D6ADC9191D3A52DB0073EAE4 /* 箭头.png */; };
 
-		D6B99D431D4B4D4B00AAA2D9 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B99D411D4B4D4B00AAA2D9 /* GiFHUD.m */; };
-		D6B99D4A1D4B4D6D00AAA2D9 /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = D6B99D491D4B4D6D00AAA2D9 /* load.gif */; };
+		
 
 		D6C7F0161D4C35BB0021A9B4 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7F0141D4C35BB0021A9B4 /* GiFHUD.m */; };
 		D6C7F0171D4C35BB0021A9B4 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0151D4C35BB0021A9B4 /* loading.gif */; };
