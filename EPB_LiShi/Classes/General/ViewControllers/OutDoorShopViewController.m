@@ -47,6 +47,10 @@
     NSString *like = [[NSUserDefaults standardUserDefaults] objectForKey:@"like"];
     
     NSLog(@"打印我的收藏 %@",like);
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 #pragma mark --- 请求数据 ---
@@ -67,6 +71,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.shopTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
         //        NSLog(@" === %@",weakself.shopDetailArr);

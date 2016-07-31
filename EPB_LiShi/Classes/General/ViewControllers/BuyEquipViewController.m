@@ -82,6 +82,10 @@
     [self DataRequest];
     [self AddTabBar];
     
+    //加载效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
+    
 }
 
 #pragma mark --- 设置TabBar ---
@@ -180,6 +184,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakself.buySportTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {
@@ -266,13 +273,23 @@
 {
     NSLog(@"分享的点击");
     
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeWeb url:cell.share_url];
-    [UMSocialData defaultData].extConfig.title = cell.title.text;
+    //分享微博
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.model.thumb];
+    [UMSocialData defaultData].extConfig.title = self.model.title;
+    
+    //分享qq联系人
+    [UMSocialData defaultData].extConfig.qqData.title = self.model.title;
+    [UMSocialData defaultData].extConfig.qqData.url = cell.share_url;
+    
+    //分享qq空间
+    [UMSocialData defaultData].extConfig.qzoneData.url = cell.share_url;
+    [UMSocialData defaultData].extConfig.qzoneData.title = self.model.title;
+    
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"5795790567e58eb0bc00128f"
-                                      shareText:cell.title.text
-                                     shareImage:[UIImage imageNamed:@"icon"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                      shareText:self.model.title
+                                     shareImage:[UIImage imageNamed:@""]
+                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToQzone]
                                        delegate:self];
 }
 

@@ -49,7 +49,11 @@
     
     [self LocationAdd];
     [self DataRequest];
-    self.view.backgroundColor = [UIColor cyanColor];    
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 #pragma mark --- 添加定位功能 ---
@@ -86,6 +90,7 @@
     
     //如果不需要实时去定位，需要关闭行为服务
     [self.locMagr stopUpdatingLocation];
+    
 }
 
 #pragma mark --- 请求数据 ---
@@ -103,6 +108,9 @@
             ShopModel *model = [[ShopModel alloc] init];
             [model setValuesForKeysWithDictionary:tempDic];
             [weakself.shopDetailArr addObject:model];
+            
+            //取消缓冲效果
+            [GiFHUD dismiss];
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
