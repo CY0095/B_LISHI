@@ -43,6 +43,10 @@
     
     [self DataRequest];
     self.view.backgroundColor = [UIColor cyanColor];
+    
+    NSString *like = [[NSUserDefaults standardUserDefaults] objectForKey:@"like"];
+    
+    NSLog(@"打印我的收藏 %@",like);
 }
 
 #pragma mark --- 请求数据 ---

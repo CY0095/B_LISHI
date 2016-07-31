@@ -21,7 +21,7 @@
             UIButton *btn = (UIButton *)items[i];
             CGFloat width = self.bounds.size.width / items.count;
             CGFloat height = self.bounds.size.height;
-            btn.frame = CGRectMake(i * width + 40, 3, 40, height - 30);
+            btn.frame = CGRectMake(i * width + 75, 3, 38, height - 30);
             [self addSubview:btn];
             
             //字体的大小

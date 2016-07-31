@@ -109,11 +109,14 @@
 #pragma mark --- 请求数据 ---
 - (void)DataRequest
 {
-//    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     
+    if (user_id.length == 0) {
+        user_id = @"0";
+    }
     __weak typeof(self) weakself = self;
     FlClothRequest *request = [[FlClothRequest alloc] init];
-    [request flClothRequestWithTopID:self.model.topicid userID:@"0" sucess:^(NSDictionary *dic) {
+    [request flClothRequestWithTopID:self.model.topicid userID:user_id sucess:^(NSDictionary *dic) {
         
         //发布帖子的model
         NSDictionary *event = [dic objectForKey:@"data"];

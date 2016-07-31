@@ -65,9 +65,13 @@
 {
     __weak typeof(self) weakself = self;
     ShopDetailRequest *request = [[ShopDetailRequest alloc] init];
-//    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     
-    [request shopRequestWithId:self.model.oid User_id:@"0" sucess:^(NSDictionary *dic) {
+    if (user_id.length == 0) {
+        user_id = @"0";
+    }
+    
+    [request shopRequestWithId:self.model.oid User_id:user_id sucess:^(NSDictionary *dic) {
         
         NSDictionary *dict = [[dic objectForKey:@"data"] objectForKey:@"info"];
         ShopDetailModel *model = [[ShopDetailModel alloc] init];
