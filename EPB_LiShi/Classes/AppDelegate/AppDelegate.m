@@ -15,6 +15,8 @@
 #import "UMSocialWechatHandler.h"
 @interface AppDelegate ()
 
+@property(strong,nonatomic) UIImageView *backImg;
+
 @end
 
 @implementation AppDelegate
@@ -28,8 +30,8 @@
     [self.window setRootViewController:rootVC];
     // 初始化欢迎界面背景视图
     self.splashView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UIImageView *backImg = [[UIImageView alloc] initWithFrame:self.splashView.bounds];
-    backImg.image = [UIImage imageNamed:@"welcome.jpg"];
+    self.backImg = [[UIImageView alloc] initWithFrame:self.splashView.bounds];
+    self.backImg.image = [UIImage imageNamed:@"welcome.jpg"];
     
     UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
     textLabel.text = @"WELCOME LISHI";
@@ -38,7 +40,7 @@
     textLabel.font = [UIFont systemFontOfSize:39];
     textLabel.center = CGPointMake(self.splashView.center.x, self.splashView.center.y + 160);
     // 添加图片
-    [self.splashView addSubview:backImg];
+    [self.splashView addSubview:self.backImg];
     // 添加字体
     [self.splashView addSubview:textLabel];
     [self.window addSubview:self.splashView];
@@ -63,7 +65,7 @@
     [UIView animateKeyframesWithDuration:1 delay:0 options:(UIViewKeyframeAnimationOptionCalculationModeCubicPaced) animations:^{
         
         [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
-            self.splashView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+            self.backImg.transform = CGAffineTransformMakeScale(1.2, 1.2);
         }];
 //        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.5
 //                                      animations:^{
