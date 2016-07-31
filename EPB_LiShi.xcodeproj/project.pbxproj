@@ -3134,12 +3134,7 @@
 			sourceTree = "<group>";
 		};
 
-		D6B99D3F1D4B4D4B00AAA2D9 /* GifHUD */ = {
-			isa = PBXGroup;
-			children = (
-				D6B99D401D4B4D4B00AAA2D9 /* GiFHUD.h */,
-				D6B99D411D4B4D4B00AAA2D9 /* GiFHUD.m */,
-				D6B99D491D4B4D6D00AAA2D9 /* load.gif */,
+
 
 		D6C7F0121D4C35BB0021A9B4 /* GifHUD */ = {
 			isa = PBXGroup;
