@@ -41,6 +41,8 @@
     // 下拉刷新
     self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动回调这个block
+        [self.communityListArray removeAllObjects];
+        
     }];
     // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
     self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh)];
@@ -64,17 +66,17 @@
     self.communityListArray = [NSMutableArray array];
     [self requestCommunityListData];
     
-    
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
     
 }
 
 - (void)downPullRefresh {
     
-    [self.communityListArray removeAllObjects];
+    
     self.page = 0;
     [self requestCommunityListData];
-    [GiFHUD setGifWithImageName:@"loading.gif"];
-    [GiFHUD show];
+    
 }
 
 - (void)addPage {
@@ -85,7 +87,9 @@
 }
 
 - (void)requestCommunityListData {
-    
+    // 当视图加载出来的时候结束刷新
+    [self.communityTableView.mj_header endRefreshing];
+    [self.communityTableView.mj_footer endRefreshing];
     
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
@@ -110,9 +114,7 @@
     } failure:^(NSError *error) {
         
     }];
-    // 当视图加载出来的时候结束刷新
-    [self.communityTableView.mj_header endRefreshing];
-    [self.communityTableView.mj_footer endRefreshing];
+    
 }
 
 
@@ -142,8 +144,15 @@
         cell.attentionBtn.hidden = YES;
         cell.replyNumLabel.hidden = YES;
         return cell;
+    } else {
+        cell.titleLabel.hidden = NO;
+        cell.nicknameLabel.hidden = NO;
+        cell.headiconImg.hidden = NO;
+        cell.attentionBtn.hidden = NO;
+        cell.replyNumLabel.hidden = NO;
+        return cell;
     }
-    return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

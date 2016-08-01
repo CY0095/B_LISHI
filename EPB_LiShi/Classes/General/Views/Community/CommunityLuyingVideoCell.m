@@ -52,7 +52,7 @@
                 //                [alertC addAction:okaction];
                 //                [self.contentView presentViewController:alertC animated:YES completion:nil];
                 self.contentBtn.titleLabel.text = @"已关注";
-                
+                self.contentBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
             }else{
                 //                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:error preferredStyle:(UIAlertControllerStyleAlert)];
                 //                UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
