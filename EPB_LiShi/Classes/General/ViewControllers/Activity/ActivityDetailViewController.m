@@ -18,6 +18,8 @@
 #import "activitySingle.h"
 #import "ActivityApplyModel.h"
 #import "LoginViewController.h"
+#import "AttentionDetailViewController.h"
+#import "ComTopicDetailViewController.h"
 @interface ActivityDetailViewController ()<SDCycleScrollViewDelegate,UMSocialUIDelegate>
 
 @property(strong,nonatomic) NSMutableArray *imgArr;
@@ -261,6 +263,10 @@
     [leaderImg setImageWithURL:[NSURL URLWithString:self.model.leaderheadicon]];
     leaderImg.layer.cornerRadius = 32;
     leaderImg.layer.masksToBounds = YES;
+    leaderImg.userInteractionEnabled = YES;
+    // 添加轻拍手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(JumpToUser)];
+    [leaderImg addGestureRecognizer:tap];
     
     // 组织者昵称
     UILabel *leadernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 30)];
@@ -286,6 +292,7 @@
     clubBtn.center = CGPointMake(WindownWidth / 2, CGRectGetMaxY(tagLabel.frame) + 25);
     [clubBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     clubBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [clubBtn addTarget:self action:@selector(JumpToClub) forControlEvents:UIControlEventTouchUpInside];
     
     
     UIImageView *viewImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 245)];
@@ -381,6 +388,31 @@
     [self.view addSubview:applyView];
     
 }
+
+-(void)JumpToUser{
+    
+    NSLog(@"pppppppppppp%@",self.model.leader_userid);
+    
+    AttentionDetailViewController *attentionVC = [AttentionDetailViewController new];
+    
+    attentionVC.uid = self.model.leader_userid;
+    
+    [self.navigationController pushViewController:attentionVC animated:YES];
+    
+    
+}
+
+-(void)JumpToClub{
+    
+    NSLog(@"%@",self.model.club_id);
+    ComTopicDetailViewController *comtopVC = [ComTopicDetailViewController new];
+    
+    comtopVC.model.club_id = self.model.club_id;
+    
+    
+    [self.navigationController pushViewController:comtopVC animated:YES];
+}
+
 
 -(void)applyAction:(UIButton *)btn{
     

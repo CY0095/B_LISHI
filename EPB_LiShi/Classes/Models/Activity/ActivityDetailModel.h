@@ -35,6 +35,8 @@
 @property(strong,nonatomic) NSString *activitytimes;
 // 俱乐部
 @property(strong,nonatomic) NSString *club_title;
+// 俱乐部id
+@property(strong,nonatomic) NSString *club_id;
 
 @property(strong,nonatomic) NSArray *activitydetail;
 
