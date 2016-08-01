@@ -53,14 +53,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHd-fI-CYz">
-                        <rect key="frame" x="344" y="9" width="46" height="30"/>
+                        <rect key="frame" x="322" y="9" width="68" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="2Fl-jS-Y1n"/>
+                            <constraint firstAttribute="width" constant="68" id="2Fl-jS-Y1n"/>
                             <constraint firstAttribute="height" constant="30" id="Kev-3g-Pym"/>
                         </constraints>
                         <state key="normal" title="+关注">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="attentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z1V-Wk-Bne"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-07-18 10:47:37" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-uK-9pV">
                         <rect key="frame" x="9" y="381" width="142" height="21"/>

@@ -50,19 +50,6 @@
                         <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWs-Ji-fWM">
-                        <rect key="frame" x="351" y="8" width="46" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="8pt-YD-YXY"/>
-                            <constraint firstAttribute="width" constant="46" id="q14-bB-WNc"/>
-                        </constraints>
-                        <state key="normal" title="+ 关注">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="attentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KHp-F9-hJV"/>
-                        </connections>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-kC-5x5">
                         <rect key="frame" x="0.0" y="301" width="414" height="13"/>
                         <color key="backgroundColor" red="0.95163241359999995" green="0.95686274510000002" blue="0.8343205776" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,6 +63,19 @@
                             <constraint firstAttribute="height" constant="190" id="EfO-1p-Y8j"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWs-Ji-fWM">
+                        <rect key="frame" x="326" y="8" width="80" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="8pt-YD-YXY"/>
+                            <constraint firstAttribute="width" constant="80" id="q14-bB-WNc"/>
+                        </constraints>
+                        <state key="normal" title="+ 关注">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="attentionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KHp-F9-hJV"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fMy-kC-5x5" secondAttribute="trailing" id="9Jq-v1-DTi"/>
@@ -91,7 +91,7 @@
                     <constraint firstItem="fMy-kC-5x5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YYK-b3-7uD"/>
                     <constraint firstItem="Brc-NQ-D1J" firstAttribute="leading" secondItem="kdI-ru-E50" secondAttribute="trailing" constant="8" id="Zrf-uH-kcf"/>
                     <constraint firstItem="sfc-Gg-HQA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jkd-85-NiQ"/>
-                    <constraint firstAttribute="trailing" secondItem="TWs-Ji-fWM" secondAttribute="trailing" constant="17" id="kAm-x6-hyu"/>
+                    <constraint firstAttribute="trailing" secondItem="TWs-Ji-fWM" secondAttribute="trailing" constant="8" id="kAm-x6-hyu"/>
                     <constraint firstItem="hdr-GJ-4WO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kUF-D1-JE2"/>
                     <constraint firstAttribute="trailing" secondItem="sfc-Gg-HQA" secondAttribute="trailing" constant="8" id="l1z-E0-AP3"/>
                     <constraint firstItem="AZK-Gb-ZHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="sot-Hz-AVq"/>
@@ -105,7 +105,7 @@
                 <outlet property="replyNumLabel" destination="hdr-GJ-4WO" id="kDs-Qo-S9o"/>
                 <outlet property="titleLabel" destination="sfc-Gg-HQA" id="aZa-l2-Gnb"/>
             </connections>
-            <point key="canvasLocation" x="146" y="357.5"/>
+            <point key="canvasLocation" x="314" y="353.5"/>
         </tableViewCell>
     </objects>
     <resources>

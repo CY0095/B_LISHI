@@ -13,6 +13,7 @@
 #import "CommunityDetailViewController.h"
 #import "TopicDetailViewController.h"
 #import "MJRefresh.h"
+#import "DetailsViewController.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -134,6 +135,14 @@
     CommunityListModel *model = self.communityListArray[indexPath.row];
     cell.model = model;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (model.type == 3) {
+        cell.titleLabel.hidden = YES;
+        cell.nicknameLabel.hidden = YES;
+        cell.headiconImg.hidden = YES;
+        cell.attentionBtn.hidden = YES;
+        cell.replyNumLabel.hidden = YES;
+        return cell;
+    }
     return cell;
 }
 
@@ -141,15 +150,20 @@
     
     CommunityListModel *model = self.communityListArray[indexPath.row];
     
-    NSLog(@"CommunityTableViewCell %@",model.topic_id);
+    // NSLog(@"CommunityTableViewCell %@",model.topic_id);
     
-//    CommunityDetailViewController *detailVC = [CommunityDetailViewController new];
-//    detailVC.topics_id = model.topic_id;
-//    [self.navigationController pushViewController:detailVC animated:YES];
-    
-    TopicDetailViewController *detailVC = [TopicDetailViewController new];
-    detailVC.topics_id = model.topic_id;
-    [self.navigationController pushViewController:detailVC animated:YES];
+    if (model.type == 3) {
+        
+        // NSLog(@"%@",model.url);
+        DetailsViewController *detailVC = [DetailsViewController new];
+        detailVC.tempUrl = model.url;
+        [self.navigationController pushViewController:detailVC animated:YES];
+        
+    } else if (model.type == 10) {
+        TopicDetailViewController *detailVC = [TopicDetailViewController new];
+        detailVC.topics_id = model.topic_id;
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
     
 }
 

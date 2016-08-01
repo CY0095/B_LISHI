@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *videoimg;
 @property (weak, nonatomic) IBOutlet UILabel *likeNum;
 @property (nonatomic, assign) NSInteger videoid;
+@property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) LuyingListModel *model;
 
 @end
