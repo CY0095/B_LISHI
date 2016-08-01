@@ -44,7 +44,8 @@
     [super viewWillAppear:animated];
     
     self.rootVC.LSTabBar.hidden = YES;
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -53,6 +54,7 @@
     
     self.rootVC.LSTabBar.hidden = NO;
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [GiFHUD dismiss];
 }
 
 - (void)viewDidLoad {

@@ -54,10 +54,7 @@
     [self DataRequest];
     
     self.view.backgroundColor = [UIColor colorWithRed:220/255.0 green:219/255.0 blue:195/255.0 alpha:1];
-    
-    //加载缓冲效果
-    [GiFHUD setGifWithImageName:@"loading.gif"];
-    [GiFHUD show];
+
 }
 
 #pragma mark --- 布局视图 ---
@@ -110,7 +107,7 @@
     //添加scrollview
     self.exchangeScrollView = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
     self.exchangeScrollView.backgroundColor = [UIColor clearColor];
-    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.FLView.frame) + 50);
+    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.FLView.frame));
     
     //添加视图
     
@@ -163,7 +160,7 @@
     add.image = [UIImage imageNamed:@"箭头"];
     [footView addSubview:btn];
     [footView addSubview:add];
-    self.FLView.tableFooterView = footView;
+//    self.FLView.tableFooterView = footView;
     
     UIView *headView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 50)];
     UIImageView *i1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
@@ -217,8 +214,6 @@
             [model setValuesForKeysWithDictionary:tempDic];
             [weakself.JFArray addObject:model];
             
-            //取消效果
-            [GiFHUD dismiss];
         }
         
         //请求福利商品

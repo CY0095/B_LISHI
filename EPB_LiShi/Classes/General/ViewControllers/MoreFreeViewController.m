@@ -28,6 +28,13 @@
 
 @implementation MoreFreeViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,7 +44,7 @@
     self.thirdDic = [NSMutableDictionary dictionary];
     
     //初始化TableView
-    self.moreFreeTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
+    self.moreFreeTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight - 44))];
     //设置代理
     self.moreFreeTableView.delegate = self;
     self.moreFreeTableView.dataSource = self;
