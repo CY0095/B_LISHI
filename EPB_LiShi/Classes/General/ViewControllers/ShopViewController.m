@@ -29,6 +29,13 @@
 
 @implementation ShopViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,7 +45,7 @@
     self.shopDetailArr = [NSMutableArray array];
     
     //初始化TableView
-    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 64))];
+    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight))];
     //设置代理 
     self.shopTableView.delegate = self;
     self.shopTableView.dataSource = self;

@@ -35,6 +35,13 @@
 
 @implementation ClothDetailViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
 [super viewDidLoad];
 
@@ -92,7 +99,7 @@
     //设置视图
     UIView *v1 = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, 58))];
     UILabel *label = [[UILabel alloc] initWithFrame:(CGRectMake(8, 8, 61, 16))];
-    label.text = [NSString stringWithFormat:@"%@人赞过",self.likeStr];
+    label.text = [NSString stringWithFormat:@"117人赞过"];
     label.textColor = [UIColor grayColor];
     label.font = [UIFont systemFontOfSize:13];
     
@@ -270,6 +277,7 @@
     }
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -23,6 +23,22 @@
 
 @implementation OutDoorShopViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
+
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,7 +48,7 @@
     self.shopDetailArr = [NSMutableArray array];
     
     //初始化TableView
-    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight))];
+    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 64))];
     //设置代理
     self.shopTableView.delegate = self;
     self.shopTableView.dataSource = self;
@@ -42,7 +58,7 @@
     [self.view addSubview:self.shopTableView];
     
     [self DataRequest];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     NSString *like = [[NSUserDefaults standardUserDefaults] objectForKey:@"like"];
     

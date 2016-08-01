@@ -24,6 +24,13 @@ static NSString *const cellResueID = @"111";
 
 @implementation SportClothViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

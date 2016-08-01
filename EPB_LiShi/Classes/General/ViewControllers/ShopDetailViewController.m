@@ -34,6 +34,22 @@
 
 @implementation ShopDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -44,7 +60,7 @@
     self.ShopDetailPicArr = [NSMutableArray array];
     
     //初始化TableView
-    self.shopDetailTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 64))];
+    self.shopDetailTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 80))];
     //设置代理
     self.shopDetailTableView.delegate = self;
     self.shopDetailTableView.dataSource = self;
@@ -57,7 +73,7 @@
     [self DataRequest];
     //添加视图
     [self.view addSubview:self.shopDetailTableView];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //加载缓冲效果
     [GiFHUD setGifWithImageName:@"loading.gif"];
@@ -219,9 +235,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ShopDetailModel *model = self.shopDetailArr[indexPath.row];
-    NSString *str = model.phone;
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"10086"]];
-    NSLog(@"电话号 == %@",str);
+    
+    //用如下方式，可以使得用户结束通话后自动返回到应用
+    UIWebView*callWebview =[[UIWebView alloc] init];
+    NSURL *telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",model.phone]];// 貌似tel:// 或者 tel: 都行
+    [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
+    //记得添加到view上
+    [self.view addSubview:callWebview];
 }
 
 - (void)didReceiveMemoryWarning {

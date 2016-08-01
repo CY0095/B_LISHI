@@ -9,10 +9,12 @@
 #import "BaseViewController.h"
 #import "FLModel.h"
 #import "FLClothModel.h"
+#import "MoreFreeModel.h"
 
 @interface ClothDetailViewController : BaseViewController
 
 @property (strong, nonatomic) FLModel *model;
 @property (strong, nonatomic) FLClothModel *flClothModel;
+@property (strong, nonatomic) MoreFreeModel *freeModel;
 
 @end
