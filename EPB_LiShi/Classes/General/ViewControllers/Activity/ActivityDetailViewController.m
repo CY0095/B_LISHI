@@ -14,6 +14,10 @@
 #import "ActivityModel.h"
 #import "ActivityIntroduceViewController.h"
 #import <UMSocial.h>
+#import "GiFHUD.h"
+#import "activitySingle.h"
+#import "ActivityApplyModel.h"
+#import "LoginViewController.h"
 @interface ActivityDetailViewController ()<SDCycleScrollViewDelegate,UMSocialUIDelegate>
 
 @property(strong,nonatomic) NSMutableArray *imgArr;
@@ -46,6 +50,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [GiFHUD setGifWithImageName:@"load.gif"];
+    [GiFHUD show];
     
     self.imgArr = [NSMutableArray array];
     self.dataArray = [NSMutableArray array];
@@ -67,7 +73,7 @@
     // 查找rootViewController
     self.rootVC = (RootViewController *)[[[UIApplication sharedApplication] windows] objectAtIndex:1].rootViewController;
     
-    [self CycleDetailRequest];
+    
     [self ActivityDetailRequest];
     [self shareNavigationItem];
 }
@@ -110,36 +116,8 @@
 
 
 
--(void)CycleDetailRequest{
-    
-    __weak typeof(self) weakSelf = self;
-    
-    ActivityDetailRequest *request = [[ActivityDetailRequest alloc] init];
-    
-    [request ActivityDetailRequestWithUrl:ActivityDetailRequest_Url(self.DetailIDString, @"451321") Parameter:nil  success:^(NSDictionary *dic) {
-        
-        NSDictionary *tempEvents = [dic objectForKey:@"data"];
-        NSArray *tempArr = [tempEvents objectForKey:@"activityimgs"];
-        for (NSDictionary *tempDic in tempArr) {
-            
-            DetailCycleModel *model = [DetailCycleModel new];
-            [model setValuesForKeysWithDictionary:tempDic];
-            NSURL *url = [NSURL URLWithString:model.images];
-            [weakSelf.imgArr addObject:url];
-            
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-        NSLog(@"activity detail = %@",weakSelf.dataArray);
-        
-    } failure:^(NSError *error) {
-        NSLog(@"activity detail error = %@",error);
-    }];
-    
-    
-}
 
+ 
 
 -(void)ActivityDetailRequest{
     
@@ -166,9 +144,22 @@
         NSLog(@"%@",weakSelf.imagesString);
         NSLog(@"----------%@",weakSelf.lightspotArray);
         NSLog(@"%@",weakSelf.dataArray);
+        
+        
+        NSArray *photoArr = [tempEvents objectForKey:@"activityimgs"];
+        for (NSDictionary *tempDic in photoArr) {
+            
+            DetailCycleModel *model = [DetailCycleModel new];
+            [model setValuesForKeysWithDictionary:tempDic];
+            NSURL *url = [NSURL URLWithString:model.images];
+            [weakSelf.imgArr addObject:url];
+            
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self DetailIntroduce];
+            [GiFHUD dismiss];
         });
+        
         
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -393,16 +384,77 @@
 
 -(void)applyAction:(UIButton *)btn{
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确认报名" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (!user_id) {
+        NSLog(@"没登录");
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有登录" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"去登录" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            LoginViewController *loginVC = [[LoginViewController alloc] init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }];
+        [alertC addAction:okaction];
         
-        UIAlertController *applyController = [UIAlertController alertControllerWithTitle:nil message:@"报名成功" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self presentViewController:alertC animated:YES completion:^{
             
         }];
-        [applyController addAction:determineAction];
-        [self presentViewController:applyController animated:YES completion:nil];
+
+    }else{
+    
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确认报名" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        BOOL isequel = NO;
+       // BOOL isApply = NO;
+//        for (NSDictionary *detailDic in [activitySingle shareSingle].activityArray) {
+//            NSString * detailID = [NSString stringWithFormat:@"%@",[detailDic objectForKey:@"detailID"]];
+//            if ([detailID isEqualToString:[NSString stringWithFormat:@"%@",self.DetailIDString]]) {
+//                isApply = YES;
+//            }
+//            NSLog(@"-----%ld",[activitySingle shareSingle].activityArray.count);
+//            NSLog(@"+++++++++++++++++++++++++++++++%@",[activitySingle shareSingle].activityArray);
         
+        activitySingle *single = [activitySingle shareSingle];
+        // 打开数据库
+        [single openDataBase];
+        
+        
+        
+//        }
+        
+        
+        NSArray *dataArray = [single selectFromStudent];
+        for (ActivityApplyModel *model in dataArray) {
+            if ([model.activityID isEqualToString:[NSString stringWithFormat:@"%@",self.DetailIDString]]) {
+                isequel = YES;
+            }
+            NSLog(@"----------------------%@",model.activityID);
+        }
+        NSLog(@"----------------------%@",self.DetailIDString);
+        
+        if (isequel == YES) {
+            
+            UIAlertController *judgeController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您已报名,无需重新报名" preferredStyle:(UIAlertControllerStyleAlert)];
+            UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:nil];
+            [judgeController addAction:OKAction];
+            [self presentViewController:judgeController animated:YES completion:nil];
+            
+        }else{
+            [single creatTable];
+            [single insertActivityDEtailWithID:self.DetailIDString title:self.model.title imagesString:self.imagesString user_id:user_id];
+            
+            UIAlertController *applyController = [UIAlertController alertControllerWithTitle:nil message:@"报名成功" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [applyController addAction:determineAction];
+            [self presentViewController:applyController animated:YES completion:nil];
+            
+        }
+        
+        
+        [single closeDataBase];
+        NSString *as = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        NSLog(@"%@",as);
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         
@@ -412,7 +464,7 @@
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
     
-    
+    }
 }
 
 

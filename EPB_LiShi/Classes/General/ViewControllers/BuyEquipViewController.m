@@ -66,7 +66,7 @@
     self.sportPicArr = [NSMutableArray array];
     
     //初始化TableView
-    self.buySportTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
+    self.buySportTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight - 30))];
     //设置代理
     self.buySportTableView.delegate = self;
     self.buySportTableView.dataSource = self;
@@ -81,6 +81,10 @@
     
     [self DataRequest];
     [self AddTabBar];
+    
+    //加载效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
     
 }
 
@@ -98,15 +102,6 @@
     //添加btn的点击方法
     [btn1 addTarget:self action:@selector(btn1Click:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    
-    //设置button2
-    UIButton *btn2 = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    //普通状态下的图片
-    [btn2 setBackgroundImage:[UIImage imageNamed:@"回复"] forState:(UIControlStateNormal)];
-    //设置btn的标题
-    [btn2 setTitle:@"评论" forState:(UIControlStateNormal)];
-    
-    
     //设置button3
     UIButton *btn3 = [UIButton buttonWithType:(UIButtonTypeCustom)];
     //普通状态下的图片
@@ -116,13 +111,13 @@
     //设置btn的点击事件
     [btn3 addTarget:self action:@selector(btn3Click:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    self.sportTabBar = [[BuySportTabBar alloc] initWithItems:@[btn1,btn2,btn3] frame:(CGRectMake(0, WindowHeight - 49, self.view.bounds.size.width, 57))];
+    self.sportTabBar = [[BuySportTabBar alloc] initWithItems:@[btn1,btn3] frame:(CGRectMake(0, WindowHeight - 49, self.view.bounds.size.width, 57))];
     
     [self.view addSubview:self.sportTabBar];
     
 }
 
-#pragma mark --- btn1的点击方法 ---
+#pragma mark --- btn1购物车的点击方法 ---
 - (void)btn1Click:(UIButton *)btn
 {
     ShopViewController *shopVC = [[ShopViewController alloc] init];
@@ -130,12 +125,28 @@
     shopVC.model = self.buySportArr[0];
     
     [self.navigationController pushViewController:shopVC animated:YES];
+    
 }
 
-#pragma mark --- btn3的点击方法 ---
+#pragma mark --- btn3收藏的点击方法 ---
 - (void)btn3Click:(UIButton *)btn
 {
     [btn setBackgroundImage:[UIImage imageNamed:@"喜欢1"] forState:(UIControlStateNormal)];
+    
+    BuySportRequest *request = [[BuySportRequest alloc] init];
+    [request buySportClothRequestWithParameter:@{@"id":self.model.ID} sucess:^(NSDictionary *dic) {
+        
+        NSDictionary *dict = [[dic objectForKey:@"data"] objectForKey:@"info"];
+        BuySportModel *model = [[BuySportModel alloc] init];
+        [model setValuesForKeysWithDictionary:dict];
+        
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:model.title forKey:@"like"];
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"failure == %@",error);
+    }];
 }
 
 #pragma mark --- 请求数据 ---
@@ -173,6 +184,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakself.buySportTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {
@@ -259,13 +273,23 @@
 {
     NSLog(@"分享的点击");
     
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeWeb url:cell.share_url];
-    [UMSocialData defaultData].extConfig.title = cell.title.text;
+    //分享微博
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:self.model.thumb];
+    [UMSocialData defaultData].extConfig.title = self.model.title;
+    
+    //分享qq联系人
+    [UMSocialData defaultData].extConfig.qqData.title = self.model.title;
+    [UMSocialData defaultData].extConfig.qqData.url = cell.share_url;
+    
+    //分享qq空间
+    [UMSocialData defaultData].extConfig.qzoneData.url = cell.share_url;
+    [UMSocialData defaultData].extConfig.qzoneData.title = self.model.title;
+    
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"5795790567e58eb0bc00128f"
-                                      shareText:cell.title.text
-                                     shareImage:[UIImage imageNamed:@"icon"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                      shareText:self.model.title
+                                     shareImage:[UIImage imageNamed:@""]
+                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToQzone]
                                        delegate:self];
 }
 
@@ -278,8 +302,10 @@
     {
         return 166;
     }else{
-        zhuangBeiPicModel *model = self.sportPicArr[indexPath.row];
-        return model.height;
+//        zhuangBeiPicModel *model = self.sportPicArr[indexPath.row];
+//        return model.height;
+        
+        return 350;
     }
     
 }

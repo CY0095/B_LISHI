@@ -58,6 +58,10 @@
     //添加视图
     [self.view addSubview:self.shopDetailTableView];
     self.view.backgroundColor = [UIColor cyanColor];
+    
+    //加载缓冲效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
 }
 
 #pragma mark --- 请求数据 ---
@@ -65,9 +69,13 @@
 {
     __weak typeof(self) weakself = self;
     ShopDetailRequest *request = [[ShopDetailRequest alloc] init];
-//    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
     
-    [request shopRequestWithId:self.model.oid User_id:@"0" sucess:^(NSDictionary *dic) {
+    if (user_id.length == 0) {
+        user_id = @"0";
+    }
+    
+    [request shopRequestWithId:self.model.oid User_id:user_id sucess:^(NSDictionary *dic) {
         
         NSDictionary *dict = [[dic objectForKey:@"data"] objectForKey:@"info"];
         ShopDetailModel *model = [[ShopDetailModel alloc] init];
@@ -89,6 +97,9 @@
             
             [self cycleShow];
             [self.shopDetailTableView reloadData];
+            
+            //取消效果
+            [GiFHUD dismiss];
         });
         
     } failure:^(NSError *error) {

@@ -16,6 +16,8 @@
 #import "ActivityModel.h"
 #import "ActivityDetailViewController.h"
 #import "MJRefresh.h"
+#import "GiFHUD.h"
+#import "activitySingle.h"
 
 
 
@@ -66,11 +68,14 @@ SDCycleScrollViewDelegate
 
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.number = 0;
+    
+    [GiFHUD setGifWithImageName:@"load.gif"];
+    [GiFHUD show];
+    
     
     // 创建
     self.mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
@@ -132,8 +137,7 @@ SDCycleScrollViewDelegate
 
 - (void)downPullResfresh
 {
-    [self.dataArray removeAllObjects];
-    [self.dataArr removeAllObjects];
+    
     self.number = 0;
     [self requestActivityData];
 }
@@ -154,6 +158,8 @@ SDCycleScrollViewDelegate
         NSDictionary *tempEvents = [dic objectForKey:@"data"];
         
         NSArray *tempArr = [tempEvents objectForKey:@"adlist"];
+        [weakSelf.dataArray removeAllObjects];
+        [weakSelf.dataArr removeAllObjects];
         for (NSDictionary *tempDic in tempArr) {
             weakSelf.model = [[CycleModel alloc] init];
             [weakSelf.model setValuesForKeysWithDictionary:tempDic];
@@ -171,14 +177,15 @@ SDCycleScrollViewDelegate
             
         }
         
-        NSLog(@"%@",weakSelf.dataArr);
+        NSLog(@"%@",weakSelf.imgArr);
         NSLog(@"%@",weakSelf.dataArray);
         dispatch_async(dispatch_get_main_queue(), ^{
-            // 当视图加载出来的时候结束刷新
-           
-            [self.ActivityTableView reloadData];
+            
+            
             
             [self cycleImage];
+            [weakSelf.ActivityTableView reloadData];
+            
         });
         
     } failure:^(NSError *error) {
@@ -212,7 +219,7 @@ SDCycleScrollViewDelegate
     }
     
     
-    
+    [GiFHUD dismiss];
     
 }
 

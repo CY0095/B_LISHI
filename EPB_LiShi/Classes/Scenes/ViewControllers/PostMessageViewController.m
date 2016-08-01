@@ -10,7 +10,7 @@
 #import "PostRequest.h"
 @interface PostMessageViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *postImg;
+
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UIButton *addImgBtn;
 
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.addImgBtn.hidden = YES;// 隐藏添加图片按钮(待解决上传图片问题)
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:(UIBarButtonItemStyleDone) target:self action:@selector(postMessageAction)];
 
 }
@@ -40,7 +40,7 @@
     if (self.titleTextField.text.length > 0 && self.contentTextView.text.length > 0) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
-        UIImage *image = self.postImg.image;
+        UIImage *image = [UIImage imageNamed:@"caoyuan.jpg"];
         NSData *data = UIImageJPEGRepresentation(image, 0.1);
         [[PostRequest sharePostRequest] postMessageRequestWithUser_id:user_id content:self.contentTextView.text title:self.titleTextField.text data:data success:^(NSDictionary *dic) {
             NSString *status = [dic objectForKey:@"status"];
@@ -139,11 +139,16 @@
     }
     
     // 设置图片
-    self.postImg.image = image;
+    // self.postImg.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
+// 释放键盘响应
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.titleTextField resignFirstResponder];
+    [self.contentTextView resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -40,7 +40,7 @@
 -(void)drawView{
     // 添加背景图片
     self.backgroundImgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    self.backgroundImgView.image = [UIImage imageNamed:@"IMG_5528.jpg"];
+    self.backgroundImgView.image = [UIImage imageNamed:@"caoyuan2.jpg"];
     [self.view addSubview:self.backgroundImgView];
     self.backgroundImgView.userInteractionEnabled = YES;
     self.backgroundView = [[UIView alloc] initWithFrame:self.backgroundImgView.bounds];
@@ -48,25 +48,31 @@
     self.backgroundView.userInteractionEnabled = YES;
     // 在图片上添加view视图
     [self.backgroundImgView addSubview:self.backgroundView];
-    
+    // 添加中央视图
+    UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth - 40, WindowHeight /2 - 30)];
+    centerView.backgroundColor = [UIColor whiteColor];
+    centerView.center = self.view.center;
+    centerView.alpha = 0.9;
+    [self.backgroundImgView addSubview:centerView];
     // 添加输入框
-    self.username = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/15)];
-    self.username.backgroundColor = [UIColor whiteColor];
+    self.username = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, WindownWidth - 60, WindowHeight/15)];
+    self.username.backgroundColor = [UIColor colorWithRed:230/250.0 green:230/250.0 blue:230/250.0 alpha:1];
     self.username.layer.cornerRadius = 10;
     self.username.layer.masksToBounds = YES;
     self.username.placeholder = @"手机号:";
-    self.username.alpha = 0.8;
-    self.username.center = CGPointMake(self.view.center.x, self.view.center.y / 3);
-    [self.backgroundView addSubview:self.username];
-    
-    self.phoneCode = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/15)];
-    self.phoneCode.backgroundColor = [UIColor whiteColor];
+    self.username.alpha = 1;
+    // self.username.center = CGPointMake(self.view.center.x, self.view.center.y / 3);
+    [centerView addSubview:self.username];
+    // 验证码输入框
+    self.phoneCode = [[UITextField alloc] initWithFrame:CGRectMake(10, 20 + WindowHeight/15, WindownWidth - 60, WindowHeight/15)];
+    self.phoneCode.backgroundColor = [UIColor colorWithRed:230/250.0 green:230/250.0 blue:230/250.0 alpha:1];
     self.phoneCode.layer.cornerRadius = 10;
     self.phoneCode.layer.masksToBounds = YES;
     self.phoneCode.placeholder = @"验证码:";
-    self.phoneCode.alpha = 0.8;
-    self.phoneCode.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15+10);
-    [self.backgroundView addSubview:self.phoneCode];
+    self.phoneCode.alpha = 1;
+    // self.phoneCode.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15+10);
+    [centerView addSubview:self.phoneCode];
+    // 获取验证码按钮
     self.getCodeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.username.bounds.size.width / 3, self.username.bounds.size.height*2/3)];
     [self.getCodeBtn setTitle:@"获取验证码" forState:(UIControlStateNormal)];
     self.getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -76,34 +82,34 @@
     self.getCodeBtn.layer.masksToBounds = YES;
     self.getCodeBtn.center = CGPointMake(self.phoneCode.center.x + self.phoneCode.bounds.size.width / 3  , self.phoneCode.center.y);
     [self.getCodeBtn addTarget:self action:@selector(getCodeAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.backgroundView addSubview:self.getCodeBtn];
+    [centerView addSubview:self.getCodeBtn];
     
     // 密码textfield
-    self.password = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/15)];
+    self.password = [[UITextField alloc] initWithFrame:CGRectMake(10, 30 + WindowHeight / 15 * 2, WindownWidth - 60, WindowHeight/15)];
     
-    self.password.backgroundColor = [UIColor whiteColor];
+    self.password.backgroundColor = [UIColor colorWithRed:230/250.0 green:230/250.0 blue:230/250.0 alpha:1];
     self.password.layer.cornerRadius = 10;
     self.password.layer.masksToBounds = YES;
     self.password.placeholder = @"密码:(6到20位大小写字母和数字)";
-    self.password.alpha = 0.8;
-    self.password.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15 * 2 + 20);
+    self.password.alpha = 1;
+    // self.password.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15 * 2 + 20);
     self.password.secureTextEntry = YES;// 密文输入
     
-    [self.backgroundView addSubview:self.password];
+    [centerView addSubview:self.password];
     
     // 注册按钮
-    UIButton *regisBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/13)];
-    regisBtn.backgroundColor = [UIColor grayColor];
-    regisBtn.layer.cornerRadius = 15;
+    UIButton *regisBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.password.frame) + WindowHeight / 12, WindownWidth - 60, WindowHeight / 13)];
+    regisBtn.backgroundColor = [UIColor colorWithRed:0 green:146/255.0 blue:0 alpha:1];
+    regisBtn.layer.cornerRadius = 5;
     regisBtn.layer.masksToBounds = YES;
-    regisBtn.alpha = 0.6;
+    regisBtn.alpha = 0.8;
     [regisBtn setTitle:@"确认注册" forState:(UIControlStateNormal)];
     [regisBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     regisBtn.titleLabel.font = [UIFont systemFontOfSize:25];
-    regisBtn.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15 * 3 + 60);
+    // regisBtn.center = CGPointMake(self.view.center.x, self.view.center.y / 3 + WindowHeight/15 * 3 + 60);
     [regisBtn addTarget:self action:@selector(registerAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self.backgroundView addSubview:regisBtn];
+    [centerView addSubview:regisBtn];
     
 }
 
@@ -186,6 +192,20 @@
             [self presentViewController:alertC animated:YES completion:nil];
         }];
     }
+    
+    
+    
+}
+// 释放键盘响应
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if ([self.username isFirstResponder]) {
+        [self.username resignFirstResponder];
+    }else if([self.password isFirstResponder]){
+        [self.password resignFirstResponder];
+    }else{
+        [self.phoneCode resignFirstResponder];
+    }
+    
     
     
     

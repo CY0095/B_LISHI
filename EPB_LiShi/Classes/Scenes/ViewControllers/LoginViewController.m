@@ -42,7 +42,7 @@
 -(void)drawView{
     // 添加背景图片
     self.backgroundImgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    self.backgroundImgView.image = [UIImage imageNamed:@"IMG_5529.jpg"];
+    self.backgroundImgView.image = [UIImage imageNamed:@"caoyuan.jpg"];
     [self.view addSubview:self.backgroundImgView];
     self.backgroundImgView.userInteractionEnabled = YES;
     self.backgroundView = [[UIView alloc] initWithFrame:self.backgroundImgView.bounds];
@@ -50,51 +50,57 @@
     self.backgroundView.userInteractionEnabled = YES;
     // 在图片上添加view视图
     [self.backgroundImgView addSubview:self.backgroundView];
+    // 添加中央视图
+    UIView *centerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth - 40, WindowHeight /2 - 20)];
+    centerView.backgroundColor = [UIColor whiteColor];
+    centerView.center = self.view.center;
+    centerView.alpha = 0.85;
+    [self.view addSubview:centerView];
     // 添加用户名textfield
-    self.usernameField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/12)];
+    self.usernameField = [[UITextField alloc] initWithFrame:CGRectMake(10, WindowHeight / 24, WindownWidth - 60 , WindowHeight/12)];
     
-    self.usernameField.backgroundColor = [UIColor whiteColor];
+    self.usernameField.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
     self.usernameField.layer.cornerRadius = 10;
     self.usernameField.layer.masksToBounds = YES;
     self.usernameField.placeholder = @"请输入账号";
-    self.usernameField.alpha = 0.85;
-    self.usernameField.center = CGPointMake(self.view.center.x, self.view.center.y / 2);
+    self.usernameField.alpha = 1;
+    // self.usernameField.center = CGPointMake(centerView.center.x,WindowHeight / 12);
     // 密码textfield
-    self.passwordField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/12)];
+    self.passwordField = [[UITextField alloc] initWithFrame:CGRectMake(10, WindowHeight / 8 + 5, WindownWidth - 60, WindowHeight/12)];
     
-    self.passwordField.backgroundColor = [UIColor whiteColor];
+    self.passwordField.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
     self.passwordField.layer.cornerRadius = 10;
     self.passwordField.layer.masksToBounds = YES;
     self.passwordField.placeholder = @"请输入密码";
-    self.passwordField.alpha = 0.85;
-    self.passwordField.center = CGPointMake(self.view.center.x, self.view.center.y / 2 + WindowHeight / 12 + 1);
+    self.passwordField.alpha = 1;
+    // self.passwordField.center = CGPointMake(centerView.center.x, WindowHeight / 6 + 10);
     self.passwordField.secureTextEntry = YES;// 密文输入
     
-    [self.backgroundView addSubview:self.usernameField];
-    [self.backgroundView addSubview:self.passwordField];
+    [centerView addSubview:self.usernameField];
+    [centerView addSubview:self.passwordField];
     
     // 添加登录按钮
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginBtn.frame = CGRectMake(0, 0, WindownWidth*2/3, WindowHeight/11);
+    loginBtn.frame = CGRectMake(10, WindowHeight * 7 / 24 + 10, WindownWidth - 60, WindowHeight/11);
     [loginBtn setTitle:@"登录" forState:(UIControlStateNormal)];
     loginBtn.titleLabel.font = [UIFont systemFontOfSize:30];
-    loginBtn.backgroundColor = [UIColor cyanColor];
-    loginBtn.layer.cornerRadius = 10;
+    loginBtn.backgroundColor = [UIColor colorWithRed:0 green:146/255.0 blue:0 alpha:1];
+    // loginBtn.layer.cornerRadius = 10;
     loginBtn.layer.masksToBounds = YES;
     loginBtn.alpha = 0.85;
-    loginBtn.center = CGPointMake(self.view.center.x, self.view.center.y  + WindowHeight / 11 );
+    // loginBtn.center = CGPointMake(self.view.center.x, self.view.center.y  + WindowHeight / 11 );
     [loginBtn addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.backgroundView addSubview:loginBtn];
+    [centerView addSubview:loginBtn];
     
     // 添加注册按钮
     UIButton *regisBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, WindownWidth / 5, WindowHeight / 18)];
-    [regisBtn setTitle:@">>去注册" forState:(UIControlStateNormal)];
+    [regisBtn setTitle:@"去注册" forState:(UIControlStateNormal)];
     [regisBtn setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
     regisBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     regisBtn.center = CGPointMake(loginBtn.center.x + loginBtn.bounds.size.width / 4, loginBtn.center.y + loginBtn.bounds.size.height / 2 + WindowHeight / 36);
     [regisBtn addTarget:self action:@selector(registerAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self.backgroundView addSubview:regisBtn];
+    [centerView addSubview:regisBtn];
     
     
     
@@ -168,8 +174,14 @@
     RegisterViewController *regisVC = [RegisterViewController new];
     [self.navigationController pushViewController:regisVC animated:YES];   
 }
-
+// 释放键盘响应
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if ([self.usernameField isFirstResponder]) {
+        [self.usernameField resignFirstResponder];
+    }else{
+        [self.passwordField resignFirstResponder];
+    }
+    
 
 }
 - (void)didReceiveMemoryWarning {
