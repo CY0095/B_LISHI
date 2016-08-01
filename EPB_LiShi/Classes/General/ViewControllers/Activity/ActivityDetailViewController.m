@@ -16,7 +16,8 @@
 #import <UMSocial.h>
 #import "GiFHUD.h"
 #import "activitySingle.h"
-
+#import "ActivityApplyModel.h"
+#import "LoginViewController.h"
 @interface ActivityDetailViewController ()<SDCycleScrollViewDelegate,UMSocialUIDelegate>
 
 @property(strong,nonatomic) NSMutableArray *imgArr;
@@ -383,6 +384,21 @@
 
 -(void)applyAction:(UIButton *)btn{
     
+    NSString *user_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_id"];
+    if (!user_id) {
+        NSLog(@"没登录");
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有登录" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"去登录" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            LoginViewController *loginVC = [[LoginViewController alloc] init];
+            [self.navigationController pushViewController:loginVC animated:YES];
+        }];
+        [alertC addAction:okaction];
+        
+        [self presentViewController:alertC animated:YES completion:^{
+            
+        }];
+
+    }else{
     
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确认报名" preferredStyle:UIAlertControllerStyleAlert];
@@ -407,11 +423,11 @@
         
         
         NSArray *dataArray = [single selectFromStudent];
-        for (ActivityDetailModel *model in dataArray) {
-            if ([model.activity_id isEqualToString:[NSString stringWithFormat:@"%@",self.DetailIDString]]) {
+        for (ActivityApplyModel *model in dataArray) {
+            if ([model.activityID isEqualToString:[NSString stringWithFormat:@"%@",self.DetailIDString]]) {
                 isequel = YES;
             }
-            NSLog(@"----------------------%@",model.activity_id);
+            NSLog(@"----------------------%@",model.activityID);
         }
         NSLog(@"----------------------%@",self.DetailIDString);
         
@@ -424,7 +440,7 @@
             
         }else{
             [single creatTable];
-            [single insertActivityDEtailWithID:self.DetailIDString title:self.model.title imagesString:self.imagesString];
+            [single insertActivityDEtailWithID:self.DetailIDString title:self.model.title imagesString:self.imagesString user_id:user_id];
             
             UIAlertController *applyController = [UIAlertController alertControllerWithTitle:nil message:@"报名成功" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
@@ -448,7 +464,7 @@
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
     
-    
+    }
 }
 
 

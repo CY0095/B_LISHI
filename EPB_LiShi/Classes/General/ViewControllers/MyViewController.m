@@ -14,6 +14,7 @@
 #import "OpinionViewController.h"
 #import "PostMessageViewController.h"
 #import "AttentionDetailViewController.h"
+#import "MyActivityViewController.h"
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *headView;// 头视图
@@ -218,8 +219,8 @@
             MyAttentionViewController *myAttVC = [[MyAttentionViewController alloc] init];
             [self.navigationController pushViewController:myAttVC animated:YES];
         }else if (indexPath.row == 2){
-            
-            
+            MyActivityViewController *myActivityVC = [[MyActivityViewController alloc] init];
+            [self.navigationController pushViewController:myActivityVC animated:YES];
         }else if (indexPath.row == 3){
             OpinionViewController *opinionVC = [[OpinionViewController alloc] init];
             [self.navigationController pushViewController:opinionVC animated:YES];
