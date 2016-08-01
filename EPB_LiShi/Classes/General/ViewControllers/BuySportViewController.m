@@ -53,6 +53,7 @@
     
     self.rootVC.LSTabBar.hidden = NO;
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [GiFHUD dismiss];
 }
 
 - (void)viewDidLoad {

@@ -26,5 +26,10 @@
 @property (nonatomic, copy) NSString *reply_num;
 // 活动封面
 @property (nonatomic, copy) NSString *image;
+// 类型
+@property (nonatomic, assign) NSInteger type;
+// Url
+@property (nonatomic, copy) NSString *url;
 
+@property (nonatomic, assign) NSInteger attenStatus;
 @end

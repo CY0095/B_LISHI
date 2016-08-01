@@ -24,6 +24,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *replyNumLabel;
 
+@property (nonatomic, assign) NSInteger type;
+
+@property (nonatomic, strong) NSString *url;
+
+@property (nonatomic, strong) NSString *uid;
+
+@property (nonatomic, assign) NSInteger attenState;
+
 @property (nonatomic, strong) CommunityListModel *model;
 
 @end

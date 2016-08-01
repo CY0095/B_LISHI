@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *update_time;
 @property (weak, nonatomic) IBOutlet UILabel *likeNum;
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
-
+@property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) LuyingListModel *model;
 + (CGFloat)cellHeight:(LuyingListModel *)model;
 @end

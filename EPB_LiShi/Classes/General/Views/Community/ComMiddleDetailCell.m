@@ -53,7 +53,7 @@
 + (CGFloat)cellHeight:(CommunityHeaderModel *)model {
     
     // cell固定部分的高度（代指实际开发中不要自适应，有固定高度的控件和间隙所共同占有高度的总和）
-    CGFloat staticHeight = 414 - 136;
+    CGFloat staticHeight = 414 - 120;
     // cell不固定部分的高度（需要自适应，因内容而变换的控件的高度）
     CGFloat dynamicHeight = [self textHeightFormModel:model] + WindownWidth / 10 * 3 + 16;
     // cell的高度等于固定的部分 + 变化的部分

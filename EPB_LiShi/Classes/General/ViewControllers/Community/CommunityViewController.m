@@ -13,6 +13,7 @@
 #import "CommunityDetailViewController.h"
 #import "TopicDetailViewController.h"
 #import "MJRefresh.h"
+#import "DetailsViewController.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -40,6 +41,8 @@
     // 下拉刷新
     self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动回调这个block
+        [self.communityListArray removeAllObjects];
+        
     }];
     // 设置回调（一旦进入刷新状态，就会调用target的action，也就是调用self的loadNewData方法）
     self.communityTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(downPullRefresh)];
@@ -63,17 +66,17 @@
     self.communityListArray = [NSMutableArray array];
     [self requestCommunityListData];
     
-    
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
     
 }
 
 - (void)downPullRefresh {
     
-    [self.communityListArray removeAllObjects];
+    
     self.page = 0;
     [self requestCommunityListData];
-    [GiFHUD setGifWithImageName:@"loading.gif"];
-    [GiFHUD show];
+    
 }
 
 - (void)addPage {
@@ -84,7 +87,9 @@
 }
 
 - (void)requestCommunityListData {
-    
+    // 当视图加载出来的时候结束刷新
+    [self.communityTableView.mj_header endRefreshing];
+    [self.communityTableView.mj_footer endRefreshing];
     
     __weak typeof(self) weakSelf = self;
     CommunityRequest *request = [[CommunityRequest alloc] init];
@@ -109,9 +114,7 @@
     } failure:^(NSError *error) {
         
     }];
-    // 当视图加载出来的时候结束刷新
-    [self.communityTableView.mj_header endRefreshing];
-    [self.communityTableView.mj_footer endRefreshing];
+    
 }
 
 
@@ -134,22 +137,42 @@
     CommunityListModel *model = self.communityListArray[indexPath.row];
     cell.model = model;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    if (model.type == 3) {
+        cell.titleLabel.hidden = YES;
+        cell.nicknameLabel.hidden = YES;
+        cell.headiconImg.hidden = YES;
+        cell.attentionBtn.hidden = YES;
+        cell.replyNumLabel.hidden = YES;
+        return cell;
+    } else {
+        cell.titleLabel.hidden = NO;
+        cell.nicknameLabel.hidden = NO;
+        cell.headiconImg.hidden = NO;
+        cell.attentionBtn.hidden = NO;
+        cell.replyNumLabel.hidden = NO;
+        return cell;
+    }
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CommunityListModel *model = self.communityListArray[indexPath.row];
     
-    NSLog(@"CommunityTableViewCell %@",model.topic_id);
+    // NSLog(@"CommunityTableViewCell %@",model.topic_id);
     
-//    CommunityDetailViewController *detailVC = [CommunityDetailViewController new];
-//    detailVC.topics_id = model.topic_id;
-//    [self.navigationController pushViewController:detailVC animated:YES];
-    
-    TopicDetailViewController *detailVC = [TopicDetailViewController new];
-    detailVC.topics_id = model.topic_id;
-    [self.navigationController pushViewController:detailVC animated:YES];
+    if (model.type == 3) {
+        
+        // NSLog(@"%@",model.url);
+        DetailsViewController *detailVC = [DetailsViewController new];
+        detailVC.tempUrl = model.url;
+        [self.navigationController pushViewController:detailVC animated:YES];
+        
+    } else if (model.type == 10) {
+        TopicDetailViewController *detailVC = [TopicDetailViewController new];
+        detailVC.topics_id = model.topic_id;
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
     
 }
 

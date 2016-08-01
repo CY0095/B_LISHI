@@ -48,6 +48,13 @@ static NSString *const cellReuseIdentifier = @"11";
 
 @implementation EquipTypeViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [GiFHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
