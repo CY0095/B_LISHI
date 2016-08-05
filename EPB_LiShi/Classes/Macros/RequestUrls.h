@@ -15,9 +15,9 @@
 //福利积分兑换界面
 #define ExchangeRequest_Url @"http://api.lis99.com/v3/zhuangbei"
 //装备类型的详情界面
-#define EquipDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/0/20?cate_id=%@",ID]
+#define EquipDetailRequest_Url(number,ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/%@/20?cate_id=%@",number,ID]
 //运动装备界面
-#define sportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/0/20?sport_id=%@",ID]
+#define sportClothDetailRequest_Url(number,ID) [NSString stringWithFormat:@"http://api.lis99.com/zhuangbei/items/%@/20?sport_id=%@",number,ID]
 //福利社衣服的界面
 #define flClothClothDetailRequest_Url @"http://api.lis99.com/v3/club/lineactivedetail"
 //更多免费界面

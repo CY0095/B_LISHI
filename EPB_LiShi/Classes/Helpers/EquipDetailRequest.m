@@ -10,11 +10,11 @@
 
 @implementation EquipDetailRequest
 
-- (void)equipDetailRequestWithParameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
+- (void)equipDetailRequestWithNumber:(NSString *)number Parameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
 {
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
     NSString *ID = [parameter objectForKey:@"id"];
-    [request requestWithUrl:EquipDetailRequest_Url(ID) parameters:nil successResponse:^(NSDictionary *dic) {
+    [request requestWithUrl:EquipDetailRequest_Url(number,ID) parameters:nil successResponse:^(NSDictionary *dic) {
         
         sucess(dic);
     } failureResponse:^(NSError *error) {

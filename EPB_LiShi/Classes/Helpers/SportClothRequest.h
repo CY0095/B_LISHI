@@ -11,6 +11,6 @@
 
 @interface SportClothRequest : BaseRequest
 
-- (void)sportClothDetailRequestWithParameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
+- (void)sportDetailRequestWithNumber:(NSString *)number Parameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
 
 @end

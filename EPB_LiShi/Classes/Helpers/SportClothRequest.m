@@ -10,11 +10,11 @@
 
 @implementation SportClothRequest
 
-- (void)sportClothDetailRequestWithParameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
+- (void)sportDetailRequestWithNumber:(NSString *)number Parameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
 {
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
     NSString *ID = [parameter objectForKey:@"id"];
-    [request requestWithUrl:sportClothDetailRequest_Url(ID) parameters:nil successResponse:^(NSDictionary *dic) {
+    [request requestWithUrl:sportClothDetailRequest_Url(number,ID) parameters:nil successResponse:^(NSDictionary *dic) {
         
         sucess(dic);
     } failureResponse:^(NSError *error) {

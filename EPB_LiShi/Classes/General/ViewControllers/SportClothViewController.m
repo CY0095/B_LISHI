@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) UICollectionView *sportTableView;
 @property (strong, nonatomic) NSMutableArray *detailArr;
+@property (assign, nonatomic) NSInteger number;
 
 @end
 
@@ -33,6 +34,8 @@ static NSString *const cellResueID = @"111";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.number = 0;
     
     self.title = self.model.title;
     
@@ -61,6 +64,57 @@ static NSString *const cellResueID = @"111";
     //加载效果
     [GiFHUD setGifWithImageName:@"loading.gif"];
     [GiFHUD show];
+    
+    //加载效果
+    [GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD show];
+    
+    //创建下拉刷新
+    MJRefreshNormalHeader* header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [self performSelector:@selector(headRefresh)withObject:nil afterDelay:2.0f];
+        
+    }];
+    
+    //设置自定义文字，因为默认是英文的
+    [header setTitle:@"下拉刷新"forState:MJRefreshStateIdle];
+    
+    [header setTitle:@"松开加载更多"forState:MJRefreshStatePulling];
+    
+    [header setTitle:@"正在刷新中"forState:MJRefreshStateRefreshing];
+    
+    
+    self.sportTableView.mj_header= header;
+    
+    //创建上拉刷新
+    MJRefreshBackNormalFooter * foot =[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        [self performSelector:@selector(footRefresh)withObject:nil afterDelay:2.0f];
+        
+    }];
+    self.sportTableView.mj_footer= foot;
+    
+    [foot setTitle:@"上拉刷新"forState:MJRefreshStateIdle];
+    
+    [foot setTitle:@"松开加载更多"forState:MJRefreshStatePulling];
+    
+    [foot setTitle:@"正在刷新中"forState:MJRefreshStateRefreshing];
+    
+}
+
+#pragma mark --- 下拉刷新 ---
+- (void)headRefresh {
+    NSLog(@"下拉,加载数据");
+    self.number ++;
+    [self.sportTableView.mj_header endRefreshing];
+}
+
+#pragma mark --- 上拉刷新 ---
+- (void)footRefresh {
+    NSLog(@"上拉，加载数据");
+    self.number ++;
+    [self DataRequest];
+    [self.sportTableView.mj_footer endRefreshing];
 }
 
 #pragma mark --- 请求数据 ---
@@ -68,8 +122,9 @@ static NSString *const cellResueID = @"111";
 {
     __weak typeof(self) weakself = self;
     SportClothRequest *request = [[SportClothRequest alloc] init];
-    [request sportClothDetailRequestWithParameter:@{@"id":self.model.ID} sucess:^(NSDictionary *dic) {
-
+    
+    [request sportDetailRequestWithNumber:[NSString stringWithFormat:@"%ld",self.number] Parameter:@{@"id":self.model.ID} sucess:^(NSDictionary *dic) {
+        
         
         NSArray *event = [dic objectForKey:@"data"];
         for (NSDictionary *tempDic in event) {
@@ -86,7 +141,7 @@ static NSString *const cellResueID = @"111";
             [GiFHUD dismiss];
         });
         
-//        NSLog(@"detail == %@",weakself.detailArr);
+        //        NSLog(@"detail == %@",weakself.detailArr);
     } failure:^(NSError *error) {
         
         NSLog(@"failure == %@",error);

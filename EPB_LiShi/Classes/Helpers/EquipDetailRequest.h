@@ -11,6 +11,6 @@
 
 @interface EquipDetailRequest : BaseModel
 
-- (void)equipDetailRequestWithParameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
+- (void)equipDetailRequestWithNumber:(NSString *)number Parameter:(NSDictionary *)parameter sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
 
 @end
