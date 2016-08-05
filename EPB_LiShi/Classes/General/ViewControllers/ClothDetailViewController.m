@@ -15,6 +15,7 @@
 #import "LikeNumCollectionViewCell.h"
 #import "LikeListModel.h"
 #import "AttentionDetailViewController.h"
+#import "StarTimeTableViewCell.h"
 
 @interface ClothDetailViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -43,14 +44,14 @@
 }
 
 - (void)viewDidLoad {
-[super viewDidLoad];
-
+    [super viewDidLoad];
+    
     self.clothArr = [NSMutableArray array];
     self.pictureStr = [NSString string];
     self.activityArr = [NSMutableArray array];
     self.headImgArr = [NSMutableArray array];
     self.likeStr = [NSString string];
-
+    
     //初始化TableView
     self.ClothDetailView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 110))];
     
@@ -62,6 +63,7 @@
     [self.ClothDetailView registerNib:[UINib nibWithNibName:@"ClothDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ClothDetailViewCell_Identify];
     //注册抽奖的cell
     [self.ClothDetailView registerNib:[UINib nibWithNibName:@"JoinStyleTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:joinStyleViewCell_Identify];
+    [self.ClothDetailView registerNib:[UINib nibWithNibName:@"StarTimeTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:StartTimeViewCell_Identify];
     
     [self DataRequest];
     [self addCollectionView];
@@ -125,9 +127,18 @@
     if (user_id.length == 0) {
         user_id = @"0";
     }
+    
+    NSString *str = [NSString string];
+    
+    if (self.model.topicid == 0) {
+        str = self.moreModel.topic_id;
+    }else if (self.moreModel.topic_id == 0)
+    {
+        str = self.model.topicid;
+    }
     __weak typeof(self) weakself = self;
     FlClothRequest *request = [[FlClothRequest alloc] init];
-    [request flClothRequestWithTopID:self.model.topicid userID:user_id sucess:^(NSDictionary *dic) {
+    [request flClothRequestWithTopID:str userID:user_id sucess:^(NSDictionary *dic) {
         
         //发布帖子的model
         NSDictionary *event = [dic objectForKey:@"data"];
@@ -166,7 +177,7 @@
         JoinStyleModel *activityModel = [[JoinStyleModel alloc] init];
         [activityModel setValuesForKeysWithDictionary:dict];
         [weakself.activityArr addObject:activityModel];
-    
+        
         //刷新界面
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -228,7 +239,7 @@
 #pragma mark --- 设置分区数 ---
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 4;
 }
 
 #pragma mark --- 设置行数 ---
@@ -236,7 +247,14 @@
 {
     if (section == 0) {
         return self.clothArr.count;
-    }else{
+    }else if(section == 1)
+    {
+        return self.activityArr.count;
+    }else if(section == 1)
+    {
+        return self.activityArr.count;
+    }else
+    {
         return self.activityArr.count;
     }
     
@@ -252,18 +270,48 @@
         [cell.clothImage setImageWithURL:[NSURL URLWithString:self.pictureStr]];
         //取消点击cell变色
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //取消cell的下划线
+        self.ClothDetailView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         return cell;
-    }else
+    }else if(indexPath.section == 1)
+    {
+        StarTimeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:StartTimeViewCell_Identify];
+        JoinStyleModel *model = self.activityArr[indexPath.row];
+        cell.timeLabel.text = model.times;
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;//取消cell的下划线
+        self.ClothDetailView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        return cell;
+        
+    }else if (indexPath.section == 2)
     {
         JoinStyleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:joinStyleViewCell_Identify];
         
         cell.model = self.activityArr[indexPath.row];
         //取消点击cell变色
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //取消cell的下划线
+        self.ClothDetailView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+        return cell;
+    }else
+    {
+        JoinStyleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:joinStyleViewCell_Identify];
+        JoinStyleModel *model = self.activityArr[indexPath.row];
+        cell.attendContent.text = model.activeAward;
+        [cell.attendShareImage setImageWithURL:[NSURL URLWithString:model.awardFileUrl]];
+        cell.bottomView.backgroundColor = [UIColor whiteColor];
+        //取消点击cell变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //取消cell的下划线
+        self.ClothDetailView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         return cell;
     }
+    
+    
     
 }
 
@@ -271,9 +319,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
+        
         return 451;
-    }else{
-        return 1583;
+    }else if(indexPath.section == 1)
+    {
+        return 58;
+        
+    }else if(indexPath.section == 2)
+    {
+        JoinStyleModel *model = self.activityArr[indexPath.row];
+        return ([JoinStyleTableViewCell cellHeight:model] + model.active_height);
+        
+    }else
+    {
+        JoinStyleModel *model = self.activityArr[indexPath.row];
+        return ([JoinStyleTableViewCell cellHeight:model] + model.award_height - 200);
     }
     
 }

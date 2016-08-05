@@ -12,16 +12,15 @@
 
 @interface JoinStyleTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *activityTime;
-@property (strong, nonatomic) IBOutlet UILabel *activityContent;
 @property (strong, nonatomic) IBOutlet UIImageView *attendImage;
 @property (strong, nonatomic) IBOutlet UILabel *attendContent;
 @property (strong, nonatomic) IBOutlet UIImageView *attendShareImage;
-@property (strong, nonatomic) IBOutlet UIImageView *awardTitleImage;
-@property (strong, nonatomic) IBOutlet UILabel *awardContent;
-@property (strong, nonatomic) IBOutlet UIImageView *awardImage;
-
+@property (strong, nonatomic) IBOutlet UIView *bottomView;
 
 
 @property (strong, nonatomic) JoinStyleModel *model;
+
+//计算当前cell实际需要的高度
++(CGFloat)cellHeight:(JoinStyleModel *)model;
+
 @end
