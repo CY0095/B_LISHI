@@ -44,7 +44,7 @@
                 <outlet property="images" destination="wNZ-2o-hai" id="b6N-58-LIs"/>
                 <outlet property="title" destination="0nF-Ie-TLd" id="1jg-UJ-kbh"/>
             </connections>
-            <point key="canvasLocation" x="663.5" y="439"/>
+            <point key="canvasLocation" x="872.5" y="548"/>
         </tableViewCell>
     </objects>
 </document>
