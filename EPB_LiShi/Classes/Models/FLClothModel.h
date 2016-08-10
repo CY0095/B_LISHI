@@ -29,6 +29,8 @@
 @property (assign, nonatomic) NSInteger is_jion;
 //浏览的人数
 @property (assign, nonatomic) NSInteger visits;
+//活动剩余的天数
+@property (assign, nonatomic) NSInteger days;
 
 //点赞的人数
 @property (strong, nonatomic) NSString *likeNum;

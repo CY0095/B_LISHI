@@ -13,8 +13,10 @@
 #import "ClothDetailViewController.h"
 #import "MoreFreeViewController.h"
 #import "OutDoorShopViewController.h"
+#import "FLDetailViewController.h"
+#import "MoreJFDetailViewController.h"
 
-@interface EquipViewController ()<UITableViewDelegate,UITableViewDataSource,toolDelegate>
+@interface EquipViewController ()<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 
 @property (strong, nonatomic) UITableView *FLView;
 @property (strong, nonatomic) UITableView *JFView;
@@ -24,6 +26,8 @@
 
 @property (strong, nonatomic) NSMutableArray *JFArray;
 @property (strong, nonatomic) NSMutableArray *FLArray;
+
+@property (strong, nonatomic) UIWebView *webView;
 
 @end
 
@@ -36,8 +40,8 @@
     self.FLArray = [NSMutableArray array];
     
     //要先初始化，再设置代理
-    self.FLView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 153, WindownWidth, WindowHeight - 64))];
-    self.JFView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 653, WindownWidth, 365))];
+    self.FLView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 153, WindownWidth, 362))];
+    self.JFView = [[UITableView alloc] initWithFrame:(CGRectMake(0, CGRectGetMaxY(self.FLView.frame) + 20, WindownWidth, 365))];
     
     //设置代理
     self.FLView.delegate = self;
@@ -45,7 +49,7 @@
     self.JFView.delegate = self;
     self.JFView.dataSource = self;
     
-    //注册cell
+    //注册cell                                                                                                                   
     [self.FLView registerNib:[UINib nibWithNibName:@"ToolsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ToolsTableViewCell_Identify];
     [self.JFView registerNib:[UINib nibWithNibName:@"ToolsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ToolsTableViewCell_Identify];
     
@@ -107,14 +111,14 @@
     //添加scrollview
     self.exchangeScrollView = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, WindownWidth, WindowHeight))];
     self.exchangeScrollView.backgroundColor = [UIColor clearColor];
-    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.FLView.frame));
+    self.exchangeScrollView.contentSize = CGSizeMake(WindownWidth, CGRectGetMaxY(self.JFView.frame) + 50);
     
     //添加视图
     
     [self.exchangeScrollView addSubview:self.shopView];
     [self.exchangeScrollView addSubview:self.equipView];
     [self.exchangeScrollView addSubview:self.FLView];
-//    [self.exchangeScrollView addSubview:self.JFView];
+    [self.exchangeScrollView addSubview:self.JFView];
     [self.exchangeScrollView addSubview:btn];
     [self.exchangeScrollView addSubview:btn1];
     [self.view addSubview:self.exchangeScrollView];
@@ -131,8 +135,6 @@
 #pragma mark --- 设置户外店的点击事件 ---
 - (void)btn1Click:(UIButton *)btn
 {
-    NSLog(@"222");
-    
     OutDoorShopViewController *outVC = [[OutDoorShopViewController alloc] init];
     
     [self.navigationController pushViewController:outVC animated:YES];
@@ -148,7 +150,7 @@
     [headView addSubview:i];
     self.FLView.tableHeaderView = headView;
     
-    UIView *footView = [[UIView alloc] initWithFrame:(CGRectMake(0, 20, WindownWidth, 40))];
+    UIView *footView = [[UIView alloc] initWithFrame:(CGRectMake(0, 15, WindownWidth, 40))];
     UIButton *btn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     btn.frame = CGRectMake(0, 0, 150, 30);
     [btn setTitle:@"更多免费装备" forState:(UIControlStateNormal)];
@@ -156,11 +158,11 @@
     btn.center = footView.center;
     [btn addTarget:self action:@selector(moreFreeClick:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    UIImageView *add = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 33, 15, 15))];
+    UIImageView *add = [[UIImageView alloc] initWithFrame:(CGRectMake((WindownWidth + btn.bounds.size.width) / 2, 28, 15, 15))];
     add.image = [UIImage imageNamed:@"箭头"];
     [footView addSubview:btn];
     [footView addSubview:add];
-//    self.FLView.tableFooterView = footView;
+    self.FLView.tableFooterView = footView;
     
     UIView *headView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WindownWidth, 50)];
     UIImageView *i1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
@@ -188,7 +190,9 @@
 #pragma mark --- 设置更多换购装备的点击 ---
 - (void)moreEchangeClick:(UIButton *)btn
 {
-    NSLog(@"1111");
+    MoreJFDetailViewController *jfVC = [[MoreJFDetailViewController alloc] init];
+    
+    [self.navigationController pushViewController:jfVC animated:YES];
 }
 
 #pragma mark --- 设置更多免费装备的点击 ---
@@ -267,9 +271,11 @@
         
         cell.flmodel = model1;
         //遵循点击button的代理
-        cell.delegate = self;
+//        cell.delegate = self;
         //取消点击cell变色
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //取消下划线
+        self.FLView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         return cell;
     }else
@@ -280,24 +286,26 @@
         
         cell.jfmodel = model;
         //遵循点击button的代理
-        cell.delegate = self;
+//        cell.delegate = self;
         //取消点击cell变色
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //取消下划线
+        self.JFView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         return cell;
     }
 }
 
-#pragma mark --- 设置代理button的点击方法 ---
-- (void)toolClickButton:(ToolsTableViewCell *)cell
-{
-    ClothDetailViewController *spVC = [ClothDetailViewController new];
-    
-    FLModel *model = cell.flmodel;
-    spVC.model = model;
-    
-    [self.navigationController pushViewController:spVC animated:YES];
-}
+#pragma mark --- 设置代理福利社button的点击方法 ---
+//- (void)toolClickButton:(ToolsTableViewCell *)cell
+//{
+//    ClothDetailViewController *spVC = [ClothDetailViewController new];
+//    
+//    FLModel *model = cell.flmodel;
+//    spVC.model = model;
+//    
+//    [self.navigationController pushViewController:spVC animated:YES];
+//}
 
 #pragma mark --- 设置cell的高度 ---
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -308,13 +316,26 @@
 #pragma mark --- 点击cell进行界面跳转 ---
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ClothDetailViewController *clothVC = [[ClothDetailViewController alloc] init];
+    if (tableView == self.FLView) {
+        
+        ClothDetailViewController *clothVC = [[ClothDetailViewController alloc] init];
+        
+        FLModel *model = self.FLArray[indexPath.row];
+        
+        clothVC.model = model;
+        
+        [self.navigationController pushViewController:clothVC animated:YES];
+    }else
+    {
+        FLDetailViewController *flVC = [[FLDetailViewController alloc] init];
+        
+        JFModel *model = self.JFArray[indexPath.row];
+        
+        flVC.jfID = model.jfID;
+        
+        [self.navigationController pushViewController:flVC animated:YES];
+    }
     
-    FLModel *model = self.FLArray[indexPath.row];
-    
-    clothVC.model = model;
-    
-    [self.navigationController pushViewController:clothVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

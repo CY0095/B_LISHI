@@ -25,9 +25,18 @@ static NSString *const cellResueID = @"111";
 
 @implementation SportClothViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
     
     [GiFHUD dismiss];
 }
@@ -47,7 +56,7 @@ static NSString *const cellResueID = @"111";
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     
     //初始化collection
-    self.sportTableView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, WindownWidth, self.view.bounds.size.height - 113) collectionViewLayout:flowLayout];
+    self.sportTableView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, WindownWidth, self.view.bounds.size.height - 64) collectionViewLayout:flowLayout];
     
     //注册自定义cell
     [self.sportTableView registerNib:[UINib nibWithNibName:@"EquipDetailCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:EquipDetailViewCell_Identify];

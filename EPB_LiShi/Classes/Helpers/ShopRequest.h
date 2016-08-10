@@ -11,6 +11,6 @@
 
 @interface ShopRequest : BaseRequest
 
-- (void)shopRequestWithBrand_id:(NSString *)Brand_id Latitude:(NSString *)latitude Longitude:(NSString *)longitude sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
+- (void)shopRequestWithNumber:(NSString *) number Brand_id:(NSString *)Brand_id Latitude:(NSString *)latitude Longitude:(NSString *)longitude sucess:(SuccessResponse)sucess failure:(FailureResponse)failure;
 
 @end

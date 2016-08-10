@@ -53,7 +53,7 @@
     self.shopTableView.delegate = self;
     self.shopTableView.dataSource = self;
     //注册cell
-    [self.shopTableView registerNib:[UINib nibWithNibName:@"ShopTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:shopRequest_Url];
+    [self.shopTableView registerNib:[UINib nibWithNibName:@"ShopTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:shopViewCell_Identify];
     //添加视图
     [self.view addSubview:self.shopTableView];
     
@@ -109,7 +109,7 @@
 #pragma mark --- 设置cell ---
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shopRequest_Url];
+    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shopViewCell_Identify];
     //取消点击cell的变色
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

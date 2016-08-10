@@ -6,13 +6,13 @@
 //  Copyright © 2016年 杨旭东. All rights reserved.
 //
 
-@class ToolsTableViewCell;
-
-@protocol toolDelegate <NSObject>
-
-- (void)toolClickButton:(ToolsTableViewCell *)cell;
-
-@end
+//@class ToolsTableViewCell;
+//
+//@protocol toolDelegate <NSObject>
+//
+//- (void)toolClickButton:(ToolsTableViewCell *)cell;
+//
+//@end
 
 #import <UIKit/UIKit.h>
 #define ToolsTableViewCell_Identify @"ToolsTableViewCell_Identify"
@@ -26,11 +26,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *content;
 @property (strong, nonatomic) IBOutlet UILabel *price;
-@property (strong, nonatomic) IBOutlet UIButton *type;
+@property (strong, nonatomic) IBOutlet UILabel *type;
+
 
 @property (strong, nonatomic) JFModel *jfmodel;
 @property (strong, nonatomic) FLModel *flmodel;
 
-@property (weak, nonatomic) id<toolDelegate> delegate;
+//@property (weak, nonatomic) id<toolDelegate> delegate;
 
 @end

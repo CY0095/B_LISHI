@@ -48,9 +48,18 @@ static NSString *const cellReuseIdentifier = @"11";
 
 @implementation EquipTypeViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
     
     [GiFHUD dismiss];
 }

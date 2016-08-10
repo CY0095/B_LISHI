@@ -239,7 +239,7 @@
     
     //用如下方式，可以使得用户结束通话后自动返回到应用
     UIWebView*callWebview =[[UIWebView alloc] init];
-    NSURL *telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",model.phone]];// 貌似tel:// 或者 tel: 都行
+    NSURL *telURL =[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",model.phone]];// 貌似tel:// 或者 tel: 都行
     [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
     //记得添加到view上
     [self.view addSubview:callWebview];

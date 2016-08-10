@@ -124,7 +124,6 @@
     ShopViewController *shopVC = [[ShopViewController alloc] init];
     
     shopVC.model = self.buySportArr[0];
-
     [self.navigationController pushViewController:shopVC animated:YES];
 }
 

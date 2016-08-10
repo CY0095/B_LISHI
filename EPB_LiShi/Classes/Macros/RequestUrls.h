@@ -11,7 +11,6 @@
 
 //装备界面
 #define ToolsRequest_Url @"http://api.lis99.com/zhuangbei/fenlei"
-
 //福利积分兑换界面
 #define ExchangeRequest_Url @"http://api.lis99.com/v3/zhuangbei"
 //装备类型的详情界面
@@ -25,7 +24,7 @@
 //购买运动装备的介绍界面
 #define buySportClothDetailRequest_Url(ID) [NSString stringWithFormat:@"http://api.lis99.com/v3/zhuangbei/detail/%@",ID]
 //商店界面
-#define shopRequest_Url @"http://api.lis99.com/v3/zhuangbei/brandshop/0"
+#define shopRequest_Url(number) [NSString stringWithFormat:@"http://api.lis99.com/v3/zhuangbei/brandshop/%@",number]
 //商店详情界面
 #define shopDetailRequest_Url @"http://api.lis99.com/shop/shopinfo"
 //户外商店详情

@@ -18,5 +18,7 @@
 @property (nonatomic, strong) NSString *content;
 //兑换需要的积分
 @property (nonatomic, strong) NSString *integral;
+//兑换商品的ID
+@property (strong, nonatomic) NSString *jfID;
 
 @end

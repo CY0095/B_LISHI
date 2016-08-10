@@ -190,6 +190,7 @@
 		D63370D61D420471004D5E20 /* 围观.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D31D420471004D5E20 /* 围观.png */; };
 		D63370D71D420471004D5E20 /* 时间.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D41D420471004D5E20 /* 时间.png */; };
 		D63370D81D420471004D5E20 /* 回复.png in Resources */ = {isa = PBXBuildFile; fileRef = D63370D51D420471004D5E20 /* 回复.png */; };
+		D63585091D58C4CB006D17C0 /* MoreJFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63585081D58C4CB006D17C0 /* MoreJFDetailViewController.m */; };
 		D648B4101D48636F00F59DF1 /* ComMiddleDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */; };
 		D648B4111D48636F00F59DF1 /* ComMiddleDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */; };
 		D65046CB1D4B565300F4FE65 /* OutDoorShopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D65046CA1D4B565300F4FE65 /* OutDoorShopRequest.m */; };
@@ -277,6 +278,7 @@
 		D6C7F02B1D4C99FA0021A9B4 /* My.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0231D4C99FA0021A9B4 /* My.png */; };
 		D6C7F02C1D4C99FA0021A9B4 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C7F0241D4C99FA0021A9B4 /* activity.png */; };
 		D6C7F02F1D4CE6F10021A9B4 /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7F02E1D4CE6F10021A9B4 /* CollectionHeaderView.m */; };
+		D6D1467C1D56126C008AF2D3 /* FLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D1467B1D56126C008AF2D3 /* FLDetailViewController.m */; };
 		D6E0AB8C1D4844DC003C798B /* OutDoorShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */; };
 		D6E0AB8F1D484973003C798B /* BuyEquipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB8E1D484973003C798B /* BuyEquipViewController.m */; };
 		D6E0AB931D48603A003C798B /* SportPicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0AB911D48603A003C798B /* SportPicTableViewCell.m */; };
@@ -1217,6 +1219,8 @@
 		D63370D31D420471004D5E20 /* 围观.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "围观.png"; sourceTree = "<group>"; };
 		D63370D41D420471004D5E20 /* 时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "时间.png"; sourceTree = "<group>"; };
 		D63370D51D420471004D5E20 /* 回复.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "回复.png"; sourceTree = "<group>"; };
+		D63585071D58C4CB006D17C0 /* MoreJFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreJFDetailViewController.h; sourceTree = "<group>"; };
+		D63585081D58C4CB006D17C0 /* MoreJFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreJFDetailViewController.m; sourceTree = "<group>"; };
 		D648B40D1D48636F00F59DF1 /* ComMiddleDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComMiddleDetailCell.h; sourceTree = "<group>"; };
 		D648B40E1D48636F00F59DF1 /* ComMiddleDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComMiddleDetailCell.m; sourceTree = "<group>"; };
 		D648B40F1D48636F00F59DF1 /* ComMiddleDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComMiddleDetailCell.xib; sourceTree = "<group>"; };
@@ -1353,6 +1357,8 @@
 		D6C7F0241D4C99FA0021A9B4 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		D6C7F02D1D4CE6F10021A9B4 /* CollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderView.h; sourceTree = "<group>"; };
 		D6C7F02E1D4CE6F10021A9B4 /* CollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderView.m; sourceTree = "<group>"; };
+		D6D1467A1D56126C008AF2D3 /* FLDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLDetailViewController.h; sourceTree = "<group>"; };
+		D6D1467B1D56126C008AF2D3 /* FLDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLDetailViewController.m; sourceTree = "<group>"; };
 		D6E0AB8A1D4844DC003C798B /* OutDoorShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutDoorShopViewController.h; sourceTree = "<group>"; };
 		D6E0AB8B1D4844DC003C798B /* OutDoorShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutDoorShopViewController.m; sourceTree = "<group>"; };
 		D6E0AB8D1D484973003C798B /* BuyEquipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyEquipViewController.h; sourceTree = "<group>"; };
@@ -3175,6 +3181,10 @@
 			children = (
 				D6ADC8B81D3A52DB0073EAE4 /* EquipViewController.h */,
 				D6ADC8B91D3A52DB0073EAE4 /* EquipViewController.m */,
+				D6D1467A1D56126C008AF2D3 /* FLDetailViewController.h */,
+				D6D1467B1D56126C008AF2D3 /* FLDetailViewController.m */,
+				D63585071D58C4CB006D17C0 /* MoreJFDetailViewController.h */,
+				D63585081D58C4CB006D17C0 /* MoreJFDetailViewController.m */,
 				D633709E1D41FB44004D5E20 /* ClothDetailViewController.h */,
 				D633709F1D41FB44004D5E20 /* ClothDetailViewController.m */,
 				D6E450491D45FBD600C5692E /* MoreFreeViewController.h */,
@@ -3394,7 +3404,7 @@
 				TargetAttributes = {
 					C231C6131D361AAA009BB26B = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = R7Z5STJESD;
+						DevelopmentTeam = 5EWQD3JR6H;
 					};
 				};
 			};
@@ -3797,6 +3807,7 @@
 				C2D4DA6F1D40E7EF00A9A3BE /* MyAttentionRequest.m in Sources */,
 				D61A993B1D4243CD0009DBFD /* CommunityDetailListModel.m in Sources */,
 				D63370A21D41FB44004D5E20 /* SportClothViewController.m in Sources */,
+				D6D1467C1D56126C008AF2D3 /* FLDetailViewController.m in Sources */,
 				D61A99CF1D42456E0009DBFD /* MJRefreshBackGifFooter.m in Sources */,
 				D63370A01D41FB44004D5E20 /* EquipTypeViewController.m in Sources */,
 				D673CB531D4B8AA700DA9C22 /* activitySingle.m in Sources */,
@@ -3827,6 +3838,7 @@
 				D6E450451D45FB7A00C5692E /* MoreFreeTableViewCell.m in Sources */,
 				D648B4101D48636F00F59DF1 /* ComMiddleDetailCell.m in Sources */,
 				C241ED9D1D437560005162C5 /* TopicDetailRequest.m in Sources */,
+				D63585091D58C4CB006D17C0 /* MoreJFDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

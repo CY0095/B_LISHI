@@ -1,4 +1,4 @@
-//
+       //
 //  ShopRequest.m
 //  EPB_LiShi
 //
@@ -10,10 +10,10 @@
 
 @implementation ShopRequest
 
-- (void)shopRequestWithBrand_id:(NSString *)Brand_id Latitude:(NSString *)latitude Longitude:(NSString *)longitude sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
+- (void)shopRequestWithNumber:(NSString *) number Brand_id:(NSString *)Brand_id Latitude:(NSString *)latitude Longitude:(NSString *)longitude sucess:(SuccessResponse)sucess failure:(FailureResponse)failure
 {
     NetWorkRequest *request = [[NetWorkRequest alloc] init];
-    [request sendDataWithUrl:shopRequest_Url paramters:@{@"brand_id" : Brand_id,@"latitude" : latitude,@"longitude" : longitude} successResponse:^(NSDictionary *dic) {
+    [request sendDataWithUrl:shopRequest_Url(number) paramters:@{@"brand_id" : Brand_id,@"latitude" : latitude,@"longitude" : longitude} successResponse:^(NSDictionary *dic) {
         
         sucess(dic);
     } failure:^(NSError *error) {

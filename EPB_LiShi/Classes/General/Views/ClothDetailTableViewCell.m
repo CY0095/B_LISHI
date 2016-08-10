@@ -28,9 +28,13 @@
     self.title.text = model.title;
     self.startTime.text = model.createdate;
     self.visits.text = [NSString stringWithFormat:@"%ld",(long)model.visits];
-    if (model.is_jion == -1) {
+    if (model.days == 0) {
         self.state.text = @"已过期";
         self.state1.text = @"已截止";
+    }else if(model.days != 0)
+    {
+        self.state.text = @"报名";
+        self.state1.text = [NSString stringWithFormat:@"还有%ld天结束",(long)model.days];
     }
 }
 

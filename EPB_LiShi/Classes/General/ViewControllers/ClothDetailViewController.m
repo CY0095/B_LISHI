@@ -131,6 +131,7 @@
     NSString *str = [NSString string];
     
     if (self.model.topicid == 0) {
+        
         str = self.moreModel.topic_id;
     }else if (self.moreModel.topic_id == 0)
     {

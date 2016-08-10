@@ -20,10 +20,12 @@
 //商店的TableView
 @property (strong, nonatomic) UITableView *shopTableView;
 //位置管理器
-@property(nonatomic,strong)CLLocationManager *locMagr;
+@property(nonatomic, strong)CLLocationManager *locMagr;
 //设置经纬度
-@property(assign,nonatomic) double latitude;
-@property(assign,nonatomic) double longitude;
+@property (assign, nonatomic) double latitude;
+@property (assign, nonatomic) double longitude;
+//设置请求商店的递增数字
+@property (assign, nonatomic) NSInteger number;
 
 @end
 
@@ -39,28 +41,77 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.number = 0;
+    
     self.title = @"店铺详情";
     
     //初始化数组
     self.shopDetailArr = [NSMutableArray array];
     
     //初始化TableView
-    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight))];
+    self.shopTableView = [[UITableView alloc] initWithFrame:(CGRectMake(0, 64, WindownWidth, WindowHeight - 64))];
     //设置代理 
     self.shopTableView.delegate = self;
     self.shopTableView.dataSource = self;
     //注册cell
-    [self.shopTableView registerNib:[UINib nibWithNibName:@"ShopTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:shopRequest_Url];
+    [self.shopTableView registerNib:[UINib nibWithNibName:@"ShopTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:shopViewCell_Identify];
     //添加视图
     [self.view addSubview:self.shopTableView];
     
     [self LocationAdd];
-    [self DataRequest];
+//    [self DataRequest];
     self.view.backgroundColor = [UIColor cyanColor];
     
     //加载缓冲效果
     [GiFHUD setGifWithImageName:@"loading.gif"];
     [GiFHUD show];
+    
+    //创建下拉刷新
+//    MJRefreshNormalHeader* header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        
+//        [self performSelector:@selector(headRefresh)withObject:nil afterDelay:2.0f];
+//        
+//    }];
+//    
+//    //设置自定义文字，因为默认是英文的
+//    [header setTitle:@"下拉刷新"forState:MJRefreshStateIdle];
+//    
+//    [header setTitle:@"松开加载更多"forState:MJRefreshStatePulling];
+//    
+//    [header setTitle:@"正在刷新中"forState:MJRefreshStateRefreshing];
+//    
+//    
+//    self.shopTableView.mj_header= header;
+    
+    //创建上拉刷新
+    MJRefreshBackNormalFooter * foot =[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        [self performSelector:@selector(footRefresh)withObject:nil afterDelay:2.0f];
+        
+    }];
+    self.shopTableView.mj_footer= foot;
+    
+    [foot setTitle:@"上拉刷新"forState:MJRefreshStateIdle];
+    
+    [foot setTitle:@"松开加载更多"forState:MJRefreshStatePulling];
+    
+    [foot setTitle:@"正在刷新中"forState:MJRefreshStateRefreshing];
+    
+}
+
+//#pragma mark --- 下拉刷新 ---
+//- (void)headRefresh {
+//    NSLog(@"下拉,加载数据");
+//    self.number ++;
+//    [self.shopTableView.mj_header endRefreshing];
+//}
+
+#pragma mark --- 上拉刷新 ---
+- (void)footRefresh {
+    NSLog(@"上拉，加载数据");
+    self.number ++;
+//    [self DataRequest];
+    [self.shopTableView.mj_footer endRefreshing];
 }
 
 #pragma mark --- 添加定位功能 ---
@@ -87,16 +138,18 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     //取出第一个位置
-    CLLocation *location = [locations firstObject];
-    CLLocationCoordinate2D coordinate = location.coordinate;//位置坐标
+    CLLocation *location = [locations lastObject];
+//    CLLocationCoordinate2D coordinate = location.coordinate;//位置坐标
     
-    self.longitude = coordinate.longitude;
-    self.latitude = coordinate.latitude;
+    self.longitude = location.coordinate.longitude;
+    self.latitude = location.coordinate.latitude;
+    
     
     NSLog(@"longtitude == %f, latitude == %f",self.longitude,self.latitude);
     
     //如果不需要实时去定位，需要关闭行为服务
     [self.locMagr stopUpdatingLocation];
+    [self DataRequest];
     
 }
 
@@ -106,7 +159,8 @@
     __weak typeof(self) weakself = self;
     ShopRequest *request = [[ShopRequest alloc] init];
     
-    [request shopRequestWithBrand_id:self.model.brand_id Latitude:@"40.029196" Longitude:@"116.337192" sucess:^(NSDictionary *dic) {
+    NSLog(@"请求数据的经纬度 ： longtitude == %f， latitude == %f",weakself.longitude,weakself.latitude);
+     [request shopRequestWithNumber:[NSString stringWithFormat:@"%ld",(long)weakself.number] Brand_id:self.model.brand_id Latitude:[NSString stringWithFormat:@"%f",weakself.latitude] Longitude:[NSString stringWithFormat:@"%f",weakself.longitude] sucess:^(NSDictionary *dic) {
         
         NSArray *event = [[dic objectForKey:@"data"] objectForKey:@"shoplist"];
         
@@ -141,10 +195,9 @@
 #pragma mark --- 设置cell ---
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shopRequest_Url];
+    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shopViewCell_Identify];
     //取消点击cell的变色
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     ShopModel *model = self.shopDetailArr[indexPath.row];
     cell.model = model;
     //显示距离

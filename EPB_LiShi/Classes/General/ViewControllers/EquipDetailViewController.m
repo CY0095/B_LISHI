@@ -28,9 +28,18 @@ static NSString *const cellResueID = @"111";
 
 @implementation EquipDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.rootVC.LSTabBar.hidden = YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    self.rootVC.LSTabBar.hidden = NO;
     
     [GiFHUD dismiss];
 }
@@ -50,7 +59,7 @@ static NSString *const cellResueID = @"111";
     flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     
     //初始化collection
-    self.equipDetailView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, WindownWidth, self.view.bounds.size.height - 113) collectionViewLayout:flowLayout];
+    self.equipDetailView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, WindownWidth, self.view.bounds.size.height - 64) collectionViewLayout:flowLayout];
 
     //注册自定义cell
     [self.equipDetailView registerNib:[UINib nibWithNibName:@"EquipDetailCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:EquipDetailViewCell_Identify];
@@ -122,7 +131,7 @@ static NSString *const cellResueID = @"111";
 {
     __weak typeof(self) weakself = self;
     EquipDetailRequest *request = [[EquipDetailRequest alloc] init];
-    [request equipDetailRequestWithNumber:[NSString stringWithFormat:@"%ld",self.number] Parameter:@{@"id":self.model.ID} sucess:^(NSDictionary *dic) {
+    [request equipDetailRequestWithNumber:[NSString stringWithFormat:@"%ld",(long)self.number] Parameter:@{@"id":self.model.ID} sucess:^(NSDictionary *dic) {
         
         NSArray *event = [dic objectForKey:@"data"];
         for (NSDictionary *tempDic in event) {
